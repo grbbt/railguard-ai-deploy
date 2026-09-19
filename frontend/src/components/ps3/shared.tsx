@@ -3,6 +3,7 @@
 import { useMemo, useSyncExternalStore } from 'react';
 import { Activity, DoorClosed, Fan, Waves } from 'lucide-react';
 import type { RecentJob, SubsystemId } from '@/lib/ps3-types';
+import { errorMessage } from './request-error';
 
 export const SUBSYSTEMS = [
   { id: 'door', title: 'Door', subtitle: 'Action segmentation', icon: DoorClosed, input: 'Continuous door CSV', task: 'Find opening and closing actions, then classify each segment.', output: 'start_time · end_time · prediction' },
@@ -23,16 +24,6 @@ export function jobTime(value: string) {
   return Number.isNaN(+date) ? value : date.toLocaleString('en-GB', { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' });
 }
 
-async function errorMessage(response: Response) {
-  try {
-    const body = await response.json();
-    if (typeof body.detail === 'string') return body.detail;
-    if (typeof body.message === 'string') return body.message;
-    if (Array.isArray(body.detail)) return body.detail.map((item: { msg?: string }) => item.msg ?? 'Invalid request').join('. ');
-  } catch { /* Keep the HTTP status when the service returns no JSON. */ }
-  return `The request failed (${response.status}). Check the local analysis service and retry.`;
-}
-
 export async function ps3Request<T>(url: string, init?: RequestInit, timeoutMs?: number): Promise<T> {
   const timeout = new AbortController();
   const timer = timeoutMs ? setTimeout(() => timeout.abort(), timeoutMs) : undefined;
@@ -42,7 +33,7 @@ export async function ps3Request<T>(url: string, init?: RequestInit, timeoutMs?:
     if (!response.ok) throw new Error(await errorMessage(response));
     return await response.json();
   } catch (cause) {
-    if (timeout.signal.aborted && !init?.signal?.aborted) throw new Error('The local service did not respond in time. Retrying a status check does not rerun the analysis.');
+    if (timeout.signal.aborted && !init?.signal?.aborted) throw new Error('The analysis service did not respond in time. Retrying a status check does not rerun the analysis.');
     throw cause;
   } finally { clearTimeout(timer); }
 }
