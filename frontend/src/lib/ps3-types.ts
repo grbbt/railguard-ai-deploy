@@ -49,7 +49,7 @@ export type Ps3Status = {
   subsystems: SubsystemStatus[];
   assistant: { available: boolean; provider: string | null; model: string | null; message: string };
   source: { repository: string; commit: string };
-  limits: { file_mb: number; batch_files: number; batch_mb: number };
+  limits: { file_mb: number; batch_files: number; batch_mb: number; upload_encodings?: string[] };
 };
 export type Evidence = { id: string; label: string; value: number | string | null; unit?: string; detail?: string; source?: string };
 export type Trace = { name: string; x_label: string; y_label: string; points: { x: number | string; y: number | null }[] };

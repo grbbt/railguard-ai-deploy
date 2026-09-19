@@ -31,7 +31,7 @@ try {
 }
 Push-Location -LiteralPath $frontendDirectory
 try {
-    Invoke-RailGuardCommand $nodeExecutable @('--test', 'src/lib/ps3-upload-proxy.test.mjs', 'src/components/ps3/request-error.test.mjs') 'Checking streamed uploads and hosted error messages'
+    Invoke-RailGuardCommand $nodeExecutable @('--test', 'src/lib/ps3-upload-proxy.test.mjs', 'src/components/ps3/request-error.test.mjs', 'src/components/ps3/upload-request.test.mjs') 'Checking streamed uploads, lossless transfer and hosted error messages'
     Invoke-RailGuardCommand $nodeExecutable @('--test', 'src/components/ps3/job-state.test.mjs', 'src/components/ps3/telemetry-chart.test.mjs', 'src/components/ps3/validation-input.test.mjs', 'src/components/ps3/prediction-comparison.test.mjs', 'src/components/ps3/result-overview.test.mjs', 'src/components/ps3/investigation-state.test.mjs', 'src/components/ps3/investigation-scroll.test.mjs', 'src/components/workspace/workspace-state.test.mjs', 'src/components/workspace/window-geometry.test.mjs', 'src/components/workspace/result-summary.test.mjs', 'src/components/workspace/recording-mapping.test.mjs', 'src/components/workspace/export-selection.test.mjs') 'Checking investigation sessions, prediction comparisons, export selections, batch uploads, workspace history and recording component mappings'
     if (-not $SkipBuild) {
         Invoke-RailGuardCommand $nodeExecutable @($nextCli, 'typegen') 'Generating Next.js route types'
