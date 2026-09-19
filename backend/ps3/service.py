@@ -287,7 +287,8 @@ class PS3Service:
                                 'available': models[key] is not None, 'model': models[key], 'example_files': len(self.examples(key))}
                                for key, spec in SUBSYSTEMS.items()],
                 'assistant': configuration(), 'source': {'repository': REPOSITORY, 'commit': COMMIT},
-                'limits': {'file_mb': 64, 'batch_files': 100, 'batch_mb': 1500}}
+                'limits': {'file_mb': 64, 'batch_files': 100, 'batch_mb': 1500,
+                           'upload_encodings': ['identity', 'gzip']}}
 
     def _job_path(self, job_id):
         if not re.fullmatch(r'[a-f0-9]{32}', job_id):

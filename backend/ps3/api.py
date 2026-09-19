@@ -13,8 +13,9 @@ from starlette.concurrency import run_in_threadpool
 
 from backend.ps3.assistant import investigate
 from backend.ps3.project_tools import ProjectTools
-from backend.ps3.service import PS3Service, safe_filename
+from backend.ps3.service import PS3Service
 from backend.ps3.summary import ResultSummarizer
+from backend.ps3.upload_transport import UploadLimitError, parse_upload_metadata, save_uploads
 
 
 class ExampleRequest(BaseModel):
@@ -102,7 +103,8 @@ def router(service: PS3Service):
         return service.list_jobs(limit=limit, subsystem=subsystem)
 
     @routes.post('/jobs', status_code=202)
-    async def upload(subsystem: str = Form(...), files: list[UploadFile] = File(...)):
+    async def upload(subsystem: str = Form(...), files: list[UploadFile] = File(...),
+                     file_encodings: str | None = Form(None)):
         inputs = None
         submitted = False
         try:
@@ -111,26 +113,14 @@ def router(service: PS3Service):
                 raise HTTPException(409, 'The subsystem model is not trained yet.')
             if not 1 <= len(files) <= 100 or (subsystem == 'door' and len(files) != 1):
                 raise ValueError('Choose one Door stream, or up to 100 files for another subsystem.')
-            names = [safe_filename(f.filename or '', spec['extension']) for f in files]
-            if len({n.casefold() for n in names}) != len(names):
-                raise ValueError('Each uploaded source must have a distinct filename.')
+            names, encodings = parse_upload_metadata(file_encodings, [f.filename or '' for f in files], spec['extension'])
             job_id = uuid.uuid4().hex
             inputs = service.jobs_dir / job_id / 'inputs'
             inputs.mkdir(parents=True)
-            paths, total = [], 0
-            for upload_file, name in zip(files, names):
-                path = inputs / name
-                size = 0
-                with path.open('wb') as target:
-                    while chunk := await upload_file.read(1024**2):
-                        size += len(chunk)
-                        total += len(chunk)
-                        if size > 64 * 1024**2 or total > 1500 * 1024**2:
-                            raise HTTPException(413, 'Limits are 64 MiB per file and 1,500 MiB per batch. No partial predictions were created.')
-                        target.write(chunk)
-                if size == 0:
-                    raise ValueError(f'{name} is empty.')
-                paths.append(path)
+            try:
+                paths = await run_in_threadpool(save_uploads, [f.file for f in files], names, encodings, inputs)
+            except UploadLimitError as exc:
+                raise HTTPException(413, str(exc)) from exc
             result = service.create(subsystem, paths, 'uploaded', job_id)
             submitted = True
             return result
