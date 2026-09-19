@@ -1,10 +1,10 @@
 # Submission, hosting and database plan
 
-**Status — 19 September 2026:** the source is published at [hpone2k/railguard-ai](https://github.com/hpone2k/railguard-ai). Hosting and database arrangements remain proposed; no cloud server, hosted domain or cloud database has been provisioned. Example deployment URLs below are placeholders. The project owner chooses the account, domain and budget before provisioning.
+**Status — 19 September 2026:** the source is published at [hpone2k/railguard-ai](https://github.com/hpone2k/railguard-ai), and the owner has hosted the prototype at [railguard.grabtch.com](https://railguard.grabtch.com/) using Docker on a friend's server. See [hosted upload behavior and checks](HOSTED_UPLOADS.md). The alternatives and database changes below remain planning material; they do not describe verified settings on that server. Example deployment URLs below are placeholders.
 
 ## Recommendation
 
-**Provider selection is pending.** The options below describe the application's hosting requirements and remain proposals, not purchase or deployment instructions.
+**The initial prototype is hosted.** The options below remain reference material for future hosting decisions, not purchase or deployment instructions.
 
 Host the existing app on **one Linux virtual machine**, with a DigitalOcean Droplet as the concrete provider option. Run the production Next.js frontend and one FastAPI process behind an HTTPS reverse proxy. Keep the current saved-job files on persistent storage for the hackathon. A database migration is unnecessary for the initial judges' deployment.
 

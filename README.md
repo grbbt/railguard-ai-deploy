@@ -2,6 +2,8 @@
 
 RailGuard turns railway sensor recordings into predictions, measured results, interactive charts, 3D component views and downloadable competition outputs. It covers **Door systems, ACV climate systems, Rail Corrugation and Structural Health Monitoring (SHM)**. The optional AI investigation assistant retrieves project documentation and saved findings to explain results.
 
+**Live prototype:** [railguard.grabtch.com](https://railguard.grabtch.com/).
+
 The application uses **Next.js, React and Three.js** for the interface, and **Python/FastAPI, scikit-learn and XGBoost** for processing and inference. The four active trained models and their provenance are included in this repository. Raw organiser datasets, uploaded files, API keys, dependencies, build output and private runtime history are excluded.
 
 ## Run locally on Windows
@@ -22,7 +24,7 @@ For optional AI investigation, copy `.env.example` to `.env` and configure your 
 - [Measured model validation and audit](outputs/model-review-20260919/model-review.md): development validation, not hidden-Test accuracy.
 - [Current prediction export](outputs/model-review-20260919/inference-check/predictions.zip) and [export verification](outputs/model-review-20260919/inference-check/verification.json).
 - [Unified workspace guide](docs/UNIFIED_WORKSPACE.md) and [AI investigation controls](docs/AI_SECURITY.md).
-- [Hosting and database plan](docs/SUBMISSION_HOSTING_PLAN.md). A hosting provider has not yet been selected, and no public website has been deployed.
+- [Hosted upload behavior and deployment checks](docs/HOSTED_UPLOADS.md), plus the [database and hosting plan](docs/SUBMISSION_HOSTING_PLAN.md).
 
 Run `.\scripts\check.ps1 -SkipBuild` for tests, type checking and lint while the app is running. Stop the app with `.\scripts\stop.ps1` before running the full `.\scripts\check.ps1` production build. Start the verified build with `.\scripts\start.ps1 -Production`.
 
@@ -38,7 +40,7 @@ This brief records the intended solution and implementation constraints. It does
 
 **Glanceable results:** an **In brief** card explains **Current file** or **All files** in the selected run, using prediction counts and recorded measurements. The scope follows you between Analyse data and 3D + AI investigation. Exact facts and measurements remain server-owned; a bounded OpenAI request adds a short review sentence, successful wording is cached, and failures leave a labelled local summary visible. The 3D model remains tied to the named recording. New investigation questions anchor at the start of their exchange; completed answers no longer scroll to the bottom or refocus the input. See [summary behavior](docs/RESULT_SUMMARIES.md).
 
-**Submission planning:** the newer submission slide requires a GitHub URL/README, hosted prototype, 2–3 minute video, prediction output and short write-up. The [hosting and database plan](docs/SUBMISSION_HOSTING_PLAN.md) recommends a persistent server for the existing app and a staged metadata/object-storage design if multi-user access is added. Cloud resources, a public domain and a hosted deployment have not been provisioned.
+**Submission planning:** the newer submission slide requires a GitHub URL/README, hosted prototype, 2–3 minute video, prediction output and short write-up. The app is now hosted on an owner-managed Docker server. The [hosting and database plan](docs/SUBMISSION_HOSTING_PLAN.md) describes a staged metadata/object-storage design if multi-user access is added.
 
 **AI retrieval controls:** project investigation uses allowlisted local retrieval, server-enforced read-only tools and file/run scope, untrusted-content envelopes, credential redaction, bounded context and fresh source citations. Adversarial tests cover scope expansion, role spoofing, malformed arguments and credential disclosure. See the [implemented controls and test scope](docs/AI_SECURITY.md).
 
