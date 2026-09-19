@@ -1,0 +1,258 @@
+/* Engineering reading order: result and geometry, measurements, signals, method.
+   Keep evidence outside the scene row so longer reports cannot create a void. */
+.rg-workspace.ps3-shell .recording-twin .rt-layout {
+  grid-template-columns: minmax(0, 1fr) 300px;
+  align-items: start;
+}
+.rg-workspace.ps3-shell .recording-twin .rt-layout .rt-visual {
+  align-self: start;
+  border-right: 1px solid var(--ui-border);
+}
+.rg-workspace.ps3-shell .recording-twin .rt-layout .rt-visual .rt-canvas {
+  height: 410px;
+}
+.rg-workspace.ps3-shell .recording-twin .rt-inspector {
+  border-left: 0;
+  padding: 21px 19px;
+  overflow: visible;
+  max-height: none;
+  background: transparent;
+}
+.rg-workspace.ps3-shell .recording-twin .rt-inspector-header {
+  display: block;
+  margin-bottom: 17px;
+}
+.rg-workspace.ps3-shell .recording-twin .rt-inspector-header .rt-eyebrow {
+  display: flex;
+  font-size: 10px;
+  letter-spacing: .09em;
+}
+.rg-workspace.ps3-shell .recording-twin .rt-inspector-header h4 {
+  margin: 9px 0 9px;
+  font-size: 19px;
+  line-height: 1.25;
+}
+.rg-workspace.ps3-shell .recording-twin .rt-status {
+  margin: 0;
+  font-size: 12px;
+}
+.rg-workspace.ps3-shell .recording-twin .rt-key-measurements {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+.rg-workspace.ps3-shell .recording-twin .rt-key-measurements > div {
+  padding: 11px 10px;
+  min-width: 0;
+}
+.rg-workspace.ps3-shell .recording-twin .rt-key-measurements dt {
+  font-size: 11px;
+}
+.rg-workspace.ps3-shell .recording-twin .rt-key-measurements dd {
+  font-size: 22px;
+}
+.rg-workspace.ps3-shell .recording-twin .rt-key-measurements dd small {
+  display: block;
+  margin: 3px 0 0;
+  font-size: 11px;
+}
+.rg-workspace.ps3-shell .recording-twin .rt-findings {
+  margin: 19px 0 0;
+  padding: 16px 0 0;
+  border-top: 1px solid var(--ui-border);
+  border-bottom: 0;
+}
+.rg-workspace.ps3-shell .recording-twin .rt-finding-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  max-height: 142px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #627d8b transparent;
+}
+.rg-workspace.ps3-shell .recording-twin .rt-finding-list button {
+  min-height: 54px;
+  padding: 9px 10px;
+  border-radius: 6px;
+}
+.rg-workspace.ps3-shell .recording-twin .rt-finding-list button[aria-pressed=true] {
+  padding: 8px 9px;
+}
+.rg-workspace.ps3-shell .recording-twin .rt-evidence-inventory {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  margin-top: 18px;
+  color: var(--ui-muted);
+  font-size: 11px;
+}
+.rg-workspace.ps3-shell .recording-twin .rt-evidence-inventory strong {
+  color: var(--ui-text);
+  font-variant-numeric: tabular-nums;
+}
+.rg-workspace.ps3-shell .recording-twin .rt-evidence-inventory small {
+  width: 100%;
+  font-size: 11px;
+}
+.rg-workspace.ps3-shell .recording-twin .rt-structure-annotation {
+  position: absolute;
+  top: 45px;
+  left: 17px;
+  z-index: 2;
+  width: 190px;
+  display: grid;
+  gap: 5px;
+  padding: 8px 11px;
+  background: #182833e8;
+  color: var(--ui-text);
+  border-left: 2px solid #b1a3e4;
+  border-radius: 5px;
+  pointer-events: none;
+}
+.rg-workspace.ps3-shell .recording-twin .rt-structure-annotation strong {
+  font-size: 12px;
+  font-weight: 550;
+}
+.rg-workspace.ps3-shell .recording-twin .rt-structure-annotation span {
+  font-size: 11px;
+  color: var(--ui-muted);
+  font-variant-numeric: tabular-nums;
+}
+.rg-workspace.ps3-shell .recording-twin .rt-data-section {
+  padding: 23px;
+  border-top: 1px solid var(--ui-border);
+  background: #17232b;
+}
+.rg-workspace.ps3-shell .recording-twin .rt-section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.rg-workspace.ps3-shell .recording-twin .rt-section-heading .rt-eyebrow {
+  font-size: 10px;
+  letter-spacing: .1em;
+  color: var(--ui-strong);
+}
+.rg-workspace.ps3-shell .recording-twin .rt-section-heading h4 {
+  font-size: 18px;
+  line-height: 1.35;
+  font-weight: 550;
+  margin: 6px 0 0;
+  color: var(--ui-text);
+}
+.rg-workspace.ps3-shell .recording-twin .rt-section-heading > span {
+  flex-shrink: 0;
+  padding: 5px 8px;
+  border: 1px solid var(--ui-border);
+  border-radius: 5px;
+  font-size: 11px;
+  color: var(--ui-muted);
+}
+.rg-workspace.ps3-shell .recording-twin .rt-data-section .rt-detail {
+  margin: 11px 0 17px;
+  max-width: 110ch;
+}
+.rg-workspace.ps3-shell .recording-twin .rt-all-measurements {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  gap: 11px;
+}
+.rg-workspace.ps3-shell .recording-twin .rt-all-measurements > div {
+  min-width: 0;
+  padding: 16px;
+  background: #1c2b34;
+}
+.rg-workspace.ps3-shell .recording-twin .rt-all-measurements dd {
+  font-size: 25px;
+}
+.rg-workspace.ps3-shell .recording-twin .rt-recording-context {
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid var(--ui-border);
+}
+.rg-workspace.ps3-shell .recording-twin .rt-recording-context .rt-section-heading { margin-bottom: 13px; }
+.rg-workspace.ps3-shell .recording-twin .rt-recording-context .rt-all-measurements dd { font-size: 21px; }
+.rg-workspace.ps3-shell .recording-twin .rt-evidence-source {
+  padding-top: 9px;
+  border-top: 1px solid #354a57;
+}
+.rg-workspace.ps3-shell .recording-twin .rt-evidence-source strong {
+  color: var(--ui-text);
+  font-weight: 500;
+  margin-right: 5px;
+}
+.rg-workspace.ps3-shell .recording-twin .rt-data-section .rt-traces.rt-all-traces {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 16px;
+  margin: 0;
+}
+.rg-workspace.ps3-shell .recording-twin .rt-all-traces .rt-trace {
+  margin: 0;
+  padding: 16px;
+  min-width: 0;
+  border: 1px solid var(--ui-border);
+  border-radius: 9px;
+  background: #111d26;
+}
+.rg-workspace.ps3-shell .recording-twin .rt-all-traces .rt-trace figcaption {
+  min-height: 50px;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+.rg-workspace.ps3-shell .recording-twin .rt-all-traces .rt-trace svg {
+  width: 100%;
+  max-height: 245px;
+  margin-top: 5px;
+}
+.rg-workspace.ps3-shell .recording-twin .rt-provenance {
+  padding: 19px 23px;
+  gap: 11px;
+}
+.rg-workspace.ps3-shell .recording-twin .rt-provenance > div {
+  min-width: 0;
+}
+.rg-workspace.ps3-shell .recording-twin .rt-provenance strong {
+  display: block;
+  color: var(--ui-text);
+  font-size: 12px;
+  font-weight: 550;
+  margin-bottom: 6px;
+}
+.rg-workspace.ps3-shell .recording-twin .rt-model-source {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px 22px;
+  margin-top: 8px;
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+.rg-workspace.ps3-shell .recording-twin .rt-model-source b {
+  font-weight: 500;
+  color: var(--ui-text);
+}
+@container (max-width: 880px) {
+  .rg-workspace.ps3-shell .recording-twin .rt-layout { grid-template-columns: minmax(0, 1fr); }
+  .rg-workspace.ps3-shell .recording-twin .rt-layout .rt-visual { border-right: 0; }
+  .rg-workspace.ps3-shell .recording-twin .rt-inspector { border-top: 1px solid var(--ui-border); }
+  .rg-workspace.ps3-shell .recording-twin .rt-key-measurements { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .rg-workspace.ps3-shell .recording-twin .rt-finding-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .rg-workspace.ps3-shell .recording-twin .rt-all-measurements { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@container (max-width: 580px) {
+  .rg-workspace.ps3-shell .recording-twin .rt-layout .rt-visual .rt-canvas { height: 340px; }
+  .rg-workspace.ps3-shell .recording-twin .rt-data-section { padding: 18px 16px; }
+  .rg-workspace.ps3-shell .recording-twin .rt-section-heading h4 { font-size: 16px; }
+  .rg-workspace.ps3-shell .recording-twin .rt-section-heading > span { font-size: 10px; }
+  .rg-workspace.ps3-shell .recording-twin .rt-all-measurements,
+  .rg-workspace.ps3-shell .recording-twin .rt-data-section .rt-traces.rt-all-traces { grid-template-columns: minmax(0, 1fr); }
+  .rg-workspace.ps3-shell .recording-twin .rt-all-traces .rt-trace { padding: 13px; }
+  .rg-workspace.ps3-shell .recording-twin .rt-provenance { padding: 17px 16px; }
+  .rg-workspace.ps3-shell .recording-twin .rt-source-strip { font-size: 10px; }
+  .rg-workspace.ps3-shell .recording-twin .rt-source-strip > span:last-child { font-size: 9px; }
+  .rg-workspace.ps3-shell .recording-twin .rt-scene-caption { gap: 10px; font-size: 10px; }
+  .rg-workspace.ps3-shell .recording-twin .rt-scene-caption span:last-child { font-size: 10px; max-width: 105px; }
+}
+@container (max-width: 390px) {
+  .rg-workspace.ps3-shell .recording-twin .rt-finding-list { grid-template-columns: minmax(0, 1fr); }
+}

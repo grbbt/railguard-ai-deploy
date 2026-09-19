@@ -1,0 +1,2434 @@
+{
+  "audited_at": "2026-09-18T16:38:29.826027+00:00",
+  "release_commit": "16526c02579c7f37e54eaaa42a4cc6d4ceb19994",
+  "method": "Independent official-metric arithmetic against original Train answers; fresh Door/ACV/SHM Train-only feature and fold replay; SHA-256 binding to fitted metadata and pinned release.",
+  "test_inputs_read": false,
+  "hidden_test_accuracy": "Not available: hidden answers are not released.",
+  "candidate_tuning_performed": false,
+  "models": {
+    "door": {
+      "provenance": {
+        "model_sha256": "088022ad7fdf6883d6520ad882e30bc91bd05e88bce41f169d049f67947b9322",
+        "metadata_sha256": "61e331e187e28a9ef4a4c16784a6ae6a4734e965ef851829dbb279e95045fabe",
+        "all_source_and_label_hashes_match_training_and_release": true,
+        "checked_files": 2,
+        "estimator_type": "LogisticRegression",
+        "sources": [
+          {
+            "path": "PS3/02_Datasets/Door/Train.csv",
+            "sha256": "acdec4aad0cadf4d7270d4766ed7e8541f73340721c0540cbb5242dcb951eaa9"
+          },
+          {
+            "path": "PS3/02_Datasets/Door/Train_Segments_Answer.csv",
+            "sha256": "72aecd080ccd8ff2481d3dc9527dd9fb3ee6674446ad7c553558ea5a990c03cc"
+          }
+        ]
+      },
+      "evaluation": {
+        "metric": "IoU-weighted F1",
+        "selected_model": "Regularized logistic regression",
+        "selected": {
+          "score": 1.0,
+          "exact_fraction": "1",
+          "matching_actions": 110,
+          "true_actions": 110,
+          "predicted_actions": 110,
+          "iou_credit": 110.0
+        },
+        "candidate_metrics": {
+          "Regularized logistic regression": {
+            "score": 1.0,
+            "exact_fraction": "1",
+            "matching_actions": 110,
+            "true_actions": 110,
+            "predicted_actions": 110,
+            "iou_credit": 110.0
+          },
+          "Extra Trees": {
+            "score": 1.0,
+            "exact_fraction": "1",
+            "matching_actions": 110,
+            "true_actions": 110,
+            "predicted_actions": 110,
+            "iou_credit": 110.0
+          },
+          "Normal-cycle Isolation Forest": {
+            "score": 0.9454545454545454,
+            "exact_fraction": "52/55",
+            "matching_actions": 104,
+            "true_actions": 110,
+            "predicted_actions": 110,
+            "iou_credit": 104.0
+          },
+          "XGBoost classifier": {
+            "score": 0.9818181818181818,
+            "exact_fraction": "54/55",
+            "matching_actions": 108,
+            "true_actions": 110,
+            "predicted_actions": 110,
+            "iou_credit": 108.0
+          }
+        },
+        "fresh_train_fold_replay_matches_saved": true,
+        "folds": [
+          {
+            "fold": 1,
+            "training_actions": 88,
+            "heldout_actions": 22,
+            "score": 1.0,
+            "exact_fraction": "1",
+            "matching_actions": 22,
+            "true_actions": 22,
+            "predicted_actions": 22,
+            "iou_credit": 22.0
+          },
+          {
+            "fold": 2,
+            "training_actions": 88,
+            "heldout_actions": 22,
+            "score": 1.0,
+            "exact_fraction": "1",
+            "matching_actions": 22,
+            "true_actions": 22,
+            "predicted_actions": 22,
+            "iou_credit": 22.0
+          },
+          {
+            "fold": 3,
+            "training_actions": 88,
+            "heldout_actions": 22,
+            "score": 1.0,
+            "exact_fraction": "1",
+            "matching_actions": 22,
+            "true_actions": 22,
+            "predicted_actions": 22,
+            "iou_credit": 22.0
+          },
+          {
+            "fold": 4,
+            "training_actions": 88,
+            "heldout_actions": 22,
+            "score": 1.0,
+            "exact_fraction": "1",
+            "matching_actions": 22,
+            "true_actions": 22,
+            "predicted_actions": 22,
+            "iou_credit": 22.0
+          },
+          {
+            "fold": 5,
+            "training_actions": 88,
+            "heldout_actions": 22,
+            "score": 1.0,
+            "exact_fraction": "1",
+            "matching_actions": 22,
+            "true_actions": 22,
+            "predicted_actions": 22,
+            "iou_credit": 22.0
+          }
+        ],
+        "duplicate_waveform_groups": 110,
+        "group_leakage_detected": false,
+        "scope": "110 held-out actions in five blocks of one previously inspected training stream; not independent door acquisitions."
+      }
+    },
+    "acv": {
+      "provenance": {
+        "model_sha256": "2631a8a61113d3d22ff2efc52c1df57ed44187dda9b03c804718784e7d4c98e2",
+        "metadata_sha256": "7c9d3b94129a258d738faa1537e76da9507248fa786103a8563fa91848df5b77",
+        "all_source_and_label_hashes_match_training_and_release": true,
+        "checked_files": 7,
+        "estimator_type": "LogisticRegression",
+        "sources": [
+          {
+            "path": "PS3/02_Datasets/ACV/Train/acv_case_01.xlsx",
+            "sha256": "d0657d45b52d12db8fbde52242f44f6efd0e3050d04822920aa3ca3b984af233"
+          },
+          {
+            "path": "PS3/02_Datasets/ACV/Train/acv_case_02.xlsx",
+            "sha256": "869107ed17735efb55f6d33de2d0456a0b1e76aadbb280a9eef830f6778194c8"
+          },
+          {
+            "path": "PS3/02_Datasets/ACV/Train/acv_case_03.xlsx",
+            "sha256": "07801fb08e6fc3654a23cd3d245fd89b327c5e9dd70880b2d80eb600b8d746c6"
+          },
+          {
+            "path": "PS3/02_Datasets/ACV/Train/acv_case_04.xlsx",
+            "sha256": "650676c44e8f5979c7cf493a2b0d4173ad0c5ae50d44ead9a8fad0444d19d749"
+          },
+          {
+            "path": "PS3/02_Datasets/ACV/Train/acv_case_05.xlsx",
+            "sha256": "cc994bf2a1a197e05ef4f231186a7da990fc6203b842d94327181866d62cfe08"
+          },
+          {
+            "path": "PS3/02_Datasets/ACV/Train/acv_case_06.xlsx",
+            "sha256": "6066b6882bf92af6b81fff311af870edf407f19257806f896a47b7e57e751172"
+          },
+          {
+            "path": "PS3/02_Datasets/ACV/Train_Labels.csv",
+            "sha256": "840226a83db2ed7e8a366d78b530528f9fc7f06a03e199605b2d46a86c151aa7"
+          }
+        ]
+      },
+      "evaluation": {
+        "metric": "Linear rank-decay",
+        "selected_model": "Pairwise cooling-exceedance ranking",
+        "selected_fixed_candidate_cv": {
+          "cases": 6,
+          "rank_decay": 0.9791666666666666,
+          "top1_correct": 5,
+          "top2_correct": 6,
+          "first_choice_accuracy": 0.8333333333333334,
+          "mean_rank": 1.1666666666666667,
+          "case_results": [
+            {
+              "file_id": "acv_case_01.xlsx",
+              "faulty_car": "01",
+              "first_choice": "01",
+              "true_car_rank": 1
+            },
+            {
+              "file_id": "acv_case_02.xlsx",
+              "faulty_car": "02",
+              "first_choice": "02",
+              "true_car_rank": 1
+            },
+            {
+              "file_id": "acv_case_03.xlsx",
+              "faulty_car": "03",
+              "first_choice": "03",
+              "true_car_rank": 1
+            },
+            {
+              "file_id": "acv_case_04.xlsx",
+              "faulty_car": "01",
+              "first_choice": "04",
+              "true_car_rank": 2
+            },
+            {
+              "file_id": "acv_case_05.xlsx",
+              "faulty_car": "04",
+              "first_choice": "04",
+              "true_car_rank": 1
+            },
+            {
+              "file_id": "acv_case_06.xlsx",
+              "faulty_car": "06",
+              "first_choice": "06",
+              "true_car_rank": 1
+            }
+          ]
+        },
+        "candidate_metrics": {
+          "Cooling peer-deviation ranking": {
+            "cases": 6,
+            "rank_decay": 0.9375,
+            "top1_correct": 5,
+            "top2_correct": 5,
+            "first_choice_accuracy": 0.8333333333333334,
+            "mean_rank": 1.5,
+            "case_results": [
+              {
+                "file_id": "acv_case_01.xlsx",
+                "faulty_car": "01",
+                "first_choice": "01",
+                "true_car_rank": 1
+              },
+              {
+                "file_id": "acv_case_02.xlsx",
+                "faulty_car": "02",
+                "first_choice": "02",
+                "true_car_rank": 1
+              },
+              {
+                "file_id": "acv_case_03.xlsx",
+                "faulty_car": "03",
+                "first_choice": "03",
+                "true_car_rank": 1
+              },
+              {
+                "file_id": "acv_case_04.xlsx",
+                "faulty_car": "01",
+                "first_choice": "01",
+                "true_car_rank": 1
+              },
+              {
+                "file_id": "acv_case_05.xlsx",
+                "faulty_car": "04",
+                "first_choice": "01",
+                "true_car_rank": 4
+              },
+              {
+                "file_id": "acv_case_06.xlsx",
+                "faulty_car": "06",
+                "first_choice": "06",
+                "true_car_rank": 1
+              }
+            ]
+          },
+          "Pairwise regularized logistic ranking": {
+            "cases": 6,
+            "rank_decay": 0.9583333333333334,
+            "top1_correct": 4,
+            "top2_correct": 6,
+            "first_choice_accuracy": 0.6666666666666666,
+            "mean_rank": 1.3333333333333333,
+            "case_results": [
+              {
+                "file_id": "acv_case_01.xlsx",
+                "faulty_car": "01",
+                "first_choice": "01",
+                "true_car_rank": 1
+              },
+              {
+                "file_id": "acv_case_02.xlsx",
+                "faulty_car": "02",
+                "first_choice": "02",
+                "true_car_rank": 1
+              },
+              {
+                "file_id": "acv_case_03.xlsx",
+                "faulty_car": "03",
+                "first_choice": "03",
+                "true_car_rank": 1
+              },
+              {
+                "file_id": "acv_case_04.xlsx",
+                "faulty_car": "01",
+                "first_choice": "04",
+                "true_car_rank": 2
+              },
+              {
+                "file_id": "acv_case_05.xlsx",
+                "faulty_car": "04",
+                "first_choice": "02",
+                "true_car_rank": 2
+              },
+              {
+                "file_id": "acv_case_06.xlsx",
+                "faulty_car": "06",
+                "first_choice": "06",
+                "true_car_rank": 1
+              }
+            ]
+          },
+          "Normal-car Isolation Forest": {
+            "cases": 6,
+            "rank_decay": 0.875,
+            "top1_correct": 4,
+            "top2_correct": 4,
+            "first_choice_accuracy": 0.6666666666666666,
+            "mean_rank": 2.0,
+            "case_results": [
+              {
+                "file_id": "acv_case_01.xlsx",
+                "faulty_car": "01",
+                "first_choice": "01",
+                "true_car_rank": 1
+              },
+              {
+                "file_id": "acv_case_02.xlsx",
+                "faulty_car": "02",
+                "first_choice": "02",
+                "true_car_rank": 1
+              },
+              {
+                "file_id": "acv_case_03.xlsx",
+                "faulty_car": "03",
+                "first_choice": "03",
+                "true_car_rank": 1
+              },
+              {
+                "file_id": "acv_case_04.xlsx",
+                "faulty_car": "01",
+                "first_choice": "04",
+                "true_car_rank": 4
+              },
+              {
+                "file_id": "acv_case_05.xlsx",
+                "faulty_car": "04",
+                "first_choice": "05",
+                "true_car_rank": 4
+              },
+              {
+                "file_id": "acv_case_06.xlsx",
+                "faulty_car": "06",
+                "first_choice": "06",
+                "true_car_rank": 1
+              }
+            ]
+          },
+          "Pairwise cooling-exceedance ranking": {
+            "cases": 6,
+            "rank_decay": 0.9791666666666666,
+            "top1_correct": 5,
+            "top2_correct": 6,
+            "first_choice_accuracy": 0.8333333333333334,
+            "mean_rank": 1.1666666666666667,
+            "case_results": [
+              {
+                "file_id": "acv_case_01.xlsx",
+                "faulty_car": "01",
+                "first_choice": "01",
+                "true_car_rank": 1
+              },
+              {
+                "file_id": "acv_case_02.xlsx",
+                "faulty_car": "02",
+                "first_choice": "02",
+                "true_car_rank": 1
+              },
+              {
+                "file_id": "acv_case_03.xlsx",
+                "faulty_car": "03",
+                "first_choice": "03",
+                "true_car_rank": 1
+              },
+              {
+                "file_id": "acv_case_04.xlsx",
+                "faulty_car": "01",
+                "first_choice": "04",
+                "true_car_rank": 2
+              },
+              {
+                "file_id": "acv_case_05.xlsx",
+                "faulty_car": "04",
+                "first_choice": "04",
+                "true_car_rank": 1
+              },
+              {
+                "file_id": "acv_case_06.xlsx",
+                "faulty_car": "06",
+                "first_choice": "06",
+                "true_car_rank": 1
+              }
+            ]
+          },
+          "XGBoost pairwise ranking": {
+            "cases": 6,
+            "rank_decay": 0.875,
+            "top1_correct": 4,
+            "top2_correct": 5,
+            "first_choice_accuracy": 0.6666666666666666,
+            "mean_rank": 2.0,
+            "case_results": [
+              {
+                "file_id": "acv_case_01.xlsx",
+                "faulty_car": "01",
+                "first_choice": "01",
+                "true_car_rank": 1
+              },
+              {
+                "file_id": "acv_case_02.xlsx",
+                "faulty_car": "02",
+                "first_choice": "02",
+                "true_car_rank": 1
+              },
+              {
+                "file_id": "acv_case_03.xlsx",
+                "faulty_car": "03",
+                "first_choice": "03",
+                "true_car_rank": 1
+              },
+              {
+                "file_id": "acv_case_04.xlsx",
+                "faulty_car": "01",
+                "first_choice": "04",
+                "true_car_rank": 2
+              },
+              {
+                "file_id": "acv_case_05.xlsx",
+                "faulty_car": "04",
+                "first_choice": "05",
+                "true_car_rank": 6
+              },
+              {
+                "file_id": "acv_case_06.xlsx",
+                "faulty_car": "06",
+                "first_choice": "06",
+                "true_car_rank": 1
+              }
+            ]
+          }
+        },
+        "nested_candidate_selection_cv": {
+          "cases": 6,
+          "rank_decay": 0.9166666666666666,
+          "top1_correct": 4,
+          "top2_correct": 5,
+          "first_choice_accuracy": 0.6666666666666666,
+          "mean_rank": 1.6666666666666667,
+          "case_results": [
+            {
+              "file_id": "acv_case_01.xlsx",
+              "faulty_car": "01",
+              "first_choice": "01",
+              "true_car_rank": 1
+            },
+            {
+              "file_id": "acv_case_02.xlsx",
+              "faulty_car": "02",
+              "first_choice": "02",
+              "true_car_rank": 1
+            },
+            {
+              "file_id": "acv_case_03.xlsx",
+              "faulty_car": "03",
+              "first_choice": "03",
+              "true_car_rank": 1
+            },
+            {
+              "file_id": "acv_case_04.xlsx",
+              "faulty_car": "01",
+              "first_choice": "04",
+              "true_car_rank": 2
+            },
+            {
+              "file_id": "acv_case_05.xlsx",
+              "faulty_car": "04",
+              "first_choice": "01",
+              "true_car_rank": 4
+            },
+            {
+              "file_id": "acv_case_06.xlsx",
+              "faulty_car": "06",
+              "first_choice": "06",
+              "true_car_rank": 1
+            }
+          ]
+        },
+        "fresh_workbooks_and_nested_replay_matches_saved": true,
+        "guarded_fit_calls": 105,
+        "outer_folds_checked": 6,
+        "selected_inner_folds_checked": 30,
+        "fitter_answers_restricted_to_its_training_cases": true,
+        "group_leakage_detected": false,
+        "scope": "Six previously inspected development workbooks. Fixed-candidate CV and nested model-selection CV are different evaluations; neither is an untouched external test."
+      }
+    },
+    "rail": {
+      "provenance": {
+        "model_sha256": "80b9c15ea8f5a53c8fe085bfcbbcab9d5218085bceb5ceee440537a783ab3941",
+        "metadata_sha256": "f87473d2afa221a417ba66ab05b97f1aab3d37bda5afc1159114dbdb5c812f53",
+        "all_source_and_label_hashes_match_training_and_release": true,
+        "checked_files": 273,
+        "estimator_type": "Pipeline",
+        "sources": [
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train1.csv",
+            "sha256": "1699196787882b1a3a9e96d506b70eb9a361008998611284b29f597e5eb97393"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train10.csv",
+            "sha256": "92508043c801a7288490b081e45431397965412bd718c2906ab2092a01efd12d"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train100.csv",
+            "sha256": "c3dd039dcbe216a960df0323536a4167cc715db8f6900c080e43ed525504cce1"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train101.csv",
+            "sha256": "f45e50d73b8053fb5e8a1b95373545999551ccae0d3622e0eb334864b136efd1"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train102.csv",
+            "sha256": "dbdba22ccd0f5798a048732a8b20daf5995278ed74ecc6f26dac7740f387bec1"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train103.csv",
+            "sha256": "17ca2fcebd0c6aaf367b5cca79a8d9c7de89dfa75a2e65157e2f05c1e718b83d"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train104.csv",
+            "sha256": "e57910abb8c2ccc14962c54f8c34043a9197a5163c33a75253b8fe89fb243609"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train105.csv",
+            "sha256": "0df8fbfd7dc39709553eca3ecacb804dc4c1822faaa3c89cceae91444d8a6aa3"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train106.csv",
+            "sha256": "3e4bcee5bbf5177d6870372b77a3541f0a9cf016f6e88ac54dfbbd70b9fb57a2"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train107.csv",
+            "sha256": "fbaeb7c39a98df672aa4a7bfa8e35941d59ec2e6ea6522bac8a8e4f525c46f39"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train108.csv",
+            "sha256": "abe4eba9e246419f1da14eba8e7bd9a76ca94e7947febdac6144c42da36ea412"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train109.csv",
+            "sha256": "aaf85f8e166b3c8f33c4b07d06ffc9b71b5a3b85cfa320085e8248efaa90e93a"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train11.csv",
+            "sha256": "64ecf8443f7de029db9e2a3761de42c937a3f74a92826e3a29fbea5cf527e3fb"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train110.csv",
+            "sha256": "da7404f8a8278acac54e5da1f837b762a99fcbd67d564e32d98003104e6c786d"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train111.csv",
+            "sha256": "0e588dbdf96fdaecd0a247e91c22c663bcb644c162cafc41ef6d5831ff616271"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train112.csv",
+            "sha256": "fbc29e62fddb9c4358123ea4426e4479483a9641f795265144d3b59229f785e6"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train113.csv",
+            "sha256": "bdc25e5df7b9243163d768ba84ca142eebe6a99530276510110dd962b1ba7220"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train114.csv",
+            "sha256": "4483df9a3cdd839b6ad7e16bed5162f29c5ac8453077df3aa0aa0b71ae3804b1"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train115.csv",
+            "sha256": "fbaeb7c39a98df672aa4a7bfa8e35941d59ec2e6ea6522bac8a8e4f525c46f39"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train116.csv",
+            "sha256": "dd576650a0de6b850c6a3cb71e147408dd39f00d901807e025878fa2baf9879d"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train117.csv",
+            "sha256": "98206c70b50e91b6b79c165f13059c94eb095e6a724ccf6951dfa04b04b022f9"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train118.csv",
+            "sha256": "d5952c1f905e8b3c92d5d3804b782962293dbcbff715b542532737ce287060df"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train119.csv",
+            "sha256": "0b14a92e770ef37842c45e2249e28ac46d88bf59ff2eab8738ba25eb227e273e"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train12.csv",
+            "sha256": "f56b0d41ddd9160bc2ef505af767876a7ab654d4ed09cc030b9257e3241a5c3b"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train120.csv",
+            "sha256": "0d4efafa43a5e82b0be22510dce0eecad90c47bf70001b4d726a42ca83da7330"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train121.csv",
+            "sha256": "ad0d98e7586f46bb1ae37b4c9946a85ba5e4b06ebc2dedc1affb5466df126875"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train122.csv",
+            "sha256": "7e32f9d4b18675b99310cd227ea3de698667594355983f01d1b5a7ed7674dde7"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train123.csv",
+            "sha256": "867a877fd38713592885e8043146788983e34042a62c240f6782314ff30a0dd4"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train124.csv",
+            "sha256": "6cfc9f2d68825e9df23ac4e98ffbb7fbdba6032b3aa049c2c588e82a7f0ccfad"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train125.csv",
+            "sha256": "cf80d63743e70ec0dc132cecddf444b818e49b782afb5ad2d0f3f7cbb90810d5"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train126.csv",
+            "sha256": "02ffb37da2283cdab63dfb26c4bb9a208f51a0a27a78ce8c57d6aa34412582b5"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train127.csv",
+            "sha256": "8a610b993a25f856604306f822088ce09a123e55b7fb945d5a5840951aa67ede"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train128.csv",
+            "sha256": "00dacca2113708ce941e40272dea9ea6df03af73f9ec25b6f2624c5d7e4c7b41"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train129.csv",
+            "sha256": "62d403f6ad9e022e7acba2d506c4303ac87fb79565c0862d18f1e5ed3a48050f"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train13.csv",
+            "sha256": "64802976d82b00ac878d747bea26418527068b8994c57e7488477212468463d5"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train130.csv",
+            "sha256": "878263d7161b1b3a6167eddd1bd4ad969e40438f52e3d9a161c782c72d1b39dc"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train131.csv",
+            "sha256": "48cdf84dd407960af1ec93a2d91716adfa6cd38fa7ab5a9627d9b8d5ff286c62"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train132.csv",
+            "sha256": "8313da432dd2bfa9edea7d83100fe5e182ac78482cfe62f3b269845c82e0b76b"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train133.csv",
+            "sha256": "6c957ed053b484225f6a8f5268cc448b53f8f165f22d69be5cdb510abcfaf16d"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train134.csv",
+            "sha256": "570cbe9f913636a8557c109081a181398693d6018a165c39a775cabc458065c2"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train135.csv",
+            "sha256": "38979f6b92869641629d0bf3a6eeb89c05b1d56a794dc9281238cbd05521c42e"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train136.csv",
+            "sha256": "e47bce1111884e723507ac87bf5a586a5a709093ebaf5c56a8805520aa3adff4"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train137.csv",
+            "sha256": "46317a84afaa794ca5de9ebf7e0891fa91965bed3a91c9db6823dfd08973d20c"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train138.csv",
+            "sha256": "0ebb4fc61edefdd9bbdfcc0ae8f77d9c0f0b57c567a55d3b13ec3d3e94866163"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train139.csv",
+            "sha256": "961ea3d40e81bd9e45301209d979c6ece3a84c97f728eb42c285b92732515102"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train14.csv",
+            "sha256": "9ed845bfa8aa179ac3ab44d2ae47cde9d3a222d53ed31ccb921726cb17184859"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train140.csv",
+            "sha256": "61927d700643d8bf3226bc61376f0d4a4ef92ebcb69e0ddbf9961817309f452b"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train141.csv",
+            "sha256": "03872d3908c687a38a9df16a2706ece5fd0dd1a7bcb7f55a41d7abfc849c59af"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train142.csv",
+            "sha256": "f1fa49dabc64a7ea82a91d041f587f73a0a432966e0c5c682533eaadbde70161"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train143.csv",
+            "sha256": "eb9b704ab47575f8c70a8da31da41144728f4e7199a0d4d1d66e69d05f490217"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train144.csv",
+            "sha256": "c8ae8bcdba4396e99de0334a4f85df3578e92078d4c749ee3065a5fc261b83a6"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train145.csv",
+            "sha256": "0f016c563379ed16171ac94ff251d395d21bc6cf80253e362d036dba1ca6c77b"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train146.csv",
+            "sha256": "7abd5a9dd7ebad66085dc608966772b77a1862fa57017cd841cc1d0ae3a5e8cc"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train147.csv",
+            "sha256": "2d602e4998ba54f39fbc3778fff3632992a2d7b2fc7b6ba8d1edfa4c4699f4d3"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train148.csv",
+            "sha256": "f899836f2aaf46417c3048e0672f7837eb850afed987c11381b76e3b17459a9d"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train149.csv",
+            "sha256": "f0fe364b408c1d5fc76f7567e1c178774b2712ccd5b847539b79f338ff02fb60"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train15.csv",
+            "sha256": "c12ecca8f0da6bbdf05f7136d340cfa5e4c6cece8703985829f71ee96f100f03"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train150.csv",
+            "sha256": "db3dcd523b58914d6b0081e2ad15a87d5d9563768497454d248446afb46e90dd"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train151.csv",
+            "sha256": "2d961811de360ad74fe162f5ac907b22acf84d2072e5185c746a97939f47b5ca"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train152.csv",
+            "sha256": "6bea2b94bdc21f39998ebf7c535826127a9a1c706b6c9c3f0c8b05f30b74db41"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train153.csv",
+            "sha256": "971ed34781c3aadd21639138ce702f9bf9dc337387f231226938041407716eca"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train154.csv",
+            "sha256": "d446ee2caf43f1a6dc5cd79572df79332e5237e93f4f762f47d646a32b3b124a"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train155.csv",
+            "sha256": "ef64d6568fa601dbd57514925b464def41871b3304923c5c976100de5949cf51"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train156.csv",
+            "sha256": "bc2b6cae2b66fce7fd54ab4b5d3445b9586645d86dd2766ecd1cd5a3ab8a0626"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train157.csv",
+            "sha256": "7799d9e37fce5cab10f08457ae045e803d23284a0533ed206719ee8a48fc8bf3"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train158.csv",
+            "sha256": "f765aff1878562aac6f0d53a226d13075c5bd3b0c79d8d606767b3468f169ba7"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train159.csv",
+            "sha256": "f70f3138f6e57f7ba6af575e52ff3b36ea7010d86b129d471fbd5e22288d3428"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train16.csv",
+            "sha256": "305669d08871e156454d6871a219124d910b96683713740c908c85b5ad0885e7"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train160.csv",
+            "sha256": "bbbba10d259fad55aa6ab44de702c9090d1904d47543d4de0e6be692a99ca6b1"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train161.csv",
+            "sha256": "ca9ace64d47e9e2a6c04769150c5a9f8ac2b22ddbb0e60df0f490a84435339a8"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train162.csv",
+            "sha256": "700d482b7a124e4a3d3e9a3ff58159e93846369924d51fe39aa51ae7c0a5ef66"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train163.csv",
+            "sha256": "ad9c7c94e9c70fb93401431454250b4fc20889bd6b7803c7e8207fb8dac230ec"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train164.csv",
+            "sha256": "5dcd45dee5bc759b695b587e0b3e5f1ef622757897ca929c72141d736bb39bbe"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train165.csv",
+            "sha256": "0ad5eea9356690c784e932846b0422ec494c5733653f7be4c2774dcca0b0fa1e"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train166.csv",
+            "sha256": "d51856efd494fd0f579366ef11cb58c8db63910e1aad5a878e630c55dce278c3"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train167.csv",
+            "sha256": "0e70d49aebf49c2d6cc4ba6881b121d08e894f96fc1a7d5c3084415717d41d64"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train168.csv",
+            "sha256": "7ecd82c7656b6e6c1123fe71c1db27f5a80be0cacc2b8e3482e4dec47b9b3596"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train169.csv",
+            "sha256": "d40ca6916a49fe0387b83b5b615da63e431949fcabf224575ca002897040b8aa"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train17.csv",
+            "sha256": "6247295e084391fa8270f3d86196ec2441e97785a8beec2c407aff95eb3a7349"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train170.csv",
+            "sha256": "e4d670390199d5809898e7738813539ab4aaa7cb719b1047645ec30b127b8407"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train171.csv",
+            "sha256": "5048a55865ad352cd25a427f08d447375ec0f076788ddff010bc85e6ec6fc375"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train172.csv",
+            "sha256": "2816a83b1b4fbd91e27f3e03edf73dfc70eae5aa009960d2656a8f3e26761f9e"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train173.csv",
+            "sha256": "40ff5106f8117e7f0c443c621ecf8d9bcee5b77cdb7bcd59ce2ae3242263cc50"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train174.csv",
+            "sha256": "4f76fd1cc01a391b8fa2718d3b0ce496a2fb18c9ad1207c692ae8b668b6d8f98"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train175.csv",
+            "sha256": "9e69c38995735a6a2fe488ca5e7d892e27d98ce916d8e412f9664b729fe0b70b"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train176.csv",
+            "sha256": "19cacaad41c14c219ca842f9d289867e6074d4b881960d16d30abe954e2b9ca3"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train177.csv",
+            "sha256": "7e16a91d8aee430087cc6640b3f76985c2c201cb7054ebb99c9162c88f7896ff"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train178.csv",
+            "sha256": "998f5e1c0cb9a975b83d5ddeb5d0cb8ce0acc1ebe0ff4b9e2e816882d3e3eeb1"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train179.csv",
+            "sha256": "6a95259a39b662b9bac53c177ab210406257d4feffa97599e8863936b58a54e3"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train18.csv",
+            "sha256": "56f3814b1d5bc1a2b029428e72758131841f19e9f1824febdca630c38273b96f"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train180.csv",
+            "sha256": "5ba180893c2f2e5f1fc0d6a81625315a525459e02848b0d4f3ebd1dc8b87f02c"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train181.csv",
+            "sha256": "4f45c5eb65f65811a4a223056aa6fd074e4d937293ab70ac239a7632836d031e"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train182.csv",
+            "sha256": "291a4ffad20c28240aa4fc19b4240d59b9deaf1a492cb5ab820804061da060c4"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train183.csv",
+            "sha256": "af9816c740c5b4a165002407de8e0b3ee391ecbe0ac97afca84d70f859d8865a"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train184.csv",
+            "sha256": "894151f88a594672e259954a0e827ff837d4c87108841dca17a9819118bd3ec2"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train185.csv",
+            "sha256": "48c393ab387ad36719e5cd7aa2ae571fedcf1ebbb157095c71482a29c21ca3b5"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train186.csv",
+            "sha256": "15014970e1cbf216a7bac971355bf47a78a6d77432fac222b5d2b88523c44170"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train187.csv",
+            "sha256": "0ad5eea9356690c784e932846b0422ec494c5733653f7be4c2774dcca0b0fa1e"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train188.csv",
+            "sha256": "05d339b91d7e354624a1070e8aae8f4651a1e34fc5a141e51789bd8eedbd9170"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train189.csv",
+            "sha256": "44ed9ddb304dfffcb9f6db872e667a3e6b23768e6916e034276baa4eee0fa914"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train19.csv",
+            "sha256": "b78a77e9f79d9c65058e3167d4129fbd8443655b53b0d2e382937026dab95bd4"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train190.csv",
+            "sha256": "9dfebf4df5e8b056ca06bf0623b0fbdbf72d7a93e345a9ce9d14d24758525b54"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train191.csv",
+            "sha256": "9703c959f19b53b54e0e4972ccdde08375d73e411b1eb842027b5d990feff045"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train192.csv",
+            "sha256": "2f3a7999f5eec417a7b041d5e73213560a22c60b675b7720c017b71467570f0b"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train193.csv",
+            "sha256": "e0b332d27ccdca91ee464dc9db369dc80966e248f83ef30e5d234af91c47c2d0"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train194.csv",
+            "sha256": "0457b8fd53f66ee8d6cf01e63018faccdaec548c06fa9d16ac1bcaac444c232b"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train195.csv",
+            "sha256": "6ef86c270c9dab95fcb15412a7658ecc22b1dba3cf94c445110282746249250e"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train196.csv",
+            "sha256": "b8c8c8a98858e2127fe34e48c2897064e3907d6f4caf40aa2bb7657532683527"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train197.csv",
+            "sha256": "c01bb2f30b1d9e511cb0d8a87e81ef45fa7f10d217b411ba178abaa7e7c7c629"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train198.csv",
+            "sha256": "e0fb09a51c38c8d6b616a40fc22af48213412a07f72e240f094f65d18bc0bf46"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train199.csv",
+            "sha256": "28bd5414aa666a4408ab0b8bdd1975609bfff29e4e05d61e99165bb213495c6e"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train2.csv",
+            "sha256": "29493c7f6bc539b6c76b390bb63bc39c9d37954e3e3415d82433300e0bcd397a"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train20.csv",
+            "sha256": "26e8b87fa7693044da626bb8c2d84b9c56238ed5f94bfb25b8559f32da3213d9"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train200.csv",
+            "sha256": "3bb12b43a7b00e76dc357e295f0a7521e6396435f83e49d8c75c216b52900fc7"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train201.csv",
+            "sha256": "085e491d2ed2f763d42aad36b720893497de060ace9d9637c4d8ad66ce6063e4"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train202.csv",
+            "sha256": "c5e8536408fb0eaae0089f582dc1fb689e2b6b506d3f0b19ae0ae3373234e7eb"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train203.csv",
+            "sha256": "5ff88ecbdb02c12958af442aaf69f64f132a382199601722fee83b04f3e125ec"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train204.csv",
+            "sha256": "b1e07c97b252c2bd1957d5db7281034698bf2249051884b53000d5bbc9306d72"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train205.csv",
+            "sha256": "eb2bce7d7a0067148573104c4a6d3e8e2cb723365c0ee3f39831dea7db468d99"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train206.csv",
+            "sha256": "f109abdf3ff3086fda2cdfdd09ccef5c3cc02eade58d61095b91b0d7b9d291f3"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train207.csv",
+            "sha256": "14c18ec4cb256e4c1192fe4e2dcbcb6db191d650e26927677f6577b997c32259"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train208.csv",
+            "sha256": "bd86894c5b725c74ff5c017a59369268ac5c9c9e1c2a297f9570c86dcba3f413"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train209.csv",
+            "sha256": "d903de91e1b8d4b5e9531fe7ea0b0e2d37edb0d73ed48d768320b0331bb937c2"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train21.csv",
+            "sha256": "793521d853f8ada7c963f7a2f4bd50a782e5973f57a397f02b8e93db0735d1a1"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train210.csv",
+            "sha256": "8a6277044df3ca20fcd43a12728cabdd8674e279296914c9c15be57b9047479f"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train211.csv",
+            "sha256": "8456534358c92f7062f9f7d05b740baa07623496aa6a1fb632cc797ea1db03f8"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train212.csv",
+            "sha256": "aadd895f698134bec0e88e5a845b0402a3ac57d713edcad782f407c3f9686938"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train213.csv",
+            "sha256": "3f49bf4e864f8fb46f9ee86465ce6b514e57b39afb33b8dee5c28d310c725137"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train214.csv",
+            "sha256": "99ad04a6edb745d3b8d79bbe7f6eb246545820927e288e0bc488b44dcb4a3005"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train215.csv",
+            "sha256": "9a6a01553e3ab78784205f394b4c5c71078e86f17c30340455d233fb556a4504"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train216.csv",
+            "sha256": "70c4013d5144907413dd6f32b388105eca971ba439c77891b9b32aaddae6d120"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train217.csv",
+            "sha256": "cc127d3907a6d65ddf3e693fd1a50141f01df1615d80022aaab29b932341df5b"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train218.csv",
+            "sha256": "36948d54ce0982e3bfa7872d214f79cebba79f88955d82d17098009d687509df"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train219.csv",
+            "sha256": "894027406dbc88f991312d2047e7157fbdb4238b86885312406f13e3ccbc6c39"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train22.csv",
+            "sha256": "36a8816501aeb148fdac0ede0d6a54c6b685ef281856ea5a3bb97cd84a4b74a8"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train220.csv",
+            "sha256": "32307dc0d89184a2ca2a92048692b324c21cdd5fa3963a51c7f5d05715255cd4"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train221.csv",
+            "sha256": "a6504935fcb004fef6e7d94e0e53539505438e42446ec382e68d4d946350c022"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train222.csv",
+            "sha256": "f1368dd1c034d78feb70e0484804cba1ad86f2fd0606877a6ec37f17c512cf77"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train223.csv",
+            "sha256": "d53610d13e34ec1faec111aa3fd907bcfec0db7522286b9cb4d9dd3bd5068bfa"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train224.csv",
+            "sha256": "be6e63e7782a0d28b8fcfcc3d1f9b3aab692bce4eeb7bbbecb03999c38a673c9"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train225.csv",
+            "sha256": "4fd4ab49235ecd1ee9cea6d408a406a1b1d6d1d90b4a6b672d6a327669cb9441"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train226.csv",
+            "sha256": "047764576b49baf625e48bece1232bd0f48899562d1c13fc127fe7f1b7053419"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train227.csv",
+            "sha256": "c1ebc704f331a50aabb9c12c79935bf8bfb853ac7b4f87315f10183642aecb91"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train228.csv",
+            "sha256": "00e7b8d9b1d459fb6ed0531075b5d15efadcca9ea149576a2f256ed29fcd93ce"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train229.csv",
+            "sha256": "db4f2484be81995fef0b41ac732285060c792cb6418cb172ea42fcc817d49f42"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train23.csv",
+            "sha256": "ff45318da28ff034d85dd49d65b7704161e6b5d707ec4cd2f9e37a29e504962c"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train230.csv",
+            "sha256": "eea8074daeb608e35e9a323bb9e1831778046aa5a4ad76072cfc76ee994ca62a"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train231.csv",
+            "sha256": "44be1c3c8b46a9002abaa36582c72611ffe619bb8e85b96afc5ac97f44f6cb16"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train232.csv",
+            "sha256": "bd4c10f8e031ef83e912e21e2e5b89a01e3ba19bd6cd690374fb9d70988c9ca1"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train233.csv",
+            "sha256": "c462514eb5d8dfd83fd6a5a98bf425fa54a38acc4e833c7ced78d321f44462b3"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train234.csv",
+            "sha256": "eba59a2adce4f0d3ddf8c1abac51e3fc2fa8bfd2db4028f8a2c99328a6dc8c8e"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train235.csv",
+            "sha256": "00a96db083984505c482eb09193f3d1095cee4d0d37f6b3129a9461d9dba8ee2"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train236.csv",
+            "sha256": "7592e028e25f509345484f8c89c21521929aea51587018483081c693b4a30951"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train237.csv",
+            "sha256": "193618b804749baeac729cb25414483a1bbd7cbc4e0cf6fdb3f51c93007fb93d"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train238.csv",
+            "sha256": "ca941fd317791f489e519e7845f579d210a232fd0dc409fdef4c2029ec35d93e"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train239.csv",
+            "sha256": "a21a0ba60302af55be50f7df2afdb0771869d659c879f1ab311711a2aa5629fd"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train24.csv",
+            "sha256": "0e034518f283cdf8e0d61c11808ee1772e898a6a16edc92236a149be96259fa9"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train240.csv",
+            "sha256": "31a1e3050d727f0b98fc416e058b9dc5436d5637f91d918f368400b6ba5c82f1"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train241.csv",
+            "sha256": "de37dfc8f2a3af0653962bccdfb6d73a2919c61a7a7ce20493ee4072b67dbcdd"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train242.csv",
+            "sha256": "5aa81eed21dd4675560db243b67fc75f115b83f3980faaac15e7f3eb9ad68e66"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train243.csv",
+            "sha256": "5528ceb5d0fbbe2191c2e43baab0ea57ecabf0de9a3b3a1402ab0643f91e4c3d"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train244.csv",
+            "sha256": "5c8b0019b492afc604539cd121b45f46190dd53e5d91ce980998ef105861a0db"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train245.csv",
+            "sha256": "46a0287385450f8ee43321a5bd164dec9eafa7aeaf358dc88e9e69897b4cd51b"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train246.csv",
+            "sha256": "3e2946157cab848edf49fd8b914ac772d264eadf2fc5ade953ea20bbfeecc370"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train247.csv",
+            "sha256": "c3843d2975de99bcf163cf5078be515ef8c853d80a90331264e41d05ac0691e6"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train248.csv",
+            "sha256": "1dc50dd7afb7c7d4569b1ba53f21de56950d18797d1988eedab5a70c6e02cc01"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train249.csv",
+            "sha256": "c35735faafb2f6c1df4c8aca9c0d2b7c29677150b890f3824a06a1754a6a9993"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train25.csv",
+            "sha256": "f2b4ff4ba7f2b0d42b09d1447c44a7de2947c7824a3bc25a97cb7799a1490611"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train250.csv",
+            "sha256": "1fb827ff8aefac0e739b03449647a27f455de1404b3e2b787d9b68be0e64a1f2"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train251.csv",
+            "sha256": "c6535dd8b8572d1465316467f5326483afd0a3ed91ebbc178ba87a2915432c5e"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train252.csv",
+            "sha256": "64ac23e204b7c8c4de9d479775413b931e262bff61536c6b4c21d6ad65b7ecb6"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train253.csv",
+            "sha256": "45911b007cf1534bcc3eb50b7637f8524fe760052c46403e427563a4ffa855ad"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train254.csv",
+            "sha256": "db2a72746911cde6361f1666f53d4aa89acb1b940c052e57fe911707d9bc22b0"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train255.csv",
+            "sha256": "297a88b91ba170e24a5929720bc34db2a2a937d2f8966cb56d2f8415a34f828b"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train256.csv",
+            "sha256": "31fd585ecf7801710a3998f59ee002b1af1d23851f4529a7a345d143384a335a"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train257.csv",
+            "sha256": "14d46fab6e95f8212a571d22c433b1527e0a8eedcab2ec8d08f31836c3b15fea"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train258.csv",
+            "sha256": "b12a317db1ec1dd808c010ec31fe479241d9d8176eceec367a8674ef80f54e6e"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train259.csv",
+            "sha256": "64164ff66119ce43e9ab2c1d7c9dd701faa07c1ee65c719c0f43a57c2d95c8dc"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train26.csv",
+            "sha256": "bff486ee3a338e664c614b21fb03f6b881982065b9ced726b6499e1517192ea7"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train260.csv",
+            "sha256": "dca96ff14e8e977da58d1a1be4bfa4fba32bc88100fb49635747ea74f0285004"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train261.csv",
+            "sha256": "2a018c0384017f04020dc5d6cc029e8c5fa80ca8f9b533fc78799ddcf71fe79a"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train262.csv",
+            "sha256": "5d1a2429273e1befb9e6d25d6f15057d88408f6f4c25fe35b75eec85feb99f66"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train263.csv",
+            "sha256": "94b7b90d3a5e8547be9794f7112fcc58eedf1fc930000e19502dc6ddb90ced08"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train264.csv",
+            "sha256": "a9efe5e84770dbcc5f7ccb3bd259b586374fa340b347d6f24e1184306aada9c5"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train265.csv",
+            "sha256": "6c049cadce16bf2482916196bb9b4a4d57cfd974432aab081d360fc2397f3cd8"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train266.csv",
+            "sha256": "7c5946b2b40b3ba1498d74e90a433034b6ae7dc939379a8db3af911cdef2f36b"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train267.csv",
+            "sha256": "32f77d30efb416b1f391400959f5a414a837086060b2774e5ce0cb6e312a6a07"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train268.csv",
+            "sha256": "d30bbdeee6e280f43bca408eb3cfb4309d047c6fba17a789d04994783a15a0b9"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train269.csv",
+            "sha256": "35d8cb659198a7dfba0fc83bef8838b3d58e3527ef2c6fc9b1545a9d8577a7a9"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train27.csv",
+            "sha256": "28a390fc4f925b6363b06a6654d10d344cebe84d68519c275f68302e05b2b3cd"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train270.csv",
+            "sha256": "24a016604bb4b18dc704f42e065258aea84487e03951923c35e3e95180a6ee7d"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train271.csv",
+            "sha256": "879fb2c6bcfb04b36cbd0142848401ab5d9e2b8168cc3b21f68ba42ec7d0900c"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train272.csv",
+            "sha256": "8a434daca56d85f07800e10529dbc3b6e964a4364b966b9312b78a91f7cd9c48"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train28.csv",
+            "sha256": "52aecb84afe6fe8d925e0590f4536d26b47b0d9fe83b7ac89e6a53a212c93630"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train29.csv",
+            "sha256": "046bbf86bd7d417b475d67f342bd81e5308c51ace6f25deb3792380456377df9"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train3.csv",
+            "sha256": "5d97b9cce88b63ddd3f7138e52f47da21299551f1e924a3202e5997970aec393"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train30.csv",
+            "sha256": "9261566cae195d8f5956fc9224cf6d22fe8afdb20df636606a1a75e4dd7348d5"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train31.csv",
+            "sha256": "c4271acb834f5c287c88481e39e4f87dd783ca97702eec74625accfbb34056d6"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train32.csv",
+            "sha256": "fb98d4ca0e7d2213a25ec3016e20e2a723c1549c30fa310ffdae41e67f582777"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train33.csv",
+            "sha256": "4e4790d25d180d60e9da010d9cac4293f34c1eab77b64fcb5bd611463553688b"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train34.csv",
+            "sha256": "a0ddae1044e65407de02ed8d27442ae701d897b148a4e2d7cc6541b0e4e2ba35"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train35.csv",
+            "sha256": "66ecdd31c2b1fab6cd21d7b2e58860316f9436aad597e0120c689537cb1184ce"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train36.csv",
+            "sha256": "1b5b3ab83fd9fbd37ae097654ab3489a252780e8772fa0a5980115312bb42f03"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train37.csv",
+            "sha256": "2374fc3d55c1f1ac94e5ae24de32c21d11a7a07473b198251d23140a684d39ff"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train38.csv",
+            "sha256": "7ae3c921f9ac398655f44c68c16ebd930a9b8a2c6eab46fd8671240bdc3f859d"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train39.csv",
+            "sha256": "461e602d2de68fbe4fa692a855360da358ebd515ae94aef9a000878061148387"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train4.csv",
+            "sha256": "05a6131cba737c749080c7d79769df351ba38b37c4c2c46d1cd753ce2ba4f770"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train40.csv",
+            "sha256": "37ca912eccf1d55a6c871b5e4a4c15cd6a7ceb5d218b8f0da0844c9f172b267e"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train41.csv",
+            "sha256": "34a468cfd3f0b140a8823393bdecfbb3b37593a000c97adc4b7fdd5924a30b21"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train42.csv",
+            "sha256": "f83065646afc456d85a3cf295e40e4a7898e6b252a918ef9c28ef8657fcc7f72"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train43.csv",
+            "sha256": "a98127ec274e3f07350eb6c7e5f647e1335bffc170518324af02258337871a7d"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train44.csv",
+            "sha256": "c6893cc488c1c1ccac7e7645f580288fcc565b0883181d112b0bc03796071f99"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train45.csv",
+            "sha256": "b28495f09c175a78fa06e64d532b5f68b216d1e3864686c84cf4c3b084c263af"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train46.csv",
+            "sha256": "84f05e63ecfd254c59b755d623f7d7648912dcb9d9f1318c062768c7f2c6f4e5"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train47.csv",
+            "sha256": "050a9ebd26e3136695bf380e5184330eb50625ea4040bf998c48bbaf3de7e932"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train48.csv",
+            "sha256": "736cac36c76b5c44b6be786c340beeadfb4c079aacd3e94ca2bcfc456e32df8d"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train49.csv",
+            "sha256": "c8e8ccdc43cb4757336f33d7fab4a644e728b4524b4c0c269b993ddadd0b9435"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train5.csv",
+            "sha256": "c972814faf036734b2f5f5a64acde63704574c545f73b65878da9cd864b21299"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train50.csv",
+            "sha256": "4836af024cd28ad9be3c7e536947428f82becc99f953d77489efa1b0fa80126d"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train51.csv",
+            "sha256": "5034924fee9f040edb03f52e4ea675dd8fcb5caeb1a3c95c31334cf9194725b9"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train52.csv",
+            "sha256": "e7730b69eaaf8aa05ef5474ea90a9741afa6ce31a382d3c2a7b315cc8de6c64d"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train53.csv",
+            "sha256": "b35079035c1971bc1463d02505c2a8fb4037356fbf0295b3fee4c59ecd2bb4d9"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train54.csv",
+            "sha256": "46e4cc4587095b70b94a7ff665decf003fd403c74778c0878ac39da5a0aa0543"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train55.csv",
+            "sha256": "410ea5885274a5fed922c76edd8e7b34cbf42fd9b85d8578736632bc3c6d3372"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train56.csv",
+            "sha256": "ba906a153be64a6de3076bc90c2c9448003424a7b5cdc90b38e05a56703c9cc6"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train57.csv",
+            "sha256": "ccf117296ae6471d1ad38f8db08ab1dfc6ea7f4a06be969eb0d50fa3311f3f25"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train58.csv",
+            "sha256": "0959208fb90e8df33bb8daaf0530411aa092229717d1b06e4f083f8be320129f"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train59.csv",
+            "sha256": "02d4c2764a5aa39b71974a9475aa63f1c6d6f3ffc0843dbc827744d59b4af9aa"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train6.csv",
+            "sha256": "91da41be0030fec21c243413d70b1c38f95fe8fc67163a3a9d53bef9ffc479ce"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train60.csv",
+            "sha256": "5ef3d2878c354ac5e6857f8cb5d94bb3e4b817222088fcfdae451ffdc0dd27ab"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train61.csv",
+            "sha256": "9e33f868e520b4a1885c24e1587d2115ec1fc233ecd257e6d005a905cdfc05fe"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train62.csv",
+            "sha256": "81524bdf332d008c74166e211fd69019d42d63b2ae6d7d2a26aabfd2bae41ef4"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train63.csv",
+            "sha256": "09045c28ac1fea6d605650a59af4e9235fd04a46e7476fa296734b65655dff85"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train64.csv",
+            "sha256": "0903e68aca4cbec434402b7d182d94c37bf346e2ab0a8780fc078f6c188702c1"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train65.csv",
+            "sha256": "33e0282a1e63dec4063e18664d31a820e70683f9510fbfcf606a42def0f70ab2"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train66.csv",
+            "sha256": "da51a2bb94a54d5075d6c0098e2a9dd0da265062eee0259b29a55e136036468c"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train67.csv",
+            "sha256": "7bd877a28d05340c691a477f6e1f67d8b178911dab6cb1cdceee2c8911d2409a"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train68.csv",
+            "sha256": "26fcd4fa894d4b2f239e4ec86a46de83b175191d2d5a08fb454ab6d3883a2707"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train69.csv",
+            "sha256": "f73f817711bbf03c28de36555116a4268d2dc95a35d4340432060ed7b6f30538"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train7.csv",
+            "sha256": "1981486864d5ac6f9b8990f19ea0b603659321e0672ab3e5d7200f619f3954a4"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train70.csv",
+            "sha256": "086a577998e2c398823d75dbdc96e7457786c2a6bc7dbe6f339256b40d4a7fa6"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train71.csv",
+            "sha256": "d8895c0677ebe6888ab97885529a4147ff72ade6fc91e96bbf4dd8a1d00580a2"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train72.csv",
+            "sha256": "60aa9192737e02a20c06d7bd9f9531cbab6050ad70b88092fc6b1eafe2991ace"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train73.csv",
+            "sha256": "329bae19502d50a3a40248160e9a38d01dc14fa6462be37005158c5ff92adb20"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train74.csv",
+            "sha256": "fcf2975424493047b1411f5d8f7352e02f0075a347fcc62d1ee75cd91b4c91a2"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train75.csv",
+            "sha256": "1c35f2590e860bcb27ec3cb89f8abd3f98538dc499e035c39bc727372a87436d"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train76.csv",
+            "sha256": "62d534e9a8b1917cd4d1a168e073462c52196531436b242a9cb1ed5dfaba3b7d"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train77.csv",
+            "sha256": "4c249d9535b2b2ff552dffa11050e6602fc88002f68af138808a6abccb735b74"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train78.csv",
+            "sha256": "1c38253a037fe7a816f6c2822cfabd451f03f036cac06ae3e25136b59a628607"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train79.csv",
+            "sha256": "773f56c97e5cb9b0609c20d7574cab35e74b111894ea2a62683a632955414c0e"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train8.csv",
+            "sha256": "c019c838344221b0d0c72e67c8e43bb5f9926016e1bbcc2313e7a2f33f7e5ca0"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train80.csv",
+            "sha256": "2d87217ac21872bc738dd86c05ea0ca56d67d0c2f98bd14d1a0ac7f835bdac03"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train81.csv",
+            "sha256": "cb3cfdba3291eb690cad241ed3a31ef613509b2ecc4050cd9bbb2f1a02799fdc"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train82.csv",
+            "sha256": "8210347a9ae2fa730948ecb3ea7d426acb7af8d3b6730802c16de8649b3e3190"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train83.csv",
+            "sha256": "b6a1f0eedcdfb73de1d8bb13c4234c6cd2166cd38530e1b90786c01b61399f02"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train84.csv",
+            "sha256": "7f24b766972326b1a17d5bf87170f22fe0ee242cc271af70cc17674c560e5b7d"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train85.csv",
+            "sha256": "c4d76bb70d9bef254fe2397439f2f316f7891ad33ff182ed3101fcca8ff77a2d"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train86.csv",
+            "sha256": "dae265139da0ed221b46b0ed1f3f0e3d20236550bd88eaa232fb39bb5694afad"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train87.csv",
+            "sha256": "01b9fd782b917b2310f56a959d6f9198ceaaa5f5ff8678bcd2fac7f4155033cb"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train88.csv",
+            "sha256": "d033141752df33acfc85a4c1b3401749a217058bb385e70ba6d97cb5913c8745"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train89.csv",
+            "sha256": "d8ab6489e36144d0e633b1a9753fec578e62523d05b53085b93f946ee81a473b"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train9.csv",
+            "sha256": "67f7f312dc6b5445e4f1740be1078bd96b166ee51e4d9e5fcdf99c776dad7a59"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train90.csv",
+            "sha256": "d718eedb7be02ec0e1101edc3dced8635c07e65a8c9653466b57a607035358f1"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train91.csv",
+            "sha256": "bcd658bb36e0c3eacc7850c9e8e49da36223000ff415c13933642ee2fa2d92f2"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train92.csv",
+            "sha256": "56ed74637fe7e3542ae6c5d382945376297ccf5f043936bd7c19043b3b8ee3bd"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train93.csv",
+            "sha256": "721ea2f4b91ecd3f4abbdd17757070290892893a7bf9c31220279c4fa4d3d83c"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train94.csv",
+            "sha256": "b81748eea9328000a049205ed499a72fb0e6ba66caeb6b6b00ea25686ade4e0c"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train95.csv",
+            "sha256": "656972e5945853449d1c8f234cfe109a542647793fd5f6fe6f37b90e220be949"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train96.csv",
+            "sha256": "d00f1c79239cd1a4619394b0aa6dc92c0eab3957def67701833d5bf07490d929"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train97.csv",
+            "sha256": "251777fa4a3fe0322b1754a79cd4b3a2fe91561b23cde88b398903bf9283b272"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train98.csv",
+            "sha256": "d8e93e3ed468a6c219845c627477343ff929138f838c523838454a9a14538174"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train/Train99.csv",
+            "sha256": "2d604e506e8fee84ad4d878e6f8b5e13e5ea4c060cacea31360a2989ad62b6fb"
+          },
+          {
+            "path": "PS3/02_Datasets/Rail_Corrugation/Train_Labels.csv",
+            "sha256": "b24e8f98d3d49d919f0a169aec5978a6806b4f548f55909a3a03067586e4d186"
+          }
+        ]
+      },
+      "evaluation": {
+        "metric": "Macro F1",
+        "selected_model": "Class-weighted XGBoost",
+        "selected": {
+          "macro_f1": 0.7857466383581033,
+          "accuracy": 0.9338235294117647,
+          "classes": {
+            "Normal": {
+              "support": 234,
+              "correct": 227,
+              "precision": 0.9578059071729957,
+              "recall": 0.9700854700854701,
+              "f1": 0.9639065817409767
+            },
+            "Side I": {
+              "support": 14,
+              "correct": 7,
+              "precision": 0.6363636363636364,
+              "recall": 0.5,
+              "f1": 0.56
+            },
+            "Side II": {
+              "support": 24,
+              "correct": 20,
+              "precision": 0.8333333333333334,
+              "recall": 0.8333333333333334,
+              "f1": 0.8333333333333334
+            }
+          },
+          "confusion_matrix_true_rows_predicted_columns": [
+            [
+              227,
+              3,
+              4
+            ],
+            [
+              7,
+              7,
+              0
+            ],
+            [
+              3,
+              1,
+              20
+            ]
+          ],
+          "class_order": [
+            "Normal",
+            "Side I",
+            "Side II"
+          ]
+        },
+        "candidate_metrics": {
+          "Balanced logistic regression": {
+            "macro_f1": 0.6364559367470902,
+            "accuracy": 0.9044117647058824,
+            "classes": {
+              "Normal": {
+                "support": 234,
+                "correct": 227,
+                "precision": 0.941908713692946,
+                "recall": 0.9700854700854701,
+                "f1": 0.9557894736842105
+              },
+              "Side I": {
+                "support": 14,
+                "correct": 3,
+                "precision": 0.375,
+                "recall": 0.21428571428571427,
+                "f1": 0.2727272727272727
+              },
+              "Side II": {
+                "support": 24,
+                "correct": 16,
+                "precision": 0.6956521739130435,
+                "recall": 0.6666666666666666,
+                "f1": 0.6808510638297872
+              }
+            },
+            "confusion_matrix_true_rows_predicted_columns": [
+              [
+                227,
+                3,
+                4
+              ],
+              [
+                8,
+                3,
+                3
+              ],
+              [
+                6,
+                2,
+                16
+              ]
+            ],
+            "class_order": [
+              "Normal",
+              "Side I",
+              "Side II"
+            ]
+          },
+          "Balanced Extra Trees": {
+            "macro_f1": 0.5246753246753246,
+            "accuracy": 0.9007352941176471,
+            "classes": {
+              "Normal": {
+                "support": 234,
+                "correct": 234,
+                "precision": 0.896551724137931,
+                "recall": 1.0,
+                "f1": 0.9454545454545454
+              },
+              "Side I": {
+                "support": 14,
+                "correct": 0,
+                "precision": 0,
+                "recall": 0.0,
+                "f1": 0.0
+              },
+              "Side II": {
+                "support": 24,
+                "correct": 11,
+                "precision": 1.0,
+                "recall": 0.4583333333333333,
+                "f1": 0.6285714285714286
+              }
+            },
+            "confusion_matrix_true_rows_predicted_columns": [
+              [
+                234,
+                0,
+                0
+              ],
+              [
+                14,
+                0,
+                0
+              ],
+              [
+                13,
+                0,
+                11
+              ]
+            ],
+            "class_order": [
+              "Normal",
+              "Side I",
+              "Side II"
+            ]
+          },
+          "Class-weighted XGBoost": {
+            "macro_f1": 0.7857466383581033,
+            "accuracy": 0.9338235294117647,
+            "classes": {
+              "Normal": {
+                "support": 234,
+                "correct": 227,
+                "precision": 0.9578059071729957,
+                "recall": 0.9700854700854701,
+                "f1": 0.9639065817409767
+              },
+              "Side I": {
+                "support": 14,
+                "correct": 7,
+                "precision": 0.6363636363636364,
+                "recall": 0.5,
+                "f1": 0.56
+              },
+              "Side II": {
+                "support": 24,
+                "correct": 20,
+                "precision": 0.8333333333333334,
+                "recall": 0.8333333333333334,
+                "f1": 0.8333333333333334
+              }
+            },
+            "confusion_matrix_true_rows_predicted_columns": [
+              [
+                227,
+                3,
+                4
+              ],
+              [
+                7,
+                7,
+                0
+              ],
+              [
+                3,
+                1,
+                20
+              ]
+            ],
+            "class_order": [
+              "Normal",
+              "Side I",
+              "Side II"
+            ]
+          },
+          "Normal-reference side Isolation Forest": {
+            "macro_f1": 0.2896742896742897,
+            "accuracy": 0.7683823529411765,
+            "classes": {
+              "Normal": {
+                "support": 234,
+                "correct": 209,
+                "precision": 0.8461538461538461,
+                "recall": 0.8931623931623932,
+                "f1": 0.8690228690228691
+              },
+              "Side I": {
+                "support": 14,
+                "correct": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0
+              },
+              "Side II": {
+                "support": 24,
+                "correct": 0,
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0
+              }
+            },
+            "confusion_matrix_true_rows_predicted_columns": [
+              [
+                209,
+                10,
+                15
+              ],
+              [
+                14,
+                0,
+                0
+              ],
+              [
+                24,
+                0,
+                0
+              ]
+            ],
+            "class_order": [
+              "Normal",
+              "Side I",
+              "Side II"
+            ]
+          }
+        },
+        "files": 272,
+        "groups": 270,
+        "folds": {
+          "1": 68,
+          "0": 68,
+          "2": 68,
+          "3": 68
+        },
+        "group_leakage_detected": false,
+        "scope": "Independent arithmetic/source/saved-group audit only; Rail refit and candidate experiments are a separate report."
+      }
+    },
+    "shm": {
+      "provenance": {
+        "model_sha256": "2cd3ab97f0f28231c4d684dd08cc25ff94b09d65c38df50c15c5553163ef8ff7",
+        "metadata_sha256": "d5c2058162cf8f5d7df3173c50584e285e1661e772629505370313141e53c1bd",
+        "all_source_and_label_hashes_match_training_and_release": true,
+        "checked_files": 65,
+        "estimator_type": "RainflowMomentRegressor",
+        "sources": [
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train01.csv",
+            "sha256": "68cd1381297c674e829b54fcd3247fe3f5c8814360df5d031ee8e0d8486a76d9"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train02.csv",
+            "sha256": "0111b9881f241b073b0721d22beab45ce40b453004711f1e3acfec2a647f76c8"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train03.csv",
+            "sha256": "ef138b82523fced486fdb75fdbca94ca79a93fe3f7ad5af2295a4eed470ca12f"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train04.csv",
+            "sha256": "13fd57974902c0b25f3010096926fa337977cb0e29cd386adcf65c5dc4d8b7f5"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train05.csv",
+            "sha256": "7ac0fbd7e95ddc8d620f7b920e63882846a408d6f09f72d0ef70bc7d0de075c9"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train06.csv",
+            "sha256": "d820df156e339a19ed3bee45299c453498468d3ed9e1a11eab513e167efa1d78"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train07.csv",
+            "sha256": "1b0ccc57fa076a5bfc2ca915aeab89fb47a4cb32fd11e36c0e63a28fb5edb448"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train08.csv",
+            "sha256": "709c3e36bf608a8380f451efc1c8cffef7a210e6bb81d95ecb025eb79537b5a8"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train09.csv",
+            "sha256": "72423bbd57fc25f1579ff5187184c14d5d04be4201806245da90c87dcd8cc5e6"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train10.csv",
+            "sha256": "83040203e5f2f1d53446372222801edbee4f627a3c0a6d793935ba8b67753b6d"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train11.csv",
+            "sha256": "5e2611d31c621e29cf6d862059b37f13a0b2cea0fdcc6fcc5e82c5e8d4e83fcc"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train12.csv",
+            "sha256": "8521e08bc870292a19b8becdade28c9b4a98fc337d47221658bbbf8118e6460e"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train13.csv",
+            "sha256": "c90930b0920e5179f6bd8a4f5c1043703c280aa37208b362ab2241015a173ddc"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train14.csv",
+            "sha256": "e89b93a1e55a542f2cc25f301784669e4d0aafaa7d890038ef06559e56d3a7cc"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train15.csv",
+            "sha256": "c1bd0b608a6b1a97473013980f59a7bf17527213fe71c2ba77e429dea57784ac"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train16.csv",
+            "sha256": "2749a6fd3d6313b28f6f7f23f48f1ef41731b84c4fce422c44bcef4d7a0e870d"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train17.csv",
+            "sha256": "ac5b02e5e6912aec8e92faf69fde16a730da8bfc135559abb016d6214e758b9a"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train18.csv",
+            "sha256": "f1f754922fef27fde8313d260ce9b85a850a15e852458db58754fb00b9b9436e"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train19.csv",
+            "sha256": "7c81a9d5b4fd9ea1360b25c112d5c07aaab7be621eacd6eceefa5a973f4d79e5"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train20.csv",
+            "sha256": "612d4c05bb4a0bfe83b69603d36224103ea39e3f334b5bf6a5cf5a85606cb9db"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train21.csv",
+            "sha256": "a609b7c7401e8c7448671f037d33ffdc7246716d7a25ac3692887a3133d8e98d"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train22.csv",
+            "sha256": "fde1223504a701633aae955a91c41b12610aa1ef9dd3ce9a6b576942eb3e9996"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train23.csv",
+            "sha256": "29c12efe085cfd796e0d8cc9927b8bc39abd83a1eb89216a68add56b513921a7"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train24.csv",
+            "sha256": "f215cf6da442f42b85b440e4f773cdb270b1a3b4a1b7fc7d31d85088e7aaa7e7"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train25.csv",
+            "sha256": "c9f7cbbbab6f00faafdbc3a91348687397b27cb0f6f348065ee41d655a6fefc9"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train26.csv",
+            "sha256": "25cf84c9e288a3055cecaee7f7ed79f4ca7dea613a321d1874e721294afa2218"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train27.csv",
+            "sha256": "8959229db96ac0181c6a53a3dc16df32f661c4fbf48a8ee1efe0392f195c70fc"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train28.csv",
+            "sha256": "1757a7892bf34fc6347f3a12b73ef088d794c6532a591b719172d172da85ded6"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train29.csv",
+            "sha256": "975eb3301f269ad2c3ce7674fa56c380baae286753da77affbcf361a62a3a632"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train30.csv",
+            "sha256": "4865507f8fecf7f5c3543849bd78f88a65bb19db8560a0e57813ee8422f2b026"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train31.csv",
+            "sha256": "4422df825fafbb34d2ec55d5bb29c4dd1c0b247a987aa2f9457183e61f0f1c0d"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train32.csv",
+            "sha256": "4bbbba8ac741fb7cd7d4568bada1ccc744fc24ac9c8a38e91a68ab3c8d64c53c"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train33.csv",
+            "sha256": "e62d17861f7c4aa192aa6516a9e3653f61fca26fd8e77ddf55b28e9b8885f986"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train34.csv",
+            "sha256": "7e3f0a1e995d44243882b52f12fc65f7143a70c722fc21f64e3e1bfdb9dc5ac0"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train35.csv",
+            "sha256": "162721798c9c1d9ca827a29b4ec3637d87e17f4e313c09c9eb6f78a5782627ac"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train36.csv",
+            "sha256": "f98f13c482f7416f457ff48f651e54451888e1263739637376aa70c523c8de83"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train37.csv",
+            "sha256": "72d094df2df88fcb88cd0fdd23431adfcb0a8c1461b048a4047567c6707df2f0"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train38.csv",
+            "sha256": "276860a76875f6bbba85016605d49fed4f3f3df62d7f4e84f0bc5f505a6c5152"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train39.csv",
+            "sha256": "fc86fe60026e255053e7d331440436c95e734489a098c121548a7a8222b56470"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train40.csv",
+            "sha256": "d9cd2b0c67f9c92fc8f8624551320e5581515fa0ae5887bd4ceb1ef30ec9dc05"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train41.csv",
+            "sha256": "25d6d0927d9fe3eec6f9a8613bfa3c41e2569ca24c78076836ce281598176611"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train42.csv",
+            "sha256": "0096da2a287b845b0ded1a084b5f06cc176fb8061ed1d601ad178f0fc5577b76"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train43.csv",
+            "sha256": "921a4d6bd2bb481f65300a5688e3c47861973eabecd356665ccd5cf208f92c39"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train44.csv",
+            "sha256": "b44e3f6968db5a238be28f1877a7069132b8d7adefe44ec5a46eeb8a5b5d847c"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train45.csv",
+            "sha256": "cb5c57f481c468ab2ee1b9ddbba15e6e91a09a0661302af5c20b034e5a11be51"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train46.csv",
+            "sha256": "90be825cc88b8b59aa8a165abb56a5e89d550c0c00d7c4351795cf649b903713"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train47.csv",
+            "sha256": "25695bb2ff65ef08d2c86e28fcebea5ff77748222873a2d433129b1cd147abbc"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train48.csv",
+            "sha256": "0db9b4f41ea4d12531b521fa8f489f39203018124937095c0b22e6dbefbd016c"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train49.csv",
+            "sha256": "b6c346103d440b549b723b943cebe3850578314fac917415e2ba6bee24ce0c3f"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train50.csv",
+            "sha256": "9467665ca4d1277600cdc89876b1e18ec511893e741b6a2a0fa5f2b556abf23e"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train51.csv",
+            "sha256": "c2e6b4eebb03bc11988f4fd0c9b14b49a783fd396f59db7607a3ce707ab9f5fd"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train52.csv",
+            "sha256": "5c2115b7e099a107ae1fb4e188560ee0f9ee6d540ed9f12f449c1d6ab251440c"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train53.csv",
+            "sha256": "bd0ab24b60803f3fa9aac4ca9874dbe8dc3e61a138585bdeb8fccec64b9a402c"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train54.csv",
+            "sha256": "d5db06f20e6dfc5ebf1391799fa59725dbd32b2c06ada5436f4c1351e67202e6"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train55.csv",
+            "sha256": "77b15d887456fa2f672aa5310aff41899ae3f83754317a8a07e0818fe015d6ef"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train56.csv",
+            "sha256": "4522fb2810a4a07ff9f41bd3747a35998bac420aa03ee9189173bb76211e2dc2"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train57.csv",
+            "sha256": "85f2f32f0a0761906eb936ed72bae30c73296f10d997b723efa17efccb3fe8d0"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train58.csv",
+            "sha256": "32133702c9246f52c033266a652dca3377de6413b47745d9fdc946119ccf7097"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train59.csv",
+            "sha256": "7ec652b89c2be96f1d6cc752c135162f7c3a09d6a07c11805e73b941a1009331"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train60.csv",
+            "sha256": "e37275d2b279e996d19b39756c9ea42f8652c6fb933cb3d671de95de04475179"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train61.csv",
+            "sha256": "163e4f4ae238b3bc6a7f1eb2b53b8db1160023851ce1c9324361d88094c2c6b0"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train62.csv",
+            "sha256": "db8ce4f817e9245f2ca5bb99aec2032014278a4843e8e78629953a9695faabe2"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train63.csv",
+            "sha256": "47e221737819c875255b9879183f400e00a508883a032820aabe6f46026e8d94"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train/train64.csv",
+            "sha256": "8a57977c300012f93cdcca1bcee7daa315ce22753f772fb065f6e65d7c4d258e"
+          },
+          {
+            "path": "PS3/02_Datasets/SHM/Train_Labels.csv",
+            "sha256": "6b358df85860ad29b21acdf3f4a68795c5874852222a97e5e110b657e260eead"
+          }
+        ]
+      },
+      "evaluation": {
+        "metric": "max(0, 1 - MAPE)",
+        "selected_model": "Rainflow moment surrogate",
+        "selected": {
+          "score": 0.9735893090002781,
+          "mape": 0.026410690999721882,
+          "mae": 0.0046030787252385585,
+          "rmse": 0.007418390661093311,
+          "median_absolute_percentage_error": 0.017848645290910667,
+          "worst_five": [
+            {
+              "file_id": "train12.csv",
+              "true": 0.054978382,
+              "prediction": 0.04727892749777828,
+              "absolute_percentage_error": 0.14004512723240414
+            },
+            {
+              "file_id": "train56.csv",
+              "true": 0.0400505,
+              "prediction": 0.0348357357462321,
+              "absolute_percentage_error": 0.13020472288155968
+            },
+            {
+              "file_id": "train21.csv",
+              "true": 0.056276601,
+              "prediction": 0.05027541133380918,
+              "absolute_percentage_error": 0.10663738675672366
+            },
+            {
+              "file_id": "train41.csv",
+              "true": 0.132170551,
+              "prediction": 0.11996488227024839,
+              "absolute_percentage_error": 0.09234786900261624
+            },
+            {
+              "file_id": "train55.csv",
+              "true": 0.055313708,
+              "prediction": 0.05049478279862029,
+              "absolute_percentage_error": 0.08711990889093374
+            }
+          ]
+        },
+        "candidate_metrics": {
+          "Training-median constant": {
+            "score": 0.066886650959053,
+            "mape": 0.933113349040947,
+            "mae": 0.1801045143125,
+            "rmse": 0.29241437469251663,
+            "median_absolute_percentage_error": 0.817444424764173,
+            "worst_five": [
+              {
+                "file_id": "train33.csv",
+                "true": 0.028831268,
+                "prediction": 0.103662995,
+                "absolute_percentage_error": 2.595505927800331
+              },
+              {
+                "file_id": "train07.csv",
+                "true": 0.028737481,
+                "prediction": 0.103184684,
+                "absolute_percentage_error": 2.590595988562811
+              },
+              {
+                "file_id": "train35.csv",
+                "true": 0.028827561,
+                "prediction": 0.103184684,
+                "absolute_percentage_error": 2.5793761393827244
+              },
+              {
+                "file_id": "train58.csv",
+                "true": 0.031759612,
+                "prediction": 0.103184684,
+                "absolute_percentage_error": 2.248927726195144
+              },
+              {
+                "file_id": "train13.csv",
+                "true": 0.028620288,
+                "prediction": 0.09275185,
+                "absolute_percentage_error": 2.240772769302671
+              }
+            ]
+          },
+          "Regularized log-damage regression": {
+            "score": 0.9199592554828311,
+            "mape": 0.08004074451716892,
+            "mae": 0.01950609839156516,
+            "rmse": 0.03604933965640238,
+            "median_absolute_percentage_error": 0.07005485085415472,
+            "worst_five": [
+              {
+                "file_id": "train56.csv",
+                "true": 0.0400505,
+                "prediction": 0.05476750532287145,
+                "absolute_percentage_error": 0.3674612132900076
+              },
+              {
+                "file_id": "train30.csv",
+                "true": 0.09275185,
+                "prediction": 0.12032121153939594,
+                "absolute_percentage_error": 0.297237861448542
+              },
+              {
+                "file_id": "train10.csv",
+                "true": 0.716510036,
+                "prediction": 0.5852774592723953,
+                "absolute_percentage_error": 0.1831552527306187
+              },
+              {
+                "file_id": "train04.csv",
+                "true": 0.894736481,
+                "prediction": 0.7494565651653594,
+                "absolute_percentage_error": 0.16237173617003844
+              },
+              {
+                "file_id": "train36.csv",
+                "true": 0.332861874,
+                "prediction": 0.3860903764097553,
+                "absolute_percentage_error": 0.15991168279535461
+              }
+            ]
+          },
+          "Rainflow moment surrogate": {
+            "score": 0.9735893090002781,
+            "mape": 0.026410690999721882,
+            "mae": 0.0046030787252385585,
+            "rmse": 0.007418390661093311,
+            "median_absolute_percentage_error": 0.017848645290910667,
+            "worst_five": [
+              {
+                "file_id": "train12.csv",
+                "true": 0.054978382,
+                "prediction": 0.04727892749777828,
+                "absolute_percentage_error": 0.14004512723240414
+              },
+              {
+                "file_id": "train56.csv",
+                "true": 0.0400505,
+                "prediction": 0.0348357357462321,
+                "absolute_percentage_error": 0.13020472288155968
+              },
+              {
+                "file_id": "train21.csv",
+                "true": 0.056276601,
+                "prediction": 0.05027541133380918,
+                "absolute_percentage_error": 0.10663738675672366
+              },
+              {
+                "file_id": "train41.csv",
+                "true": 0.132170551,
+                "prediction": 0.11996488227024839,
+                "absolute_percentage_error": 0.09234786900261624
+              },
+              {
+                "file_id": "train55.csv",
+                "true": 0.055313708,
+                "prediction": 0.05049478279862029,
+                "absolute_percentage_error": 0.08711990889093374
+              }
+            ]
+          },
+          "Extra Trees damage regression": {
+            "score": 0.931953339432728,
+            "mape": 0.06804666056727199,
+            "mae": 0.01768959683734047,
+            "rmse": 0.034233009222170194,
+            "median_absolute_percentage_error": 0.05894990766477434,
+            "worst_five": [
+              {
+                "file_id": "train64.csv",
+                "true": 0.280285955,
+                "prediction": 0.34658608108030753,
+                "absolute_percentage_error": 0.23654458918680946
+              },
+              {
+                "file_id": "train40.csv",
+                "true": 0.178849028,
+                "prediction": 0.21841115626854188,
+                "absolute_percentage_error": 0.22120404405296454
+              },
+              {
+                "file_id": "train29.csv",
+                "true": 0.045191049,
+                "prediction": 0.05426357721729163,
+                "absolute_percentage_error": 0.20075940740591425
+              },
+              {
+                "file_id": "train07.csv",
+                "true": 0.028737481,
+                "prediction": 0.03447705959999996,
+                "absolute_percentage_error": 0.1997244852462872
+              },
+              {
+                "file_id": "train38.csv",
+                "true": 0.035914277,
+                "prediction": 0.04285004601722222,
+                "absolute_percentage_error": 0.1931201070043041
+              }
+            ]
+          },
+          "XGBoost log-damage regression": {
+            "score": 0.8731242294307064,
+            "mape": 0.1268757705692935,
+            "mae": 0.03960906283947805,
+            "rmse": 0.08083142459663156,
+            "median_absolute_percentage_error": 0.10572610591965231,
+            "worst_five": [
+              {
+                "file_id": "train40.csv",
+                "true": 0.178849028,
+                "prediction": 0.27316203713417053,
+                "absolute_percentage_error": 0.5273330819229867
+              },
+              {
+                "file_id": "train17.csv",
+                "true": 0.423558906,
+                "prediction": 0.2750872075557709,
+                "absolute_percentage_error": 0.3505337660028547
+              },
+              {
+                "file_id": "train31.csv",
+                "true": 0.928338975,
+                "prediction": 0.6131706833839417,
+                "absolute_percentage_error": 0.3394969942052237
+              },
+              {
+                "file_id": "train04.csv",
+                "true": 0.894736481,
+                "prediction": 0.6170173287391663,
+                "absolute_percentage_error": 0.31039211897389235
+              },
+              {
+                "file_id": "train10.csv",
+                "true": 0.716510036,
+                "prediction": 0.4941452145576477,
+                "absolute_percentage_error": 0.31034432215873703
+              }
+            ]
+          }
+        },
+        "files": 64,
+        "samples": 37191680,
+        "folds": [
+          {
+            "fold": 0,
+            "training_files": 51,
+            "heldout_files": 13,
+            "fitted_moment": "log_rainflow_amplitude_moment_5",
+            "fitted_scale": 1.3562291385841417e-09
+          },
+          {
+            "fold": 1,
+            "training_files": 51,
+            "heldout_files": 13,
+            "fitted_moment": "log_rainflow_amplitude_moment_5",
+            "fitted_scale": 1.3602318550841202e-09
+          },
+          {
+            "fold": 2,
+            "training_files": 51,
+            "heldout_files": 13,
+            "fitted_moment": "log_rainflow_amplitude_moment_5",
+            "fitted_scale": 1.3553172163462364e-09
+          },
+          {
+            "fold": 3,
+            "training_files": 51,
+            "heldout_files": 13,
+            "fitted_moment": "log_rainflow_amplitude_moment_5",
+            "fitted_scale": 1.3658508040456556e-09
+          },
+          {
+            "fold": 4,
+            "training_files": 52,
+            "heldout_files": 12,
+            "fitted_moment": "log_rainflow_amplitude_moment_5",
+            "fitted_scale": 1.3608647647461062e-09
+          }
+        ],
+        "fresh_full_waveform_features_and_fold_replay_matches_saved": true,
+        "group_leakage_detected": false,
+        "scope": "Whole-file grouped CV on 64 previously inspected Train recordings; 1-MAPE is a regression score, not classification accuracy."
+      }
+    }
+  },
+  "active_models_and_metadata_unchanged": true,
+  "passed": true,
+  "limits": [
+    "Declared exact/near-duplicate group exclusion is checked; undocumented common acquisition dependence cannot be ruled out.",
+    "These development folds previously guided model selection; repeated reproduction does not create a new independent test.",
+    "Unit tests and application tests validate behavior and are not predictive accuracy measurements."
+  ]
+}

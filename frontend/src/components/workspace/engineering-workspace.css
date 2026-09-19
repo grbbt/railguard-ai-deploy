@@ -1,0 +1,92 @@
+/* Engineering presentation: permanent dataset controls and explicit PS3 outputs. */
+.rg-workspace.ps3-shell .rg-page-heading { margin-bottom: 20px; }
+.rg-workspace.ps3-shell .rg-recording-console {
+  padding: 16px 18px 0;
+  margin-bottom: 22px;
+  background: #19242c;
+  border: 1px solid var(--ui-border);
+  border-radius: 12px;
+  min-width: 0;
+}
+.rg-workspace.ps3-shell .rg-recording-console .rg-subsystems { margin: 0 0 13px; gap: 8px; }
+.rg-workspace.ps3-shell .rg-recording-console .rg-subsystems button { min-height: 39px; padding: 8px 12px; font-size: 12px; }
+.rg-workspace.ps3-shell .rg-recording-console .rg-selection {
+  display: grid;
+  grid-template-columns: minmax(0,1.2fr) minmax(0,1fr) minmax(135px,.8fr);
+  align-items: end;
+  gap: 14px;
+  padding: 0 0 14px;
+  margin: 0;
+  background: transparent;
+  border: 0;
+}
+.rg-workspace.ps3-shell .rg-recording-console .rg-selection label { display: flex; min-width: 0; gap: 5px; }
+.rg-workspace.ps3-shell .rg-recording-console .rg-selection label>span { display: block; font-size: 11px; }
+.rg-workspace.ps3-shell .rg-recording-console .rg-selection select { width: 100%; min-width: 0; height: 39px; min-height: 39px; font-size: 12px; text-overflow: ellipsis; }
+.rg-workspace.ps3-shell .rg-recording-console .rg-selection-provenance { width: auto; align-self: center; margin-top: 13px; font-size: 12px; }
+.rg-workspace.ps3-shell .rg-recording-console .rg-selection-provenance small { display: block; font-size: 11px; margin: 3px 0 0; }
+.rg-workspace.ps3-shell .rg-recording-console .rg-run-status { margin: 0 0 14px; }
+.rg-workspace.ps3-shell .rg-task-requirement {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr 1fr;
+  gap: 18px;
+  padding: 11px 0 13px;
+  border-top: 1px solid var(--ui-border);
+}
+.rg-workspace.ps3-shell .rg-task-requirement>div { display: flex; flex-direction: column; min-width: 0; gap: 3px; }
+.rg-workspace.ps3-shell .rg-task-requirement span { color: #a7bac4; font-size: 10px; text-transform: uppercase; letter-spacing: .07em; }
+.rg-workspace.ps3-shell .rg-task-requirement strong,
+.rg-workspace.ps3-shell .rg-task-requirement code { color: #e0eaf0; font-size: 12px; font-weight: 500; overflow-wrap: anywhere; }
+.rg-workspace.ps3-shell .rg-task-requirement code { background: transparent; padding: 0; }
+.rg-workspace.ps3-shell .rg-task-card { padding: 20px; }
+.rg-workspace.ps3-shell .rg-task-card-top { display: flex; align-items: center; justify-content: space-between; width: 100%; color: var(--ui-strong); margin-bottom: 20px; }
+.rg-workspace.ps3-shell .rg-task-card-top>span { font-size: 10px; letter-spacing: .08em; color: var(--ui-muted); }
+.rg-workspace.ps3-shell .rg-task-card p { margin-bottom: 16px; }
+.rg-workspace.ps3-shell .rg-task-card>span { margin-top: 15px; font-size: 11px; }
+.rg-workspace.ps3-shell .rg-task-output { display: flex; flex-direction: column; gap: 3px; width: 100%; min-height: 54px; }
+.rg-workspace.ps3-shell .rg-task-output>small,
+.rg-workspace.ps3-shell .rg-task-validation small { color: #aabdc8; font-size: 10px; font-weight: 400; }
+.rg-workspace.ps3-shell .rg-task-output>b { font-size: 12px; font-weight: 500; }
+.rg-workspace.ps3-shell .rg-task-validation { width: 100%; margin-top: 10px; padding-top: 12px; border-top: 1px solid var(--ui-border); }
+.rg-workspace.ps3-shell .rg-task-validation>div { display: flex; align-items: center; justify-content: space-between; gap: 6px; }
+.rg-workspace.ps3-shell .rg-task-validation b { font-size: 22px; font-weight: 550; font-variant-numeric: tabular-nums; }
+.rg-workspace.ps3-shell .rg-task-validation>span { font-size: 11px; color: var(--ui-muted); }
+.rg-workspace.ps3-shell .rg-evaluation-context {
+  display: flex; align-items: center; gap: 22px; padding: 15px 0; border-bottom: 1px solid var(--ui-border);
+}
+.rg-workspace.ps3-shell .rg-evaluation-context p { flex: 1; font-size: 11px; color: var(--ui-muted); line-height: 1.7; margin: 0; }
+.rg-workspace.ps3-shell .rg-evaluation-context strong { color: var(--ui-text); margin-right: 8px; font-weight: 550; }
+.rg-workspace.ps3-shell .rg-evaluation-context button { display: flex; align-items: center; gap: 10px; min-height: 40px; padding: 8px 12px; font-size: 11px; background: #21303a; border: 1px solid #47616d; color: var(--ui-strong); }
+.rg-workspace.ps3-shell .rg-finding-file { display: flex; align-items: center; gap: 7px; margin: 13px 0; color: var(--ui-muted); overflow-wrap: anywhere; }
+.rg-workspace.ps3-shell .rg-section-heading { display: flex; gap: 12px; align-items: flex-start; margin: 0 0 16px; }
+.rg-workspace.ps3-shell .rg-section-heading>svg { margin-top: 3px; color: var(--ui-strong); }
+.rg-workspace.ps3-shell .rg-section-heading h2 { font-size: 18px; margin: 0 0 4px; }
+.rg-workspace.ps3-shell .rg-section-heading p { font-size: 12px; margin: 0; color: var(--ui-muted); }
+.rg-workspace.ps3-shell .rg-upload-section { min-width: 0; scroll-margin-top: 20px; }
+.rg-workspace.ps3-shell .rg-analysis-grid.has-result .rg-analysis-input { display: grid; grid-template-columns: minmax(0,1.25fr) minmax(0,.75fr); gap: 22px; padding-top: 20px; border-top: 1px solid var(--ui-border); align-items: start; }
+.rg-workspace.ps3-shell .rg-analysis-grid.has-result .rg-analysis-input>.rg-history { margin-top: 0; }
+
+@media(max-width:1100px) {
+  .rg-workspace.ps3-shell .rg-overview-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .rg-workspace.ps3-shell .rg-recording-console .rg-selection { grid-template-columns: minmax(0,1fr) minmax(0,1fr); }
+  .rg-workspace.ps3-shell .rg-recording-console .rg-selection-provenance { grid-column: 1/-1; margin-top: 0; }
+  .rg-workspace.ps3-shell .rg-recording-console .rg-selection-provenance small { display: inline; margin-left: 9px; }
+}
+@media(max-width:760px) {
+  .rg-workspace.ps3-shell .rg-recording-console { padding: 13px 12px 0; }
+  .rg-workspace.ps3-shell .rg-recording-console .rg-selection { gap: 10px; }
+  .rg-workspace.ps3-shell .rg-task-requirement { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 9px 12px; }
+  .rg-workspace.ps3-shell .rg-task-requirement>div:last-child { grid-column: 1/-1; flex-direction: row; align-items: center; gap: 10px; }
+  .rg-workspace.ps3-shell .rg-task-requirement strong,.rg-workspace.ps3-shell .rg-task-requirement code { font-size: 11px; }
+  .rg-workspace.ps3-shell .rg-analysis-grid.has-result .rg-analysis-input { grid-template-columns: minmax(0,1fr); }
+  .rg-workspace.ps3-shell .rg-evaluation-context { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .rg-workspace.ps3-shell .rg-flow { gap: 13px 20px; }
+  .rg-workspace.ps3-shell .rg-flow span { font-size: 12px; }
+}
+@media(max-width:480px) {
+  .rg-workspace.ps3-shell .rg-overview-grid { grid-template-columns: minmax(0,1fr); }
+  .rg-workspace.ps3-shell .rg-task-card { padding: 18px; }
+  .rg-workspace.ps3-shell .rg-recording-console .rg-selection { grid-template-columns: minmax(0,1fr); }
+  .rg-workspace.ps3-shell .rg-recording-console .rg-selection-provenance { font-size: 11px; }
+  .rg-workspace.ps3-shell .rg-recording-console .rg-subsystems button { padding: 8px; font-size: 11px; }
+}

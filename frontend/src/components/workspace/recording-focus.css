@@ -1,0 +1,50 @@
+/* Findings are prominent; geometry is context, never a fabricated fault location. */
+.rg-workspace .recording-twin .rt-heading { padding: 23px 26px; align-items: flex-start; }
+.rg-workspace .recording-twin .rt-heading h3 { font-size: clamp(23px,2.3vw,30px); margin: 10px 0; line-height: 1.25; }
+.rg-workspace .recording-twin .rt-heading p { max-width: 75ch; font-size: 13px; }
+.recording-twin .rt-eyebrow { font-size: 11px; letter-spacing: .06em; overflow-wrap: anywhere; }
+.recording-twin .rt-focus-result { display: inline-flex; align-items: center; gap: 7px; flex-shrink: 0; padding: 11px 14px; border: 1px solid #171717; background: #171717; color: white; }
+.recording-twin .rt-focus-result:hover:not(:disabled) { background: #333; }
+.rt-view-toolbar { display: flex; justify-content: space-between; gap: 12px; padding: 12px 18px; border-bottom: 1px solid var(--ui-border); flex-wrap: wrap; }
+.rt-view-toolbar>div { display: flex; align-items: center; gap: 5px; flex-wrap: wrap; }
+.rt-view-toolbar button { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 39px; padding: 8px 11px; background: white; border: 1px solid var(--ui-border); font-size: 12px; }
+.rg-workspace .rt-view-toolbar button[aria-pressed=true],.rg-workspace .rt-view-toolbar button[aria-pressed=true]:hover:not(:disabled) { background: #171717; border-color: #171717; color: white; }
+.rt-view-toolbar>div>span { font-size: 12px; color: var(--ui-muted); }
+.rg-workspace .recording-twin .rt-layout { align-items: start; grid-template-columns: minmax(0,1fr) 330px; }
+.rg-workspace .recording-twin .rt-canvas { height: 470px; }
+.rg-workspace .recording-twin .rt-inspector { max-height: none; overflow: visible; }
+.rg-workspace .recording-twin .rt-scene-caption { font-size: 11px; }
+.rt-scene-callout { display: flex; flex-direction: column; gap: 4px; min-width: 120px; max-width: 265px; padding: 10px 13px; background: #fff; color: #171717; border: 1px solid #bbb; border-radius: 7px; text-align: center; box-shadow: 0 4px 14px #0003; white-space: nowrap; }
+.rt-scene-callout.needs-review { border-top: 4px solid #eeac71; }
+.rt-scene-callout b { font-size: 13px; font-weight: 650; }
+.rt-scene-callout small { font-size: 10px; }
+.rt-scene-scope { font-size: 11px; background: #222d; color: #eee; padding: 7px 10px; border-radius: 5px; white-space: nowrap; }
+.rt-car-navigation small { font-size: 10px; }
+.rt-findings { margin-bottom: 23px; padding-bottom: 18px; border-bottom: 1px solid var(--ui-border); }
+.rt-findings>div:first-child { display: flex; align-items: center; gap: 7px; margin-bottom: 10px; font-size: 13px; }
+.rt-findings>div:first-child>span { margin-left: auto; font-size: 12px; }
+.rt-finding-list { display: grid; gap: 6px; max-height: 190px; overflow-y: auto; padding: 3px; }
+.rt-finding-list button { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 11px; background: #fff; color: #171717; border: 1px solid var(--ui-border); text-align: left; }
+.rt-finding-list button strong { display: block; font-size: 13px; }
+.rt-finding-list button small { display: block; margin-top: 4px; font-size: 11px; color: #595959; }
+.rg-workspace .rt-finding-list button[aria-pressed=true] { border: 2px solid #171717; padding: 10px; background: #f2f2f2; }
+.rt-evidence-details { border-top: 1px solid var(--ui-border); margin-top: 18px; }
+.rt-evidence-details>summary { padding: 14px 0; cursor: pointer; font-size: 12px; font-weight: 600; }
+.rt-evidence-details>summary span { color: var(--ui-muted); margin-left: 6px; }
+.rg-workspace .rt-evidence-details .rt-traces { margin-top: 0; }
+@container(max-width:850px) {
+  .rg-workspace .recording-twin .rt-layout { grid-template-columns: minmax(0,1fr); }
+  .rg-workspace .recording-twin .rt-inspector { border-left: none; border-top: 1px solid var(--ui-border); }
+  .rt-key-measurements { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .rt-finding-list { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+@container(max-width:500px) {
+  .rg-workspace .recording-twin .rt-heading { padding: 18px; flex-direction: column; }
+  .rg-workspace .recording-twin .rt-canvas { height: 365px; }
+  .rt-view-toolbar { padding: 12px; gap: 10px; }
+  .rt-view-toolbar button { font-size: 11px; padding: 8px; }
+  .rt-scene-callout { padding: 7px 9px; max-width: 200px; white-space: normal; }
+  .rt-scene-callout b { font-size: 11px; }
+  .rt-scene-callout small { font-size: 9px; }
+  .rt-key-measurements { grid-template-columns: 1fr; }
+}

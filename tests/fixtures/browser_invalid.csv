@@ -1,0 +1,3 @@
+timestamp,train_id,pressure
+not-a-date,A,8
+also-invalid,A,9

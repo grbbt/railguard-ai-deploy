@@ -1,0 +1,103 @@
+/* On-demand assistant, independent of the page's evidence layout. */
+.rg-workspace.ps3-shell .rg-ai-launcher {
+  position: fixed; right: 24px; bottom: 22px; z-index: 71; display: flex; align-items: center; gap: 9px;
+  min-height: 48px; padding: 12px 18px; border: 1px solid #b5dcfa; border-radius: 15px;
+  background: var(--gs-primary); color: var(--ui-on-strong); box-shadow: 0 8px 28px #02071366;
+  font: inherit; font-size: 13px; font-weight: 650; cursor: pointer;
+}
+.rg-workspace.ps3-shell .rg-ai-launcher:hover { background: var(--gs-primary-hover); }
+.rg-workspace.ps3-shell .rg-ai-backdrop {
+  position: fixed; inset: 0; z-index: 200; width: 100%; height: 100%; margin: 0; padding: 0;
+  border: 0; border-radius: 0; background: #060b2099; cursor: default;
+  -webkit-backdrop-filter: blur(7px) saturate(.8); backdrop-filter: blur(7px) saturate(.8);
+}
+.rg-workspace.ps3-shell .rg-ai-window {
+  position: fixed; right: 24px; bottom: 84px; z-index: 201;
+  width: min(430px, calc(100vw - 32px)); height: min(680px, calc(100dvh - 110px));
+  display: flex; flex-direction: column; overflow: hidden; min-width: 0;
+  background: var(--ui-subtle); color: var(--ui-text); border: 1px solid #7c8bb5; border-radius: 18px;
+  box-shadow: 0 22px 72px #03081699, 0 0 0 1px #c3d1ff0b; outline: none;
+}
+.rg-workspace.ps3-shell :is(.rg-ai-window, .rg-ai-launcher)[hidden] { display: none; }
+.rg-ai-window-heading { flex: 0 0 auto; display: flex; align-items: center; gap: 11px; padding: 15px 16px; border-bottom: 1px solid var(--ui-border); background: var(--gs-selected); }
+.rg-ai-window-heading > span { display: grid; place-items: center; width: 36px; height: 36px; flex-shrink: 0; border-radius: 11px; color: var(--ui-strong); background: #99bcf013; border: 1px solid #839cc64d; }
+.rg-ai-window-heading > div { min-width: 0; flex: 1; }
+.rg-ai-window-heading h2 { margin: 0; font-size: 15px; font-weight: 650; letter-spacing: -.02em; }
+.rg-ai-window-heading p { margin: 4px 0 0; font-size: 11px; line-height: 1.4; color: var(--ui-muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.rg-ai-window-heading small { display: block; margin-top: 4px; color: var(--ui-muted); font-size: 10px; line-height: 1.4; }
+.rg-ai-window-heading > button { display: grid; place-items: center; width: 36px; height: 36px; border: 1px solid var(--ui-border); border-radius: 9px; background: #18233b; color: var(--ui-text); cursor: pointer; }
+.rg-ai-window-heading > button { flex-shrink: 0; }
+.rg-ai-window-heading > button:hover { background: var(--ng-hover); }
+.rg-workspace.ps3-shell .rg-ai-window .rg-investigator.is-compact { display: flex; flex-direction: column; flex: 1; min-height: 0; width: 100%; margin: 0; padding: 0; border: 0; border-radius: 0; background: var(--gs-inset); box-shadow: none; }
+.rg-ai-window .rg-agent-scroll { flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; scroll-padding: 12px; }
+.rg-workspace.ps3-shell .rg-ai-window .rg-agent-introduction { padding: 12px 16px 8px; }
+.rg-ai-window .rg-agent-introduction p { display: none; }
+.rg-ai-window .rg-agent-status { font-size: 11px; }
+.rg-workspace.ps3-shell .rg-ai-window .rg-agent-scope { padding: 8px 16px 10px; border-top: 0; }
+.rg-ai-window .rg-agent-scope > .rg-agent-field-label, .rg-ai-window .rg-agent-scope > small { display: none; }
+.rg-ai-window .rg-agent-scope-options { display: flex; gap: 5px; margin: 0; }
+.rg-workspace.ps3-shell .rg-ai-window .rg-agent-scope-options button { flex: 1; justify-content: center; min-height: 36px; padding: 8px 6px; font-size: 11px; gap: 5px; }
+.rg-workspace.ps3-shell .rg-ai-window .rg-agent-scope p { margin: 8px 0 0; font-size: 11px; line-height: 1.6; overflow-wrap: anywhere; }
+.rg-workspace.ps3-shell .rg-ai-window .rg-agent-component { margin: 2px 16px 12px; padding: 11px 12px; gap: 3px 10px; grid-template-columns: minmax(0, 1fr) auto; align-items: center; }
+.rg-ai-window .rg-agent-component > span { grid-column: 1; font-size: 9px; }
+.rg-ai-window .rg-agent-component strong { grid-column: 1; font-size: 12px; overflow-wrap: anywhere; }
+.rg-ai-window .rg-agent-component p { grid-column: 1; font-size: 11px; }
+.rg-workspace.ps3-shell .rg-ai-window .rg-agent-component button { grid-column: 2; grid-row: 1 / 4; padding: 8px; font-size: 11px; gap: 5px; }
+.rg-ai-window .rg-agent-component button > svg:last-child { display: none; }
+.rg-workspace.ps3-shell .rg-ai-window .rg-agent-workflows { padding: 0 16px 10px; }
+.rg-ai-window .rg-agent-workflows > div:first-child { margin: 0; }
+.rg-ai-window .rg-agent-field-label, .rg-ai-window .rg-agent-workflows > div > button { font-size: 11px; }
+.rg-workspace.ps3-shell .rg-ai-window .rg-agent-workflow-grid { grid-template-columns: 1fr; gap: 7px; margin-top: 10px; }
+.rg-workspace.ps3-shell .rg-ai-window .rg-agent-workflow-grid button { padding: 10px; min-height: 48px; }
+.rg-workspace.ps3-shell .rg-ai-window .rg-agent-workflow-grid strong { font-size: 12px; }
+.rg-workspace.ps3-shell .rg-ai-window .rg-agent-workflow-grid small { font-size: 11px; line-height: 1.5; }
+.rg-workspace.ps3-shell .rg-ai-window .rg-agent-conversation-bar { padding: 8px 16px; margin: 0; gap: 8px; font-size: 11px; }
+.rg-ai-window .rg-agent-conversation-bar button { font-size: 10px; }
+.rg-workspace.ps3-shell .rg-ai-window .rg-agent-conversation { padding: 0 16px; max-height: none; overflow: visible; scrollbar-gutter: auto; }
+.rg-ai-window .rg-agent-empty { padding: 8px 0 4px; }
+.rg-ai-window .rg-agent-empty p { margin: 0; font-size: 12px; line-height: 1.7; }
+.rg-ai-window .rg-agent-exchange { padding: 14px 0; }
+.rg-workspace.ps3-shell .rg-ai-window :is(.rg-agent-question, .rg-agent-prose, .rg-agent-prose > p) { font-size: 13px; line-height: 1.7; }
+.rg-ai-window .rg-agent-question { margin: 0; padding: 10px 12px; }
+.rg-ai-window .rg-agent-answer { padding-top: 13px; }
+.rg-ai-window .rg-agent-data-note { margin: 12px 16px; font-size: 11px; color: var(--ui-muted); }
+.rg-ai-window .rg-agent-data-note > summary { cursor: pointer; min-height: 24px; }
+.rg-workspace.ps3-shell .rg-ai-window .rg-agent-footer { padding: 8px 0 0; }
+.rg-ai-window .rg-agent-footer p { margin: 0; font-size: 11px; line-height: 1.6; }
+.rg-workspace.ps3-shell .rg-ai-window .rg-agent-compose { flex: 0 0 auto; padding: 12px 16px 10px; background: #151f36; border-top: 1px solid var(--ui-border); }
+.rg-ai-window .rg-agent-compose > label { margin-bottom: 7px; font-size: 12px; }
+.rg-workspace.ps3-shell .rg-ai-window .rg-agent-compose textarea { resize: none; min-height: 65px; max-height: 110px; padding: 10px 11px 4px; font-size: 13px; line-height: 1.5; }
+.rg-ai-window .rg-agent-compose-actions { padding: 6px 8px 8px; }
+.rg-workspace.ps3-shell .rg-ai-window .rg-agent-compose-actions button { min-height: 32px; font-size: 11px; padding: 6px 10px; }
+.rg-ai-window .rg-agent-compose > p { margin: 5px 0 0; font-size: 10px; line-height: 1.4; }
+.rg-workspace.ps3-shell .rg-ai-window .rg-agent-notice { flex: 0 0 auto; font-size: 11px; line-height: 1.5; padding: 8px 16px; margin: 0; background: #18273c; max-height: 54px; overflow-y: auto; }
+.rg-workspace.ps3-shell .rg-ai-window .rg-agent-notice:empty { padding: 0; }
+.rg-workspace.ps3-shell .rg-ai-window.is-resizing { user-select: none; }
+.rg-workspace.ps3-shell .rg-ai-resize {
+  position: absolute; z-index: 3; margin: 0; padding: 0; min-height: 0; min-width: 0;
+  border: 0; border-radius: 0; background: transparent; color: var(--ui-muted); box-shadow: none;
+  touch-action: none; user-select: none;
+}
+.rg-workspace.ps3-shell .rg-ai-resize:is(:hover, :focus-visible) { background: #91dce833; outline-offset: -3px; }
+.rg-workspace.ps3-shell .rg-ai-resize-n { top: 0; left: 16px; right: 16px; height: 8px; cursor: ns-resize; }
+.rg-workspace.ps3-shell .rg-ai-resize-s { bottom: 0; left: 16px; right: 16px; height: 8px; cursor: ns-resize; }
+.rg-workspace.ps3-shell .rg-ai-resize-w { left: 0; top: 16px; bottom: 16px; width: 8px; cursor: ew-resize; }
+.rg-workspace.ps3-shell .rg-ai-resize-e { right: 0; top: 16px; bottom: 16px; width: 8px; cursor: ew-resize; }
+.rg-workspace.ps3-shell .rg-ai-resize-nw { left: 0; top: 0; width: 17px; height: 17px; cursor: nwse-resize; }
+.rg-workspace.ps3-shell .rg-ai-resize-ne { right: 0; top: 0; width: 17px; height: 17px; cursor: nesw-resize; }
+.rg-workspace.ps3-shell .rg-ai-resize-sw { left: 0; bottom: 0; width: 17px; height: 17px; cursor: nesw-resize; }
+.rg-workspace.ps3-shell .rg-ai-resize-se { right: 0; bottom: 0; width: 17px; height: 17px; cursor: nwse-resize; }
+.rg-ai-resize-se svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 1.5; }
+.rg-workspace.ps3-shell .rg-footer { padding-bottom: 80px; }
+@media (prefers-reduced-transparency: reduce) {
+  .rg-workspace.ps3-shell .rg-ai-backdrop { background: #080f24eb; -webkit-backdrop-filter: none; backdrop-filter: none; }
+}
+@media (max-width: 600px) {
+  .rg-workspace.ps3-shell .rg-ai-window { right: 12px; bottom: 78px; width: calc(100vw - 24px); height: min(640px, calc(100dvh - 94px)); border-radius: 16px; }
+  .rg-workspace.ps3-shell .rg-ai-launcher { right: 12px; bottom: 16px; }
+}
+@media (max-height: 540px) {
+  .rg-workspace.ps3-shell .rg-ai-window { bottom: 72px; height: calc(100dvh - 84px); }
+  .rg-workspace.ps3-shell .rg-ai-window .rg-agent-compose textarea { min-height: 48px; }
+  .rg-ai-window .rg-agent-compose > p { display: none; }
+}

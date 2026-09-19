@@ -1,0 +1,338 @@
+/* Aurora engineering workspace. Cyan marks an action or selection; lavender
+   identifies context. Amber remains reserved for findings, never decoration.
+   This layer is imported last and does not recolour measured chart series. */
+:root {
+  --ui-canvas: #0b1021;
+  --ui-surface: #19213c;
+  --ui-subtle: #111a31;
+  --ui-text: #edf3ff;
+  --ui-muted: #b8c5df;
+  --ui-border: #3c486d;
+  --ui-strong: #78e4ee;
+  --ui-on-strong: #101b32;
+  --ng-hover: #303d64;
+  --ng-selected: #253b5b;
+  --ng-amber: #f1c48a;
+  --ng-amber-bg: #352d29;
+  --v-lilac: #c2b4ff;
+  --v-pink: #e8acdb;
+  --v-focus: #a2f3ff;
+  --v-control-border: #68789d;
+  --gs-panel: linear-gradient(135deg, #232c50 0%, #1a2541 45%, #151e35 100%);
+  --gs-inset: linear-gradient(135deg, #172340, #111a31);
+  --gs-raised: linear-gradient(125deg, #303d64, #253354);
+  --gs-selected: linear-gradient(115deg, #25425c, #303c65 65%, #3d3761);
+  --gs-primary: linear-gradient(110deg, #90edf2 0%, #8ed5f2 50%, #b8b5ff 100%);
+  --gs-primary-hover: linear-gradient(110deg, #b2f8fa, #ade3ff 50%, #d0c8ff);
+  --gs-border-strong: #7b86b2;
+  --gs-shadow: 0 14px 38px #04061736, inset 0 1px 0 #d2d7ff0d;
+  --bg: var(--ui-canvas);
+  --panel: var(--ui-surface);
+  --ink: var(--ui-text);
+  --muted: var(--ui-muted);
+  --faint: #a6b7d5;
+  --line: var(--ui-border);
+  color-scheme: dark;
+}
+
+body { background: var(--ui-canvas); }
+::selection { background: #b8b5ff; color: #101b32; }
+::-webkit-scrollbar-thumb { background: #61749a; }
+.rg-workspace.ps3-shell {
+  background: radial-gradient(ellipse 900px 680px at 93% 30px, #5f3bac29, transparent 72%),
+    radial-gradient(ellipse 780px 880px at 13% 420px, #12768b19, transparent 75%),
+    linear-gradient(150deg, #111832 0%, #0b1021 68%);
+}
+.rg-workspace.ps3-shell :is(button, a, input, textarea, select, summary):focus-visible {
+  outline: 2px solid var(--v-focus); outline-offset: 3px;
+}
+.rg-workspace.ps3-shell :is(select, input[type=search], textarea),
+.rg-workspace.ps3-shell select option { background: #121b32; color: var(--ui-text); }
+.rg-workspace.ps3-shell :is(input, textarea)::placeholder { color: #a8b8d4; }
+.rg-workspace.ps3-shell select { border-color: var(--v-control-border); }
+.rg-workspace.ps3-shell :is(.ps3-panel, .rg-export-picker, .rg-export-preview),
+.rg-workspace.ps3-shell .rg-overview-details :is(.rg-history, .rg-current-finding),
+.rg-workspace.ps3-shell :is(.rg-map-section, .rg-recording-console, .rg-glass) {
+  background: var(--gs-panel); border-color: var(--ui-border); box-shadow: var(--gs-shadow);
+}
+.rg-workspace.ps3-shell .ps3-panel.ps3-results-first { background: transparent; box-shadow: none; }
+.rg-workspace.ps3-shell :is(.ps3-button, .rg-topbar-upload, .rg-result-actions button, .ps3-compare-open, .rg-evaluation-context button) {
+  background: var(--gs-raised); color: var(--ui-text); border-color: var(--v-control-border);
+  box-shadow: inset 0 1px 0 #d9e6ff0e;
+}
+.rg-workspace.ps3-shell :is(.ps3-button, .rg-topbar-upload, .rg-result-actions button, .ps3-compare-open, .rg-evaluation-context button):hover:not(:disabled) {
+  background: linear-gradient(120deg, #3b4d77, #423d6b); border-color: #9cb4d5;
+}
+.rg-workspace.ps3-shell .ps3-button-primary,
+.rg-workspace.ps3-shell .rg-agent-compose-actions button,
+.rg-workspace.ps3-shell section.recording-twin .rt-focus-result {
+  background: var(--gs-primary); color: var(--ui-on-strong); border-color: #b5dcfa;
+  box-shadow: 0 5px 17px #71c5ec16, inset 0 1px 0 #ffffff6b;
+  font-weight: 650;
+}
+.rg-workspace.ps3-shell .ps3-button-primary:hover:not(:disabled),
+.rg-workspace.ps3-shell .rg-agent-compose-actions button:hover:not(:disabled),
+.rg-workspace.ps3-shell section.recording-twin .rt-focus-result:hover:not(:disabled) {
+  background: var(--gs-primary-hover); border-color: #d4edff;
+}
+.rg-workspace.ps3-shell .rg-agent-compose-actions button.rg-agent-stop {
+  background: var(--gs-raised); color: var(--ui-text); border-color: var(--v-control-border);
+}
+
+/* Navigation is deliberately quieter than the content and the main action. */
+.rg-workspace.ps3-shell .rg-sidebar {
+  background: radial-gradient(ellipse 320px 430px at 5% 0%, #52459135, transparent 72%),
+    linear-gradient(175deg, #151d37, #0d152a 78%);
+  border-right-color: #394369;
+}
+.rg-workspace.ps3-shell .rg-topbar {
+  background: linear-gradient(100deg, #15233aee, #241f41ee);
+  border-bottom-color: #42486b; backdrop-filter: blur(18px);
+}
+.rg-workspace.ps3-shell .rg-brand > span,
+.rg-workspace.ps3-shell .rg-agent-emblem {
+  background: linear-gradient(135deg, #244965, #443772);
+  color: #a7edff; border-color: #727ba9;
+  box-shadow: 0 4px 20px #645cc421, inset 0 1px 0 #ffffff13;
+}
+.rg-workspace.ps3-shell .rg-brand small { color: var(--v-lilac); }
+.rg-workspace.ps3-shell .rg-sidebar nav button { color: #c1cbe2; }
+.rg-workspace.ps3-shell .rg-sidebar nav button.active {
+  background: linear-gradient(110deg, #254159, #34345c);
+  color: #baf2f9; border-color: #778fc0;
+  box-shadow: inset 3px 0 0 #80e5f1, 0 4px 18px #08122328;
+}
+.rg-workspace.ps3-shell .rg-sidebar nav button:hover:not(.active) { background: #283353; color: #edf3ff; }
+.rg-workspace.ps3-shell .rg-page-heading h1 { color: #f0f4ff; }
+.rg-workspace.ps3-shell :is(.rg-section-heading > svg, .ps3-section-icon, .rg-back-result) { color: var(--ui-strong); }
+.rg-workspace.ps3-shell .ps3-section-icon { background: linear-gradient(135deg, #254761, #393964); border-color: #657fa9; }
+.rg-workspace.ps3-shell .rg-inline-link:hover { color: #bcf5ff!important; }
+.rg-workspace.ps3-shell .rg-service-badge i { background: #83ded8; box-shadow: 0 0 9px #55c5d23b; }
+.rg-workspace.ps3-shell .rg-service-badge.error i { background: var(--ng-amber); }
+.rg-workspace.ps3-shell .rg-map-frame .workspace-map-glass { background: #17213bef; border-color: #7885ad; }
+
+/* Each task has one identity accent; none of these colours denotes severity. */
+.rg-workspace.ps3-shell .rg-task-card {
+  --task-accent: #7ee5ec; --task-wash: #236273;
+  position: relative; overflow: hidden;
+  background: radial-gradient(ellipse 110% 75% at 100% 0%, color-mix(in srgb, var(--task-wash) 42%, transparent), transparent 75%), var(--gs-panel);
+  border-color: #4f6286; box-shadow: var(--gs-shadow);
+}
+.rg-workspace.ps3-shell .rg-task-card[data-subsystem=acv] { --task-accent: #b9abff; --task-wash: #594b95; }
+.rg-workspace.ps3-shell .rg-task-card[data-subsystem=rail] { --task-accent: #83bfff; --task-wash: #315e94; }
+.rg-workspace.ps3-shell .rg-task-card[data-subsystem=shm] { --task-accent: #e7afd9; --task-wash: #733e75; }
+.rg-workspace.ps3-shell .rg-task-card::before {
+  content: ''; position: absolute; top: 0; left: 20px; right: 20px; height: 2px;
+  background: linear-gradient(90deg, var(--task-accent), transparent);
+}
+.rg-workspace.ps3-shell .rg-task-card:hover {
+  border-color: var(--task-accent);
+  background: radial-gradient(ellipse 110% 90% at 100% 0%, color-mix(in srgb, var(--task-wash) 60%, transparent), transparent 75%), var(--gs-panel);
+}
+.rg-workspace.ps3-shell .rg-task-card-top > svg,
+.rg-workspace.ps3-shell .rg-task-card > strong svg { color: var(--task-accent); }
+.rg-workspace.ps3-shell .rg-task-validation b { color: #e8edff; }
+.rg-workspace.ps3-shell .rg-flow b { border-color: #667b9d; }
+.rg-workspace.ps3-shell .rg-flow .current b { background: var(--gs-primary); border-color: #a8d7f2; }
+.rg-workspace.ps3-shell .rg-current-finding { border-top: 2px solid #aca1ee; }
+
+/* The upload entry is visible before result controls, with a short primary path. */
+.rg-workspace.ps3-shell .rg-analysis-upload { margin: 0 0 23px; min-width: 0; scroll-margin-top: 20px; }
+.rg-workspace.ps3-shell .rg-upload-top { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-bottom: 13px; }
+.rg-workspace.ps3-shell .rg-upload-top .rg-section-heading { margin-bottom: 0; }
+.rg-workspace.ps3-shell .rg-upload-top h2 { font-size: 19px; }
+.rg-workspace.ps3-shell .rg-upload-top p { color: var(--ui-muted); font-size: 12px; }
+.rg-workspace.ps3-shell .rg-system-picker { min-width: 0; margin-bottom: 12px; }
+.rg-workspace.ps3-shell .rg-system-picker .rg-subsystems { margin: 0; }
+.rg-workspace.ps3-shell .ps3-input-panel.is-workspace-upload {
+  display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, .85fr); gap: 0 23px;
+  padding: 18px 21px 20px; align-items: start;
+  background: radial-gradient(ellipse 65% 110% at 96% 0%, #594ba139, transparent 80%),
+    linear-gradient(115deg, #1c344c, #202749 55%, #22253f);
+  border-color: #637bac; box-shadow: 0 10px 34px #03071429, inset 0 1px 0 #abdce52b;
+}
+.rg-workspace.ps3-shell .is-workspace-upload > .ps3-panel-heading { grid-column: 1 / -1; padding: 0; }
+.rg-workspace.ps3-shell .is-workspace-upload > .ps3-panel-copy { grid-column: 1 / -1; padding: 9px 0 14px; margin: 0; }
+.rg-workspace.ps3-shell .is-workspace-upload > .ps3-input-note { grid-column: 1 / -1; padding: 0 0 12px; margin: 0; }
+.rg-workspace.ps3-shell .is-workspace-upload .ps3-upload-workflow { min-width: 0; }
+.rg-workspace.ps3-shell .is-workspace-upload .ps3-drop {
+  display: grid; grid-template-columns: 34px minmax(0, 1fr) auto; column-gap: 12px; row-gap: 4px;
+  margin: 0; padding: 17px 16px; text-align: left; align-items: center;
+  background: linear-gradient(120deg, #14334a90, #1a254690); border-color: #8ab7d8;
+}
+.rg-workspace.ps3-shell .is-workspace-upload .ps3-drop > svg { grid-column: 1; grid-row: 1 / 4; margin: 0; color: #9ceff2; }
+.rg-workspace.ps3-shell .is-workspace-upload .ps3-drop > strong { grid-column: 2; font-size: 13px; }
+.rg-workspace.ps3-shell .is-workspace-upload .ps3-drop > span { grid-column: 2; font-size: 11px; }
+.rg-workspace.ps3-shell .is-workspace-upload .ps3-drop > .ps3-file-label { grid-column: 3; grid-row: 1 / 4; margin: 0; min-height: 40px; }
+.rg-workspace.ps3-shell .is-workspace-upload .ps3-drop > small { grid-column: 2; margin: 0; font-size: 10px; }
+.rg-workspace.ps3-shell .is-workspace-upload .ps3-drop.dragging { background: #294c68; outline: 2px solid #98e5f2; outline-offset: 3px; }
+.rg-workspace.ps3-shell .is-workspace-upload .ps3-full { margin: 12px 0 0; width: 100%; }
+.rg-workspace.ps3-shell .is-workspace-upload .ps3-file-list { margin: 12px 0 0; }
+.rg-workspace.ps3-shell .is-workspace-upload .ps3-upload-workflow > .ps3-input-note { padding: 9px 0 0; margin: 0; }
+.rg-workspace.ps3-shell .is-workspace-upload .ps3-upload-workflow > .ps3-error { margin: 10px 0 0; }
+.rg-workspace.ps3-shell .is-workspace-upload > .ps3-example {
+  margin: 0; padding: 14px 16px; min-width: 0; border: 1px solid #65719c; border-radius: 10px;
+  background: linear-gradient(135deg, #3431589e, #222a499e);
+}
+.rg-workspace.ps3-shell .is-workspace-upload .ps3-example > div:first-child > svg { color: var(--v-lilac); }
+.rg-workspace.ps3-shell .is-workspace-upload .ps3-example > p { margin: 6px 0 11px; font-size: 11px!important; }
+.rg-workspace.ps3-shell .is-workspace-upload .ps3-example-actions .ps3-button { min-height: 35px; padding: 7px 10px; }
+
+/* Dataset selections and predictions use the same visual language. */
+.rg-workspace.ps3-shell :is(.rg-selection, .rg-recording-context, .rg-run-status) { background: var(--gs-inset); border-color: #3d5074; }
+.rg-workspace.ps3-shell .rg-recording-console .rg-selection { background: transparent; }
+.rg-workspace.ps3-shell .rg-subsystems button { background: linear-gradient(115deg, #202e4b, #1e2846); border-color: #626f95; }
+.rg-workspace.ps3-shell .rg-subsystems button.active,
+.rg-workspace.ps3-shell .ps3-prediction-scope button.active,
+.rg-workspace.ps3-shell .rg-agent-scope-options button[aria-pressed=true] {
+  background: var(--gs-selected); border-color: #85d0df; color: #b7f0f5;
+  box-shadow: inset 0 1px 0 #b9ecff14;
+}
+.rg-workspace.ps3-shell .rg-subsystems button:hover { border-color: #aaa6df; }
+.rg-workspace.ps3-shell .rg-subsystems button[data-subsystem=door] > svg { color: #7ee5ec; }
+.rg-workspace.ps3-shell .rg-subsystems button[data-subsystem=acv] > svg { color: #b9abff; }
+.rg-workspace.ps3-shell .rg-subsystems button[data-subsystem=rail] > svg { color: #83bfff; }
+.rg-workspace.ps3-shell .rg-subsystems button[data-subsystem=shm] > svg { color: #e7afd9; }
+.rg-workspace.ps3-shell .rg-task-requirement span { color: #bbb7e1; }
+.rg-workspace.ps3-shell .rg-task-requirement strong,
+.rg-workspace.ps3-shell .rg-task-requirement code { color: #e6eaff; }
+.rg-workspace.ps3-shell .ps3-prediction-scope > div { background: #101a30; }
+.rg-workspace.ps3-shell .ps3-prediction-scope button.active span { background: #3d597c; color: #d7f4ff; }
+.rg-workspace.ps3-shell .rg-history-row.selected { background: linear-gradient(100deg, #263d58, #2e3155); }
+.rg-workspace.ps3-shell .ps3-empty-symbol { background: linear-gradient(135deg, #274961, #453c70); }
+.rg-workspace.ps3-shell .ps3-result-overview {
+  background: radial-gradient(ellipse 75% 150% at 100% 0%, #604a9859, transparent 78%),
+    linear-gradient(110deg, #203b52, #233153 52%, #242842);
+  border-color: #6a7fa8; border-top-color: #86e0ea; box-shadow: var(--gs-shadow);
+}
+.rg-workspace.ps3-shell .ps3-result-emblem { background: linear-gradient(135deg, #254a62, #3c3d67); border-color: #7ba6c1; }
+.rg-workspace.ps3-shell .ps3-result-emblem.needs-review { background: #352e2b; border-color: var(--ng-amber); }
+.rg-workspace.ps3-shell .ps3-result-facts { border-color: #516888; }
+.rg-workspace.ps3-shell .ps3-result-next .ps3-button-quiet { background: var(--gs-raised); border-color: #85b8d6; color: #c1eff8; }
+.rg-workspace.ps3-shell .ps3-result-order li { background: var(--gs-inset); }
+.rg-workspace.ps3-shell .ps3-result-order li:first-child { background: linear-gradient(135deg, #3e352d, #302931); }
+.rg-workspace.ps3-shell .ps3-result-order li.is-unavailable { background: #242e47; }
+.rg-workspace.ps3-shell :is(.ps3-result-summary, .ps3-evidence-card) { background: var(--gs-inset); border-color: #465d82; }
+.rg-workspace.ps3-shell :is(.ps3-limitations, .rg-warning, .rg-agent-warning, .rg-validation-intro, .ps3-context-note) {
+  background: linear-gradient(120deg, #252d49, #202942); border-color: #586384; border-left-color: #aea4db;
+}
+.rg-workspace.ps3-shell :is(.ps3-table-scroll, .ps3-compare-table) { background: #14203a; }
+.rg-workspace.ps3-shell th { background: #2c3658; color: #dce8fc; }
+.rg-workspace.ps3-shell .ps3-compare-table tr.is-current,
+.rg-workspace.ps3-shell .ps3-compare-table tr.is-current > th { background: #2b405f; }
+.rg-workspace.ps3-shell .ps3-compare-table tbody tr:hover { background: #2c3d5b; }
+.rg-workspace.ps3-shell .ps3-compare-class { background: #2b3c5a; }
+.rg-workspace.ps3-shell .ps3-compare-class.side { background: #352d29; }
+.rg-workspace.ps3-shell .ps3-result-tabs button.active { color: #a0edf7; border-bottom-color: #89ddeb; }
+.rg-workspace.ps3-shell .ps3-signal svg { background: #101c32; border-color: #415e83; }
+.rg-workspace.ps3-shell .ps3-signal svg text { fill: #c6d5ec; }
+.rg-workspace.ps3-shell .ps3-grid-line { stroke: #b1ceef26; }
+
+/* One continuous workspace: component, measurements, signals, then reasoning. */
+.rg-workspace.ps3-shell .rg-investigation-intro {
+  border-color: #5a6d96;
+  background: linear-gradient(115deg, #203a50, #302c51);
+}
+.rg-workspace.ps3-shell .rg-investigation-intro :is(p, span) { color: var(--ui-muted); font-size: 12px; }
+.rg-workspace.ps3-shell .rg-investigation-intro strong { color: var(--ui-text); }
+.rg-workspace.ps3-shell .rg-investigation-intro :is(a, button) {
+  border-color: #7b88b0; background: #243554; color: #c6f0fa;
+}
+.rg-workspace.ps3-shell .rg-investigation-intro :is(a, button):hover { background: #36456d; border-color: #a5c2e8; }
+.rg-workspace.ps3-shell .rg-workbench-agent .rg-section-heading > svg { color: var(--v-lilac); }
+.rg-workspace.ps3-shell section.recording-twin { background: var(--gs-panel); border-color: #53668d; box-shadow: var(--gs-shadow); }
+.rg-workspace.ps3-shell section.recording-twin .rt-heading {
+  background: linear-gradient(115deg, #29405b, #323258 65%, #342c50); border-bottom-color: #56698e;
+}
+.rg-workspace.ps3-shell section.recording-twin .rt-heading .rt-eyebrow { color: #bcb4e7; }
+.rg-workspace.ps3-shell section.recording-twin .rt-view-toolbar { background: linear-gradient(110deg, #202f4c, #262b4a); }
+.rg-workspace.ps3-shell section.recording-twin .rt-view-toolbar button { background: var(--gs-raised); color: var(--ui-muted); border-color: #6d7b9f; }
+.rg-workspace.ps3-shell section.recording-twin .rt-view-toolbar button:hover:not(:disabled) { background: #384969; }
+.rg-workspace.ps3-shell section.recording-twin .rt-layout .rt-visual {
+  background: radial-gradient(ellipse 67% 90% at 12% 8%, #378aab24, transparent 74%),
+    radial-gradient(ellipse 65% 90% at 93% 40%, #8b54c527, transparent 72%),
+    radial-gradient(ellipse 83% 72% at 47% 41%, #354978 0%, #2a365d 34%, #222a51 67%, #111a32 100%);
+  border-color: #50698a;
+}
+.rg-workspace.ps3-shell section.recording-twin .rt-layout .rt-visual .rt-canvas,
+.rg-workspace.ps3-shell section.recording-twin .rt-layout .rt-visual .rt-canvas canvas { background: transparent; }
+.rg-workspace.ps3-shell section.recording-twin .rt-layout .rt-inspector { background: linear-gradient(145deg, #202d4b, #1c253e); }
+.rg-workspace.ps3-shell section.recording-twin .rt-source-strip { color: #e7effe; }
+.rg-workspace.ps3-shell section.recording-twin .rt-source-strip > span:last-child,
+.rg-workspace.ps3-shell section.recording-twin .rt-scene-caption,
+.rg-workspace.ps3-shell section.recording-twin .rt-scene-caption span:last-child { color: #c5d4ed; }
+.rg-workspace.ps3-shell section.recording-twin :is(.rt-selection-controls, .rt-car-navigation) {
+  background: linear-gradient(115deg, #253a55, #2c2f50); border-color: #53658b;
+}
+.rg-workspace.ps3-shell section.recording-twin .rt-camera-tools { background: #192641ed; border-color: #7e92b3; }
+.rg-workspace.ps3-shell section.recording-twin :is(.rt-view-toolbar, .rt-car-navigation, .rt-camera-tools, .rt-sensor-navigation, .rt-sides) button[aria-pressed=true],
+.rg-workspace.ps3-shell section.recording-twin :is(.rt-view-toolbar, .rt-car-navigation, .rt-camera-tools, .rt-sensor-navigation, .rt-sides) button[aria-pressed=true]:hover:not(:disabled) {
+  color: #bbf2f8; border-color: #86d5e1; background: var(--gs-selected);
+}
+.rg-workspace.ps3-shell section.recording-twin .rt-sides button[aria-pressed=true] small { color: #d3e9f8; }
+.rg-workspace.ps3-shell section.recording-twin .rt-finding-list button { background: var(--gs-inset); border-color: #647b9d; }
+.rg-workspace.ps3-shell section.recording-twin .rt-finding-list button[aria-pressed=true] {
+  background: linear-gradient(135deg, #40342d, #332b33); border-color: #d0ac7c;
+}
+.rg-workspace.ps3-shell section.recording-twin .rt-finding-list button:hover:not(:disabled) { background: #34425f; }
+.rg-workspace.ps3-shell section.recording-twin .rt-measurements > div,
+.rg-workspace.ps3-shell section.recording-twin .rt-data-section .rt-all-measurements > div {
+  background: linear-gradient(125deg, #273c59, #2b3153 65%, #292c4b); border-color: #566d92;
+  box-shadow: inset 0 1px 0 #c9deff0d;
+}
+.rg-workspace.ps3-shell section.recording-twin .rt-data-section {
+  background: radial-gradient(ellipse 85% 120% at 98% 0%, #58438b1a, transparent 70%), linear-gradient(135deg, #1b2a46, #19213b);
+}
+.rg-workspace.ps3-shell section.recording-twin .rt-section-heading .rt-eyebrow { color: #bfb5ef; }
+.rg-workspace.ps3-shell section.recording-twin .rt-evidence-source { border-color: #4a6082; }
+.rg-workspace.ps3-shell section.recording-twin .rt-all-traces .rt-trace {
+  background: linear-gradient(135deg, #1a2a46, #19243e); border-color: #4e668c;
+}
+.rg-workspace.ps3-shell section.recording-twin .rt-trace svg { background: #101c32; }
+.rg-workspace.ps3-shell section.recording-twin .rt-provenance { background: linear-gradient(110deg, #1b2b43, #26283f); }
+.rg-workspace.ps3-shell section.recording-twin :is(.rt-car-label, .rt-sensor-label, .rt-scene-callout, .rt-structure-annotation) {
+  background: #15203bec; border-color: #7e94b8; color: #edf3ff; box-shadow: 0 4px 15px #07122535;
+}
+.rg-workspace.ps3-shell section.recording-twin .rt-car-label.is-active { color: #b9f0fa; border-color: #83e2eb; }
+.rg-workspace.ps3-shell section.recording-twin .rt-scene-callout.needs-review { border-top-color: var(--ng-amber); }
+.rg-workspace.ps3-shell section.recording-twin .rt-scene-callout small { color: #cedbf0; }
+.rg-workspace.ps3-shell section.recording-twin .rt-scene-scope { background: #192b49e8; border-color: #8198bd; color: #d7e7f9; }
+.rg-workspace.ps3-shell section.recording-twin .rt-fallback { background: transparent; }
+
+/* Reasoning and export retain their existing controls and evidence semantics. */
+.rg-workspace.ps3-shell .rg-agent-question { background: linear-gradient(115deg, #293d5c, #393357); border-color: #7783ab; }
+.rg-workspace.ps3-shell .rg-agent-compose textarea { background: var(--gs-inset); }
+.rg-workspace.ps3-shell .rg-agent-workflow-grid button { background: linear-gradient(130deg, #232f4b, #292d4d); border-color: #576c93; }
+.rg-workspace.ps3-shell .rg-agent-workflow-grid button > svg:first-child { color: #c4b6f9; }
+.rg-workspace.ps3-shell .rg-agent-workflow-grid button:hover:not(:disabled),
+.rg-workspace.ps3-shell .rg-agent-answer-actions button:hover { background: linear-gradient(115deg, #334865, #423763); border-color: #9badd1; }
+.rg-workspace.ps3-shell .rg-citation { color: #9ee6f0; border-color: #8eafdc; }
+.rg-workspace.ps3-shell .rg-citation:hover { color: #dbf8ff; }
+.rg-workspace.ps3-shell .rg-agent-sources li:target,
+.rg-workspace.ps3-shell .rg-agent-sources li:focus { background: var(--gs-selected); }
+.rg-workspace.ps3-shell .rg-export-selection-bar { background: linear-gradient(110deg, #28435a, #393255); border-color: #788bb4; }
+.rg-workspace.ps3-shell .rg-export-picker.has-selection { border-color: #93b9d3; }
+.rg-workspace.ps3-shell .rg-export-search { background: var(--gs-inset); border-color: #697b9d; }
+.rg-workspace.ps3-shell .rg-export-file-list label:has(input:checked) { background: var(--gs-selected); }
+.rg-workspace.ps3-shell .rg-export-preview { background: var(--gs-inset); }
+
+@media (max-width: 1100px) {
+  .rg-workspace.ps3-shell .ps3-input-panel.is-workspace-upload { grid-template-columns: minmax(0, 1.2fr) minmax(0, .9fr); gap: 0 16px; }
+  .rg-workspace.ps3-shell .is-workspace-upload .ps3-drop { grid-template-columns: 27px minmax(0, 1fr); gap: 4px 9px; padding: 13px; }
+  .rg-workspace.ps3-shell .is-workspace-upload .ps3-drop > .ps3-file-label { grid-column: 1 / -1; grid-row: auto; margin-top: 7px; }
+}
+@media (max-width: 760px) {
+  .rg-workspace.ps3-shell .rg-topbar { background: linear-gradient(100deg, #16253ef7, #26203ff7); }
+  .rg-workspace.ps3-shell .rg-nav-scrim { background: #050b20ce; }
+  .rg-workspace.ps3-shell .rg-upload-top { align-items: flex-start; flex-direction: column; }
+  .rg-workspace.ps3-shell .ps3-input-panel.is-workspace-upload { grid-template-columns: minmax(0, 1fr); padding: 17px 16px; gap: 0; }
+  .rg-workspace.ps3-shell .is-workspace-upload > .ps3-example { margin-top: 16px; padding: 13px; }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .rg-workspace.ps3-shell .rg-topbar,
+  .rg-workspace.ps3-shell section.recording-twin :is(.rt-scene-callout, .rt-structure-annotation, .rt-camera-tools),
+  .rg-workspace.ps3-shell .rg-map-frame .workspace-map-glass { background: #192540; backdrop-filter: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rg-workspace.ps3-shell :is(.rg-task-card, .rg-sidebar, .ps3-button, .rg-subsystems button) { transition: none; }
+}

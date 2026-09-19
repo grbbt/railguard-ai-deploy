@@ -1,0 +1,1204 @@
+{
+  "generated_at": "2026-09-13T17:00:20.499743+00:00",
+  "operational_review_date": "2026-09-14",
+  "source_sha256": {
+    "lta-train-stations.zip": "7a7c6730ce7a9092b38d095ef7b663e8281ae612b1c9477449ea7c215b477e09",
+    "ura-rail-lines-2025.geojson": "834e90d633a4b2b267df7cf0ee427ffa5841591304ce8f0d033a8e907412a0c6",
+    "ura-rail-stations-2025.geojson": "a7630d6403cf2329c87e8959a5550dcf1b3e0ca0e758bb4460d3f1b52f9ad31a"
+  },
+  "station_count": 146,
+  "line_station_counts": {
+    "NSL": 27,
+    "EWL": 35,
+    "NEL": 17,
+    "CCL": 33,
+    "DTL": 35,
+    "TEL": 27
+  },
+  "method": "Area centroid of LTA station footprints; URA indicative footprints supplement missing CCL6 stations. WGS84 transform, 2m Douglas-Peucker simplification, 100m endpoint gap matching, 300m station footprint connections, shortest geographic path between explicitly reviewed adjacent operating stations. Route rendering is indicative, not an operator track topology.",
+  "route_segments": [
+    {
+      "line": "NSL",
+      "from": "Jurong East",
+      "to": "Bukit Batok",
+      "alignment_m": 2092,
+      "straight_m": 1924
+    },
+    {
+      "line": "NSL",
+      "from": "Bukit Batok",
+      "to": "Bukit Gombak",
+      "alignment_m": 1173,
+      "straight_m": 1102
+    },
+    {
+      "line": "NSL",
+      "from": "Bukit Gombak",
+      "to": "Choa Chu Kang",
+      "alignment_m": 3318,
+      "straight_m": 3048
+    },
+    {
+      "line": "NSL",
+      "from": "Choa Chu Kang",
+      "to": "Yew Tee",
+      "alignment_m": 1488,
+      "straight_m": 1410
+    },
+    {
+      "line": "NSL",
+      "from": "Yew Tee",
+      "to": "Kranji",
+      "alignment_m": 4215,
+      "straight_m": 3476
+    },
+    {
+      "line": "NSL",
+      "from": "Kranji",
+      "to": "Marsiling",
+      "alignment_m": 1686,
+      "straight_m": 1563
+    },
+    {
+      "line": "NSL",
+      "from": "Marsiling",
+      "to": "Woodlands",
+      "alignment_m": 1631,
+      "straight_m": 1512
+    },
+    {
+      "line": "NSL",
+      "from": "Woodlands",
+      "to": "Admiralty",
+      "alignment_m": 1697,
+      "straight_m": 1598
+    },
+    {
+      "line": "NSL",
+      "from": "Admiralty",
+      "to": "Sembawang",
+      "alignment_m": 2416,
+      "straight_m": 2335
+    },
+    {
+      "line": "NSL",
+      "from": "Sembawang",
+      "to": "Canberra",
+      "alignment_m": 1427,
+      "straight_m": 1247
+    },
+    {
+      "line": "NSL",
+      "from": "Canberra",
+      "to": "Yishun",
+      "alignment_m": 1669,
+      "straight_m": 1607
+    },
+    {
+      "line": "NSL",
+      "from": "Yishun",
+      "to": "Khatib",
+      "alignment_m": 1397,
+      "straight_m": 1345
+    },
+    {
+      "line": "NSL",
+      "from": "Khatib",
+      "to": "Yio Chu Kang",
+      "alignment_m": 4930,
+      "straight_m": 4171
+    },
+    {
+      "line": "NSL",
+      "from": "Yio Chu Kang",
+      "to": "Ang Mo Kio",
+      "alignment_m": 1484,
+      "straight_m": 1411
+    },
+    {
+      "line": "NSL",
+      "from": "Ang Mo Kio",
+      "to": "Bishan",
+      "alignment_m": 2366,
+      "straight_m": 2089
+    },
+    {
+      "line": "NSL",
+      "from": "Bishan",
+      "to": "Braddell",
+      "alignment_m": 1252,
+      "straight_m": 1196
+    },
+    {
+      "line": "NSL",
+      "from": "Braddell",
+      "to": "Toa Payoh",
+      "alignment_m": 922,
+      "straight_m": 862
+    },
+    {
+      "line": "NSL",
+      "from": "Toa Payoh",
+      "to": "Novena",
+      "alignment_m": 1504,
+      "straight_m": 1412
+    },
+    {
+      "line": "NSL",
+      "from": "Novena",
+      "to": "Newton",
+      "alignment_m": 1126,
+      "straight_m": 1047
+    },
+    {
+      "line": "NSL",
+      "from": "Newton",
+      "to": "Orchard",
+      "alignment_m": 1380,
+      "straight_m": 1285
+    },
+    {
+      "line": "NSL",
+      "from": "Orchard",
+      "to": "Somerset",
+      "alignment_m": 987,
+      "straight_m": 885
+    },
+    {
+      "line": "NSL",
+      "from": "Somerset",
+      "to": "Dhoby Ghaut",
+      "alignment_m": 775,
+      "straight_m": 744
+    },
+    {
+      "line": "NSL",
+      "from": "Dhoby Ghaut",
+      "to": "City Hall",
+      "alignment_m": 1098,
+      "straight_m": 1046
+    },
+    {
+      "line": "NSL",
+      "from": "City Hall",
+      "to": "Raffles Place",
+      "alignment_m": 1076,
+      "straight_m": 989
+    },
+    {
+      "line": "NSL",
+      "from": "Raffles Place",
+      "to": "Marina Bay",
+      "alignment_m": 1060,
+      "straight_m": 1001
+    },
+    {
+      "line": "NSL",
+      "from": "Marina Bay",
+      "to": "Marina South Pier",
+      "alignment_m": 1118,
+      "straight_m": 1003
+    },
+    {
+      "line": "EWL",
+      "from": "Pasir Ris",
+      "to": "Tampines",
+      "alignment_m": 2215,
+      "straight_m": 2144
+    },
+    {
+      "line": "EWL",
+      "from": "Tampines",
+      "to": "Simei",
+      "alignment_m": 1664,
+      "straight_m": 1612
+    },
+    {
+      "line": "EWL",
+      "from": "Simei",
+      "to": "Tanah Merah",
+      "alignment_m": 2502,
+      "straight_m": 1920
+    },
+    {
+      "line": "EWL",
+      "from": "Tanah Merah",
+      "to": "Bedok",
+      "alignment_m": 1895,
+      "straight_m": 1857
+    },
+    {
+      "line": "EWL",
+      "from": "Bedok",
+      "to": "Kembangan",
+      "alignment_m": 1986,
+      "straight_m": 1945
+    },
+    {
+      "line": "EWL",
+      "from": "Kembangan",
+      "to": "Eunos",
+      "alignment_m": 1107,
+      "straight_m": 1076
+    },
+    {
+      "line": "EWL",
+      "from": "Eunos",
+      "to": "Paya Lebar",
+      "alignment_m": 1262,
+      "straight_m": 1221
+    },
+    {
+      "line": "EWL",
+      "from": "Paya Lebar",
+      "to": "Aljunied",
+      "alignment_m": 1122,
+      "straight_m": 1086
+    },
+    {
+      "line": "EWL",
+      "from": "Aljunied",
+      "to": "Kallang",
+      "alignment_m": 1458,
+      "straight_m": 1405
+    },
+    {
+      "line": "EWL",
+      "from": "Kallang",
+      "to": "Lavender",
+      "alignment_m": 1089,
+      "straight_m": 1043
+    },
+    {
+      "line": "EWL",
+      "from": "Lavender",
+      "to": "Bugis",
+      "alignment_m": 1145,
+      "straight_m": 1083
+    },
+    {
+      "line": "EWL",
+      "from": "Bugis",
+      "to": "City Hall",
+      "alignment_m": 1066,
+      "straight_m": 895
+    },
+    {
+      "line": "EWL",
+      "from": "City Hall",
+      "to": "Raffles Place",
+      "alignment_m": 1076,
+      "straight_m": 989
+    },
+    {
+      "line": "EWL",
+      "from": "Raffles Place",
+      "to": "Tanjong Pagar",
+      "alignment_m": 1130,
+      "straight_m": 1042
+    },
+    {
+      "line": "EWL",
+      "from": "Tanjong Pagar",
+      "to": "Outram Park",
+      "alignment_m": 982,
+      "straight_m": 861
+    },
+    {
+      "line": "EWL",
+      "from": "Outram Park",
+      "to": "Tiong Bahru",
+      "alignment_m": 1623,
+      "straight_m": 1499
+    },
+    {
+      "line": "EWL",
+      "from": "Tiong Bahru",
+      "to": "Redhill",
+      "alignment_m": 1253,
+      "straight_m": 1200
+    },
+    {
+      "line": "EWL",
+      "from": "Redhill",
+      "to": "Queenstown",
+      "alignment_m": 1399,
+      "straight_m": 1317
+    },
+    {
+      "line": "EWL",
+      "from": "Queenstown",
+      "to": "Commonwealth",
+      "alignment_m": 1254,
+      "straight_m": 1223
+    },
+    {
+      "line": "EWL",
+      "from": "Commonwealth",
+      "to": "Buona Vista",
+      "alignment_m": 1092,
+      "straight_m": 1001
+    },
+    {
+      "line": "EWL",
+      "from": "Buona Vista",
+      "to": "Dover",
+      "alignment_m": 1463,
+      "straight_m": 1403
+    },
+    {
+      "line": "EWL",
+      "from": "Dover",
+      "to": "Clementi",
+      "alignment_m": 1717,
+      "straight_m": 1547
+    },
+    {
+      "line": "EWL",
+      "from": "Clementi",
+      "to": "Jurong East",
+      "alignment_m": 3525,
+      "straight_m": 3249
+    },
+    {
+      "line": "EWL",
+      "from": "Jurong East",
+      "to": "Chinese Garden",
+      "alignment_m": 1497,
+      "straight_m": 1443
+    },
+    {
+      "line": "EWL",
+      "from": "Chinese Garden",
+      "to": "Lakeside",
+      "alignment_m": 1421,
+      "straight_m": 1339
+    },
+    {
+      "line": "EWL",
+      "from": "Lakeside",
+      "to": "Boon Lay",
+      "alignment_m": 1805,
+      "straight_m": 1773
+    },
+    {
+      "line": "EWL",
+      "from": "Boon Lay",
+      "to": "Pioneer",
+      "alignment_m": 1015,
+      "straight_m": 979
+    },
+    {
+      "line": "EWL",
+      "from": "Pioneer",
+      "to": "Joo Koon",
+      "alignment_m": 2638,
+      "straight_m": 2373
+    },
+    {
+      "line": "EWL",
+      "from": "Joo Koon",
+      "to": "Gul Circle",
+      "alignment_m": 2407,
+      "straight_m": 2176
+    },
+    {
+      "line": "EWL",
+      "from": "Gul Circle",
+      "to": "Tuas Crescent",
+      "alignment_m": 1667,
+      "straight_m": 1294
+    },
+    {
+      "line": "EWL",
+      "from": "Tuas Crescent",
+      "to": "Tuas West Road",
+      "alignment_m": 1469,
+      "straight_m": 1441
+    },
+    {
+      "line": "EWL",
+      "from": "Tuas West Road",
+      "to": "Tuas Link",
+      "alignment_m": 1406,
+      "straight_m": 1191
+    },
+    {
+      "line": "EWL",
+      "from": "Tanah Merah",
+      "to": "Expo",
+      "alignment_m": 2007,
+      "straight_m": 1924
+    },
+    {
+      "line": "EWL",
+      "from": "Expo",
+      "to": "Changi Airport",
+      "alignment_m": 4477,
+      "straight_m": 3832
+    },
+    {
+      "line": "NEL",
+      "from": "HarbourFront",
+      "to": "Outram Park",
+      "alignment_m": 2751,
+      "straight_m": 2613
+    },
+    {
+      "line": "NEL",
+      "from": "Outram Park",
+      "to": "Chinatown",
+      "alignment_m": 718,
+      "straight_m": 660
+    },
+    {
+      "line": "NEL",
+      "from": "Chinatown",
+      "to": "Clarke Quay",
+      "alignment_m": 577,
+      "straight_m": 539
+    },
+    {
+      "line": "NEL",
+      "from": "Clarke Quay",
+      "to": "Dhoby Ghaut",
+      "alignment_m": 1349,
+      "straight_m": 1198
+    },
+    {
+      "line": "NEL",
+      "from": "Dhoby Ghaut",
+      "to": "Little India",
+      "alignment_m": 1012,
+      "straight_m": 953
+    },
+    {
+      "line": "NEL",
+      "from": "Little India",
+      "to": "Farrer Park",
+      "alignment_m": 851,
+      "straight_m": 804
+    },
+    {
+      "line": "NEL",
+      "from": "Farrer Park",
+      "to": "Boon Keng",
+      "alignment_m": 1168,
+      "straight_m": 1131
+    },
+    {
+      "line": "NEL",
+      "from": "Boon Keng",
+      "to": "Potong Pasir",
+      "alignment_m": 1626,
+      "straight_m": 1555
+    },
+    {
+      "line": "NEL",
+      "from": "Potong Pasir",
+      "to": "Woodleigh",
+      "alignment_m": 919,
+      "straight_m": 886
+    },
+    {
+      "line": "NEL",
+      "from": "Woodleigh",
+      "to": "Serangoon",
+      "alignment_m": 1283,
+      "straight_m": 1222
+    },
+    {
+      "line": "NEL",
+      "from": "Serangoon",
+      "to": "Kovan",
+      "alignment_m": 1778,
+      "straight_m": 1742
+    },
+    {
+      "line": "NEL",
+      "from": "Kovan",
+      "to": "Hougang",
+      "alignment_m": 1571,
+      "straight_m": 1469
+    },
+    {
+      "line": "NEL",
+      "from": "Hougang",
+      "to": "Buangkok",
+      "alignment_m": 1308,
+      "straight_m": 1273
+    },
+    {
+      "line": "NEL",
+      "from": "Buangkok",
+      "to": "Sengkang",
+      "alignment_m": 1038,
+      "straight_m": 1002
+    },
+    {
+      "line": "NEL",
+      "from": "Sengkang",
+      "to": "Punggol",
+      "alignment_m": 1734,
+      "straight_m": 1692
+    },
+    {
+      "line": "NEL",
+      "from": "Punggol",
+      "to": "Punggol Coast",
+      "alignment_m": 1572,
+      "straight_m": 1392
+    },
+    {
+      "line": "CCL",
+      "from": "Promenade",
+      "to": "Nicoll Highway",
+      "alignment_m": 927,
+      "straight_m": 796
+    },
+    {
+      "line": "CCL",
+      "from": "Nicoll Highway",
+      "to": "Stadium",
+      "alignment_m": 1382,
+      "straight_m": 1347
+    },
+    {
+      "line": "CCL",
+      "from": "Stadium",
+      "to": "Mountbatten",
+      "alignment_m": 916,
+      "straight_m": 882
+    },
+    {
+      "line": "CCL",
+      "from": "Mountbatten",
+      "to": "Dakota",
+      "alignment_m": 754,
+      "straight_m": 723
+    },
+    {
+      "line": "CCL",
+      "from": "Dakota",
+      "to": "Paya Lebar",
+      "alignment_m": 1291,
+      "straight_m": 1117
+    },
+    {
+      "line": "CCL",
+      "from": "Paya Lebar",
+      "to": "MacPherson",
+      "alignment_m": 1032,
+      "straight_m": 995
+    },
+    {
+      "line": "CCL",
+      "from": "MacPherson",
+      "to": "Tai Seng",
+      "alignment_m": 1076,
+      "straight_m": 1036
+    },
+    {
+      "line": "CCL",
+      "from": "Tai Seng",
+      "to": "Bartley",
+      "alignment_m": 1314,
+      "straight_m": 1245
+    },
+    {
+      "line": "CCL",
+      "from": "Bartley",
+      "to": "Serangoon",
+      "alignment_m": 1200,
+      "straight_m": 1079
+    },
+    {
+      "line": "CCL",
+      "from": "Serangoon",
+      "to": "Lorong Chuan",
+      "alignment_m": 1097,
+      "straight_m": 1017
+    },
+    {
+      "line": "CCL",
+      "from": "Lorong Chuan",
+      "to": "Bishan",
+      "alignment_m": 1820,
+      "straight_m": 1713
+    },
+    {
+      "line": "CCL",
+      "from": "Bishan",
+      "to": "Marymount",
+      "alignment_m": 1418,
+      "straight_m": 1071
+    },
+    {
+      "line": "CCL",
+      "from": "Marymount",
+      "to": "Caldecott",
+      "alignment_m": 1276,
+      "straight_m": 1249
+    },
+    {
+      "line": "CCL",
+      "from": "Caldecott",
+      "to": "Botanic Gardens",
+      "alignment_m": 3792,
+      "straight_m": 3194
+    },
+    {
+      "line": "CCL",
+      "from": "Botanic Gardens",
+      "to": "Farrer Road",
+      "alignment_m": 1106,
+      "straight_m": 1033
+    },
+    {
+      "line": "CCL",
+      "from": "Farrer Road",
+      "to": "Holland Village",
+      "alignment_m": 1469,
+      "straight_m": 1393
+    },
+    {
+      "line": "CCL",
+      "from": "Holland Village",
+      "to": "Buona Vista",
+      "alignment_m": 896,
+      "straight_m": 867
+    },
+    {
+      "line": "CCL",
+      "from": "Buona Vista",
+      "to": "one-north",
+      "alignment_m": 885,
+      "straight_m": 853
+    },
+    {
+      "line": "CCL",
+      "from": "one-north",
+      "to": "Kent Ridge",
+      "alignment_m": 806,
+      "straight_m": 763
+    },
+    {
+      "line": "CCL",
+      "from": "Kent Ridge",
+      "to": "Haw Par Villa",
+      "alignment_m": 1365,
+      "straight_m": 1241
+    },
+    {
+      "line": "CCL",
+      "from": "Haw Par Villa",
+      "to": "Pasir Panjang",
+      "alignment_m": 1334,
+      "straight_m": 1266
+    },
+    {
+      "line": "CCL",
+      "from": "Pasir Panjang",
+      "to": "Labrador Park",
+      "alignment_m": 1387,
+      "straight_m": 1360
+    },
+    {
+      "line": "CCL",
+      "from": "Labrador Park",
+      "to": "Telok Blangah",
+      "alignment_m": 823,
+      "straight_m": 782
+    },
+    {
+      "line": "CCL",
+      "from": "Telok Blangah",
+      "to": "HarbourFront",
+      "alignment_m": 1487,
+      "straight_m": 1432
+    },
+    {
+      "line": "CCL",
+      "from": "HarbourFront",
+      "to": "Keppel",
+      "alignment_m": 1211,
+      "straight_m": 1120
+    },
+    {
+      "line": "CCL",
+      "from": "Keppel",
+      "to": "Cantonment",
+      "alignment_m": 844,
+      "straight_m": 781
+    },
+    {
+      "line": "CCL",
+      "from": "Cantonment",
+      "to": "Prince Edward Road",
+      "alignment_m": 1212,
+      "straight_m": 1171
+    },
+    {
+      "line": "CCL",
+      "from": "Prince Edward Road",
+      "to": "Marina Bay",
+      "alignment_m": 1015,
+      "straight_m": 906
+    },
+    {
+      "line": "CCL",
+      "from": "Marina Bay",
+      "to": "Bayfront",
+      "alignment_m": 848,
+      "straight_m": 814
+    },
+    {
+      "line": "CCL",
+      "from": "Bayfront",
+      "to": "Promenade",
+      "alignment_m": 1344,
+      "straight_m": 1262
+    },
+    {
+      "line": "CCL",
+      "from": "Dhoby Ghaut",
+      "to": "Bras Basah",
+      "alignment_m": 659,
+      "straight_m": 618
+    },
+    {
+      "line": "CCL",
+      "from": "Bras Basah",
+      "to": "Esplanade",
+      "alignment_m": 703,
+      "straight_m": 678
+    },
+    {
+      "line": "CCL",
+      "from": "Esplanade",
+      "to": "Promenade",
+      "alignment_m": 771,
+      "straight_m": 595
+    },
+    {
+      "line": "DTL",
+      "from": "Bukit Panjang",
+      "to": "Cashew",
+      "alignment_m": 1182,
+      "straight_m": 1138
+    },
+    {
+      "line": "DTL",
+      "from": "Cashew",
+      "to": "Hillview",
+      "alignment_m": 890,
+      "straight_m": 834
+    },
+    {
+      "line": "DTL",
+      "from": "Hillview",
+      "to": "Hume",
+      "alignment_m": 940,
+      "straight_m": 886
+    },
+    {
+      "line": "DTL",
+      "from": "Hume",
+      "to": "Beauty World",
+      "alignment_m": 1758,
+      "straight_m": 1650
+    },
+    {
+      "line": "DTL",
+      "from": "Beauty World",
+      "to": "King Albert Park",
+      "alignment_m": 1165,
+      "straight_m": 1087
+    },
+    {
+      "line": "DTL",
+      "from": "King Albert Park",
+      "to": "Sixth Avenue",
+      "alignment_m": 1616,
+      "straight_m": 1590
+    },
+    {
+      "line": "DTL",
+      "from": "Sixth Avenue",
+      "to": "Tan Kah Kee",
+      "alignment_m": 1279,
+      "straight_m": 1239
+    },
+    {
+      "line": "DTL",
+      "from": "Tan Kah Kee",
+      "to": "Botanic Gardens",
+      "alignment_m": 1047,
+      "straight_m": 991
+    },
+    {
+      "line": "DTL",
+      "from": "Botanic Gardens",
+      "to": "Stevens",
+      "alignment_m": 1261,
+      "straight_m": 1179
+    },
+    {
+      "line": "DTL",
+      "from": "Stevens",
+      "to": "Newton",
+      "alignment_m": 1710,
+      "straight_m": 1555
+    },
+    {
+      "line": "DTL",
+      "from": "Newton",
+      "to": "Little India",
+      "alignment_m": 1470,
+      "straight_m": 1409
+    },
+    {
+      "line": "DTL",
+      "from": "Little India",
+      "to": "Rochor",
+      "alignment_m": 557,
+      "straight_m": 498
+    },
+    {
+      "line": "DTL",
+      "from": "Rochor",
+      "to": "Bugis",
+      "alignment_m": 631,
+      "straight_m": 599
+    },
+    {
+      "line": "DTL",
+      "from": "Bugis",
+      "to": "Promenade",
+      "alignment_m": 1024,
+      "straight_m": 933
+    },
+    {
+      "line": "DTL",
+      "from": "Promenade",
+      "to": "Bayfront",
+      "alignment_m": 1344,
+      "straight_m": 1262
+    },
+    {
+      "line": "DTL",
+      "from": "Bayfront",
+      "to": "Downtown",
+      "alignment_m": 917,
+      "straight_m": 743
+    },
+    {
+      "line": "DTL",
+      "from": "Downtown",
+      "to": "Telok Ayer",
+      "alignment_m": 617,
+      "straight_m": 595
+    },
+    {
+      "line": "DTL",
+      "from": "Telok Ayer",
+      "to": "Chinatown",
+      "alignment_m": 596,
+      "straight_m": 544
+    },
+    {
+      "line": "DTL",
+      "from": "Chinatown",
+      "to": "Fort Canning",
+      "alignment_m": 1023,
+      "straight_m": 886
+    },
+    {
+      "line": "DTL",
+      "from": "Fort Canning",
+      "to": "Bencoolen",
+      "alignment_m": 991,
+      "straight_m": 955
+    },
+    {
+      "line": "DTL",
+      "from": "Bencoolen",
+      "to": "Jalan Besar",
+      "alignment_m": 962,
+      "straight_m": 935
+    },
+    {
+      "line": "DTL",
+      "from": "Jalan Besar",
+      "to": "Bendemeer",
+      "alignment_m": 1298,
+      "straight_m": 1234
+    },
+    {
+      "line": "DTL",
+      "from": "Bendemeer",
+      "to": "Geylang Bahru",
+      "alignment_m": 1384,
+      "straight_m": 1328
+    },
+    {
+      "line": "DTL",
+      "from": "Geylang Bahru",
+      "to": "Mattar",
+      "alignment_m": 1527,
+      "straight_m": 1394
+    },
+    {
+      "line": "DTL",
+      "from": "Mattar",
+      "to": "MacPherson",
+      "alignment_m": 795,
+      "straight_m": 740
+    },
+    {
+      "line": "DTL",
+      "from": "MacPherson",
+      "to": "Ubi",
+      "alignment_m": 1147,
+      "straight_m": 1120
+    },
+    {
+      "line": "DTL",
+      "from": "Ubi",
+      "to": "Kaki Bukit",
+      "alignment_m": 1212,
+      "straight_m": 1165
+    },
+    {
+      "line": "DTL",
+      "from": "Kaki Bukit",
+      "to": "Bedok North",
+      "alignment_m": 1140,
+      "straight_m": 1049
+    },
+    {
+      "line": "DTL",
+      "from": "Bedok North",
+      "to": "Bedok Reservoir",
+      "alignment_m": 1708,
+      "straight_m": 1617
+    },
+    {
+      "line": "DTL",
+      "from": "Bedok Reservoir",
+      "to": "Tampines West",
+      "alignment_m": 1699,
+      "straight_m": 1200
+    },
+    {
+      "line": "DTL",
+      "from": "Tampines West",
+      "to": "Tampines",
+      "alignment_m": 1405,
+      "straight_m": 1151
+    },
+    {
+      "line": "DTL",
+      "from": "Tampines",
+      "to": "Tampines East",
+      "alignment_m": 1433,
+      "straight_m": 1222
+    },
+    {
+      "line": "DTL",
+      "from": "Tampines East",
+      "to": "Upper Changi",
+      "alignment_m": 2632,
+      "straight_m": 1764
+    },
+    {
+      "line": "DTL",
+      "from": "Upper Changi",
+      "to": "Expo",
+      "alignment_m": 838,
+      "straight_m": 751
+    },
+    {
+      "line": "TEL",
+      "from": "Woodlands North",
+      "to": "Woodlands",
+      "alignment_m": 1505,
+      "straight_m": 1337
+    },
+    {
+      "line": "TEL",
+      "from": "Woodlands",
+      "to": "Woodlands South",
+      "alignment_m": 1485,
+      "straight_m": 1264
+    },
+    {
+      "line": "TEL",
+      "from": "Woodlands South",
+      "to": "Springleaf",
+      "alignment_m": 4401,
+      "straight_m": 4174
+    },
+    {
+      "line": "TEL",
+      "from": "Springleaf",
+      "to": "Lentor",
+      "alignment_m": 2600,
+      "straight_m": 2515
+    },
+    {
+      "line": "TEL",
+      "from": "Lentor",
+      "to": "Mayflower",
+      "alignment_m": 1673,
+      "straight_m": 1419
+    },
+    {
+      "line": "TEL",
+      "from": "Mayflower",
+      "to": "Bright Hill",
+      "alignment_m": 1143,
+      "straight_m": 1067
+    },
+    {
+      "line": "TEL",
+      "from": "Bright Hill",
+      "to": "Upper Thomson",
+      "alignment_m": 1434,
+      "straight_m": 980
+    },
+    {
+      "line": "TEL",
+      "from": "Upper Thomson",
+      "to": "Caldecott",
+      "alignment_m": 2129,
+      "straight_m": 2022
+    },
+    {
+      "line": "TEL",
+      "from": "Caldecott",
+      "to": "Stevens",
+      "alignment_m": 3027,
+      "straight_m": 2518
+    },
+    {
+      "line": "TEL",
+      "from": "Stevens",
+      "to": "Napier",
+      "alignment_m": 1731,
+      "straight_m": 1614
+    },
+    {
+      "line": "TEL",
+      "from": "Napier",
+      "to": "Orchard Boulevard",
+      "alignment_m": 904,
+      "straight_m": 702
+    },
+    {
+      "line": "TEL",
+      "from": "Orchard Boulevard",
+      "to": "Orchard",
+      "alignment_m": 995,
+      "straight_m": 875
+    },
+    {
+      "line": "TEL",
+      "from": "Orchard",
+      "to": "Great World",
+      "alignment_m": 1090,
+      "straight_m": 983
+    },
+    {
+      "line": "TEL",
+      "from": "Great World",
+      "to": "Havelock",
+      "alignment_m": 729,
+      "straight_m": 673
+    },
+    {
+      "line": "TEL",
+      "from": "Havelock",
+      "to": "Outram Park",
+      "alignment_m": 1184,
+      "straight_m": 1070
+    },
+    {
+      "line": "TEL",
+      "from": "Outram Park",
+      "to": "Maxwell",
+      "alignment_m": 562,
+      "straight_m": 511
+    },
+    {
+      "line": "TEL",
+      "from": "Maxwell",
+      "to": "Shenton Way",
+      "alignment_m": 871,
+      "straight_m": 815
+    },
+    {
+      "line": "TEL",
+      "from": "Shenton Way",
+      "to": "Marina Bay",
+      "alignment_m": 587,
+      "straight_m": 530
+    },
+    {
+      "line": "TEL",
+      "from": "Marina Bay",
+      "to": "Gardens by the Bay",
+      "alignment_m": 1972,
+      "straight_m": 1484
+    },
+    {
+      "line": "TEL",
+      "from": "Gardens by the Bay",
+      "to": "Tanjong Rhu",
+      "alignment_m": 2741,
+      "straight_m": 2092
+    },
+    {
+      "line": "TEL",
+      "from": "Tanjong Rhu",
+      "to": "Katong Park",
+      "alignment_m": 1455,
+      "straight_m": 1418
+    },
+    {
+      "line": "TEL",
+      "from": "Katong Park",
+      "to": "Tanjong Katong",
+      "alignment_m": 1337,
+      "straight_m": 1266
+    },
+    {
+      "line": "TEL",
+      "from": "Tanjong Katong",
+      "to": "Marine Parade",
+      "alignment_m": 1208,
+      "straight_m": 1131
+    },
+    {
+      "line": "TEL",
+      "from": "Marine Parade",
+      "to": "Marine Terrace",
+      "alignment_m": 1044,
+      "straight_m": 1021
+    },
+    {
+      "line": "TEL",
+      "from": "Marine Terrace",
+      "to": "Siglap",
+      "alignment_m": 1705,
+      "straight_m": 1656
+    },
+    {
+      "line": "TEL",
+      "from": "Siglap",
+      "to": "Bayshore",
+      "alignment_m": 1435,
+      "straight_m": 1389
+    }
+  ]
+}

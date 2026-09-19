@@ -1,0 +1,212 @@
+{
+  "subsystem": "shm",
+  "model_name": "Rainflow moment surrogate",
+  "trained_at": "2026-09-17T11:51:10.653821+00:00",
+  "training_files": 64,
+  "training_rows": 37191680,
+  "feature_version": "shm-rainflow-v1",
+  "feature_names": [
+    "log_sample_count",
+    "mean_stress",
+    "log_abs_mean",
+    "log_rms",
+    "log_std",
+    "log_peak_to_peak",
+    "log_abs_p50",
+    "log_abs_p90",
+    "log_abs_p99",
+    "log_abs_peak",
+    "kurtosis",
+    "log_total_variation",
+    "log_rainflow_count",
+    "rainflow_cycles_per_sample",
+    "log_range_weighted_mean",
+    "log_range_max",
+    "log_cycle_abs_mean_stress",
+    "log_rainflow_amplitude_moment_2",
+    "log_rainflow_amplitude_moment_3",
+    "log_rainflow_amplitude_moment_4",
+    "log_rainflow_amplitude_moment_5",
+    "log_rainflow_amplitude_moment_6",
+    "log_rainflow_amplitude_moment_7",
+    "log_rainflow_amplitude_moment_8",
+    "log_range_q50",
+    "log_range_q90",
+    "log_range_q99"
+  ],
+  "feature_count": 27,
+  "validation": {
+    "metric": "max(0, 1 - MAPE)",
+    "score": 0.9735893090002781,
+    "mape": 0.026410690999721882,
+    "method": "5-fold GroupKFold on whole training files, shuffled seed 42; exact/near-identical waveforms grouped; candidate transformations fitted within each fold; final selected estimator fitted to all training files",
+    "candidates": [
+      {
+        "name": "Training-median constant",
+        "score": 0.06688665095905288,
+        "mape": 0.9331133490409471,
+        "fold_scores": [
+          0.10230368321630479,
+          0.0,
+          0.08608288994070001,
+          0.22536617064987352,
+          0.11378337147751771
+        ],
+        "mae": 0.18010451431250002,
+        "rmse": 0.29241437469251663
+      },
+      {
+        "name": "Regularized log-damage regression",
+        "score": 0.9199592554828311,
+        "mape": 0.08004074451716892,
+        "fold_scores": [
+          0.928505904304772,
+          0.9160611311955585,
+          0.9136216262377218,
+          0.9218794894871687,
+          0.9197088654144431
+        ],
+        "mae": 0.01950609839156516,
+        "rmse": 0.03604933965640238
+      },
+      {
+        "name": "Rainflow moment surrogate",
+        "score": 0.9735893090002781,
+        "mape": 0.026410690999721882,
+        "fold_scores": [
+          0.9750132133232501,
+          0.9767316604185807,
+          0.9616160742849562,
+          0.9794131521877861,
+          0.975304372769029
+        ],
+        "mae": 0.0046030787252385585,
+        "rmse": 0.007418390661093312
+      },
+      {
+        "name": "Extra Trees damage regression",
+        "score": 0.931953339432728,
+        "mape": 0.06804666056727199,
+        "fold_scores": [
+          0.9310869946513202,
+          0.9306158227422918,
+          0.9472476935702488,
+          0.9258896819884709,
+          0.9243409346095235
+        ],
+        "mae": 0.01768959683734047,
+        "rmse": 0.034233009222170194
+      },
+      {
+        "name": "XGBoost log-damage regression",
+        "score": 0.8731242294307064,
+        "mape": 0.1268757705692935,
+        "fold_scores": [
+          0.8459590669430759,
+          0.8661371413277899,
+          0.9044677024180432,
+          0.8544757873289249,
+          0.8963695507777811
+        ],
+        "mae": 0.03960906283947804,
+        "rmse": 0.08083142459663155
+      }
+    ],
+    "limitations": [
+      "Whole-file grouped validation on the 64 labelled organiser training records; official held-out test scores are unavailable.",
+      "Candidate selection uses these same out-of-fold results, so the selected validation score has model-selection optimism and is not independent outer-test performance.",
+      "Exact and conservative near-identical waveform matches stay in one fold; line/load/acquisition-group identifiers are unavailable, so residual dependence cannot be excluded.",
+      "The source signals represent healthy operating conditions. Damage is not a structural-fault label, failure probability or remaining useful life.",
+      "Stress unit, sampling frequency and material S-N constants are unspecified. Rainflow ranges use raw units; fitted moment coefficients are statistical surrogates, not verified material constants."
+    ]
+  },
+  "limitations": [
+    "Whole-file grouped validation on the 64 labelled organiser training records; official held-out test scores are unavailable.",
+    "Candidate selection uses these same out-of-fold results, so the selected validation score has model-selection optimism and is not independent outer-test performance.",
+    "Exact and conservative near-identical waveform matches stay in one fold; line/load/acquisition-group identifiers are unavailable, so residual dependence cannot be excluded.",
+    "The source signals represent healthy operating conditions. Damage is not a structural-fault label, failure probability or remaining useful life.",
+    "Stress unit, sampling frequency and material S-N constants are unspecified. Rainflow ranges use raw units; fitted moment coefficients are statistical surrogates, not verified material constants."
+  ],
+  "duplicate_links": [],
+  "independent_groups": 64,
+  "training_sample_counts": [
+    581120
+  ],
+  "training_target_range": [
+    0.028620288,
+    0.928338975
+  ],
+  "source_hashes": {
+    "train01.csv": "68cd1381297c674e829b54fcd3247fe3f5c8814360df5d031ee8e0d8486a76d9",
+    "train02.csv": "0111b9881f241b073b0721d22beab45ce40b453004711f1e3acfec2a647f76c8",
+    "train03.csv": "ef138b82523fced486fdb75fdbca94ca79a93fe3f7ad5af2295a4eed470ca12f",
+    "train04.csv": "13fd57974902c0b25f3010096926fa337977cb0e29cd386adcf65c5dc4d8b7f5",
+    "train05.csv": "7ac0fbd7e95ddc8d620f7b920e63882846a408d6f09f72d0ef70bc7d0de075c9",
+    "train06.csv": "d820df156e339a19ed3bee45299c453498468d3ed9e1a11eab513e167efa1d78",
+    "train07.csv": "1b0ccc57fa076a5bfc2ca915aeab89fb47a4cb32fd11e36c0e63a28fb5edb448",
+    "train08.csv": "709c3e36bf608a8380f451efc1c8cffef7a210e6bb81d95ecb025eb79537b5a8",
+    "train09.csv": "72423bbd57fc25f1579ff5187184c14d5d04be4201806245da90c87dcd8cc5e6",
+    "train10.csv": "83040203e5f2f1d53446372222801edbee4f627a3c0a6d793935ba8b67753b6d",
+    "train11.csv": "5e2611d31c621e29cf6d862059b37f13a0b2cea0fdcc6fcc5e82c5e8d4e83fcc",
+    "train12.csv": "8521e08bc870292a19b8becdade28c9b4a98fc337d47221658bbbf8118e6460e",
+    "train13.csv": "c90930b0920e5179f6bd8a4f5c1043703c280aa37208b362ab2241015a173ddc",
+    "train14.csv": "e89b93a1e55a542f2cc25f301784669e4d0aafaa7d890038ef06559e56d3a7cc",
+    "train15.csv": "c1bd0b608a6b1a97473013980f59a7bf17527213fe71c2ba77e429dea57784ac",
+    "train16.csv": "2749a6fd3d6313b28f6f7f23f48f1ef41731b84c4fce422c44bcef4d7a0e870d",
+    "train17.csv": "ac5b02e5e6912aec8e92faf69fde16a730da8bfc135559abb016d6214e758b9a",
+    "train18.csv": "f1f754922fef27fde8313d260ce9b85a850a15e852458db58754fb00b9b9436e",
+    "train19.csv": "7c81a9d5b4fd9ea1360b25c112d5c07aaab7be621eacd6eceefa5a973f4d79e5",
+    "train20.csv": "612d4c05bb4a0bfe83b69603d36224103ea39e3f334b5bf6a5cf5a85606cb9db",
+    "train21.csv": "a609b7c7401e8c7448671f037d33ffdc7246716d7a25ac3692887a3133d8e98d",
+    "train22.csv": "fde1223504a701633aae955a91c41b12610aa1ef9dd3ce9a6b576942eb3e9996",
+    "train23.csv": "29c12efe085cfd796e0d8cc9927b8bc39abd83a1eb89216a68add56b513921a7",
+    "train24.csv": "f215cf6da442f42b85b440e4f773cdb270b1a3b4a1b7fc7d31d85088e7aaa7e7",
+    "train25.csv": "c9f7cbbbab6f00faafdbc3a91348687397b27cb0f6f348065ee41d655a6fefc9",
+    "train26.csv": "25cf84c9e288a3055cecaee7f7ed79f4ca7dea613a321d1874e721294afa2218",
+    "train27.csv": "8959229db96ac0181c6a53a3dc16df32f661c4fbf48a8ee1efe0392f195c70fc",
+    "train28.csv": "1757a7892bf34fc6347f3a12b73ef088d794c6532a591b719172d172da85ded6",
+    "train29.csv": "975eb3301f269ad2c3ce7674fa56c380baae286753da77affbcf361a62a3a632",
+    "train30.csv": "4865507f8fecf7f5c3543849bd78f88a65bb19db8560a0e57813ee8422f2b026",
+    "train31.csv": "4422df825fafbb34d2ec55d5bb29c4dd1c0b247a987aa2f9457183e61f0f1c0d",
+    "train32.csv": "4bbbba8ac741fb7cd7d4568bada1ccc744fc24ac9c8a38e91a68ab3c8d64c53c",
+    "train33.csv": "e62d17861f7c4aa192aa6516a9e3653f61fca26fd8e77ddf55b28e9b8885f986",
+    "train34.csv": "7e3f0a1e995d44243882b52f12fc65f7143a70c722fc21f64e3e1bfdb9dc5ac0",
+    "train35.csv": "162721798c9c1d9ca827a29b4ec3637d87e17f4e313c09c9eb6f78a5782627ac",
+    "train36.csv": "f98f13c482f7416f457ff48f651e54451888e1263739637376aa70c523c8de83",
+    "train37.csv": "72d094df2df88fcb88cd0fdd23431adfcb0a8c1461b048a4047567c6707df2f0",
+    "train38.csv": "276860a76875f6bbba85016605d49fed4f3f3df62d7f4e84f0bc5f505a6c5152",
+    "train39.csv": "fc86fe60026e255053e7d331440436c95e734489a098c121548a7a8222b56470",
+    "train40.csv": "d9cd2b0c67f9c92fc8f8624551320e5581515fa0ae5887bd4ceb1ef30ec9dc05",
+    "train41.csv": "25d6d0927d9fe3eec6f9a8613bfa3c41e2569ca24c78076836ce281598176611",
+    "train42.csv": "0096da2a287b845b0ded1a084b5f06cc176fb8061ed1d601ad178f0fc5577b76",
+    "train43.csv": "921a4d6bd2bb481f65300a5688e3c47861973eabecd356665ccd5cf208f92c39",
+    "train44.csv": "b44e3f6968db5a238be28f1877a7069132b8d7adefe44ec5a46eeb8a5b5d847c",
+    "train45.csv": "cb5c57f481c468ab2ee1b9ddbba15e6e91a09a0661302af5c20b034e5a11be51",
+    "train46.csv": "90be825cc88b8b59aa8a165abb56a5e89d550c0c00d7c4351795cf649b903713",
+    "train47.csv": "25695bb2ff65ef08d2c86e28fcebea5ff77748222873a2d433129b1cd147abbc",
+    "train48.csv": "0db9b4f41ea4d12531b521fa8f489f39203018124937095c0b22e6dbefbd016c",
+    "train49.csv": "b6c346103d440b549b723b943cebe3850578314fac917415e2ba6bee24ce0c3f",
+    "train50.csv": "9467665ca4d1277600cdc89876b1e18ec511893e741b6a2a0fa5f2b556abf23e",
+    "train51.csv": "c2e6b4eebb03bc11988f4fd0c9b14b49a783fd396f59db7607a3ce707ab9f5fd",
+    "train52.csv": "5c2115b7e099a107ae1fb4e188560ee0f9ee6d540ed9f12f449c1d6ab251440c",
+    "train53.csv": "bd0ab24b60803f3fa9aac4ca9874dbe8dc3e61a138585bdeb8fccec64b9a402c",
+    "train54.csv": "d5db06f20e6dfc5ebf1391799fa59725dbd32b2c06ada5436f4c1351e67202e6",
+    "train55.csv": "77b15d887456fa2f672aa5310aff41899ae3f83754317a8a07e0818fe015d6ef",
+    "train56.csv": "4522fb2810a4a07ff9f41bd3747a35998bac420aa03ee9189173bb76211e2dc2",
+    "train57.csv": "85f2f32f0a0761906eb936ed72bae30c73296f10d997b723efa17efccb3fe8d0",
+    "train58.csv": "32133702c9246f52c033266a652dca3377de6413b47745d9fdc946119ccf7097",
+    "train59.csv": "7ec652b89c2be96f1d6cc752c135162f7c3a09d6a07c11805e73b941a1009331",
+    "train60.csv": "e37275d2b279e996d19b39756c9ea42f8652c6fb933cb3d671de95de04475179",
+    "train61.csv": "163e4f4ae238b3bc6a7f1eb2b53b8db1160023851ce1c9324361d88094c2c6b0",
+    "train62.csv": "db8ce4f817e9245f2ca5bb99aec2032014278a4843e8e78629953a9695faabe2",
+    "train63.csv": "47e221737819c875255b9879183f400e00a508883a032820aabe6f46026e8d94",
+    "train64.csv": "8a57977c300012f93cdcca1bcee7daa315ce22753f772fb065f6e65d7c4d258e"
+  },
+  "labels_sha256": "6b358df85860ad29b21acdf3f4a68795c5874852222a97e5e110b657e260eead",
+  "selected_model_parameters": {
+    "rainflow_amplitude_power": 5,
+    "fitted_scale": 1.3602318550841202e-09,
+    "meaning": "Empirically fitted moment and scale; not independently known material S-N parameters"
+  },
+  "model_sha256": "2cd3ab97f0f28231c4d684dd08cc25ff94b09d65c38df50c15c5553163ef8ff7"
+}

@@ -1,0 +1,998 @@
+{
+  "reviewed_at": "2026-09-18T16:39:11.487179+00:00",
+  "decision": "Retain installed Class-weighted XGBoost; no tested replacement improves macro F1 or Side I recall.",
+  "installed_model_sha256": "80b9c15ea8f5a53c8fe085bfcbbcab9d5218085bceb5ceee440537a783ab3941",
+  "candidates": [
+    {
+      "name": "Balanced logistic regression",
+      "score": 0.6364559367470902,
+      "accuracy": 0.9044117647058824,
+      "fold_scores": [
+        0.7286501377410467,
+        0.6540465184532981,
+        0.5166666666666666,
+        0.6773946360153257
+      ],
+      "per_class": {
+        "Normal": {
+          "precision": 0.941908713692946,
+          "recall": 0.9700854700854701,
+          "f1-score": 0.9557894736842105,
+          "support": 234.0
+        },
+        "Side I": {
+          "precision": 0.375,
+          "recall": 0.21428571428571427,
+          "f1-score": 0.2727272727272727,
+          "support": 14.0
+        },
+        "Side II": {
+          "precision": 0.6956521739130435,
+          "recall": 0.6666666666666666,
+          "f1-score": 0.6808510638297872,
+          "support": 24.0
+        },
+        "accuracy": 0.9044117647058824,
+        "macro avg": {
+          "precision": 0.6708536292019964,
+          "recall": 0.617012617012617,
+          "f1-score": 0.6364559367470902,
+          "support": 272.0
+        },
+        "weighted avg": {
+          "precision": 0.8910010705075824,
+          "recall": 0.9044117647058824,
+          "f1-score": 0.896372588941919,
+          "support": 272.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          227,
+          3,
+          4
+        ],
+        [
+          8,
+          3,
+          3
+        ],
+        [
+          6,
+          2,
+          16
+        ]
+      ]
+    },
+    {
+      "name": "Balanced Extra Trees",
+      "score": 0.5246753246753246,
+      "accuracy": 0.9007352941176471,
+      "fold_scores": [
+        0.539426523297491,
+        0.586449864498645,
+        0.478494623655914,
+        0.478494623655914
+      ],
+      "per_class": {
+        "Normal": {
+          "precision": 0.896551724137931,
+          "recall": 1.0,
+          "f1-score": 0.9454545454545454,
+          "support": 234.0
+        },
+        "Side I": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 14.0
+        },
+        "Side II": {
+          "precision": 1.0,
+          "recall": 0.4583333333333333,
+          "f1-score": 0.6285714285714286,
+          "support": 24.0
+        },
+        "accuracy": 0.9007352941176471,
+        "macro avg": {
+          "precision": 0.632183908045977,
+          "recall": 0.4861111111111111,
+          "f1-score": 0.5246753246753246,
+          "support": 272.0
+        },
+        "weighted avg": {
+          "precision": 0.8595334685598378,
+          "recall": 0.9007352941176471,
+          "f1-score": 0.8688311688311687,
+          "support": 272.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          234,
+          0,
+          0
+        ],
+        [
+          14,
+          0,
+          0
+        ],
+        [
+          13,
+          0,
+          11
+        ]
+      ]
+    },
+    {
+      "name": "Class-weighted XGBoost",
+      "score": 0.7857466383581033,
+      "accuracy": 0.9338235294117647,
+      "fold_scores": [
+        0.7424046541693601,
+        0.8485958485958486,
+        0.6341269841269841,
+        0.8960662525879917
+      ],
+      "per_class": {
+        "Normal": {
+          "precision": 0.9578059071729957,
+          "recall": 0.9700854700854701,
+          "f1-score": 0.9639065817409767,
+          "support": 234.0
+        },
+        "Side I": {
+          "precision": 0.6363636363636364,
+          "recall": 0.5,
+          "f1-score": 0.56,
+          "support": 14.0
+        },
+        "Side II": {
+          "precision": 0.8333333333333334,
+          "recall": 0.8333333333333334,
+          "f1-score": 0.8333333333333334,
+          "support": 24.0
+        },
+        "accuracy": 0.9338235294117647,
+        "macro avg": {
+          "precision": 0.8091676256233219,
+          "recall": 0.7678062678062679,
+          "f1-score": 0.7857466383581033,
+          "support": 272.0
+        },
+        "weighted avg": {
+          "precision": 0.9302782102484262,
+          "recall": 0.9338235294117647,
+          "f1-score": 0.9315961034095167,
+          "support": 272.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          227,
+          3,
+          4
+        ],
+        [
+          7,
+          7,
+          0
+        ],
+        [
+          3,
+          1,
+          20
+        ]
+      ]
+    },
+    {
+      "name": "Normal-reference side Isolation Forest",
+      "score": 0.2896742896742897,
+      "accuracy": 0.7683823529411765,
+      "fold_scores": [
+        0.29508196721311475,
+        0.29201101928374656,
+        0.2888888888888889,
+        0.2824858757062147
+      ],
+      "per_class": {
+        "Normal": {
+          "precision": 0.8461538461538461,
+          "recall": 0.8931623931623932,
+          "f1-score": 0.8690228690228691,
+          "support": 234.0
+        },
+        "Side I": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 14.0
+        },
+        "Side II": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 24.0
+        },
+        "accuracy": 0.7683823529411765,
+        "macro avg": {
+          "precision": 0.28205128205128205,
+          "recall": 0.29772079772079774,
+          "f1-score": 0.2896742896742897,
+          "support": 272.0
+        },
+        "weighted avg": {
+          "precision": 0.7279411764705882,
+          "recall": 0.7683823529411765,
+          "f1-score": 0.7476152623211447,
+          "support": 272.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          209,
+          10,
+          15
+        ],
+        [
+          14,
+          0,
+          0
+        ],
+        [
+          24,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "Balanced RBF SVM, all features",
+      "score": 0.5894325874832698,
+      "accuracy": 0.8933823529411765,
+      "fold_scores": [
+        0.6291779584462511,
+        0.5836065573770491,
+        0.5362718089990817,
+        0.6262626262626263
+      ],
+      "per_class": {
+        "Normal": {
+          "precision": 0.9087301587301587,
+          "recall": 0.9786324786324786,
+          "f1-score": 0.9423868312757202,
+          "support": 234.0
+        },
+        "Side I": {
+          "precision": 0.4,
+          "recall": 0.14285714285714285,
+          "f1-score": 0.21052631578947367,
+          "support": 14.0
+        },
+        "Side II": {
+          "precision": 0.8,
+          "recall": 0.5,
+          "f1-score": 0.6153846153846154,
+          "support": 24.0
+        },
+        "accuracy": 0.8933823529411765,
+        "macro avg": {
+          "precision": 0.7029100529100529,
+          "recall": 0.5404965404965405,
+          "f1-score": 0.5894325874832698,
+          "support": 272.0
+        },
+        "weighted avg": {
+          "precision": 0.8729516806722688,
+          "recall": 0.8933823529411765,
+          "f1-score": 0.8758644033411835,
+          "support": 272.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          229,
+          2,
+          3
+        ],
+        [
+          12,
+          2,
+          0
+        ],
+        [
+          11,
+          1,
+          12
+        ]
+      ]
+    },
+    {
+      "name": "Balanced RBF SVM, side summaries",
+      "score": 0.5945033879648661,
+      "accuracy": 0.875,
+      "fold_scores": [
+        0.5140495867768595,
+        0.547987117552335,
+        0.6672364672364672,
+        0.61767925561029
+      ],
+      "per_class": {
+        "Normal": {
+          "precision": 0.9404255319148936,
+          "recall": 0.9444444444444444,
+          "f1-score": 0.9424307036247335,
+          "support": 234.0
+        },
+        "Side I": {
+          "precision": 0.26666666666666666,
+          "recall": 0.2857142857142857,
+          "f1-score": 0.27586206896551724,
+          "support": 14.0
+        },
+        "Side II": {
+          "precision": 0.5909090909090909,
+          "recall": 0.5416666666666666,
+          "f1-score": 0.5652173913043478,
+          "support": 24.0
+        },
+        "accuracy": 0.875,
+        "macro avg": {
+          "precision": 0.5993337631635504,
+          "recall": 0.5906084656084656,
+          "f1-score": 0.5945033879648661,
+          "support": 272.0
+        },
+        "weighted avg": {
+          "precision": 0.8749070808207229,
+          "recall": 0.875,
+          "f1-score": 0.8748384963419457,
+          "support": 272.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          221,
+          7,
+          6
+        ],
+        [
+          7,
+          4,
+          3
+        ],
+        [
+          7,
+          4,
+          13
+        ]
+      ]
+    },
+    {
+      "name": "Balanced Extra Trees, leaf size 1",
+      "score": 0.47991967871485947,
+      "accuracy": 0.8897058823529411,
+      "fold_scores": [
+        0.48133333333333334,
+        0.586449864498645,
+        0.4045714285714286,
+        0.4045714285714286
+      ],
+      "per_class": {
+        "Normal": {
+          "precision": 0.8863636363636364,
+          "recall": 1.0,
+          "f1-score": 0.9397590361445783,
+          "support": 234.0
+        },
+        "Side I": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 14.0
+        },
+        "Side II": {
+          "precision": 1.0,
+          "recall": 0.3333333333333333,
+          "f1-score": 0.5,
+          "support": 24.0
+        },
+        "accuracy": 0.8897058823529411,
+        "macro avg": {
+          "precision": 0.6287878787878788,
+          "recall": 0.4444444444444444,
+          "f1-score": 0.47991967871485947,
+          "support": 272.0
+        },
+        "weighted avg": {
+          "precision": 0.85076871657754,
+          "recall": 0.8897058823529411,
+          "f1-score": 0.852586817859674,
+          "support": 272.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          234,
+          0,
+          0
+        ],
+        [
+          14,
+          0,
+          0
+        ],
+        [
+          16,
+          0,
+          8
+        ]
+      ]
+    }
+  ],
+  "nested_validation": {
+    "metric": "macro_f1",
+    "score": 0.7857466383581033,
+    "accuracy": 0.9338235294117647,
+    "correct": 254,
+    "total": 272,
+    "method": "Retrospective nested grouped selection audit: 4 whole-file outer folds (seed 42), 3 inner grouped folds (seed 31415 + outer index), fold-fitted preprocessing; highest inner OOF macro F1 selects among 7 predeclared candidates. Duplicate groups stay together at both levels. All outer folds selected XGBoost.",
+    "limitations": [
+      "Train data has already been inspected during earlier model development; nested audit is retrospective.",
+      "Only 14 Side I recordings constrain fault recall estimates.",
+      "Exact and conservative near-duplicate groups are enforced; unknown shared acquisition runs may remain.",
+      "No performance claim about official Test data or operational railways can be inferred.",
+      "No candidate is promoted automatically; installed artifacts stay unchanged."
+    ],
+    "per_class": {
+      "Normal": {
+        "precision": 0.9578059071729957,
+        "recall": 0.9700854700854701,
+        "f1-score": 0.9639065817409767,
+        "support": 234.0
+      },
+      "Side I": {
+        "precision": 0.6363636363636364,
+        "recall": 0.5,
+        "f1-score": 0.56,
+        "support": 14.0
+      },
+      "Side II": {
+        "precision": 0.8333333333333334,
+        "recall": 0.8333333333333334,
+        "f1-score": 0.8333333333333334,
+        "support": 24.0
+      },
+      "accuracy": 0.9338235294117647,
+      "macro avg": {
+        "precision": 0.8091676256233219,
+        "recall": 0.7678062678062679,
+        "f1-score": 0.7857466383581033,
+        "support": 272.0
+      },
+      "weighted avg": {
+        "precision": 0.9302782102484262,
+        "recall": 0.9338235294117647,
+        "f1-score": 0.9315961034095167,
+        "support": 272.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        227,
+        3,
+        4
+      ],
+      [
+        7,
+        7,
+        0
+      ],
+      [
+        3,
+        1,
+        20
+      ]
+    ],
+    "baseline_selection_score": 0.7857466383581033,
+    "candidate_count": 7,
+    "baseline_candidate_count": 4,
+    "folds": [
+      {
+        "outer_fold": 0,
+        "existing_candidate_selection": {
+          "candidate": "Class-weighted XGBoost",
+          "inner_macro_f1": 0.738838848496011,
+          "outer_result": {
+            "macro_f1": 0.7424046541693601,
+            "accuracy": 0.9264705882352942,
+            "correct": 63,
+            "total": 68,
+            "confusion_matrix": [
+              [
+                57,
+                0,
+                2
+              ],
+              [
+                2,
+                1,
+                0
+              ],
+              [
+                1,
+                0,
+                5
+              ]
+            ],
+            "per_class": {
+              "Normal": {
+                "precision": 0.95,
+                "recall": 0.9661016949152542,
+                "f1-score": 0.957983193277311,
+                "support": 59.0
+              },
+              "Side I": {
+                "precision": 1.0,
+                "recall": 0.3333333333333333,
+                "f1-score": 0.5,
+                "support": 3.0
+              },
+              "Side II": {
+                "precision": 0.7142857142857143,
+                "recall": 0.8333333333333334,
+                "f1-score": 0.7692307692307693,
+                "support": 6.0
+              },
+              "accuracy": 0.9264705882352942,
+              "macro avg": {
+                "precision": 0.888095238095238,
+                "recall": 0.7109227871939736,
+                "f1-score": 0.7424046541693601,
+                "support": 68.0
+              },
+              "weighted avg": {
+                "precision": 0.93140756302521,
+                "recall": 0.9264705882352942,
+                "f1-score": 0.9211234267462641,
+                "support": 68.0
+              }
+            }
+          }
+        },
+        "expanded_candidate_selection": {
+          "candidate": "Class-weighted XGBoost",
+          "inner_macro_f1": 0.738838848496011,
+          "outer_result": {
+            "macro_f1": 0.7424046541693601,
+            "accuracy": 0.9264705882352942,
+            "correct": 63,
+            "total": 68,
+            "confusion_matrix": [
+              [
+                57,
+                0,
+                2
+              ],
+              [
+                2,
+                1,
+                0
+              ],
+              [
+                1,
+                0,
+                5
+              ]
+            ],
+            "per_class": {
+              "Normal": {
+                "precision": 0.95,
+                "recall": 0.9661016949152542,
+                "f1-score": 0.957983193277311,
+                "support": 59.0
+              },
+              "Side I": {
+                "precision": 1.0,
+                "recall": 0.3333333333333333,
+                "f1-score": 0.5,
+                "support": 3.0
+              },
+              "Side II": {
+                "precision": 0.7142857142857143,
+                "recall": 0.8333333333333334,
+                "f1-score": 0.7692307692307693,
+                "support": 6.0
+              },
+              "accuracy": 0.9264705882352942,
+              "macro avg": {
+                "precision": 0.888095238095238,
+                "recall": 0.7109227871939736,
+                "f1-score": 0.7424046541693601,
+                "support": 68.0
+              },
+              "weighted avg": {
+                "precision": 0.93140756302521,
+                "recall": 0.9264705882352942,
+                "f1-score": 0.9211234267462641,
+                "support": 68.0
+              }
+            }
+          }
+        }
+      },
+      {
+        "outer_fold": 1,
+        "existing_candidate_selection": {
+          "candidate": "Class-weighted XGBoost",
+          "inner_macro_f1": 0.7714664425190741,
+          "outer_result": {
+            "macro_f1": 0.8485958485958486,
+            "accuracy": 0.9558823529411765,
+            "correct": 65,
+            "total": 68,
+            "confusion_matrix": [
+              [
+                57,
+                2,
+                0
+              ],
+              [
+                1,
+                2,
+                0
+              ],
+              [
+                0,
+                0,
+                6
+              ]
+            ],
+            "per_class": {
+              "Normal": {
+                "precision": 0.9827586206896551,
+                "recall": 0.9661016949152542,
+                "f1-score": 0.9743589743589743,
+                "support": 59.0
+              },
+              "Side I": {
+                "precision": 0.5,
+                "recall": 0.6666666666666666,
+                "f1-score": 0.5714285714285714,
+                "support": 3.0
+              },
+              "Side II": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1-score": 1.0,
+                "support": 6.0
+              },
+              "accuracy": 0.9558823529411765,
+              "macro avg": {
+                "precision": 0.8275862068965517,
+                "recall": 0.8775894538606402,
+                "f1-score": 0.8485958485958486,
+                "support": 68.0
+              },
+              "weighted avg": {
+                "precision": 0.9629817444219066,
+                "recall": 0.9558823529411765,
+                "f1-score": 0.9588450764921352,
+                "support": 68.0
+              }
+            }
+          }
+        },
+        "expanded_candidate_selection": {
+          "candidate": "Class-weighted XGBoost",
+          "inner_macro_f1": 0.7714664425190741,
+          "outer_result": {
+            "macro_f1": 0.8485958485958486,
+            "accuracy": 0.9558823529411765,
+            "correct": 65,
+            "total": 68,
+            "confusion_matrix": [
+              [
+                57,
+                2,
+                0
+              ],
+              [
+                1,
+                2,
+                0
+              ],
+              [
+                0,
+                0,
+                6
+              ]
+            ],
+            "per_class": {
+              "Normal": {
+                "precision": 0.9827586206896551,
+                "recall": 0.9661016949152542,
+                "f1-score": 0.9743589743589743,
+                "support": 59.0
+              },
+              "Side I": {
+                "precision": 0.5,
+                "recall": 0.6666666666666666,
+                "f1-score": 0.5714285714285714,
+                "support": 3.0
+              },
+              "Side II": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1-score": 1.0,
+                "support": 6.0
+              },
+              "accuracy": 0.9558823529411765,
+              "macro avg": {
+                "precision": 0.8275862068965517,
+                "recall": 0.8775894538606402,
+                "f1-score": 0.8485958485958486,
+                "support": 68.0
+              },
+              "weighted avg": {
+                "precision": 0.9629817444219066,
+                "recall": 0.9558823529411765,
+                "f1-score": 0.9588450764921352,
+                "support": 68.0
+              }
+            }
+          }
+        }
+      },
+      {
+        "outer_fold": 2,
+        "existing_candidate_selection": {
+          "candidate": "Class-weighted XGBoost",
+          "inner_macro_f1": 0.6359238451935081,
+          "outer_result": {
+            "macro_f1": 0.6341269841269841,
+            "accuracy": 0.8970588235294118,
+            "correct": 61,
+            "total": 68,
+            "confusion_matrix": [
+              [
+                57,
+                1,
+                0
+              ],
+              [
+                3,
+                1,
+                0
+              ],
+              [
+                2,
+                1,
+                3
+              ]
+            ],
+            "per_class": {
+              "Normal": {
+                "precision": 0.9193548387096774,
+                "recall": 0.9827586206896551,
+                "f1-score": 0.95,
+                "support": 58.0
+              },
+              "Side I": {
+                "precision": 0.3333333333333333,
+                "recall": 0.25,
+                "f1-score": 0.2857142857142857,
+                "support": 4.0
+              },
+              "Side II": {
+                "precision": 1.0,
+                "recall": 0.5,
+                "f1-score": 0.6666666666666666,
+                "support": 6.0
+              },
+              "accuracy": 0.8970588235294118,
+              "macro avg": {
+                "precision": 0.7508960573476703,
+                "recall": 0.5775862068965517,
+                "f1-score": 0.6341269841269841,
+                "support": 68.0
+              },
+              "weighted avg": {
+                "precision": 0.8919987349778621,
+                "recall": 0.8970588235294118,
+                "f1-score": 0.8859243697478991,
+                "support": 68.0
+              }
+            }
+          }
+        },
+        "expanded_candidate_selection": {
+          "candidate": "Class-weighted XGBoost",
+          "inner_macro_f1": 0.6359238451935081,
+          "outer_result": {
+            "macro_f1": 0.6341269841269841,
+            "accuracy": 0.8970588235294118,
+            "correct": 61,
+            "total": 68,
+            "confusion_matrix": [
+              [
+                57,
+                1,
+                0
+              ],
+              [
+                3,
+                1,
+                0
+              ],
+              [
+                2,
+                1,
+                3
+              ]
+            ],
+            "per_class": {
+              "Normal": {
+                "precision": 0.9193548387096774,
+                "recall": 0.9827586206896551,
+                "f1-score": 0.95,
+                "support": 58.0
+              },
+              "Side I": {
+                "precision": 0.3333333333333333,
+                "recall": 0.25,
+                "f1-score": 0.2857142857142857,
+                "support": 4.0
+              },
+              "Side II": {
+                "precision": 1.0,
+                "recall": 0.5,
+                "f1-score": 0.6666666666666666,
+                "support": 6.0
+              },
+              "accuracy": 0.8970588235294118,
+              "macro avg": {
+                "precision": 0.7508960573476703,
+                "recall": 0.5775862068965517,
+                "f1-score": 0.6341269841269841,
+                "support": 68.0
+              },
+              "weighted avg": {
+                "precision": 0.8919987349778621,
+                "recall": 0.8970588235294118,
+                "f1-score": 0.8859243697478991,
+                "support": 68.0
+              }
+            }
+          }
+        }
+      },
+      {
+        "outer_fold": 3,
+        "existing_candidate_selection": {
+          "candidate": "Class-weighted XGBoost",
+          "inner_macro_f1": 0.6793838782602828,
+          "outer_result": {
+            "macro_f1": 0.8960662525879917,
+            "accuracy": 0.9558823529411765,
+            "correct": 65,
+            "total": 68,
+            "confusion_matrix": [
+              [
+                56,
+                0,
+                2
+              ],
+              [
+                1,
+                3,
+                0
+              ],
+              [
+                0,
+                0,
+                6
+              ]
+            ],
+            "per_class": {
+              "Normal": {
+                "precision": 0.9824561403508771,
+                "recall": 0.9655172413793104,
+                "f1-score": 0.9739130434782609,
+                "support": 58.0
+              },
+              "Side I": {
+                "precision": 1.0,
+                "recall": 0.75,
+                "f1-score": 0.8571428571428571,
+                "support": 4.0
+              },
+              "Side II": {
+                "precision": 0.75,
+                "recall": 1.0,
+                "f1-score": 0.8571428571428571,
+                "support": 6.0
+              },
+              "accuracy": 0.9558823529411765,
+              "macro avg": {
+                "precision": 0.9108187134502924,
+                "recall": 0.9051724137931035,
+                "f1-score": 0.8960662525879917,
+                "support": 68.0
+              },
+              "weighted avg": {
+                "precision": 0.9629772961816305,
+                "recall": 0.9558823529411765,
+                "f1-score": 0.9567409572524662,
+                "support": 68.0
+              }
+            }
+          }
+        },
+        "expanded_candidate_selection": {
+          "candidate": "Class-weighted XGBoost",
+          "inner_macro_f1": 0.6793838782602828,
+          "outer_result": {
+            "macro_f1": 0.8960662525879917,
+            "accuracy": 0.9558823529411765,
+            "correct": 65,
+            "total": 68,
+            "confusion_matrix": [
+              [
+                56,
+                0,
+                2
+              ],
+              [
+                1,
+                3,
+                0
+              ],
+              [
+                0,
+                0,
+                6
+              ]
+            ],
+            "per_class": {
+              "Normal": {
+                "precision": 0.9824561403508771,
+                "recall": 0.9655172413793104,
+                "f1-score": 0.9739130434782609,
+                "support": 58.0
+              },
+              "Side I": {
+                "precision": 1.0,
+                "recall": 0.75,
+                "f1-score": 0.8571428571428571,
+                "support": 4.0
+              },
+              "Side II": {
+                "precision": 0.75,
+                "recall": 1.0,
+                "f1-score": 0.8571428571428571,
+                "support": 6.0
+              },
+              "accuracy": 0.9558823529411765,
+              "macro avg": {
+                "precision": 0.9108187134502924,
+                "recall": 0.9051724137931035,
+                "f1-score": 0.8960662525879917,
+                "support": 68.0
+              },
+              "weighted avg": {
+                "precision": 0.9629772961816305,
+                "recall": 0.9558823529411765,
+                "f1-score": 0.9567409572524662,
+                "support": 68.0
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "evidence_directory": "outputs/model-review-20260919/rail",
+  "official_test_performance": "Unavailable: labels not released."
+}

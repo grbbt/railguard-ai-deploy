@@ -1,0 +1,43 @@
+{
+  "verified_at": "2026-09-18T16:45:33.550467+00:00",
+  "all_files": true,
+  "release_commit": "16526c02579c7f37e54eaaa42a4cc6d4ceb19994",
+  "subsystems": {
+    "door": {
+      "job_id": "be3f12b2fd2f4471ad5a7f9b2db5e215",
+      "files": 1,
+      "prediction_rows": 38,
+      "model": "Regularized logistic regression",
+      "model_sha256": "088022ad7fdf6883d6520ad882e30bc91bd05e88bce41f169d049f67947b9322",
+      "local_validation": 1.0
+    },
+    "acv": {
+      "job_id": "fc86c59f16c44a7a80dbbf38022d8819",
+      "files": 1,
+      "prediction_rows": 1,
+      "model": "Pairwise cooling-exceedance ranking",
+      "model_sha256": "2631a8a61113d3d22ff2efc52c1df57ed44187dda9b03c804718784e7d4c98e2",
+      "local_validation": 0.9791666666666666
+    },
+    "shm": {
+      "job_id": "190d95a319dc41089320c9b12f719f30",
+      "files": 16,
+      "prediction_rows": 16,
+      "model": "Rainflow moment surrogate",
+      "model_sha256": "2cd3ab97f0f28231c4d684dd08cc25ff94b09d65c38df50c15c5553163ef8ff7",
+      "local_validation": 0.9735893090002781
+    },
+    "rail": {
+      "job_id": "c193265377744a32ae9d9003edec5066",
+      "files": 68,
+      "prediction_rows": 68,
+      "model": "Class-weighted XGBoost",
+      "model_sha256": "80b9c15ea8f5a53c8fe085bfcbbcab9d5218085bceb5ceee440537a783ab3941",
+      "local_validation": 0.7857466383581033
+    }
+  },
+  "ai_requested": false,
+  "zip_sha256": "065ba378f4bfe5e98a03104b9bba36e93c59291c8fbdbc9713cf9ff963d53953",
+  "total_files": 86,
+  "frozen_models_unchanged": true
+}

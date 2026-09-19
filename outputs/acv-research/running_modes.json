@@ -1,0 +1,406 @@
+[
+  {
+    "file": "acv_case_01.xlsx",
+    "rows_by_mode_across_cars": {
+      "automatic cooling": 46760,
+      "none": 5416,
+      "stop": 3630,
+      "emergency ventilation": 96,
+      "full cooling": 34,
+      "invalid": 56
+    },
+    "cars": {
+      "Car 08 - ACV Running Mode": {
+        "automatic cooling": 5854,
+        "none": 677,
+        "stop": 454,
+        "emergency ventilation": 12,
+        "full cooling": 2
+      },
+      "Car 07 - ACV Running Mode": {
+        "automatic cooling": 5854,
+        "none": 677,
+        "stop": 454,
+        "emergency ventilation": 12,
+        "full cooling": 2
+      },
+      "Car 05 - ACV Running Mode": {
+        "automatic cooling": 5854,
+        "none": 677,
+        "stop": 454,
+        "emergency ventilation": 12,
+        "full cooling": 2
+      },
+      "Car 03 - ACV Running Mode": {
+        "automatic cooling": 5842,
+        "none": 677,
+        "stop": 454,
+        "emergency ventilation": 12,
+        "full cooling": 14
+      },
+      "Car 06 - ACV Running Mode": {
+        "automatic cooling": 5854,
+        "none": 677,
+        "stop": 454,
+        "emergency ventilation": 12,
+        "full cooling": 2
+      },
+      "Car 04 - ACV Running Mode": {
+        "automatic cooling": 5854,
+        "none": 677,
+        "stop": 454,
+        "emergency ventilation": 12,
+        "full cooling": 2
+      },
+      "Car 02 - ACV Running Mode": {
+        "automatic cooling": 5854,
+        "none": 677,
+        "stop": 454,
+        "emergency ventilation": 12,
+        "full cooling": 2
+      },
+      "Car 01 - ACV Running Mode": {
+        "automatic cooling": 5794,
+        "none": 677,
+        "stop": 452,
+        "invalid": 56,
+        "emergency ventilation": 12,
+        "full cooling": 8
+      }
+    },
+    "seconds": 2.187000000001717
+  },
+  {
+    "file": "acv_case_02.xlsx",
+    "rows_by_mode_across_cars": {
+      "automatic cooling": 66305,
+      "none": 6440,
+      "stop": 598,
+      "emergency ventilation": 104,
+      "invalid": 49
+    },
+    "cars": {
+      "Car 08 - ACV Running Mode": {
+        "automatic cooling": 8291,
+        "none": 805,
+        "stop": 78,
+        "emergency ventilation": 13
+      },
+      "Car 07 - ACV Running Mode": {
+        "automatic cooling": 8290,
+        "none": 805,
+        "invalid": 1,
+        "stop": 78,
+        "emergency ventilation": 13
+      },
+      "Car 05 - ACV Running Mode": {
+        "automatic cooling": 8291,
+        "none": 805,
+        "stop": 78,
+        "emergency ventilation": 13
+      },
+      "Car 03 - ACV Running Mode": {
+        "automatic cooling": 8290,
+        "none": 805,
+        "invalid": 1,
+        "stop": 78,
+        "emergency ventilation": 13
+      },
+      "Car 06 - ACV Running Mode": {
+        "automatic cooling": 8290,
+        "none": 805,
+        "invalid": 1,
+        "stop": 78,
+        "emergency ventilation": 13
+      },
+      "Car 04 - ACV Running Mode": {
+        "automatic cooling": 8290,
+        "none": 805,
+        "invalid": 1,
+        "stop": 78,
+        "emergency ventilation": 13
+      },
+      "Car 02 - ACV Running Mode": {
+        "automatic cooling": 8272,
+        "none": 805,
+        "stop": 52,
+        "emergency ventilation": 13,
+        "invalid": 45
+      },
+      "Car 01 - ACV Running Mode": {
+        "automatic cooling": 8291,
+        "none": 805,
+        "stop": 78,
+        "emergency ventilation": 13
+      }
+    },
+    "seconds": 3.577999999997701
+  },
+  {
+    "file": "acv_case_03.xlsx",
+    "rows_by_mode_across_cars": {
+      "stop": 352,
+      "automatic cooling": 65587,
+      "half cooling": 13,
+      "ventilation": 524,
+      "emergency ventilation": 3,
+      "invalid": 1
+    },
+    "cars": {
+      "Car 08 - ACV Running Mode": {
+        "stop": 44,
+        "automatic cooling": 7921,
+        "half cooling": 13,
+        "ventilation": 332
+      },
+      "Car 07 - ACV Running Mode": {
+        "stop": 44,
+        "automatic cooling": 8218,
+        "ventilation": 48
+      },
+      "Car 05 - ACV Running Mode": {
+        "stop": 44,
+        "automatic cooling": 8266
+      },
+      "Car 03 - ACV Running Mode": {
+        "stop": 44,
+        "automatic cooling": 8216,
+        "emergency ventilation": 1,
+        "invalid": 1,
+        "ventilation": 48
+      },
+      "Car 06 - ACV Running Mode": {
+        "stop": 44,
+        "automatic cooling": 8218,
+        "ventilation": 48
+      },
+      "Car 04 - ACV Running Mode": {
+        "stop": 44,
+        "automatic cooling": 8266
+      },
+      "Car 02 - ACV Running Mode": {
+        "stop": 44,
+        "automatic cooling": 8217,
+        "emergency ventilation": 1,
+        "ventilation": 48
+      },
+      "Car 01 - ACV Running Mode": {
+        "stop": 44,
+        "automatic cooling": 8265,
+        "emergency ventilation": 1
+      }
+    },
+    "seconds": 2.797000000002299
+  },
+  {
+    "file": "acv_case_04.xlsx",
+    "rows_by_mode_across_cars": {
+      "stopped": 1416,
+      "ventilation": 1818,
+      "half cooling": 27790,
+      "full cooling": 56209,
+      "none": 90707,
+      "self-check": 4,
+      "emergency ventilation": 152
+    },
+    "cars": {
+      "Car 01 - ACV Running Mode": {
+        "stopped": 354,
+        "ventilation": 931,
+        "half cooling": 13072,
+        "full cooling": 7453,
+        "none": 413,
+        "self-check": 1,
+        "emergency ventilation": 38
+      },
+      "Car 08 - ACV Running Mode": {
+        "none": 22262
+      },
+      "Car 02 - ACV Running Mode": {
+        "stopped": 354,
+        "ventilation": 284,
+        "full cooling": 15520,
+        "none": 413,
+        "half cooling": 5652,
+        "self-check": 1,
+        "emergency ventilation": 38
+      },
+      "Car 07 - ACV Running Mode": {
+        "none": 22262
+      },
+      "Car 03 - ACV Running Mode": {
+        "stopped": 355,
+        "ventilation": 349,
+        "full cooling": 13335,
+        "none": 413,
+        "half cooling": 7771,
+        "self-check": 1,
+        "emergency ventilation": 38
+      },
+      "Car 06 - ACV Running Mode": {
+        "none": 22262
+      },
+      "Car 05 - ACV Running Mode": {
+        "none": 22262
+      },
+      "Car 04 - ACV Running Mode": {
+        "stopped": 353,
+        "ventilation": 254,
+        "half cooling": 1295,
+        "full cooling": 19901,
+        "none": 420,
+        "self-check": 1,
+        "emergency ventilation": 38
+      }
+    },
+    "seconds": 24.85899999999674
+  },
+  {
+    "file": "acv_case_05.xlsx",
+    "rows_by_mode_across_cars": {
+      "automatic cooling": 49686,
+      "emergency ventilation": 649,
+      "none": 5392,
+      "stop": 34,
+      "full cooling": 5,
+      "half cooling": 1,
+      "ventilation": 9
+    },
+    "cars": {
+      "Car 05 - ACV Running Mode": {
+        "automatic cooling": 6212,
+        "emergency ventilation": 81,
+        "none": 674,
+        "stop": 5
+      },
+      "Car 07 - ACV Running Mode": {
+        "automatic cooling": 6212,
+        "emergency ventilation": 81,
+        "none": 674,
+        "full cooling": 1,
+        "stop": 4
+      },
+      "Car 02 - ACV Running Mode": {
+        "automatic cooling": 6212,
+        "emergency ventilation": 81,
+        "none": 674,
+        "full cooling": 1,
+        "stop": 4
+      },
+      "Car 03 - ACV Running Mode": {
+        "automatic cooling": 6212,
+        "emergency ventilation": 81,
+        "none": 674,
+        "full cooling": 1,
+        "stop": 4
+      },
+      "Car 01 - ACV Running Mode": {
+        "automatic cooling": 6211,
+        "emergency ventilation": 82,
+        "none": 674,
+        "full cooling": 1,
+        "stop": 4
+      },
+      "Car 06 - ACV Running Mode": {
+        "automatic cooling": 6212,
+        "emergency ventilation": 81,
+        "none": 674,
+        "full cooling": 1,
+        "stop": 4
+      },
+      "Car 04 - ACV Running Mode": {
+        "automatic cooling": 6204,
+        "emergency ventilation": 80,
+        "none": 674,
+        "half cooling": 1,
+        "stop": 4,
+        "ventilation": 9
+      },
+      "Car 08 - ACV Running Mode": {
+        "automatic cooling": 6211,
+        "emergency ventilation": 82,
+        "none": 674,
+        "stop": 5
+      }
+    },
+    "seconds": 2.547000000002299
+  },
+  {
+    "file": "acv_case_06.xlsx",
+    "rows_by_mode_across_cars": {
+      "none": 3584,
+      "emergency ventilation": 1299,
+      "automatic cooling": 20979,
+      "stop": 24,
+      "full cooling": 128,
+      "ventilation": 90
+    },
+    "cars": {
+      "Car 05 - ACV Running Mode": {
+        "none": 448,
+        "emergency ventilation": 163,
+        "automatic cooling": 2621,
+        "stop": 3,
+        "full cooling": 15,
+        "ventilation": 13
+      },
+      "Car 07 - ACV Running Mode": {
+        "none": 448,
+        "emergency ventilation": 163,
+        "automatic cooling": 2622,
+        "stop": 3,
+        "full cooling": 15,
+        "ventilation": 12
+      },
+      "Car 02 - ACV Running Mode": {
+        "none": 448,
+        "emergency ventilation": 163,
+        "automatic cooling": 2621,
+        "stop": 3,
+        "full cooling": 15,
+        "ventilation": 13
+      },
+      "Car 03 - ACV Running Mode": {
+        "none": 448,
+        "emergency ventilation": 163,
+        "automatic cooling": 2622,
+        "stop": 3,
+        "full cooling": 15,
+        "ventilation": 12
+      },
+      "Car 01 - ACV Running Mode": {
+        "none": 448,
+        "emergency ventilation": 162,
+        "automatic cooling": 2623,
+        "stop": 3,
+        "full cooling": 22,
+        "ventilation": 5
+      },
+      "Car 06 - ACV Running Mode": {
+        "none": 448,
+        "emergency ventilation": 162,
+        "automatic cooling": 2623,
+        "stop": 3,
+        "full cooling": 15,
+        "ventilation": 12
+      },
+      "Car 04 - ACV Running Mode": {
+        "none": 448,
+        "emergency ventilation": 161,
+        "automatic cooling": 2624,
+        "stop": 3,
+        "full cooling": 15,
+        "ventilation": 12
+      },
+      "Car 08 - ACV Running Mode": {
+        "none": 448,
+        "emergency ventilation": 162,
+        "automatic cooling": 2623,
+        "stop": 3,
+        "full cooling": 16,
+        "ventilation": 11
+      }
+    },
+    "seconds": 1.1879999999982829
+  }
+]

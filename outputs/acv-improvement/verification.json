@@ -1,0 +1,45 @@
+{
+  "checked_at": "2026-09-17T14:54:05.356410+00:00",
+  "model_sha256": "2631a8a61113d3d22ff2efc52c1df57ed44187dda9b03c804718784e7d4c98e2",
+  "acv_job_id": "4d6d0d618f384eaf8f257fe3dea3835e",
+  "selected_case_validation": {
+    "cases": 6,
+    "top1_correct": 5,
+    "top2_correct": 6,
+    "mean_rank": 1.1666666666666667
+  },
+  "nested_selection_audit": {
+    "cases": 6,
+    "top1_correct": 4,
+    "top2_correct": 5,
+    "mean_rank": 1.6666666666666667
+  },
+  "official_acv_files": 1,
+  "bundle_files": 86,
+  "other_subsystems": "Reused previously verified 85 official input reports; their trained model hashes are unchanged.",
+  "zip_sha256": "9c2a58a41fcd8463d5fb9b4ea8448693c4b8b7a172f3476da1480f798c37a1dd",
+  "python_tests": 202,
+  "frontend_tests": 15,
+  "typescript": "passed",
+  "lint": "passed",
+  "production_build": "passed",
+  "live_ai": "agent",
+  "job_ids": {
+    "door": "19e23e94c8b24455838276c66aaf0896",
+    "shm": "b7e6334cca344e2f91b7ffc272454987",
+    "rail": "001a8b1dec4a4e9abce2ce757ff1d6cc",
+    "acv": "4d6d0d618f384eaf8f257fe3dea3835e"
+  },
+  "browser_checks": {
+    "two_real_workbooks_uploaded_together": true,
+    "batch_completed_files": 2,
+    "batch_check_scope": "Functional upload/inference test on two known Train workbooks, not an accuracy estimate.",
+    "selected_case_metrics_visible": true,
+    "stricter_nested_audit_visible": true,
+    "official_example_after_update": "completed",
+    "mobile_viewport_width": 390,
+    "mobile_page_width": 385,
+    "viewport_reset": true
+  },
+  "finished_at": "2026-09-17T14:56:11.266967+00:00"
+}

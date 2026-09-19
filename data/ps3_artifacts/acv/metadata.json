@@ -1,0 +1,2368 @@
+{
+  "subsystem": "acv",
+  "model_name": "Pairwise cooling-exceedance ranking",
+  "trained_at": "2026-09-17T14:47:26.382052+00:00",
+  "training_files": 6,
+  "training_rows": 56993,
+  "feature_names": [
+    "peer_median_rank",
+    "peer_q90_rank",
+    "residual_median_rank",
+    "residual_q90_rank",
+    "residual_spread_rank",
+    "above_peer_fraction",
+    "above_target_fraction",
+    "warming_fraction"
+  ],
+  "artifact_version": 2,
+  "training_sources": [
+    {
+      "file": "acv_case_01.xlsx",
+      "sha256": "d0657d45b52d12db8fbde52242f44f6efd0e3050d04822920aa3ca3b984af233"
+    },
+    {
+      "file": "acv_case_02.xlsx",
+      "sha256": "869107ed17735efb55f6d33de2d0456a0b1e76aadbb280a9eef830f6778194c8"
+    },
+    {
+      "file": "acv_case_03.xlsx",
+      "sha256": "07801fb08e6fc3654a23cd3d245fd89b327c5e9dd70880b2d80eb600b8d746c6"
+    },
+    {
+      "file": "acv_case_04.xlsx",
+      "sha256": "650676c44e8f5979c7cf493a2b0d4173ad0c5ae50d44ead9a8fad0444d19d749"
+    },
+    {
+      "file": "acv_case_05.xlsx",
+      "sha256": "cc994bf2a1a197e05ef4f231186a7da990fc6203b842d94327181866d62cfe08"
+    },
+    {
+      "file": "acv_case_06.xlsx",
+      "sha256": "6066b6882bf92af6b81fff311af870edf407f19257806f896a47b7e57e751172"
+    },
+    {
+      "file": "Train_Labels.csv",
+      "sha256": "840226a83db2ed7e8a366d78b530528f9fc7f06a03e199605b2d46a86c151aa7"
+    }
+  ],
+  "validation": {
+    "metric": "Linear rank-decay score",
+    "score": 0.9791666666666666,
+    "ranking_metrics": {
+      "cases": 6,
+      "top1_correct": 5,
+      "top2_correct": 6,
+      "mean_rank": 1.1666666666666667
+    },
+    "nested_validation": {
+      "metric": "Linear rank-decay score",
+      "score": 0.9166666666666666,
+      "ranking_metrics": {
+        "cases": 6,
+        "top1_correct": 4,
+        "top2_correct": 5,
+        "mean_rank": 1.6666666666666667
+      },
+      "folds": [
+        {
+          "file_id": "acv_case_01.xlsx",
+          "heldout_files": [
+            "acv_case_01.xlsx"
+          ],
+          "training_files": [
+            "acv_case_02.xlsx",
+            "acv_case_03.xlsx",
+            "acv_case_04.xlsx",
+            "acv_case_05.xlsx",
+            "acv_case_06.xlsx"
+          ],
+          "faulty_car": "01",
+          "ranked_cars": [
+            "01",
+            "02",
+            "03",
+            "04",
+            "08",
+            "07",
+            "05",
+            "06"
+          ],
+          "score": 1.0,
+          "true_car_rank": 1,
+          "available_cars": [
+            "01",
+            "02",
+            "03",
+            "04",
+            "08",
+            "07",
+            "05",
+            "06"
+          ],
+          "ranking_scores": {
+            "01": 2.1337228450453427,
+            "02": 0.9076357122307298,
+            "03": 0.21872963639860593,
+            "04": -0.2694490970174625,
+            "05": -0.7814462523365939,
+            "06": -0.797748790366859,
+            "07": -0.5521762211550952,
+            "08": -0.3639110717766363
+          },
+          "selected_model": "Pairwise cooling-exceedance ranking",
+          "inner_candidates": [
+            {
+              "name": "Cooling peer-deviation ranking",
+              "score": 0.925,
+              "ranking_metrics": {
+                "cases": 5,
+                "top1_correct": 4,
+                "top2_correct": 4,
+                "mean_rank": 1.6
+              }
+            },
+            {
+              "name": "Pairwise regularized logistic ranking",
+              "score": 0.95,
+              "ranking_metrics": {
+                "cases": 5,
+                "top1_correct": 3,
+                "top2_correct": 5,
+                "mean_rank": 1.4
+              }
+            },
+            {
+              "name": "Normal-car Isolation Forest",
+              "score": 0.825,
+              "ranking_metrics": {
+                "cases": 5,
+                "top1_correct": 3,
+                "top2_correct": 3,
+                "mean_rank": 2.4
+              }
+            },
+            {
+              "name": "Pairwise cooling-exceedance ranking",
+              "score": 0.975,
+              "ranking_metrics": {
+                "cases": 5,
+                "top1_correct": 4,
+                "top2_correct": 5,
+                "mean_rank": 1.2
+              }
+            },
+            {
+              "name": "XGBoost pairwise ranking",
+              "score": 0.875,
+              "ranking_metrics": {
+                "cases": 5,
+                "top1_correct": 4,
+                "top2_correct": 4,
+                "mean_rank": 2.0
+              }
+            }
+          ],
+          "inner_folds": [
+            {
+              "file_id": "acv_case_02.xlsx",
+              "heldout_files": [
+                "acv_case_02.xlsx"
+              ],
+              "training_files": [
+                "acv_case_03.xlsx",
+                "acv_case_04.xlsx",
+                "acv_case_05.xlsx",
+                "acv_case_06.xlsx"
+              ],
+              "faulty_car": "02",
+              "ranked_cars": [
+                "02",
+                "03",
+                "08",
+                "07",
+                "01",
+                "04",
+                "06",
+                "05"
+              ],
+              "score": 1.0,
+              "true_car_rank": 1,
+              "available_cars": [
+                "02",
+                "03",
+                "08",
+                "07",
+                "01",
+                "04",
+                "06",
+                "05"
+              ],
+              "ranking_scores": {
+                "01": 0.027811266582553937,
+                "02": 1.5023853813060482,
+                "03": 0.968027802439064,
+                "04": -0.22072378832957412,
+                "05": -0.6476237754267518,
+                "06": -0.2831790607679632,
+                "07": 0.06771714979012716,
+                "08": 0.17854778205042365
+              }
+            },
+            {
+              "file_id": "acv_case_03.xlsx",
+              "heldout_files": [
+                "acv_case_03.xlsx"
+              ],
+              "training_files": [
+                "acv_case_02.xlsx",
+                "acv_case_04.xlsx",
+                "acv_case_05.xlsx",
+                "acv_case_06.xlsx"
+              ],
+              "faulty_car": "03",
+              "ranked_cars": [
+                "03",
+                "02",
+                "01",
+                "07",
+                "08",
+                "04",
+                "05",
+                "06"
+              ],
+              "score": 1.0,
+              "true_car_rank": 1,
+              "available_cars": [
+                "03",
+                "02",
+                "01",
+                "07",
+                "08",
+                "04",
+                "05",
+                "06"
+              ],
+              "ranking_scores": {
+                "01": 1.015994158611556,
+                "02": 1.2442851440052705,
+                "03": 3.3803649877427855,
+                "04": 0.1234130762216391,
+                "05": -0.35367801389224107,
+                "06": -0.45002474246087815,
+                "07": 0.33256512447704223,
+                "08": 0.2494371883204926
+              }
+            },
+            {
+              "file_id": "acv_case_04.xlsx",
+              "heldout_files": [
+                "acv_case_04.xlsx"
+              ],
+              "training_files": [
+                "acv_case_02.xlsx",
+                "acv_case_03.xlsx",
+                "acv_case_05.xlsx",
+                "acv_case_06.xlsx"
+              ],
+              "faulty_car": "01",
+              "ranked_cars": [
+                "04",
+                "01",
+                "03",
+                "02",
+                "05",
+                "06",
+                "07",
+                "08"
+              ],
+              "score": 0.875,
+              "true_car_rank": 2,
+              "available_cars": [
+                "04",
+                "01",
+                "03",
+                "02"
+              ],
+              "ranking_scores": {
+                "01": -1.6317403414643747,
+                "02": -2.4690914746786934,
+                "03": -2.2878256023524397,
+                "04": 0.22181369460352374,
+                "05": null,
+                "06": null,
+                "07": null,
+                "08": null
+              }
+            },
+            {
+              "file_id": "acv_case_05.xlsx",
+              "heldout_files": [
+                "acv_case_05.xlsx"
+              ],
+              "training_files": [
+                "acv_case_02.xlsx",
+                "acv_case_03.xlsx",
+                "acv_case_04.xlsx",
+                "acv_case_06.xlsx"
+              ],
+              "faulty_car": "04",
+              "ranked_cars": [
+                "04",
+                "02",
+                "01",
+                "07",
+                "06",
+                "03",
+                "08",
+                "05"
+              ],
+              "score": 1.0,
+              "true_car_rank": 1,
+              "available_cars": [
+                "04",
+                "02",
+                "01",
+                "07",
+                "06",
+                "03",
+                "08",
+                "05"
+              ],
+              "ranking_scores": {
+                "01": -1.0257139126407382,
+                "02": -0.06535646664247352,
+                "03": -1.508209430473002,
+                "04": 0.25426739019609723,
+                "05": -2.1110845266070264,
+                "06": -1.4117254188672241,
+                "07": -1.2169083440292146,
+                "08": -1.9312782130150206
+              }
+            },
+            {
+              "file_id": "acv_case_06.xlsx",
+              "heldout_files": [
+                "acv_case_06.xlsx"
+              ],
+              "training_files": [
+                "acv_case_02.xlsx",
+                "acv_case_03.xlsx",
+                "acv_case_04.xlsx",
+                "acv_case_05.xlsx"
+              ],
+              "faulty_car": "06",
+              "ranked_cars": [
+                "06",
+                "08",
+                "04",
+                "05",
+                "02",
+                "03",
+                "01",
+                "07"
+              ],
+              "score": 1.0,
+              "true_car_rank": 1,
+              "available_cars": [
+                "06",
+                "08",
+                "04",
+                "05",
+                "02",
+                "03",
+                "01",
+                "07"
+              ],
+              "ranking_scores": {
+                "01": -0.7939617643327932,
+                "02": -0.47639990682598043,
+                "03": -0.6684006855319318,
+                "04": 0.1696408673874985,
+                "05": -0.44269198924174846,
+                "06": 6.6386975729001865,
+                "07": -1.3217760606686113,
+                "08": 0.9848702790221826
+              }
+            }
+          ]
+        },
+        {
+          "file_id": "acv_case_02.xlsx",
+          "heldout_files": [
+            "acv_case_02.xlsx"
+          ],
+          "training_files": [
+            "acv_case_01.xlsx",
+            "acv_case_03.xlsx",
+            "acv_case_04.xlsx",
+            "acv_case_05.xlsx",
+            "acv_case_06.xlsx"
+          ],
+          "faulty_car": "02",
+          "ranked_cars": [
+            "02",
+            "03",
+            "08",
+            "07",
+            "01",
+            "04",
+            "06",
+            "05"
+          ],
+          "score": 1.0,
+          "true_car_rank": 1,
+          "available_cars": [
+            "02",
+            "03",
+            "08",
+            "07",
+            "01",
+            "04",
+            "06",
+            "05"
+          ],
+          "ranking_scores": {
+            "01": 0.039308165903856704,
+            "02": 1.832426034541995,
+            "03": 1.1886418761703128,
+            "04": -0.25510072562647595,
+            "05": -0.7770823589212699,
+            "06": -0.32487273878316913,
+            "07": 0.09576990910424615,
+            "08": 0.2335437550778976
+          },
+          "selected_model": "Pairwise cooling-exceedance ranking",
+          "inner_candidates": [
+            {
+              "name": "Cooling peer-deviation ranking",
+              "score": 0.925,
+              "ranking_metrics": {
+                "cases": 5,
+                "top1_correct": 4,
+                "top2_correct": 4,
+                "mean_rank": 1.6
+              }
+            },
+            {
+              "name": "Pairwise regularized logistic ranking",
+              "score": 0.95,
+              "ranking_metrics": {
+                "cases": 5,
+                "top1_correct": 3,
+                "top2_correct": 5,
+                "mean_rank": 1.4
+              }
+            },
+            {
+              "name": "Normal-car Isolation Forest",
+              "score": 0.85,
+              "ranking_metrics": {
+                "cases": 5,
+                "top1_correct": 3,
+                "top2_correct": 3,
+                "mean_rank": 2.2
+              }
+            },
+            {
+              "name": "Pairwise cooling-exceedance ranking",
+              "score": 0.975,
+              "ranking_metrics": {
+                "cases": 5,
+                "top1_correct": 4,
+                "top2_correct": 5,
+                "mean_rank": 1.2
+              }
+            },
+            {
+              "name": "XGBoost pairwise ranking",
+              "score": 0.9,
+              "ranking_metrics": {
+                "cases": 5,
+                "top1_correct": 3,
+                "top2_correct": 4,
+                "mean_rank": 1.8
+              }
+            }
+          ],
+          "inner_folds": [
+            {
+              "file_id": "acv_case_01.xlsx",
+              "heldout_files": [
+                "acv_case_01.xlsx"
+              ],
+              "training_files": [
+                "acv_case_03.xlsx",
+                "acv_case_04.xlsx",
+                "acv_case_05.xlsx",
+                "acv_case_06.xlsx"
+              ],
+              "faulty_car": "01",
+              "ranked_cars": [
+                "01",
+                "02",
+                "03",
+                "04",
+                "08",
+                "07",
+                "05",
+                "06"
+              ],
+              "score": 1.0,
+              "true_car_rank": 1,
+              "available_cars": [
+                "01",
+                "02",
+                "03",
+                "04",
+                "08",
+                "07",
+                "05",
+                "06"
+              ],
+              "ranking_scores": {
+                "01": 1.7794182936628773,
+                "02": 0.7911676123541383,
+                "03": 0.2350121168534349,
+                "04": -0.15720391502656106,
+                "05": -0.5684630974483822,
+                "06": -0.5823124905141545,
+                "07": -0.3841916299668423,
+                "08": -0.229471944909365
+              }
+            },
+            {
+              "file_id": "acv_case_03.xlsx",
+              "heldout_files": [
+                "acv_case_03.xlsx"
+              ],
+              "training_files": [
+                "acv_case_01.xlsx",
+                "acv_case_04.xlsx",
+                "acv_case_05.xlsx",
+                "acv_case_06.xlsx"
+              ],
+              "faulty_car": "03",
+              "ranked_cars": [
+                "03",
+                "02",
+                "01",
+                "07",
+                "08",
+                "04",
+                "05",
+                "06"
+              ],
+              "score": 1.0,
+              "true_car_rank": 1,
+              "available_cars": [
+                "03",
+                "02",
+                "01",
+                "07",
+                "08",
+                "04",
+                "05",
+                "06"
+              ],
+              "ranking_scores": {
+                "01": 1.1031632076525055,
+                "02": 1.3308398551164395,
+                "03": 3.404710239554063,
+                "04": 0.23195129712967988,
+                "05": -0.23383080715053367,
+                "06": -0.3278826831792017,
+                "07": 0.44287917452952197,
+                "08": 0.36172173457550816
+              }
+            },
+            {
+              "file_id": "acv_case_04.xlsx",
+              "heldout_files": [
+                "acv_case_04.xlsx"
+              ],
+              "training_files": [
+                "acv_case_01.xlsx",
+                "acv_case_03.xlsx",
+                "acv_case_05.xlsx",
+                "acv_case_06.xlsx"
+              ],
+              "faulty_car": "01",
+              "ranked_cars": [
+                "04",
+                "01",
+                "03",
+                "02",
+                "05",
+                "06",
+                "07",
+                "08"
+              ],
+              "score": 0.875,
+              "true_car_rank": 2,
+              "available_cars": [
+                "04",
+                "01",
+                "03",
+                "02"
+              ],
+              "ranking_scores": {
+                "01": -1.5015494431557352,
+                "02": -2.3128390784066823,
+                "03": -2.137168579647729,
+                "04": 0.29846203432688073,
+                "05": null,
+                "06": null,
+                "07": null,
+                "08": null
+              }
+            },
+            {
+              "file_id": "acv_case_05.xlsx",
+              "heldout_files": [
+                "acv_case_05.xlsx"
+              ],
+              "training_files": [
+                "acv_case_01.xlsx",
+                "acv_case_03.xlsx",
+                "acv_case_04.xlsx",
+                "acv_case_06.xlsx"
+              ],
+              "faulty_car": "04",
+              "ranked_cars": [
+                "04",
+                "02",
+                "01",
+                "07",
+                "06",
+                "03",
+                "08",
+                "05"
+              ],
+              "score": 1.0,
+              "true_car_rank": 1,
+              "available_cars": [
+                "04",
+                "02",
+                "01",
+                "07",
+                "06",
+                "03",
+                "08",
+                "05"
+              ],
+              "ranking_scores": {
+                "01": -0.8447404269381035,
+                "02": 0.09711029450111786,
+                "03": -1.3207835881784349,
+                "04": 0.4036297870069448,
+                "05": -1.9110438235857707,
+                "06": -1.227741784761255,
+                "07": -1.0353333717202982,
+                "08": -1.7343314004570738
+              }
+            },
+            {
+              "file_id": "acv_case_06.xlsx",
+              "heldout_files": [
+                "acv_case_06.xlsx"
+              ],
+              "training_files": [
+                "acv_case_01.xlsx",
+                "acv_case_03.xlsx",
+                "acv_case_04.xlsx",
+                "acv_case_05.xlsx"
+              ],
+              "faulty_car": "06",
+              "ranked_cars": [
+                "06",
+                "08",
+                "04",
+                "05",
+                "02",
+                "03",
+                "01",
+                "07"
+              ],
+              "score": 1.0,
+              "true_car_rank": 1,
+              "available_cars": [
+                "06",
+                "08",
+                "04",
+                "05",
+                "02",
+                "03",
+                "01",
+                "07"
+              ],
+              "ranking_scores": {
+                "01": -0.7130086579758869,
+                "02": -0.40308482693982317,
+                "03": -0.5927373884750409,
+                "04": 0.21199926605963226,
+                "05": -0.3779251308683901,
+                "06": 6.487126069133286,
+                "07": -1.231387812066946,
+                "08": 1.0035781992833583
+              }
+            }
+          ]
+        },
+        {
+          "file_id": "acv_case_03.xlsx",
+          "heldout_files": [
+            "acv_case_03.xlsx"
+          ],
+          "training_files": [
+            "acv_case_01.xlsx",
+            "acv_case_02.xlsx",
+            "acv_case_04.xlsx",
+            "acv_case_05.xlsx",
+            "acv_case_06.xlsx"
+          ],
+          "faulty_car": "03",
+          "ranked_cars": [
+            "03",
+            "02",
+            "01",
+            "07",
+            "08",
+            "04",
+            "05",
+            "06"
+          ],
+          "score": 1.0,
+          "true_car_rank": 1,
+          "available_cars": [
+            "03",
+            "02",
+            "01",
+            "07",
+            "08",
+            "04",
+            "05",
+            "06"
+          ],
+          "ranking_scores": {
+            "01": 1.2065340643269995,
+            "02": 1.4825259660199712,
+            "03": 4.016492432309101,
+            "04": 0.1437235939790911,
+            "05": -0.42445328926134873,
+            "06": -0.539184969628666,
+            "07": 0.39858405061388724,
+            "08": 0.29958542949782885
+          },
+          "selected_model": "Pairwise cooling-exceedance ranking",
+          "inner_candidates": [
+            {
+              "name": "Cooling peer-deviation ranking",
+              "score": 0.925,
+              "ranking_metrics": {
+                "cases": 5,
+                "top1_correct": 4,
+                "top2_correct": 4,
+                "mean_rank": 1.6
+              }
+            },
+            {
+              "name": "Pairwise regularized logistic ranking",
+              "score": 0.95,
+              "ranking_metrics": {
+                "cases": 5,
+                "top1_correct": 3,
+                "top2_correct": 5,
+                "mean_rank": 1.4
+              }
+            },
+            {
+              "name": "Normal-car Isolation Forest",
+              "score": 0.775,
+              "ranking_metrics": {
+                "cases": 5,
+                "top1_correct": 3,
+                "top2_correct": 3,
+                "mean_rank": 2.8
+              }
+            },
+            {
+              "name": "Pairwise cooling-exceedance ranking",
+              "score": 0.975,
+              "ranking_metrics": {
+                "cases": 5,
+                "top1_correct": 4,
+                "top2_correct": 5,
+                "mean_rank": 1.2
+              }
+            },
+            {
+              "name": "XGBoost pairwise ranking",
+              "score": 0.875,
+              "ranking_metrics": {
+                "cases": 5,
+                "top1_correct": 3,
+                "top2_correct": 4,
+                "mean_rank": 2.0
+              }
+            }
+          ],
+          "inner_folds": [
+            {
+              "file_id": "acv_case_01.xlsx",
+              "heldout_files": [
+                "acv_case_01.xlsx"
+              ],
+              "training_files": [
+                "acv_case_02.xlsx",
+                "acv_case_04.xlsx",
+                "acv_case_05.xlsx",
+                "acv_case_06.xlsx"
+              ],
+              "faulty_car": "01",
+              "ranked_cars": [
+                "01",
+                "02",
+                "03",
+                "04",
+                "08",
+                "07",
+                "05",
+                "06"
+              ],
+              "score": 1.0,
+              "true_car_rank": 1,
+              "available_cars": [
+                "01",
+                "02",
+                "03",
+                "04",
+                "08",
+                "07",
+                "05",
+                "06"
+              ],
+              "ranking_scores": {
+                "01": 2.0962971425553882,
+                "02": 0.9829214189265688,
+                "03": 0.35707041450125726,
+                "04": -0.08583786711028592,
+                "05": -0.5503268452618324,
+                "06": -0.5653510919872198,
+                "07": -0.34229613429308564,
+                "08": -0.17041364654255858
+              }
+            },
+            {
+              "file_id": "acv_case_02.xlsx",
+              "heldout_files": [
+                "acv_case_02.xlsx"
+              ],
+              "training_files": [
+                "acv_case_01.xlsx",
+                "acv_case_04.xlsx",
+                "acv_case_05.xlsx",
+                "acv_case_06.xlsx"
+              ],
+              "faulty_car": "02",
+              "ranked_cars": [
+                "02",
+                "03",
+                "08",
+                "07",
+                "01",
+                "04",
+                "06",
+                "05"
+              ],
+              "score": 1.0,
+              "true_car_rank": 1,
+              "available_cars": [
+                "02",
+                "03",
+                "08",
+                "07",
+                "01",
+                "04",
+                "06",
+                "05"
+              ],
+              "ranking_scores": {
+                "01": 0.23088133320647358,
+                "02": 1.8633099428109616,
+                "03": 1.2805695962930264,
+                "04": -0.03278410812436036,
+                "05": -0.5095846525661918,
+                "06": -0.09285864454827164,
+                "07": 0.28671009405602893,
+                "08": 0.4138116366850236
+              }
+            },
+            {
+              "file_id": "acv_case_04.xlsx",
+              "heldout_files": [
+                "acv_case_04.xlsx"
+              ],
+              "training_files": [
+                "acv_case_01.xlsx",
+                "acv_case_02.xlsx",
+                "acv_case_05.xlsx",
+                "acv_case_06.xlsx"
+              ],
+              "faulty_car": "01",
+              "ranked_cars": [
+                "04",
+                "01",
+                "03",
+                "02",
+                "05",
+                "06",
+                "07",
+                "08"
+              ],
+              "score": 0.875,
+              "true_car_rank": 2,
+              "available_cars": [
+                "04",
+                "01",
+                "03",
+                "02"
+              ],
+              "ranking_scores": {
+                "01": -1.5719057517616808,
+                "02": -2.4825368191473136,
+                "03": -2.285278413447653,
+                "04": 0.45543587452617407,
+                "05": null,
+                "06": null,
+                "07": null,
+                "08": null
+              }
+            },
+            {
+              "file_id": "acv_case_05.xlsx",
+              "heldout_files": [
+                "acv_case_05.xlsx"
+              ],
+              "training_files": [
+                "acv_case_01.xlsx",
+                "acv_case_02.xlsx",
+                "acv_case_04.xlsx",
+                "acv_case_06.xlsx"
+              ],
+              "faulty_car": "04",
+              "ranked_cars": [
+                "04",
+                "02",
+                "01",
+                "07",
+                "06",
+                "03",
+                "08",
+                "05"
+              ],
+              "score": 1.0,
+              "true_car_rank": 1,
+              "available_cars": [
+                "04",
+                "02",
+                "01",
+                "07",
+                "06",
+                "03",
+                "08",
+                "05"
+              ],
+              "ranking_scores": {
+                "01": -0.8466200068565346,
+                "02": 0.20175592367335216,
+                "03": -1.3754853023846798,
+                "04": 0.5454310646778572,
+                "05": -2.03286229957276,
+                "06": -1.2713532950733881,
+                "07": -1.0576650909693779,
+                "08": -1.8362962719015856
+              }
+            },
+            {
+              "file_id": "acv_case_06.xlsx",
+              "heldout_files": [
+                "acv_case_06.xlsx"
+              ],
+              "training_files": [
+                "acv_case_01.xlsx",
+                "acv_case_02.xlsx",
+                "acv_case_04.xlsx",
+                "acv_case_05.xlsx"
+              ],
+              "faulty_car": "06",
+              "ranked_cars": [
+                "06",
+                "08",
+                "04",
+                "05",
+                "02",
+                "03",
+                "01",
+                "07"
+              ],
+              "score": 1.0,
+              "true_car_rank": 1,
+              "available_cars": [
+                "06",
+                "08",
+                "04",
+                "05",
+                "02",
+                "03",
+                "01",
+                "07"
+              ],
+              "ranking_scores": {
+                "01": -0.7095712339411673,
+                "02": -0.35129102825030334,
+                "03": -0.5698688055078681,
+                "04": 0.3642840284880022,
+                "05": -0.3199366768926776,
+                "06": 7.629739985773521,
+                "07": -1.3078753583010831,
+                "08": 1.2805558598995552
+              }
+            }
+          ]
+        },
+        {
+          "file_id": "acv_case_04.xlsx",
+          "heldout_files": [
+            "acv_case_04.xlsx"
+          ],
+          "training_files": [
+            "acv_case_01.xlsx",
+            "acv_case_02.xlsx",
+            "acv_case_03.xlsx",
+            "acv_case_05.xlsx",
+            "acv_case_06.xlsx"
+          ],
+          "faulty_car": "01",
+          "ranked_cars": [
+            "04",
+            "01",
+            "03",
+            "02",
+            "05",
+            "06",
+            "07",
+            "08"
+          ],
+          "score": 0.875,
+          "true_car_rank": 2,
+          "available_cars": [
+            "04",
+            "01",
+            "03",
+            "02"
+          ],
+          "ranking_scores": {
+            "01": -0.495561410194984,
+            "02": -2.349017099536431,
+            "03": -2.204648243075209,
+            "04": 1.4573476940551566,
+            "05": null,
+            "06": null,
+            "07": null,
+            "08": null
+          },
+          "selected_model": "Pairwise regularized logistic ranking",
+          "inner_candidates": [
+            {
+              "name": "Cooling peer-deviation ranking",
+              "score": 0.925,
+              "ranking_metrics": {
+                "cases": 5,
+                "top1_correct": 4,
+                "top2_correct": 4,
+                "mean_rank": 1.6
+              }
+            },
+            {
+              "name": "Pairwise regularized logistic ranking",
+              "score": 1.0,
+              "ranking_metrics": {
+                "cases": 5,
+                "top1_correct": 5,
+                "top2_correct": 5,
+                "mean_rank": 1.0
+              }
+            },
+            {
+              "name": "Normal-car Isolation Forest",
+              "score": 0.925,
+              "ranking_metrics": {
+                "cases": 5,
+                "top1_correct": 4,
+                "top2_correct": 4,
+                "mean_rank": 1.6
+              }
+            },
+            {
+              "name": "Pairwise cooling-exceedance ranking",
+              "score": 1.0,
+              "ranking_metrics": {
+                "cases": 5,
+                "top1_correct": 5,
+                "top2_correct": 5,
+                "mean_rank": 1.0
+              }
+            },
+            {
+              "name": "XGBoost pairwise ranking",
+              "score": 0.925,
+              "ranking_metrics": {
+                "cases": 5,
+                "top1_correct": 4,
+                "top2_correct": 4,
+                "mean_rank": 1.6
+              }
+            }
+          ],
+          "inner_folds": [
+            {
+              "file_id": "acv_case_01.xlsx",
+              "heldout_files": [
+                "acv_case_01.xlsx"
+              ],
+              "training_files": [
+                "acv_case_02.xlsx",
+                "acv_case_03.xlsx",
+                "acv_case_05.xlsx",
+                "acv_case_06.xlsx"
+              ],
+              "faulty_car": "01",
+              "ranked_cars": [
+                "01",
+                "02",
+                "03",
+                "04",
+                "08",
+                "07",
+                "05",
+                "06"
+              ],
+              "score": 1.0,
+              "true_car_rank": 1,
+              "available_cars": [
+                "01",
+                "02",
+                "03",
+                "04",
+                "08",
+                "07",
+                "05",
+                "06"
+              ],
+              "ranking_scores": {
+                "01": 3.900439669260331,
+                "02": 2.045240717332492,
+                "03": -0.27248636762142164,
+                "04": -0.6951813858369882,
+                "05": -1.4712956573396658,
+                "06": -1.5185932207306583,
+                "07": -1.3309324968186462,
+                "08": -1.2793293566148396
+              }
+            },
+            {
+              "file_id": "acv_case_02.xlsx",
+              "heldout_files": [
+                "acv_case_02.xlsx"
+              ],
+              "training_files": [
+                "acv_case_01.xlsx",
+                "acv_case_03.xlsx",
+                "acv_case_05.xlsx",
+                "acv_case_06.xlsx"
+              ],
+              "faulty_car": "02",
+              "ranked_cars": [
+                "02",
+                "03",
+                "08",
+                "07",
+                "01",
+                "04",
+                "06",
+                "05"
+              ],
+              "score": 1.0,
+              "true_car_rank": 1,
+              "available_cars": [
+                "02",
+                "03",
+                "08",
+                "07",
+                "01",
+                "04",
+                "06",
+                "05"
+              ],
+              "ranking_scores": {
+                "01": -0.29223656212272603,
+                "02": 2.4888408485294775,
+                "03": 1.31163217926473,
+                "04": -0.5123058061209373,
+                "05": -0.9187621309621267,
+                "06": -0.5554085281842102,
+                "07": -0.23344044292166147,
+                "08": -0.1299759558808356
+              }
+            },
+            {
+              "file_id": "acv_case_03.xlsx",
+              "heldout_files": [
+                "acv_case_03.xlsx"
+              ],
+              "training_files": [
+                "acv_case_01.xlsx",
+                "acv_case_02.xlsx",
+                "acv_case_05.xlsx",
+                "acv_case_06.xlsx"
+              ],
+              "faulty_car": "03",
+              "ranked_cars": [
+                "03",
+                "02",
+                "01",
+                "07",
+                "08",
+                "04",
+                "05",
+                "06"
+              ],
+              "score": 1.0,
+              "true_car_rank": 1,
+              "available_cars": [
+                "03",
+                "02",
+                "01",
+                "07",
+                "08",
+                "04",
+                "05",
+                "06"
+              ],
+              "ranking_scores": {
+                "01": 1.766695142977175,
+                "02": 1.9984547102499977,
+                "03": 5.375635566063506,
+                "04": -0.7645602273799513,
+                "05": -1.5682907341087282,
+                "06": -1.661327316256082,
+                "07": 0.05796148630682574,
+                "08": -0.44388115130422723
+              }
+            },
+            {
+              "file_id": "acv_case_05.xlsx",
+              "heldout_files": [
+                "acv_case_05.xlsx"
+              ],
+              "training_files": [
+                "acv_case_01.xlsx",
+                "acv_case_02.xlsx",
+                "acv_case_03.xlsx",
+                "acv_case_06.xlsx"
+              ],
+              "faulty_car": "04",
+              "ranked_cars": [
+                "04",
+                "07",
+                "02",
+                "06",
+                "01",
+                "03",
+                "08",
+                "05"
+              ],
+              "score": 1.0,
+              "true_car_rank": 1,
+              "available_cars": [
+                "04",
+                "07",
+                "02",
+                "06",
+                "01",
+                "03",
+                "08",
+                "05"
+              ],
+              "ranking_scores": {
+                "01": -0.009092772660496795,
+                "02": 0.262133591166663,
+                "03": -0.1317043582342805,
+                "04": 0.5540107021468142,
+                "05": -2.298829399903005,
+                "06": 0.1806103984161641,
+                "07": 0.3622397186562858,
+                "08": -1.3761544731551418
+              }
+            },
+            {
+              "file_id": "acv_case_06.xlsx",
+              "heldout_files": [
+                "acv_case_06.xlsx"
+              ],
+              "training_files": [
+                "acv_case_01.xlsx",
+                "acv_case_02.xlsx",
+                "acv_case_03.xlsx",
+                "acv_case_05.xlsx"
+              ],
+              "faulty_car": "06",
+              "ranked_cars": [
+                "06",
+                "08",
+                "04",
+                "02",
+                "05",
+                "03",
+                "01",
+                "07"
+              ],
+              "score": 1.0,
+              "true_car_rank": 1,
+              "available_cars": [
+                "06",
+                "08",
+                "04",
+                "02",
+                "05",
+                "03",
+                "01",
+                "07"
+              ],
+              "ranking_scores": {
+                "01": -1.213853305345665,
+                "02": -0.6571671592664284,
+                "03": -0.8647248001308897,
+                "04": 0.25677607453422235,
+                "05": -0.6845036356753853,
+                "06": 8.790226780134905,
+                "07": -3.727314309025867,
+                "08": 1.4629697204491738
+              }
+            }
+          ]
+        },
+        {
+          "file_id": "acv_case_05.xlsx",
+          "heldout_files": [
+            "acv_case_05.xlsx"
+          ],
+          "training_files": [
+            "acv_case_01.xlsx",
+            "acv_case_02.xlsx",
+            "acv_case_03.xlsx",
+            "acv_case_04.xlsx",
+            "acv_case_06.xlsx"
+          ],
+          "faulty_car": "04",
+          "ranked_cars": [
+            "01",
+            "02",
+            "03",
+            "04",
+            "06",
+            "07",
+            "08",
+            "05"
+          ],
+          "score": 0.625,
+          "true_car_rank": 4,
+          "available_cars": [
+            "01",
+            "02",
+            "03",
+            "04",
+            "06",
+            "07",
+            "08",
+            "05"
+          ],
+          "ranking_scores": {
+            "01": 0.63125,
+            "02": 0.63125,
+            "03": 0.63125,
+            "04": 0.63125,
+            "05": 0.20625,
+            "06": 0.63125,
+            "07": 0.63125,
+            "08": 0.50625
+          },
+          "selected_model": "Cooling peer-deviation ranking",
+          "inner_candidates": [
+            {
+              "name": "Cooling peer-deviation ranking",
+              "score": 1.0,
+              "ranking_metrics": {
+                "cases": 5,
+                "top1_correct": 5,
+                "top2_correct": 5,
+                "mean_rank": 1.0
+              }
+            },
+            {
+              "name": "Pairwise regularized logistic ranking",
+              "score": 0.975,
+              "ranking_metrics": {
+                "cases": 5,
+                "top1_correct": 4,
+                "top2_correct": 5,
+                "mean_rank": 1.2
+              }
+            },
+            {
+              "name": "Normal-car Isolation Forest",
+              "score": 0.975,
+              "ranking_metrics": {
+                "cases": 5,
+                "top1_correct": 4,
+                "top2_correct": 5,
+                "mean_rank": 1.2
+              }
+            },
+            {
+              "name": "Pairwise cooling-exceedance ranking",
+              "score": 0.975,
+              "ranking_metrics": {
+                "cases": 5,
+                "top1_correct": 4,
+                "top2_correct": 5,
+                "mean_rank": 1.2
+              }
+            },
+            {
+              "name": "XGBoost pairwise ranking",
+              "score": 0.975,
+              "ranking_metrics": {
+                "cases": 5,
+                "top1_correct": 4,
+                "top2_correct": 5,
+                "mean_rank": 1.2
+              }
+            }
+          ],
+          "inner_folds": [
+            {
+              "file_id": "acv_case_01.xlsx",
+              "heldout_files": [
+                "acv_case_01.xlsx"
+              ],
+              "training_files": [
+                "acv_case_02.xlsx",
+                "acv_case_03.xlsx",
+                "acv_case_04.xlsx",
+                "acv_case_06.xlsx"
+              ],
+              "faulty_car": "01",
+              "ranked_cars": [
+                "01",
+                "02",
+                "03",
+                "04",
+                "05",
+                "06",
+                "07",
+                "08"
+              ],
+              "score": 1.0,
+              "true_car_rank": 1,
+              "available_cars": [
+                "01",
+                "02",
+                "03",
+                "04",
+                "05",
+                "06",
+                "07",
+                "08"
+              ],
+              "ranking_scores": {
+                "01": 0.990625,
+                "02": 0.659375,
+                "03": 0.475,
+                "04": 0.475,
+                "05": 0.475,
+                "06": 0.475,
+                "07": 0.475,
+                "08": 0.475
+              }
+            },
+            {
+              "file_id": "acv_case_02.xlsx",
+              "heldout_files": [
+                "acv_case_02.xlsx"
+              ],
+              "training_files": [
+                "acv_case_01.xlsx",
+                "acv_case_03.xlsx",
+                "acv_case_04.xlsx",
+                "acv_case_06.xlsx"
+              ],
+              "faulty_car": "02",
+              "ranked_cars": [
+                "02",
+                "03",
+                "01",
+                "04",
+                "05",
+                "06",
+                "07",
+                "08"
+              ],
+              "score": 1.0,
+              "true_car_rank": 1,
+              "available_cars": [
+                "02",
+                "03",
+                "01",
+                "04",
+                "05",
+                "06",
+                "07",
+                "08"
+              ],
+              "ranking_scores": {
+                "01": 0.528125,
+                "02": 0.7281249999999999,
+                "03": 0.6031249999999999,
+                "04": 0.528125,
+                "05": 0.528125,
+                "06": 0.528125,
+                "07": 0.528125,
+                "08": 0.528125
+              }
+            },
+            {
+              "file_id": "acv_case_03.xlsx",
+              "heldout_files": [
+                "acv_case_03.xlsx"
+              ],
+              "training_files": [
+                "acv_case_01.xlsx",
+                "acv_case_02.xlsx",
+                "acv_case_04.xlsx",
+                "acv_case_06.xlsx"
+              ],
+              "faulty_car": "03",
+              "ranked_cars": [
+                "03",
+                "01",
+                "02",
+                "07",
+                "08",
+                "04",
+                "05",
+                "06"
+              ],
+              "score": 1.0,
+              "true_car_rank": 1,
+              "available_cars": [
+                "03",
+                "01",
+                "02",
+                "07",
+                "08",
+                "04",
+                "05",
+                "06"
+              ],
+              "ranking_scores": {
+                "01": 0.6156250000000001,
+                "02": 0.6156250000000001,
+                "03": 0.9624999999999999,
+                "04": 0.43124999999999997,
+                "05": 0.43124999999999997,
+                "06": 0.43124999999999997,
+                "07": 0.50625,
+                "08": 0.50625
+              }
+            },
+            {
+              "file_id": "acv_case_04.xlsx",
+              "heldout_files": [
+                "acv_case_04.xlsx"
+              ],
+              "training_files": [
+                "acv_case_01.xlsx",
+                "acv_case_02.xlsx",
+                "acv_case_03.xlsx",
+                "acv_case_06.xlsx"
+              ],
+              "faulty_car": "01",
+              "ranked_cars": [
+                "01",
+                "04",
+                "02",
+                "03",
+                "05",
+                "06",
+                "07",
+                "08"
+              ],
+              "score": 1.0,
+              "true_car_rank": 1,
+              "available_cars": [
+                "01",
+                "04",
+                "02",
+                "03"
+              ],
+              "ranking_scores": {
+                "01": 0.6875,
+                "02": 0.5625,
+                "03": 0.5625,
+                "04": 0.6875,
+                "05": null,
+                "06": null,
+                "07": null,
+                "08": null
+              }
+            },
+            {
+              "file_id": "acv_case_06.xlsx",
+              "heldout_files": [
+                "acv_case_06.xlsx"
+              ],
+              "training_files": [
+                "acv_case_01.xlsx",
+                "acv_case_02.xlsx",
+                "acv_case_03.xlsx",
+                "acv_case_04.xlsx"
+              ],
+              "faulty_car": "06",
+              "ranked_cars": [
+                "06",
+                "08",
+                "01",
+                "02",
+                "03",
+                "04",
+                "05",
+                "07"
+              ],
+              "score": 1.0,
+              "true_car_rank": 1,
+              "available_cars": [
+                "06",
+                "08",
+                "01",
+                "02",
+                "03",
+                "04",
+                "05",
+                "07"
+              ],
+              "ranking_scores": {
+                "01": 0.54375,
+                "02": 0.54375,
+                "03": 0.54375,
+                "04": 0.54375,
+                "05": 0.54375,
+                "06": 1.0,
+                "07": 0.171875,
+                "08": 0.609375
+              }
+            }
+          ]
+        },
+        {
+          "file_id": "acv_case_06.xlsx",
+          "heldout_files": [
+            "acv_case_06.xlsx"
+          ],
+          "training_files": [
+            "acv_case_01.xlsx",
+            "acv_case_02.xlsx",
+            "acv_case_03.xlsx",
+            "acv_case_04.xlsx",
+            "acv_case_05.xlsx"
+          ],
+          "faulty_car": "06",
+          "ranked_cars": [
+            "06",
+            "08",
+            "04",
+            "05",
+            "02",
+            "03",
+            "01",
+            "07"
+          ],
+          "score": 1.0,
+          "true_car_rank": 1,
+          "available_cars": [
+            "06",
+            "08",
+            "04",
+            "05",
+            "02",
+            "03",
+            "01",
+            "07"
+          ],
+          "ranking_scores": {
+            "01": -0.9067665850056961,
+            "02": -0.5464631839315368,
+            "03": -0.7671332551470162,
+            "04": 0.1673246243889318,
+            "05": -0.5178565675474867,
+            "06": 7.459317375799725,
+            "07": -1.5096815623954345,
+            "08": 1.0872425284789098
+          },
+          "selected_model": "Pairwise cooling-exceedance ranking",
+          "inner_candidates": [
+            {
+              "name": "Cooling peer-deviation ranking",
+              "score": 0.925,
+              "ranking_metrics": {
+                "cases": 5,
+                "top1_correct": 4,
+                "top2_correct": 4,
+                "mean_rank": 1.6
+              }
+            },
+            {
+              "name": "Pairwise regularized logistic ranking",
+              "score": 0.95,
+              "ranking_metrics": {
+                "cases": 5,
+                "top1_correct": 3,
+                "top2_correct": 5,
+                "mean_rank": 1.4
+              }
+            },
+            {
+              "name": "Normal-car Isolation Forest",
+              "score": 0.8,
+              "ranking_metrics": {
+                "cases": 5,
+                "top1_correct": 3,
+                "top2_correct": 3,
+                "mean_rank": 2.6
+              }
+            },
+            {
+              "name": "Pairwise cooling-exceedance ranking",
+              "score": 0.975,
+              "ranking_metrics": {
+                "cases": 5,
+                "top1_correct": 4,
+                "top2_correct": 5,
+                "mean_rank": 1.2
+              }
+            },
+            {
+              "name": "XGBoost pairwise ranking",
+              "score": 0.825,
+              "ranking_metrics": {
+                "cases": 5,
+                "top1_correct": 3,
+                "top2_correct": 4,
+                "mean_rank": 2.4
+              }
+            }
+          ],
+          "inner_folds": [
+            {
+              "file_id": "acv_case_01.xlsx",
+              "heldout_files": [
+                "acv_case_01.xlsx"
+              ],
+              "training_files": [
+                "acv_case_02.xlsx",
+                "acv_case_03.xlsx",
+                "acv_case_04.xlsx",
+                "acv_case_05.xlsx"
+              ],
+              "faulty_car": "01",
+              "ranked_cars": [
+                "01",
+                "02",
+                "03",
+                "04",
+                "08",
+                "07",
+                "05",
+                "06"
+              ],
+              "score": 1.0,
+              "true_car_rank": 1,
+              "available_cars": [
+                "01",
+                "02",
+                "03",
+                "04",
+                "08",
+                "07",
+                "05",
+                "06"
+              ],
+              "ranking_scores": {
+                "01": 2.5529976070161173,
+                "02": 1.1965278057390685,
+                "03": 0.4298288435983416,
+                "04": -0.10376659240945353,
+                "05": -0.662917925695814,
+                "06": -0.68459412085326,
+                "07": -0.4119604600770661,
+                "08": -0.18841011540336833
+              }
+            },
+            {
+              "file_id": "acv_case_02.xlsx",
+              "heldout_files": [
+                "acv_case_02.xlsx"
+              ],
+              "training_files": [
+                "acv_case_01.xlsx",
+                "acv_case_03.xlsx",
+                "acv_case_04.xlsx",
+                "acv_case_05.xlsx"
+              ],
+              "faulty_car": "02",
+              "ranked_cars": [
+                "02",
+                "03",
+                "08",
+                "07",
+                "01",
+                "04",
+                "06",
+                "05"
+              ],
+              "score": 1.0,
+              "true_car_rank": 1,
+              "available_cars": [
+                "02",
+                "03",
+                "08",
+                "07",
+                "01",
+                "04",
+                "06",
+                "05"
+              ],
+              "ranking_scores": {
+                "01": 0.0963264392985762,
+                "02": 2.0438107992396737,
+                "03": 1.3330201773923163,
+                "04": -0.23849835086735754,
+                "05": -0.7998999725865217,
+                "06": -0.3261840747178626,
+                "07": 0.14234779239132078,
+                "08": 0.28619546692728354
+              }
+            },
+            {
+              "file_id": "acv_case_03.xlsx",
+              "heldout_files": [
+                "acv_case_03.xlsx"
+              ],
+              "training_files": [
+                "acv_case_01.xlsx",
+                "acv_case_02.xlsx",
+                "acv_case_04.xlsx",
+                "acv_case_05.xlsx"
+              ],
+              "faulty_car": "03",
+              "ranked_cars": [
+                "03",
+                "02",
+                "01",
+                "07",
+                "08",
+                "04",
+                "05",
+                "06"
+              ],
+              "score": 1.0,
+              "true_car_rank": 1,
+              "available_cars": [
+                "03",
+                "02",
+                "01",
+                "07",
+                "08",
+                "04",
+                "05",
+                "06"
+              ],
+              "ranking_scores": {
+                "01": 1.390469336265706,
+                "02": 1.6942634851804543,
+                "03": 4.624089370708355,
+                "04": 0.17336414581501958,
+                "05": -0.47701278442452355,
+                "06": -0.6083710028309158,
+                "07": 0.4480744695136555,
+                "08": 0.3347533156133772
+              }
+            },
+            {
+              "file_id": "acv_case_04.xlsx",
+              "heldout_files": [
+                "acv_case_04.xlsx"
+              ],
+              "training_files": [
+                "acv_case_01.xlsx",
+                "acv_case_02.xlsx",
+                "acv_case_03.xlsx",
+                "acv_case_05.xlsx"
+              ],
+              "faulty_car": "01",
+              "ranked_cars": [
+                "04",
+                "01",
+                "03",
+                "02",
+                "05",
+                "06",
+                "07",
+                "08"
+              ],
+              "score": 0.875,
+              "true_car_rank": 2,
+              "available_cars": [
+                "04",
+                "01",
+                "03",
+                "02"
+              ],
+              "ranking_scores": {
+                "01": -1.7887933203652024,
+                "02": -2.867002754194491,
+                "03": -2.6341271185224944,
+                "04": 0.5504393976751214,
+                "05": null,
+                "06": null,
+                "07": null,
+                "08": null
+              }
+            },
+            {
+              "file_id": "acv_case_05.xlsx",
+              "heldout_files": [
+                "acv_case_05.xlsx"
+              ],
+              "training_files": [
+                "acv_case_01.xlsx",
+                "acv_case_02.xlsx",
+                "acv_case_03.xlsx",
+                "acv_case_04.xlsx"
+              ],
+              "faulty_car": "04",
+              "ranked_cars": [
+                "04",
+                "02",
+                "01",
+                "07",
+                "06",
+                "03",
+                "08",
+                "05"
+              ],
+              "score": 1.0,
+              "true_car_rank": 1,
+              "available_cars": [
+                "04",
+                "02",
+                "01",
+                "07",
+                "06",
+                "03",
+                "08",
+                "05"
+              ],
+              "ranking_scores": {
+                "01": -0.7186770690117009,
+                "02": 0.6120244564184508,
+                "03": -1.410031809179214,
+                "04": 0.9992756830867245,
+                "05": -2.237408067634617,
+                "06": -1.2890195770734558,
+                "07": -1.0082966683146934,
+                "08": -1.9852902834301822
+              }
+            }
+          ]
+        }
+      ],
+      "method": "Retrospective nested leave-one-input-group-out: outer case excluded from inner candidate selection and all fitting; inner rank-decay selects the candidate; declared candidate order breaks ties.",
+      "limitations": [
+        "This audits model selection, not the final model refitted on all cases.",
+        "All available cases were already inspected during development; this is not an untouched external test.",
+        "Only 6 labelled cases in 6 distinct selected-input groups; unknown shared acquisition may remain."
+      ]
+    },
+    "method": "Leave one whole selected-input group out; identical parsed workbooks excluded together; preprocessing fitted only on remaining cases. Scores select the final candidate and are not independent final-test accuracy.",
+    "candidates": [
+      {
+        "name": "Cooling peer-deviation ranking",
+        "score": 0.9375,
+        "ranking_metrics": {
+          "cases": 6,
+          "top1_correct": 5,
+          "top2_correct": 5,
+          "mean_rank": 1.5
+        }
+      },
+      {
+        "name": "Pairwise regularized logistic ranking",
+        "score": 0.9583333333333334,
+        "ranking_metrics": {
+          "cases": 6,
+          "top1_correct": 4,
+          "top2_correct": 6,
+          "mean_rank": 1.3333333333333333
+        }
+      },
+      {
+        "name": "Normal-car Isolation Forest",
+        "score": 0.875,
+        "ranking_metrics": {
+          "cases": 6,
+          "top1_correct": 4,
+          "top2_correct": 4,
+          "mean_rank": 2.0
+        }
+      },
+      {
+        "name": "Pairwise cooling-exceedance ranking",
+        "score": 0.9791666666666666,
+        "ranking_metrics": {
+          "cases": 6,
+          "top1_correct": 5,
+          "top2_correct": 6,
+          "mean_rank": 1.1666666666666667
+        }
+      },
+      {
+        "name": "XGBoost pairwise ranking",
+        "score": 0.875,
+        "ranking_metrics": {
+          "cases": 6,
+          "top1_correct": 4,
+          "top2_correct": 5,
+          "mean_rank": 2.0
+        }
+      }
+    ],
+    "folds": [
+      {
+        "file_id": "acv_case_01.xlsx",
+        "heldout_files": [
+          "acv_case_01.xlsx"
+        ],
+        "training_files": [
+          "acv_case_02.xlsx",
+          "acv_case_03.xlsx",
+          "acv_case_04.xlsx",
+          "acv_case_05.xlsx",
+          "acv_case_06.xlsx"
+        ],
+        "faulty_car": "01",
+        "ranked_cars": [
+          "01",
+          "02",
+          "03",
+          "04",
+          "08",
+          "07",
+          "05",
+          "06"
+        ],
+        "score": 1.0,
+        "true_car_rank": 1,
+        "available_cars": [
+          "01",
+          "02",
+          "03",
+          "04",
+          "08",
+          "07",
+          "05",
+          "06"
+        ],
+        "ranking_scores": {
+          "01": 2.1337228450453427,
+          "02": 0.9076357122307298,
+          "03": 0.21872963639860593,
+          "04": -0.2694490970174625,
+          "05": -0.7814462523365939,
+          "06": -0.797748790366859,
+          "07": -0.5521762211550952,
+          "08": -0.3639110717766363
+        }
+      },
+      {
+        "file_id": "acv_case_02.xlsx",
+        "heldout_files": [
+          "acv_case_02.xlsx"
+        ],
+        "training_files": [
+          "acv_case_01.xlsx",
+          "acv_case_03.xlsx",
+          "acv_case_04.xlsx",
+          "acv_case_05.xlsx",
+          "acv_case_06.xlsx"
+        ],
+        "faulty_car": "02",
+        "ranked_cars": [
+          "02",
+          "03",
+          "08",
+          "07",
+          "01",
+          "04",
+          "06",
+          "05"
+        ],
+        "score": 1.0,
+        "true_car_rank": 1,
+        "available_cars": [
+          "02",
+          "03",
+          "08",
+          "07",
+          "01",
+          "04",
+          "06",
+          "05"
+        ],
+        "ranking_scores": {
+          "01": 0.039308165903856704,
+          "02": 1.832426034541995,
+          "03": 1.1886418761703128,
+          "04": -0.25510072562647595,
+          "05": -0.7770823589212699,
+          "06": -0.32487273878316913,
+          "07": 0.09576990910424615,
+          "08": 0.2335437550778976
+        }
+      },
+      {
+        "file_id": "acv_case_03.xlsx",
+        "heldout_files": [
+          "acv_case_03.xlsx"
+        ],
+        "training_files": [
+          "acv_case_01.xlsx",
+          "acv_case_02.xlsx",
+          "acv_case_04.xlsx",
+          "acv_case_05.xlsx",
+          "acv_case_06.xlsx"
+        ],
+        "faulty_car": "03",
+        "ranked_cars": [
+          "03",
+          "02",
+          "01",
+          "07",
+          "08",
+          "04",
+          "05",
+          "06"
+        ],
+        "score": 1.0,
+        "true_car_rank": 1,
+        "available_cars": [
+          "03",
+          "02",
+          "01",
+          "07",
+          "08",
+          "04",
+          "05",
+          "06"
+        ],
+        "ranking_scores": {
+          "01": 1.2065340643269995,
+          "02": 1.4825259660199712,
+          "03": 4.016492432309101,
+          "04": 0.1437235939790911,
+          "05": -0.42445328926134873,
+          "06": -0.539184969628666,
+          "07": 0.39858405061388724,
+          "08": 0.29958542949782885
+        }
+      },
+      {
+        "file_id": "acv_case_04.xlsx",
+        "heldout_files": [
+          "acv_case_04.xlsx"
+        ],
+        "training_files": [
+          "acv_case_01.xlsx",
+          "acv_case_02.xlsx",
+          "acv_case_03.xlsx",
+          "acv_case_05.xlsx",
+          "acv_case_06.xlsx"
+        ],
+        "faulty_car": "01",
+        "ranked_cars": [
+          "04",
+          "01",
+          "03",
+          "02",
+          "05",
+          "06",
+          "07",
+          "08"
+        ],
+        "score": 0.875,
+        "true_car_rank": 2,
+        "available_cars": [
+          "04",
+          "01",
+          "03",
+          "02"
+        ],
+        "ranking_scores": {
+          "01": -1.8309997125889714,
+          "02": -2.783027773265378,
+          "03": -2.576831783201928,
+          "04": 0.2858422561293731,
+          "05": null,
+          "06": null,
+          "07": null,
+          "08": null
+        }
+      },
+      {
+        "file_id": "acv_case_05.xlsx",
+        "heldout_files": [
+          "acv_case_05.xlsx"
+        ],
+        "training_files": [
+          "acv_case_01.xlsx",
+          "acv_case_02.xlsx",
+          "acv_case_03.xlsx",
+          "acv_case_04.xlsx",
+          "acv_case_06.xlsx"
+        ],
+        "faulty_car": "04",
+        "ranked_cars": [
+          "04",
+          "02",
+          "01",
+          "07",
+          "06",
+          "03",
+          "08",
+          "05"
+        ],
+        "score": 1.0,
+        "true_car_rank": 1,
+        "available_cars": [
+          "04",
+          "02",
+          "01",
+          "07",
+          "06",
+          "03",
+          "08",
+          "05"
+        ],
+        "ranking_scores": {
+          "01": -1.0515408166081817,
+          "02": 0.10712444183180359,
+          "03": -1.6379921533735646,
+          "04": 0.48219681960237204,
+          "05": -2.363842321357176,
+          "06": -1.5239897533914153,
+          "07": -1.286899759195719,
+          "08": -2.1463433063030823
+        }
+      },
+      {
+        "file_id": "acv_case_06.xlsx",
+        "heldout_files": [
+          "acv_case_06.xlsx"
+        ],
+        "training_files": [
+          "acv_case_01.xlsx",
+          "acv_case_02.xlsx",
+          "acv_case_03.xlsx",
+          "acv_case_04.xlsx",
+          "acv_case_05.xlsx"
+        ],
+        "faulty_car": "06",
+        "ranked_cars": [
+          "06",
+          "08",
+          "04",
+          "05",
+          "02",
+          "03",
+          "01",
+          "07"
+        ],
+        "score": 1.0,
+        "true_car_rank": 1,
+        "available_cars": [
+          "06",
+          "08",
+          "04",
+          "05",
+          "02",
+          "03",
+          "01",
+          "07"
+        ],
+        "ranking_scores": {
+          "01": -0.9067665850056961,
+          "02": -0.5464631839315368,
+          "03": -0.7671332551470162,
+          "04": 0.1673246243889318,
+          "05": -0.5178565675474867,
+          "06": 7.459317375799725,
+          "07": -1.5096815623954345,
+          "08": 1.0872425284789098
+        }
+      }
+    ],
+    "limitations": [
+      "Only 6 labelled case files in 6 distinct selected-input groups are available; acquisition independence is unverified.",
+      "Leave-one-case-out scores were used for candidate selection; they are not independent official test scores.",
+      "One faulty car per case is the organiser task assumption. A ranking does not verify a refrigerant leak or locate its onset.",
+      "Temperature and pressure scaling are undocumented; evidence is reported in raw source units, not calibrated physical units.",
+      "Cars without usable cooling/cabin/target evidence are placed last in stable identifier order solely to satisfy the required complete ranking; their condition is unknown."
+    ]
+  },
+  "limitations": [
+    "Only 6 labelled case files in 6 distinct selected-input groups are available; acquisition independence is unverified.",
+    "Leave-one-case-out scores were used for candidate selection; they are not independent official test scores.",
+    "One faulty car per case is the organiser task assumption. A ranking does not verify a refrigerant leak or locate its onset.",
+    "Temperature and pressure scaling are undocumented; evidence is reported in raw source units, not calibrated physical units.",
+    "Cars without usable cooling/cabin/target evidence are placed last in stable identifier order solely to satisfy the required complete ranking; their condition is unknown."
+  ],
+  "input_groups": {
+    "acv_case_01.xlsx": "5d228ff1f4ff3b775cd3fd6891cfa720cd44cb6e531cf3bed9a26a1183873fd9",
+    "acv_case_02.xlsx": "4348ee7032261ea2b74a219ffc7f8135318b16a5d0bb8e9e2297359340f7b2c2",
+    "acv_case_03.xlsx": "6fe95247d9829b65f7518b92cd1e75f38c7f59337d872dc8c70bdce54b7e1fa0",
+    "acv_case_04.xlsx": "44e8935ba5988ee5f5832b985af9055ed8b8103aac2cc3c024437ddc200d4828",
+    "acv_case_05.xlsx": "ef0fbb8d175316e0939758d48e762e8680159c11038ff6a0bcebb4cea32eabc4",
+    "acv_case_06.xlsx": "13553a78590f668f8509b93f14544020f82b5164ab3ae32e95edc56061d8153b"
+  },
+  "selected_model_features": [
+    "above_peer_fraction",
+    "above_target_fraction"
+  ],
+  "preprocessing": {
+    "validity": "Explicit Information Valid=Valid when present; exact Automatic Cooling/Full Cooling/Half Cooling modes; nonmissing control states; finite cabin and cooling-target values",
+    "sentinels": "Observation-area channel is not used; -50 values there flagged as suspected sentinels, not diagnosed temperatures",
+    "ranking_features": "Case-relative temperature-residual and matched-mode peer summaries; no car ID or timestamp label features",
+    "missing_evidence": "Unavailable cars excluded from model fitting and placed at ranking tail with unknown status"
+  },
+  "model_sha256": "2631a8a61113d3d22ff2efc52c1df57ed44187dda9b03c804718784e7d4c98e2"
+}

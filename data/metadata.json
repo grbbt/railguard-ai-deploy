@@ -1,0 +1,182 @@
+{
+  "name": "RailGuard synthetic telemetry demonstration",
+  "source": "synthetic",
+  "generator": "backend.synthetic",
+  "generator_version": "1.0",
+  "seed": 42,
+  "start_utc": "2026-09-01T00:00:00Z",
+  "frequency_minutes": 5,
+  "periods_per_component": 288,
+  "train_count": 8,
+  "components": [
+    "bogies",
+    "doors",
+    "brakes",
+    "motors"
+  ],
+  "records_per_dataset": 9216,
+  "reference_fraction": 0.4,
+  "reference_periods": 115,
+  "sensor_units": {
+    "speed_kmh": "km/h",
+    "ambient_temp_c": "°C",
+    "vibration_mm_s": "mm/s",
+    "bearing_temp_c": "°C",
+    "door_current_a": "A",
+    "door_cycle_s": "s",
+    "brake_pressure_bar": "bar",
+    "brake_temp_c": "°C",
+    "motor_current_a": "A",
+    "motor_temp_c": "°C"
+  },
+  "applicable_sensors": {
+    "bogies": [
+      "vibration_mm_s",
+      "bearing_temp_c"
+    ],
+    "doors": [
+      "door_current_a",
+      "door_cycle_s"
+    ],
+    "brakes": [
+      "brake_pressure_bar",
+      "brake_temp_c"
+    ],
+    "motors": [
+      "motor_current_a",
+      "motor_temp_c"
+    ]
+  },
+  "context_columns": [
+    "speed_kmh",
+    "ambient_temp_c"
+  ],
+  "exclude_from_model": [
+    "timestamp",
+    "train_id",
+    "train_name",
+    "line",
+    "component",
+    "injected_anomaly",
+    "scenario"
+  ],
+  "label_definition": "injected_anomaly=1 marks a planted synthetic change, not a confirmed fault or physical diagnosis. Evaluation only; never a detector feature.",
+  "provenance": "All train names, measurements, operating conditions, and anomaly scenarios are generated. No railway operator data or empirical validation is claimed.",
+  "limitations": [
+    "Illustrative feature-level distributions and operating relationships; not calibrated from real rolling stock.",
+    "Values are five-minute feature aggregates, not raw waveforms or synchronized actuator samples.",
+    "Healthy means no planted change; a detector may still produce false positives.",
+    "Absent non-applicable component sensors are structural blanks, not telemetry dropout.",
+    "The mixed and missing injection markers are evaluation annotations; never verified fault labels."
+  ],
+  "injection_schedule": [
+    {
+      "train_id": "RG-101",
+      "component": "bogies",
+      "kind": "sustained",
+      "start_fraction": 0.62,
+      "scenario": "synthetic_bogie_vibration_temperature_shift",
+      "end_offsets": {
+        "vibration_mm_s": 4.2,
+        "bearing_temp_c": 15.0
+      },
+      "start_step_zero_based": 179,
+      "start_timestamp": "2026-09-01T14:55:00Z",
+      "end_timestamp": "2026-09-01T23:55:00Z",
+      "injected_records": 109
+    },
+    {
+      "train_id": "RG-103",
+      "component": "doors",
+      "kind": "sustained",
+      "start_fraction": 0.68,
+      "scenario": "synthetic_door_current_cycle_shift",
+      "end_offsets": {
+        "door_current_a": 4.0,
+        "door_cycle_s": 1.25
+      },
+      "start_step_zero_based": 196,
+      "start_timestamp": "2026-09-01T16:20:00Z",
+      "end_timestamp": "2026-09-01T23:55:00Z",
+      "injected_records": 92
+    },
+    {
+      "train_id": "RG-105",
+      "component": "motors",
+      "kind": "sustained",
+      "start_fraction": 0.65,
+      "scenario": "synthetic_motor_current_temperature_shift",
+      "end_offsets": {
+        "motor_current_a": 100.0,
+        "motor_temp_c": 24.0
+      },
+      "start_step_zero_based": 188,
+      "start_timestamp": "2026-09-01T15:40:00Z",
+      "end_timestamp": "2026-09-01T23:55:00Z",
+      "injected_records": 100
+    },
+    {
+      "train_id": "RG-106",
+      "component": "brakes",
+      "kind": "drift",
+      "start_fraction": 0.7,
+      "scenario": "synthetic_brake_pressure_temperature_drift",
+      "end_offsets": {
+        "brake_pressure_bar": -0.34,
+        "brake_temp_c": 5.2
+      },
+      "start_step_zero_based": 202,
+      "start_timestamp": "2026-09-01T16:50:00Z",
+      "end_timestamp": "2026-09-01T23:55:00Z",
+      "injected_records": 86
+    },
+    {
+      "train_id": "RG-108",
+      "component": "bogies",
+      "kind": "drift",
+      "start_fraction": 0.73,
+      "scenario": "synthetic_bogie_vibration_temperature_drift",
+      "end_offsets": {
+        "vibration_mm_s": 0.8,
+        "bearing_temp_c": 4.2
+      },
+      "start_step_zero_based": 211,
+      "start_timestamp": "2026-09-01T17:35:00Z",
+      "end_timestamp": "2026-09-01T23:55:00Z",
+      "injected_records": 77
+    }
+  ],
+  "missing_variant": {
+    "base": "mixed",
+    "random_gap_fraction_per_applicable_sensor": "floor(component_rows / 30) cells per sensor",
+    "additional_gap": "RG-102 doors: both applicable sensors absent for final 12 observations",
+    "encoding": "Empty CSV fields; original absent values are preserved as missing"
+  },
+  "files": {
+    "mixed": {
+      "filename": "railguard_synthetic_mixed.csv",
+      "rows": 9216,
+      "injected_records": 464,
+      "sha256": "191b142c54f1b3462210f1d9eb9bae23453666a641a4837be42a20507a259522"
+    },
+    "quoted": {
+      "filename": "railguard_synthetic_quoted.csv",
+      "rows": 9216,
+      "injected_records": 464,
+      "sha256": "4767a55c726e85cf3bb01c1a38b4086fc0c383eeb41d4a4d3fa5467aec21144f",
+      "note": "Identical mixed readings with every CSV field quoted; parsing regression fixture."
+    },
+    "healthy": {
+      "filename": "railguard_synthetic_healthy.csv",
+      "rows": 9216,
+      "injected_records": 0,
+      "sha256": "3862d7126f4797a190aa2f8b9e364c5dd37777f241e59cca4580f78faed36099"
+    },
+    "missing": {
+      "filename": "railguard_synthetic_missing.csv",
+      "rows": 9216,
+      "injected_records": 464,
+      "sha256": "860aa02e504b486d11468dc3d6c1ba74b4f400b68014f8c9bf386e90e457dd47"
+    }
+  }
+}

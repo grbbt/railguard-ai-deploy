@@ -1,0 +1,6 @@
+{
+  "Balanced logistic regression": true,
+  "Balanced Extra Trees": true,
+  "Class-weighted XGBoost": true,
+  "Normal-reference side Isolation Forest": true
+}

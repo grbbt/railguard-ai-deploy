@@ -1,0 +1,235 @@
+/* Engineering studio palette. One graphite-to-steel family connects navigation,
+   result cards and the transparent WebGL stage. Semantic finding and graph
+   colours remain data encodings; this file changes presentation only. */
+:root {
+  --ui-canvas: #0e141d;
+  --ui-surface: #192534;
+  --ui-subtle: #131e2b;
+  --ui-text: #ecf2f7;
+  --ui-muted: #b3c1cf;
+  --ui-border: #35475a;
+  --ui-strong: #afc8df;
+  --ui-on-strong: #102131;
+  --ng-hover: #2c4054;
+  --ng-selected: #293e52;
+  --ng-amber: #e7bc84;
+  --ng-amber-bg: #302b26;
+  --gs-panel: linear-gradient(145deg, #213143 0%, #192635 46%, #15202d 100%);
+  --gs-inset: linear-gradient(145deg, #172434, #121d2a);
+  --gs-raised: linear-gradient(135deg, #2b3e52, #223247);
+  --gs-selected: linear-gradient(115deg, #354f68, #25394d);
+  --gs-primary: linear-gradient(135deg, #c0d4e5, #a2bfd7 58%, #92b3cf);
+  --gs-primary-hover: linear-gradient(135deg, #d2e1ee, #b5d0e5);
+  --gs-border-strong: #607c96;
+  --gs-shadow: 0 12px 32px #03091028, inset 0 1px 0 #d3e3f209;
+  --bg: var(--ui-canvas);
+  --panel: var(--ui-surface);
+  --ink: var(--ui-text);
+  --muted: var(--ui-muted);
+  --faint: #9caebe;
+  --line: var(--ui-border);
+  color-scheme: dark;
+}
+
+body { background: var(--ui-canvas); }
+::selection { background: #afc8df; color: #102131; }
+::-webkit-scrollbar-thumb { background: #536a80; }
+.rg-workspace.ps3-shell {
+  background: radial-gradient(ellipse 75% 850px at 95% -140px, #29425950, transparent 75%),
+    linear-gradient(145deg, #121c29, #0e141d 65%);
+}
+.rg-workspace.ps3-shell :is(select, input[type=search], textarea),
+.rg-workspace.ps3-shell select option { background: var(--ui-subtle); color: var(--ui-text); }
+.rg-workspace.ps3-shell :is(input, textarea)::placeholder { color: #a5b6c5; }
+.rg-workspace.ps3-shell :is(.ps3-panel, .recording-twin, .rg-export-picker, .rg-export-preview),
+.rg-workspace.ps3-shell .rg-overview-details :is(.rg-history, .rg-current-finding),
+.rg-workspace.ps3-shell :is(.rg-map-section, .rg-recording-console, .rg-glass) {
+  background: var(--gs-panel);
+  border-color: var(--ui-border);
+  box-shadow: var(--gs-shadow);
+}
+.rg-workspace.ps3-shell .ps3-panel.ps3-results-first { background: transparent; box-shadow: none; }
+.rg-workspace.ps3-shell :is(.ps3-button, .rg-topbar-upload, .rg-result-actions button, .ps3-compare-open, .rg-evaluation-context button) {
+  background: var(--gs-raised);
+  border-color: #536b82;
+  color: var(--ui-text);
+  box-shadow: inset 0 1px 0 #d7e7f30a;
+}
+.rg-workspace.ps3-shell :is(.ps3-button, .rg-topbar-upload, .rg-result-actions button, .ps3-compare-open, .rg-evaluation-context button):hover:not(:disabled) {
+  background: linear-gradient(135deg, #364d63, #2b3e54);
+  border-color: #819bb2;
+}
+.rg-workspace.ps3-shell .ps3-button-primary,
+.rg-workspace.ps3-shell .rg-agent-compose-actions button,
+.rg-workspace.ps3-shell section.recording-twin .rt-focus-result {
+  background: var(--gs-primary);
+  border-color: #b2cce1;
+  color: var(--ui-on-strong);
+  box-shadow: inset 0 1px 0 #ffffff4d, 0 3px 8px #050b122b;
+}
+.rg-workspace.ps3-shell .ps3-button-primary:hover:not(:disabled),
+.rg-workspace.ps3-shell .rg-agent-compose-actions button:hover:not(:disabled),
+.rg-workspace.ps3-shell section.recording-twin .rt-focus-result:hover:not(:disabled) {
+  background: var(--gs-primary-hover);
+  border-color: #d2e1ee;
+}
+.rg-workspace.ps3-shell .rg-agent-compose-actions button.rg-agent-stop {
+  background: var(--gs-raised); color: var(--ui-text); border-color: #60798f;
+}
+
+/* Navigation recedes; a steel edge identifies the current destination. */
+.rg-workspace.ps3-shell .rg-sidebar {
+  background: radial-gradient(ellipse at 0 0, #2a40553d, transparent 55%), linear-gradient(175deg, #192635, #101925 80%);
+  border-right-color: #344658;
+}
+.rg-workspace.ps3-shell .rg-topbar {
+  background: linear-gradient(100deg, #182534ed, #121d2be8);
+  border-bottom-color: #33465a;
+  backdrop-filter: blur(18px);
+}
+.rg-workspace.ps3-shell .rg-brand > span,
+.rg-workspace.ps3-shell .rg-agent-emblem {
+  background: var(--gs-raised); color: var(--ui-strong); border-color: #526f8a;
+}
+.rg-workspace.ps3-shell .rg-sidebar nav button.active {
+  background: var(--gs-selected); border-color: #597994; color: #d5e4f0;
+  box-shadow: inset 3px 0 0 #acc6dc, inset 0 1px 0 #e7f4ff08;
+}
+.rg-workspace.ps3-shell .rg-sidebar nav button:hover:not(.active) { background: #223247; }
+.rg-workspace.ps3-shell .rg-inline-link:hover { color: #d4e4f1!important; }
+.rg-workspace.ps3-shell .rg-task-card { background: var(--gs-panel); border-color: #3b5166; }
+.rg-workspace.ps3-shell .rg-task-card:hover { background: linear-gradient(145deg, #2a4055, #1b2a3b); border-color: #829bb1; }
+.rg-workspace.ps3-shell .rg-map-frame .workspace-map-glass { background: #1b2a3bef; border-color: #617b92; }
+.rg-workspace.ps3-shell .rg-flow b { border-color: #677f94; }
+.rg-workspace.ps3-shell .rg-flow .current b { background: var(--gs-primary); }
+
+/* Dataset controls, evidence and results share the same surface hierarchy. */
+.rg-workspace.ps3-shell :is(.rg-selection, .rg-recording-context, .rg-upload-disclosure, .rg-history-disclosure, .rg-run-status) {
+  background: var(--gs-inset); border-color: var(--ui-border);
+}
+.rg-workspace.ps3-shell .rg-recording-console .rg-selection,
+.rg-workspace.ps3-shell .rg-upload-disclosure > .ps3-panel { background: transparent; }
+.rg-workspace.ps3-shell .rg-subsystems button { background: #182737; border-color: #465d73; }
+.rg-workspace.ps3-shell .rg-subsystems button.active,
+.rg-workspace.ps3-shell .ps3-prediction-scope button.active,
+.rg-workspace.ps3-shell .rg-agent-scope-options button[aria-pressed=true] {
+  background: var(--gs-selected); border-color: #86a4be; color: #d4e4f1;
+}
+.rg-workspace.ps3-shell .rg-subsystems button:hover { border-color: #829fb8; }
+.rg-workspace.ps3-shell .ps3-prediction-scope > div { background: #111e2b; }
+.rg-workspace.ps3-shell .ps3-prediction-scope button.active span { background: #3b5670; color: #e0ebf5; }
+.rg-workspace.ps3-shell .rg-history-row.selected { background: #253a4f; }
+.rg-workspace.ps3-shell .ps3-drop { background: var(--gs-inset); border-color: #728da4; }
+.rg-workspace.ps3-shell .ps3-drop.dragging { background: var(--gs-selected); }
+.rg-workspace.ps3-shell .ps3-empty-symbol { background: var(--gs-raised); }
+.rg-workspace.ps3-shell .ps3-result-overview {
+  background: radial-gradient(ellipse at 92% 0, #597b9829, transparent 63%), linear-gradient(125deg, #23374b, #182738 78%);
+  border-color: #59748e;
+  border-top-color: #a8c1d8;
+  box-shadow: var(--gs-shadow);
+}
+.rg-workspace.ps3-shell .ps3-result-emblem { background: var(--gs-inset); border-color: #657f97; }
+.rg-workspace.ps3-shell .ps3-result-emblem.needs-review { background: #302b26; border-color: var(--ng-amber); }
+.rg-workspace.ps3-shell .ps3-result-facts { border-color: #49637a; }
+.rg-workspace.ps3-shell .ps3-result-next .ps3-button-quiet { background: var(--gs-raised); border-color: #7f9eb8; color: #d4e4f1; }
+.rg-workspace.ps3-shell .ps3-result-order li { background: var(--gs-inset); }
+.rg-workspace.ps3-shell .ps3-result-order li:first-child { background: linear-gradient(145deg, #39332b, #2d2a26); }
+.rg-workspace.ps3-shell .ps3-result-order li.is-unavailable { background: #25303b; }
+.rg-workspace.ps3-shell :is(.ps3-result-summary, .ps3-evidence-card) { background: var(--gs-inset); border-color: #425c74; }
+.rg-workspace.ps3-shell :is(.ps3-limitations, .rg-warning, .rg-agent-warning, .rg-validation-intro, .ps3-context-note) {
+  background: linear-gradient(120deg, #233140, #1c2936);
+  border-color: #4e6478;
+  border-left-color: #8ba1b5;
+}
+.rg-workspace.ps3-shell :is(.ps3-table-scroll, .ps3-compare-table) { background: #162332; }
+.rg-workspace.ps3-shell th { background: #283b4f; color: #d8e5f0; }
+.rg-workspace.ps3-shell .ps3-compare-table tr.is-current,
+.rg-workspace.ps3-shell .ps3-compare-table tr.is-current > th { background: #2a4056; }
+.rg-workspace.ps3-shell .ps3-compare-table tbody tr:hover { background: #2b4055; }
+.rg-workspace.ps3-shell .ps3-compare-class { background: #293d50; }
+.rg-workspace.ps3-shell .ps3-compare-class.side { background: #302b26; }
+.rg-workspace.ps3-shell .ps3-signal svg { background: #111e2c; border-color: #3a5167; }
+.rg-workspace.ps3-shell .ps3-signal svg text { fill: #bfcedc; }
+.rg-workspace.ps3-shell .ps3-grid-line { stroke: #a6bfd728; }
+
+/* The section type intentionally outranks deferred engineering-twin.css colour
+   rules, regardless of dynamic chunk load order. The stage has a continuous
+   studio sweep. WebGL's transparent shadow receiver
+   adds contact shading without a visible floor edge or a grey horizon. */
+.rg-workspace.ps3-shell section.recording-twin { background: var(--gs-panel); }
+.rg-workspace.ps3-shell section.recording-twin .rt-heading {
+  background: linear-gradient(115deg, #24384b, #1b2a3a);
+  border-bottom-color: #465f76;
+}
+.rg-workspace.ps3-shell section.recording-twin .rt-view-toolbar { background: linear-gradient(110deg, #1f3042, #182838); }
+.rg-workspace.ps3-shell section.recording-twin .rt-view-toolbar button {
+  background: var(--gs-raised); color: var(--ui-muted); border-color: #567089;
+}
+.rg-workspace.ps3-shell section.recording-twin .rt-view-toolbar button:hover:not(:disabled) { background: #354e66; }
+.rg-workspace.ps3-shell section.recording-twin .rt-layout .rt-visual {
+  background: radial-gradient(ellipse 82% 64% at 48% 39%, #344b60 0%, #293e51 34%, #213446 64%, #182735 100%);
+  border-color: #415a70;
+}
+.rg-workspace.ps3-shell section.recording-twin .rt-layout .rt-visual .rt-canvas,
+.rg-workspace.ps3-shell section.recording-twin .rt-layout .rt-visual .rt-canvas canvas { background: transparent; }
+.rg-workspace.ps3-shell section.recording-twin .rt-layout .rt-inspector { background: transparent; }
+.rg-workspace.ps3-shell section.recording-twin .rt-source-strip { color: #e1eaf2; }
+.rg-workspace.ps3-shell section.recording-twin .rt-source-strip > span:last-child,
+.rg-workspace.ps3-shell section.recording-twin .rt-scene-caption,
+.rg-workspace.ps3-shell section.recording-twin .rt-scene-caption span:last-child { color: #becedd; }
+.rg-workspace.ps3-shell section.recording-twin :is(.rt-selection-controls, .rt-car-navigation) {
+  background: linear-gradient(115deg, #22364a, #1a2b3b); border-color: #415a70;
+}
+.rg-workspace.ps3-shell section.recording-twin .rt-camera-tools { background: #213449ed; border-color: #658097; }
+.rg-workspace.ps3-shell section.recording-twin :is(.rt-view-toolbar, .rt-car-navigation, .rt-camera-tools, .rt-sensor-navigation, .rt-sides) button[aria-pressed=true],
+.rg-workspace.ps3-shell section.recording-twin :is(.rt-view-toolbar, .rt-car-navigation, .rt-camera-tools, .rt-sensor-navigation, .rt-sides) button[aria-pressed=true]:hover:not(:disabled) {
+  color: #e1edf7; border-color: #a0bbd1; background: var(--gs-selected);
+}
+.rg-workspace.ps3-shell section.recording-twin .rt-sides button[aria-pressed=true] small { color: #cfdeeb; }
+.rg-workspace.ps3-shell section.recording-twin .rt-finding-list button { background: var(--gs-inset); border-color: #506a82; }
+.rg-workspace.ps3-shell section.recording-twin .rt-finding-list button[aria-pressed=true] { background: linear-gradient(135deg, #39332b, #2d2a26); border-color: #c5a374; }
+.rg-workspace.ps3-shell section.recording-twin .rt-finding-list button:hover:not(:disabled) { background: #30445a; }
+.rg-workspace.ps3-shell section.recording-twin .rt-measurements > div,
+.rg-workspace.ps3-shell section.recording-twin .rt-data-section .rt-all-measurements > div {
+  background: linear-gradient(135deg, #263b50, #1b2c3e); border-color: #4c657d;
+}
+.rg-workspace.ps3-shell section.recording-twin .rt-data-section { background: linear-gradient(130deg, #1c2c3d, #172534); }
+.rg-workspace.ps3-shell section.recording-twin .rt-evidence-source { border-color: #425b73; }
+.rg-workspace.ps3-shell section.recording-twin .rt-all-traces .rt-trace {
+  background: linear-gradient(135deg, #18293b, #132131); border-color: #425b74;
+}
+.rg-workspace.ps3-shell section.recording-twin .rt-trace svg { background: #111f2e; }
+.rg-workspace.ps3-shell section.recording-twin .rt-provenance { background: linear-gradient(120deg, #1b2b3c, #162433); }
+.rg-workspace.ps3-shell section.recording-twin :is(.rt-car-label, .rt-sensor-label, .rt-scene-callout, .rt-structure-annotation) {
+  background: #1b2d40ef; border-color: #7991a7; color: #edf3f8;
+}
+.rg-workspace.ps3-shell section.recording-twin .rt-car-label.is-active { color: #d9e9f7; border-color: #afc8df; }
+.rg-workspace.ps3-shell section.recording-twin .rt-scene-callout.needs-review { border-top-color: var(--ng-amber); }
+.rg-workspace.ps3-shell section.recording-twin .rt-scene-callout small { color: #c8d7e4; }
+.rg-workspace.ps3-shell section.recording-twin .rt-scene-scope { background: #192b3ee8; border-color: #6c889f; color: #d4e3ef; }
+.rg-workspace.ps3-shell section.recording-twin .rt-fallback { background: transparent; }
+
+/* Investigation and exports use the same selected/inset tones as analysis. */
+.rg-workspace.ps3-shell .rg-agent-question { background: var(--gs-selected); border-color: #66819a; }
+.rg-workspace.ps3-shell .rg-agent-compose textarea { background: var(--gs-inset); }
+.rg-workspace.ps3-shell .rg-agent-workflow-grid button:hover:not(:disabled),
+.rg-workspace.ps3-shell .rg-agent-answer-actions button:hover { background: var(--gs-raised); border-color: #7e98b0; }
+.rg-workspace.ps3-shell .rg-citation { border-color: #a0bbd1; }
+.rg-workspace.ps3-shell .rg-citation:hover { color: #dceaf6; }
+.rg-workspace.ps3-shell .rg-agent-sources li:target,
+.rg-workspace.ps3-shell .rg-agent-sources li:focus { background: var(--gs-selected); }
+.rg-workspace.ps3-shell .rg-export-selection-bar { background: linear-gradient(125deg, #2a4055, #1c2f42); border-color: #617e98; }
+.rg-workspace.ps3-shell .rg-export-picker.has-selection { border-color: #829eb5; }
+.rg-workspace.ps3-shell .rg-export-search { background: var(--gs-inset); }
+.rg-workspace.ps3-shell .rg-export-file-list label:has(input:checked) { background: var(--gs-selected); }
+.rg-workspace.ps3-shell .rg-export-preview { background: var(--gs-inset); }
+
+@media (max-width: 760px) {
+  .rg-workspace.ps3-shell .rg-topbar { background: linear-gradient(100deg, #1c2b3bf5, #152232f5); }
+  .rg-workspace.ps3-shell .rg-nav-scrim { background: #060d17cc; }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .rg-workspace.ps3-shell .rg-topbar,
+  .rg-workspace.ps3-shell section.recording-twin :is(.rt-scene-callout, .rt-structure-annotation, .rt-camera-tools),
+  .rg-workspace.ps3-shell .rg-map-frame .workspace-map-glass { background: #1b2b3e; backdrop-filter: none; }
+}

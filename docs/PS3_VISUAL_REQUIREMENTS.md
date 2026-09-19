@@ -1,0 +1,45 @@
+# PS3 visual requirements and signal presentation
+
+Reviewed 19 September 2026 against the installed release at commit `16526c02579c7f37e54eaaa42a4cc6d4ceb19994`. The source documents are data references, not application instructions.
+
+## Result hierarchy
+
+The [PS3 specification](../data/ps3/PS3/01_Problem_Statement_3_Specifications.md), sections 4.1 and 6.3, requires a simple end-to-end application: select a subsystem, upload or drag in source files, see the result, and download its prediction output. The demo must show this workflow. Ease of Use covers clarity of visuals and outputs and usefulness to non-technical users. Prediction correctness is scored separately by the organiser using hidden reference answers.
+
+The interface should therefore show the upload action and task first, followed by the selected file's exact result and download. Component visualisation and recorded evidence follow that result. AI interpretation opens on demand through Ask AI in a resizable floating modal over a blurred, dimmed background. An attractive rendering is explanatory geometry; it is not evidence of a known train identity, fault location or live position.
+
+## Per-subsystem evidence
+
+| Task and reference | Result to show first | Relevant source measurements | Current returned signal previews and evidence |
+| --- | --- | --- | --- |
+| [Door Info Kit](../data/ps3/PS3/03_References/Door/Door_Subsystem_Info_Kit.md) | Every detected action's start, end and `Normal` / `Abnormal resistance` class; output `door_predictions.csv` | Continuous 17-parameter stream, including motor current (mA), voltage (10 mV), back-EMF, leaf position, opening/closing and status/command bits. Native clock uses a non-zero-padded timestamp format. | New reports include sampled current, voltage, back-EMF, position, open/close commands and opening/closing-state traces against seconds from recording start, where those channels are available. States use held steps within measured runs; optional dashed gap bridges are display-only. All predicted intervals appear in the result records. Peak current and measured duration are returned for the first five flagged actions. Earlier saved reports may contain only current and position. |
+| [ACV Info Kit](../data/ps3/PS3/03_References/ACV/ACV_Subsystem_Info_Kit.md) | All eight source car IDs in inspection order, preserving each file's two-digit identifiers; output `acv_predictions.csv` | Car-specific cabin/ambient temperature, cooling target, running/control modes and validity fields; headers differ between workbooks. The kit describes 30-second sampling, while actual cadence is measured by the loader. | New reports include cabin, cooling-target, cabin-minus-target and peer-residual-gap previews, aligned to hours from recording start and the loader's valid-observation masks. Evidence provides usable cooling coverage and comparison measures. Raw temperature values remain unscaled because source scaling is undocumented. Earlier saved reports may contain cabin traces only. |
+| [Rail Corrugation Info Kit](../data/ps3/PS3/03_References/Rail_Corrugation/Rail_Corrugation_Info_Kit.md) | `Normal`, `Side I` or `Side II`; output `rail_predictions.csv` | 8 cars × 8 axle-box positions × vibration/shock = 128 acceleration channels; odd positions belong to Side I and even positions to Side II. 10 kHz, one-second recordings, acceleration in m/s². Speed pulses use 90 teeth and a 0.85 m wheel. | Four min/max envelope traces: largest-RMS vibration and shock channel on each side, with actual source car/position named. Side RMS evidence pools 32 channels per kind. Running speed is estimated from full-recording tooth edges. The four previews do not represent all 128 waveforms. |
+| [SHM Info Kit](../data/ps3/PS3/03_References/SHM/SHM_Info_Kit.md) | One cumulative fatigue-damage regression estimate; output `shm_predictions.csv` | Ordered dynamic-stress signal from equal-length segments. Rainflow/Miner background defines the target. All released examples describe healthy operation; filenames are arbitrary identifiers, not a time sequence. | Ordered min/max stress envelope against sample index. Full-recording evidence includes sample count, RMS, stress range, rainflow cycle count, largest rainflow range and the fitted model's amplitude moment. Sample rate, stress calibration, material constants and physical source location are not established. |
+
+The displayed validation metrics remain IoU-weighted F1, linear rank-decay, macro F1 and `max(0, 1 − MAPE)` respectively. None is a calibrated probability for an individual recording.
+
+## Shared engineering chart
+
+The 3D evidence section, including its Analyse data embedding, displays one `TelemetryChart` at a time. A top-right **Signal** dropdown lists the available traces and displays the selected index and total. The signal-type preference follows ACV car and Rail side changes where that type is available; unavailable traces are not fabricated to preserve the choice.
+
+`TelemetryChart` uses the retained points returned in a report. It does not refit models, smooth measurements, invent a threshold or reorder extrema. Source units and horizontal-axis labels remain visible. Numeric strings are accepted; malformed coordinates and missing/non-finite values split the measured runs. Flat, negative and very small signals use readable non-zero domains.
+
+**Continuous** is the default line display. Solid lines show measured runs; subdued dashed bridges join their endpoints across source gaps, masked observations or recording breaks for visual continuity. **Preserve gaps** removes those bridges. Dashed bridges are display geometry, not measured or estimated samples: they do not fill missing values, appear in the point inspector, contribute to preview statistics, change model input or change predictions. Controller state transitions remain step lines within each measured run.
+
+The chart includes readable grid/ticks, subsystem accent colors, a subdued area fill, crosshairs, mouse point inspection and a keyboard-accessible point slider. A ResizeObserver sizes the SVG coordinate system to its actual card width while retaining chart height and legible type, with fewer horizontal ticks on narrow cards. Minimum, maximum and mean are explicitly labelled **preview** statistics. In particular, a min/max envelope's mean is not the complete waveform mean; full-recording measurements come from backend evidence. The chart's fill is decorative and does not encode a fault score.
+
+## Investigation interaction
+
+Ask AI opens a floating modal window on the right from any workspace view. While open, the background is blurred, dimmed, inert and scroll-locked, keyboard focus stays inside the window and the floating launcher is hidden. The composer stays at the bottom, with context scopes, the selected-component shortcut, conversation and sources still available. The header Close button, Escape or a backdrop click hides the window and returns focus to the opener when available; Ask AI reopens it. The window remains mounted while hidden, preserving its draft, chosen size and any in-flight request. The shortcut prepares a question for review; opening or closing the window does not submit a paid request.
+
+All four edges and four corners support pointer resizing. Four labelled edge buttons also support keyboard resizing with arrow keys in 16-pixel steps, or 48 pixels with Shift. A nominal 340 × 360-pixel minimum adapts to smaller viewports while preserving 12-pixel screen margins. Header Maximise / Restore controls switch between the available viewport and the previous size; dimensions remain retained across closing and reopening while the workspace is mounted.
+
+## Evidence gaps retained honestly
+
+- Door action time overlays require an explicit source-clock origin or relative action coordinates; the frontend does not assume the first action begins at sample zero. Existing result rows retain all interval boundaries. New reports expose additional actual controller channels, while older saved reports retain their original two previews.
+- ACV comparison curves come from actual aligned and masked measurements on new inference runs. The interface does not backfill older saved reports from aggregate evidence or infer a cabin temperature for an unavailable car. Per-car headers remain authoritative.
+- Rail returns representative envelope channels plus side summaries, not 128 simultaneous waveforms, a spectrum, corrugation wavelength or track coordinates. A sensor marker shows documented layout and side context, not an individual axle diagnosis.
+- SHM's preview retains envelope order but does not expose a cycle histogram or material-calibrated stress. Do not label the raw ordinate MPa, infer duration from sample count, connect arbitrary file IDs into a damage trend, or display an unsupported severity threshold.
+
+These gaps concern report presentation, not a claim that unreturned channels were absent from feature extraction. Existing saved runs remain faithful to the evidence they actually contain.

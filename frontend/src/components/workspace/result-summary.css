@@ -1,0 +1,29 @@
+.rg-workspace.ps3-shell .rg-file-summary {
+  position: relative; margin: 0 0 16px; padding: 19px 23px 15px; overflow: hidden;
+  border: 1px solid #7099c56b; border-radius: 16px;
+  background: linear-gradient(115deg, #17344af2 0%, #23344af7 52%, #343054eb 100%);
+  box-shadow: inset 3px 0 0 #86dfeb, 0 8px 22px #050b181f;
+}
+.rg-file-summary-heading { display: flex; align-items: center; flex-wrap: wrap; gap: 9px; }
+.rg-summary-icon { display: grid; place-items: center; color: #a6edf4; }
+.rg-workspace.ps3-shell .rg-file-summary h2 { font-size: 13px; font-weight: 650; letter-spacing: .035em; margin: 0; color: #e9f5ff; }
+.rg-summary-badge { display: inline-flex; align-items: center; gap: 5px; margin-left: auto; font-size: 10px; color: #c2cede; }
+.rg-summary-badge.is-ai { color: #acf0eb; }
+.ps3-result-brief { padding: 0 24px; margin-top: 18px; }
+.rg-summary-scope { display: inline-flex; gap: 3px; margin-top: 12px; padding: 3px; border: 1px solid #89a4d14d; border-radius: 9px; background: #0915275e; }
+.rg-workspace.ps3-shell .rg-summary-scope button { min-height: 32px; padding: 5px 13px; border: 1px solid transparent; border-radius: 6px; background: transparent; color: #c5d6ee; font: inherit; font-size: 12px; cursor: pointer; }
+.rg-workspace.ps3-shell .rg-summary-scope button[aria-pressed="true"] { background: linear-gradient(115deg, #9adced30, #ada0f42b); border-color: #a5e4ed77; color: #f3fbff; }
+.rg-summary-scope button:focus-visible { outline: 2px solid #acebf6; outline-offset: 2px; }
+.rg-summary-detail-scope { display: flex; align-items: center; gap: 8px; margin: 4px 3px 14px; font-size: 12px; line-height: 1.6; color: #bfd4e9; overflow-wrap: anywhere; }
+.rg-summary-detail-scope svg { flex-shrink: 0; color: #9be4f2; }
+.rg-workspace.ps3-shell .rg-file-summary .rg-file-summary-text { max-width: 100ch; margin: 11px 0 12px; font-size: clamp(14px, 1.15vw, 17px); font-weight: 450; line-height: 1.65; color: #f3f7ff; }
+.rg-file-summary-source { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 10px; color: #bacbdf; }
+.rg-workspace.ps3-shell .rg-file-summary .rg-file-summary-caution { margin: 0 0 12px; padding-left: 10px; border-left: 2px solid #e7b77c; font-size: 12px; line-height: 1.6; color: #f3d4ad; }
+.rg-file-summary-source > span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.rg-workspace.ps3-shell .rg-file-summary-source button { display: inline-flex; align-items: center; gap: 5px; flex-shrink: 0; min-height: 28px; padding: 3px 5px; border: 0; border-radius: 5px; background: transparent; color: #b5ecf5; font: inherit; cursor: pointer; }
+.rg-workspace.ps3-shell .rg-file-summary-source button:hover { background: #9bdded17; }
+@media (max-width: 600px) {
+  .ps3-result-brief { padding: 0 12px; }
+  .rg-workspace.ps3-shell .rg-file-summary { padding: 16px; border-radius: 13px; }
+  .rg-file-summary-source { flex-wrap: wrap; gap: 4px; }
+}

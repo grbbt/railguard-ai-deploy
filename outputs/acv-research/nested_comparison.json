@@ -1,0 +1,2666 @@
+{
+  "audited_at": "2026-09-17T14:45:35.273609+00:00",
+  "scope": "Retrospective comparison using the six original training cases and their version-1 cached features. No official Test data was read. No artifacts or candidate settings were changed. All six cases were already available during feature and candidate development; this is not external or blind validation.",
+  "selection_metric": "Mean linear rank-decay over inner held-out cases",
+  "tie_policy": "max returns first candidate in the frozen ordered list; original relative candidate order preserved",
+  "grouping": "Whole-case holdouts; exact source SHA256 duplicate groups excluded together at both levels",
+  "feature_cache_version": 1,
+  "new_candidate_features": [
+    "above_peer_fraction",
+    "above_target_fraction"
+  ],
+  "source_labels_sha256": "840226a83db2ed7e8a366d78b530528f9fc7f06a03e199605b2d46a86c151aa7",
+  "inputs": [
+    {
+      "file_id": "acv_case_01.xlsx",
+      "source_sha256": "d0657d45b52d12db8fbde52242f44f6efd0e3050d04822920aa3ca3b984af233",
+      "feature_cache": "data/ps3_artifacts/acv/features-v1-d0657d45b52d12db8fbde52242f44f6efd0e3050d04822920aa3ca3b984af233.joblib",
+      "feature_cache_sha256": "9eaeb1c4e007f3e7b694e6effdbb83aaad61329b11777e7caf9ab38a983439d5",
+      "rows": 6999,
+      "available_cars": [
+        "01",
+        "02",
+        "03",
+        "04",
+        "05",
+        "06",
+        "07",
+        "08"
+      ]
+    },
+    {
+      "file_id": "acv_case_02.xlsx",
+      "source_sha256": "869107ed17735efb55f6d33de2d0456a0b1e76aadbb280a9eef830f6778194c8",
+      "feature_cache": "data/ps3_artifacts/acv/features-v1-869107ed17735efb55f6d33de2d0456a0b1e76aadbb280a9eef830f6778194c8.joblib",
+      "feature_cache_sha256": "89e70dca80bbff8366f6be2f59eead567352d60179b3cc1b4f92d9bef1ba43ee",
+      "rows": 9187,
+      "available_cars": [
+        "01",
+        "02",
+        "03",
+        "04",
+        "05",
+        "06",
+        "07",
+        "08"
+      ]
+    },
+    {
+      "file_id": "acv_case_03.xlsx",
+      "source_sha256": "07801fb08e6fc3654a23cd3d245fd89b327c5e9dd70880b2d80eb600b8d746c6",
+      "feature_cache": "data/ps3_artifacts/acv/features-v1-07801fb08e6fc3654a23cd3d245fd89b327c5e9dd70880b2d80eb600b8d746c6.joblib",
+      "feature_cache_sha256": "707d700fbbeb509a799e13a92911064fb8e9bd0eb594ed92efe8393a6a286ff4",
+      "rows": 8310,
+      "available_cars": [
+        "01",
+        "02",
+        "03",
+        "04",
+        "05",
+        "06",
+        "07",
+        "08"
+      ]
+    },
+    {
+      "file_id": "acv_case_04.xlsx",
+      "source_sha256": "650676c44e8f5979c7cf493a2b0d4173ad0c5ae50d44ead9a8fad0444d19d749",
+      "feature_cache": "data/ps3_artifacts/acv/features-v1-650676c44e8f5979c7cf493a2b0d4173ad0c5ae50d44ead9a8fad0444d19d749.joblib",
+      "feature_cache_sha256": "a24a8f5c9eb8bbe4ebe33c825b5eda28415f7060bfb588be19d9bcf99dcd801f",
+      "rows": 22262,
+      "available_cars": [
+        "01",
+        "02",
+        "03",
+        "04"
+      ]
+    },
+    {
+      "file_id": "acv_case_05.xlsx",
+      "source_sha256": "cc994bf2a1a197e05ef4f231186a7da990fc6203b842d94327181866d62cfe08",
+      "feature_cache": "data/ps3_artifacts/acv/features-v1-cc994bf2a1a197e05ef4f231186a7da990fc6203b842d94327181866d62cfe08.joblib",
+      "feature_cache_sha256": "f0dd6a40303d7fe0a6852d45dc92a9baa49093c8514eadd9db9692f7c282a19e",
+      "rows": 6972,
+      "available_cars": [
+        "01",
+        "02",
+        "03",
+        "04",
+        "05",
+        "06",
+        "07",
+        "08"
+      ]
+    },
+    {
+      "file_id": "acv_case_06.xlsx",
+      "source_sha256": "6066b6882bf92af6b81fff311af870edf407f19257806f896a47b7e57e751172",
+      "feature_cache": "data/ps3_artifacts/acv/features-v1-6066b6882bf92af6b81fff311af870edf407f19257806f896a47b7e57e751172.joblib",
+      "feature_cache_sha256": "616c61ae17920387688f9c5b7a77b54b152737f111244a7ac8ebf97f1cfe773d",
+      "rows": 3263,
+      "available_cars": [
+        "01",
+        "02",
+        "03",
+        "04",
+        "05",
+        "06",
+        "07",
+        "08"
+      ]
+    }
+  ],
+  "original_four_candidate_nested": {
+    "candidates": [
+      "Cooling peer-deviation ranking",
+      "Pairwise regularized logistic ranking",
+      "Normal-car Isolation Forest",
+      "XGBoost pairwise ranking"
+    ],
+    "metrics": {
+      "cases": 6,
+      "top1_correct": 4,
+      "top1_accuracy": 0.6666666666666666,
+      "top2_correct": 5,
+      "top2_accuracy": 0.8333333333333334,
+      "mean_true_car_rank": 1.6666666666666667,
+      "mean_rank_decay": 0.9166666666666666
+    },
+    "folds": [
+      {
+        "file_id": "acv_case_01.xlsx",
+        "training_files": [
+          "acv_case_02.xlsx",
+          "acv_case_03.xlsx",
+          "acv_case_04.xlsx",
+          "acv_case_05.xlsx",
+          "acv_case_06.xlsx"
+        ],
+        "faulty_car": "01",
+        "ranked_cars": [
+          "01",
+          "02",
+          "08",
+          "07",
+          "05",
+          "06",
+          "03",
+          "04"
+        ],
+        "true_car_rank": 1,
+        "rank_decay": 1.0,
+        "available_cars": [
+          "01",
+          "02",
+          "08",
+          "07",
+          "05",
+          "06",
+          "03",
+          "04"
+        ],
+        "selected_candidate": "Pairwise regularized logistic ranking",
+        "inner_candidates": [
+          {
+            "name": "Cooling peer-deviation ranking",
+            "score": 0.925,
+            "heldout_ranks": [
+              {
+                "file_id": "acv_case_02.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_03.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_04.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_05.xlsx",
+                "true_car_rank": 4,
+                "rank_decay": 0.625
+              },
+              {
+                "file_id": "acv_case_06.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              }
+            ]
+          },
+          {
+            "name": "Pairwise regularized logistic ranking",
+            "score": 0.95,
+            "heldout_ranks": [
+              {
+                "file_id": "acv_case_02.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_03.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_04.xlsx",
+                "true_car_rank": 2,
+                "rank_decay": 0.875
+              },
+              {
+                "file_id": "acv_case_05.xlsx",
+                "true_car_rank": 2,
+                "rank_decay": 0.875
+              },
+              {
+                "file_id": "acv_case_06.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              }
+            ]
+          },
+          {
+            "name": "Normal-car Isolation Forest",
+            "score": 0.825,
+            "heldout_ranks": [
+              {
+                "file_id": "acv_case_02.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_03.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_04.xlsx",
+                "true_car_rank": 4,
+                "rank_decay": 0.625
+              },
+              {
+                "file_id": "acv_case_05.xlsx",
+                "true_car_rank": 5,
+                "rank_decay": 0.5
+              },
+              {
+                "file_id": "acv_case_06.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              }
+            ]
+          },
+          {
+            "name": "XGBoost pairwise ranking",
+            "score": 0.875,
+            "heldout_ranks": [
+              {
+                "file_id": "acv_case_02.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_03.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_04.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_05.xlsx",
+                "true_car_rank": 6,
+                "rank_decay": 0.375
+              },
+              {
+                "file_id": "acv_case_06.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "file_id": "acv_case_02.xlsx",
+        "training_files": [
+          "acv_case_01.xlsx",
+          "acv_case_03.xlsx",
+          "acv_case_04.xlsx",
+          "acv_case_05.xlsx",
+          "acv_case_06.xlsx"
+        ],
+        "faulty_car": "02",
+        "ranked_cars": [
+          "02",
+          "03",
+          "08",
+          "07",
+          "01",
+          "04",
+          "06",
+          "05"
+        ],
+        "true_car_rank": 1,
+        "rank_decay": 1.0,
+        "available_cars": [
+          "02",
+          "03",
+          "08",
+          "07",
+          "01",
+          "04",
+          "06",
+          "05"
+        ],
+        "selected_candidate": "Pairwise regularized logistic ranking",
+        "inner_candidates": [
+          {
+            "name": "Cooling peer-deviation ranking",
+            "score": 0.925,
+            "heldout_ranks": [
+              {
+                "file_id": "acv_case_01.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_03.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_04.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_05.xlsx",
+                "true_car_rank": 4,
+                "rank_decay": 0.625
+              },
+              {
+                "file_id": "acv_case_06.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              }
+            ]
+          },
+          {
+            "name": "Pairwise regularized logistic ranking",
+            "score": 0.95,
+            "heldout_ranks": [
+              {
+                "file_id": "acv_case_01.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_03.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_04.xlsx",
+                "true_car_rank": 2,
+                "rank_decay": 0.875
+              },
+              {
+                "file_id": "acv_case_05.xlsx",
+                "true_car_rank": 2,
+                "rank_decay": 0.875
+              },
+              {
+                "file_id": "acv_case_06.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              }
+            ]
+          },
+          {
+            "name": "Normal-car Isolation Forest",
+            "score": 0.85,
+            "heldout_ranks": [
+              {
+                "file_id": "acv_case_01.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_03.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_04.xlsx",
+                "true_car_rank": 4,
+                "rank_decay": 0.625
+              },
+              {
+                "file_id": "acv_case_05.xlsx",
+                "true_car_rank": 4,
+                "rank_decay": 0.625
+              },
+              {
+                "file_id": "acv_case_06.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              }
+            ]
+          },
+          {
+            "name": "XGBoost pairwise ranking",
+            "score": 0.9,
+            "heldout_ranks": [
+              {
+                "file_id": "acv_case_01.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_03.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_04.xlsx",
+                "true_car_rank": 2,
+                "rank_decay": 0.875
+              },
+              {
+                "file_id": "acv_case_05.xlsx",
+                "true_car_rank": 4,
+                "rank_decay": 0.625
+              },
+              {
+                "file_id": "acv_case_06.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "file_id": "acv_case_03.xlsx",
+        "training_files": [
+          "acv_case_01.xlsx",
+          "acv_case_02.xlsx",
+          "acv_case_04.xlsx",
+          "acv_case_05.xlsx",
+          "acv_case_06.xlsx"
+        ],
+        "faulty_car": "03",
+        "ranked_cars": [
+          "03",
+          "02",
+          "01",
+          "08",
+          "07",
+          "05",
+          "06",
+          "04"
+        ],
+        "true_car_rank": 1,
+        "rank_decay": 1.0,
+        "available_cars": [
+          "03",
+          "02",
+          "01",
+          "08",
+          "07",
+          "05",
+          "06",
+          "04"
+        ],
+        "selected_candidate": "Pairwise regularized logistic ranking",
+        "inner_candidates": [
+          {
+            "name": "Cooling peer-deviation ranking",
+            "score": 0.925,
+            "heldout_ranks": [
+              {
+                "file_id": "acv_case_01.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_02.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_04.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_05.xlsx",
+                "true_car_rank": 4,
+                "rank_decay": 0.625
+              },
+              {
+                "file_id": "acv_case_06.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              }
+            ]
+          },
+          {
+            "name": "Pairwise regularized logistic ranking",
+            "score": 0.95,
+            "heldout_ranks": [
+              {
+                "file_id": "acv_case_01.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_02.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_04.xlsx",
+                "true_car_rank": 2,
+                "rank_decay": 0.875
+              },
+              {
+                "file_id": "acv_case_05.xlsx",
+                "true_car_rank": 2,
+                "rank_decay": 0.875
+              },
+              {
+                "file_id": "acv_case_06.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              }
+            ]
+          },
+          {
+            "name": "Normal-car Isolation Forest",
+            "score": 0.775,
+            "heldout_ranks": [
+              {
+                "file_id": "acv_case_01.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_02.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_04.xlsx",
+                "true_car_rank": 4,
+                "rank_decay": 0.625
+              },
+              {
+                "file_id": "acv_case_05.xlsx",
+                "true_car_rank": 7,
+                "rank_decay": 0.25
+              },
+              {
+                "file_id": "acv_case_06.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              }
+            ]
+          },
+          {
+            "name": "XGBoost pairwise ranking",
+            "score": 0.875,
+            "heldout_ranks": [
+              {
+                "file_id": "acv_case_01.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_02.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_04.xlsx",
+                "true_car_rank": 2,
+                "rank_decay": 0.875
+              },
+              {
+                "file_id": "acv_case_05.xlsx",
+                "true_car_rank": 5,
+                "rank_decay": 0.5
+              },
+              {
+                "file_id": "acv_case_06.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "file_id": "acv_case_04.xlsx",
+        "training_files": [
+          "acv_case_01.xlsx",
+          "acv_case_02.xlsx",
+          "acv_case_03.xlsx",
+          "acv_case_05.xlsx",
+          "acv_case_06.xlsx"
+        ],
+        "faulty_car": "01",
+        "ranked_cars": [
+          "04",
+          "01",
+          "03",
+          "02",
+          "05",
+          "06",
+          "07",
+          "08"
+        ],
+        "true_car_rank": 2,
+        "rank_decay": 0.875,
+        "available_cars": [
+          "04",
+          "01",
+          "03",
+          "02"
+        ],
+        "selected_candidate": "Pairwise regularized logistic ranking",
+        "inner_candidates": [
+          {
+            "name": "Cooling peer-deviation ranking",
+            "score": 0.925,
+            "heldout_ranks": [
+              {
+                "file_id": "acv_case_01.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_02.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_03.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_05.xlsx",
+                "true_car_rank": 4,
+                "rank_decay": 0.625
+              },
+              {
+                "file_id": "acv_case_06.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              }
+            ]
+          },
+          {
+            "name": "Pairwise regularized logistic ranking",
+            "score": 1.0,
+            "heldout_ranks": [
+              {
+                "file_id": "acv_case_01.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_02.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_03.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_05.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_06.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              }
+            ]
+          },
+          {
+            "name": "Normal-car Isolation Forest",
+            "score": 0.925,
+            "heldout_ranks": [
+              {
+                "file_id": "acv_case_01.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_02.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_03.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_05.xlsx",
+                "true_car_rank": 4,
+                "rank_decay": 0.625
+              },
+              {
+                "file_id": "acv_case_06.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              }
+            ]
+          },
+          {
+            "name": "XGBoost pairwise ranking",
+            "score": 0.925,
+            "heldout_ranks": [
+              {
+                "file_id": "acv_case_01.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_02.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_03.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_05.xlsx",
+                "true_car_rank": 4,
+                "rank_decay": 0.625
+              },
+              {
+                "file_id": "acv_case_06.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "file_id": "acv_case_05.xlsx",
+        "training_files": [
+          "acv_case_01.xlsx",
+          "acv_case_02.xlsx",
+          "acv_case_03.xlsx",
+          "acv_case_04.xlsx",
+          "acv_case_06.xlsx"
+        ],
+        "faulty_car": "04",
+        "ranked_cars": [
+          "01",
+          "02",
+          "03",
+          "04",
+          "06",
+          "07",
+          "08",
+          "05"
+        ],
+        "true_car_rank": 4,
+        "rank_decay": 0.625,
+        "available_cars": [
+          "01",
+          "02",
+          "03",
+          "04",
+          "06",
+          "07",
+          "08",
+          "05"
+        ],
+        "selected_candidate": "Cooling peer-deviation ranking",
+        "inner_candidates": [
+          {
+            "name": "Cooling peer-deviation ranking",
+            "score": 1.0,
+            "heldout_ranks": [
+              {
+                "file_id": "acv_case_01.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_02.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_03.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_04.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_06.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              }
+            ]
+          },
+          {
+            "name": "Pairwise regularized logistic ranking",
+            "score": 0.975,
+            "heldout_ranks": [
+              {
+                "file_id": "acv_case_01.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_02.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_03.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_04.xlsx",
+                "true_car_rank": 2,
+                "rank_decay": 0.875
+              },
+              {
+                "file_id": "acv_case_06.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              }
+            ]
+          },
+          {
+            "name": "Normal-car Isolation Forest",
+            "score": 0.975,
+            "heldout_ranks": [
+              {
+                "file_id": "acv_case_01.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_02.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_03.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_04.xlsx",
+                "true_car_rank": 2,
+                "rank_decay": 0.875
+              },
+              {
+                "file_id": "acv_case_06.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              }
+            ]
+          },
+          {
+            "name": "XGBoost pairwise ranking",
+            "score": 0.975,
+            "heldout_ranks": [
+              {
+                "file_id": "acv_case_01.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_02.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_03.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_04.xlsx",
+                "true_car_rank": 2,
+                "rank_decay": 0.875
+              },
+              {
+                "file_id": "acv_case_06.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "file_id": "acv_case_06.xlsx",
+        "training_files": [
+          "acv_case_01.xlsx",
+          "acv_case_02.xlsx",
+          "acv_case_03.xlsx",
+          "acv_case_04.xlsx",
+          "acv_case_05.xlsx"
+        ],
+        "faulty_car": "06",
+        "ranked_cars": [
+          "06",
+          "08",
+          "01",
+          "05",
+          "02",
+          "03",
+          "04",
+          "07"
+        ],
+        "true_car_rank": 1,
+        "rank_decay": 1.0,
+        "available_cars": [
+          "06",
+          "08",
+          "01",
+          "05",
+          "02",
+          "03",
+          "04",
+          "07"
+        ],
+        "selected_candidate": "Pairwise regularized logistic ranking",
+        "inner_candidates": [
+          {
+            "name": "Cooling peer-deviation ranking",
+            "score": 0.925,
+            "heldout_ranks": [
+              {
+                "file_id": "acv_case_01.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_02.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_03.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_04.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_05.xlsx",
+                "true_car_rank": 4,
+                "rank_decay": 0.625
+              }
+            ]
+          },
+          {
+            "name": "Pairwise regularized logistic ranking",
+            "score": 0.95,
+            "heldout_ranks": [
+              {
+                "file_id": "acv_case_01.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_02.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_03.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_04.xlsx",
+                "true_car_rank": 2,
+                "rank_decay": 0.875
+              },
+              {
+                "file_id": "acv_case_05.xlsx",
+                "true_car_rank": 2,
+                "rank_decay": 0.875
+              }
+            ]
+          },
+          {
+            "name": "Normal-car Isolation Forest",
+            "score": 0.8,
+            "heldout_ranks": [
+              {
+                "file_id": "acv_case_01.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_02.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_03.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_04.xlsx",
+                "true_car_rank": 4,
+                "rank_decay": 0.625
+              },
+              {
+                "file_id": "acv_case_05.xlsx",
+                "true_car_rank": 6,
+                "rank_decay": 0.375
+              }
+            ]
+          },
+          {
+            "name": "XGBoost pairwise ranking",
+            "score": 0.825,
+            "heldout_ranks": [
+              {
+                "file_id": "acv_case_01.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_02.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_03.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_04.xlsx",
+                "true_car_rank": 2,
+                "rank_decay": 0.875
+              },
+              {
+                "file_id": "acv_case_05.xlsx",
+                "true_car_rank": 7,
+                "rank_decay": 0.25
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "extended_five_candidate_nested": {
+    "candidates": [
+      "Cooling peer-deviation ranking",
+      "Pairwise regularized logistic ranking",
+      "Normal-car Isolation Forest",
+      "Pairwise cooling-exceedance ranking",
+      "XGBoost pairwise ranking"
+    ],
+    "metrics": {
+      "cases": 6,
+      "top1_correct": 4,
+      "top1_accuracy": 0.6666666666666666,
+      "top2_correct": 5,
+      "top2_accuracy": 0.8333333333333334,
+      "mean_true_car_rank": 1.6666666666666667,
+      "mean_rank_decay": 0.9166666666666666
+    },
+    "folds": [
+      {
+        "file_id": "acv_case_01.xlsx",
+        "training_files": [
+          "acv_case_02.xlsx",
+          "acv_case_03.xlsx",
+          "acv_case_04.xlsx",
+          "acv_case_05.xlsx",
+          "acv_case_06.xlsx"
+        ],
+        "faulty_car": "01",
+        "ranked_cars": [
+          "01",
+          "02",
+          "03",
+          "04",
+          "08",
+          "07",
+          "05",
+          "06"
+        ],
+        "true_car_rank": 1,
+        "rank_decay": 1.0,
+        "available_cars": [
+          "01",
+          "02",
+          "03",
+          "04",
+          "08",
+          "07",
+          "05",
+          "06"
+        ],
+        "selected_candidate": "Pairwise cooling-exceedance ranking",
+        "inner_candidates": [
+          {
+            "name": "Cooling peer-deviation ranking",
+            "score": 0.925,
+            "heldout_ranks": [
+              {
+                "file_id": "acv_case_02.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_03.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_04.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_05.xlsx",
+                "true_car_rank": 4,
+                "rank_decay": 0.625
+              },
+              {
+                "file_id": "acv_case_06.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              }
+            ]
+          },
+          {
+            "name": "Pairwise regularized logistic ranking",
+            "score": 0.95,
+            "heldout_ranks": [
+              {
+                "file_id": "acv_case_02.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_03.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_04.xlsx",
+                "true_car_rank": 2,
+                "rank_decay": 0.875
+              },
+              {
+                "file_id": "acv_case_05.xlsx",
+                "true_car_rank": 2,
+                "rank_decay": 0.875
+              },
+              {
+                "file_id": "acv_case_06.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              }
+            ]
+          },
+          {
+            "name": "Normal-car Isolation Forest",
+            "score": 0.825,
+            "heldout_ranks": [
+              {
+                "file_id": "acv_case_02.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_03.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_04.xlsx",
+                "true_car_rank": 4,
+                "rank_decay": 0.625
+              },
+              {
+                "file_id": "acv_case_05.xlsx",
+                "true_car_rank": 5,
+                "rank_decay": 0.5
+              },
+              {
+                "file_id": "acv_case_06.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              }
+            ]
+          },
+          {
+            "name": "Pairwise cooling-exceedance ranking",
+            "score": 0.975,
+            "heldout_ranks": [
+              {
+                "file_id": "acv_case_02.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_03.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_04.xlsx",
+                "true_car_rank": 2,
+                "rank_decay": 0.875
+              },
+              {
+                "file_id": "acv_case_05.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_06.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              }
+            ]
+          },
+          {
+            "name": "XGBoost pairwise ranking",
+            "score": 0.875,
+            "heldout_ranks": [
+              {
+                "file_id": "acv_case_02.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_03.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_04.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_05.xlsx",
+                "true_car_rank": 6,
+                "rank_decay": 0.375
+              },
+              {
+                "file_id": "acv_case_06.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "file_id": "acv_case_02.xlsx",
+        "training_files": [
+          "acv_case_01.xlsx",
+          "acv_case_03.xlsx",
+          "acv_case_04.xlsx",
+          "acv_case_05.xlsx",
+          "acv_case_06.xlsx"
+        ],
+        "faulty_car": "02",
+        "ranked_cars": [
+          "02",
+          "03",
+          "08",
+          "07",
+          "01",
+          "04",
+          "06",
+          "05"
+        ],
+        "true_car_rank": 1,
+        "rank_decay": 1.0,
+        "available_cars": [
+          "02",
+          "03",
+          "08",
+          "07",
+          "01",
+          "04",
+          "06",
+          "05"
+        ],
+        "selected_candidate": "Pairwise cooling-exceedance ranking",
+        "inner_candidates": [
+          {
+            "name": "Cooling peer-deviation ranking",
+            "score": 0.925,
+            "heldout_ranks": [
+              {
+                "file_id": "acv_case_01.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_03.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_04.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_05.xlsx",
+                "true_car_rank": 4,
+                "rank_decay": 0.625
+              },
+              {
+                "file_id": "acv_case_06.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              }
+            ]
+          },
+          {
+            "name": "Pairwise regularized logistic ranking",
+            "score": 0.95,
+            "heldout_ranks": [
+              {
+                "file_id": "acv_case_01.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_03.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_04.xlsx",
+                "true_car_rank": 2,
+                "rank_decay": 0.875
+              },
+              {
+                "file_id": "acv_case_05.xlsx",
+                "true_car_rank": 2,
+                "rank_decay": 0.875
+              },
+              {
+                "file_id": "acv_case_06.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              }
+            ]
+          },
+          {
+            "name": "Normal-car Isolation Forest",
+            "score": 0.85,
+            "heldout_ranks": [
+              {
+                "file_id": "acv_case_01.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_03.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_04.xlsx",
+                "true_car_rank": 4,
+                "rank_decay": 0.625
+              },
+              {
+                "file_id": "acv_case_05.xlsx",
+                "true_car_rank": 4,
+                "rank_decay": 0.625
+              },
+              {
+                "file_id": "acv_case_06.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              }
+            ]
+          },
+          {
+            "name": "Pairwise cooling-exceedance ranking",
+            "score": 0.975,
+            "heldout_ranks": [
+              {
+                "file_id": "acv_case_01.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_03.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_04.xlsx",
+                "true_car_rank": 2,
+                "rank_decay": 0.875
+              },
+              {
+                "file_id": "acv_case_05.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_06.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              }
+            ]
+          },
+          {
+            "name": "XGBoost pairwise ranking",
+            "score": 0.9,
+            "heldout_ranks": [
+              {
+                "file_id": "acv_case_01.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_03.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_04.xlsx",
+                "true_car_rank": 2,
+                "rank_decay": 0.875
+              },
+              {
+                "file_id": "acv_case_05.xlsx",
+                "true_car_rank": 4,
+                "rank_decay": 0.625
+              },
+              {
+                "file_id": "acv_case_06.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "file_id": "acv_case_03.xlsx",
+        "training_files": [
+          "acv_case_01.xlsx",
+          "acv_case_02.xlsx",
+          "acv_case_04.xlsx",
+          "acv_case_05.xlsx",
+          "acv_case_06.xlsx"
+        ],
+        "faulty_car": "03",
+        "ranked_cars": [
+          "03",
+          "02",
+          "01",
+          "07",
+          "08",
+          "04",
+          "05",
+          "06"
+        ],
+        "true_car_rank": 1,
+        "rank_decay": 1.0,
+        "available_cars": [
+          "03",
+          "02",
+          "01",
+          "07",
+          "08",
+          "04",
+          "05",
+          "06"
+        ],
+        "selected_candidate": "Pairwise cooling-exceedance ranking",
+        "inner_candidates": [
+          {
+            "name": "Cooling peer-deviation ranking",
+            "score": 0.925,
+            "heldout_ranks": [
+              {
+                "file_id": "acv_case_01.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_02.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_04.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_05.xlsx",
+                "true_car_rank": 4,
+                "rank_decay": 0.625
+              },
+              {
+                "file_id": "acv_case_06.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              }
+            ]
+          },
+          {
+            "name": "Pairwise regularized logistic ranking",
+            "score": 0.95,
+            "heldout_ranks": [
+              {
+                "file_id": "acv_case_01.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_02.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_04.xlsx",
+                "true_car_rank": 2,
+                "rank_decay": 0.875
+              },
+              {
+                "file_id": "acv_case_05.xlsx",
+                "true_car_rank": 2,
+                "rank_decay": 0.875
+              },
+              {
+                "file_id": "acv_case_06.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              }
+            ]
+          },
+          {
+            "name": "Normal-car Isolation Forest",
+            "score": 0.775,
+            "heldout_ranks": [
+              {
+                "file_id": "acv_case_01.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_02.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_04.xlsx",
+                "true_car_rank": 4,
+                "rank_decay": 0.625
+              },
+              {
+                "file_id": "acv_case_05.xlsx",
+                "true_car_rank": 7,
+                "rank_decay": 0.25
+              },
+              {
+                "file_id": "acv_case_06.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              }
+            ]
+          },
+          {
+            "name": "Pairwise cooling-exceedance ranking",
+            "score": 0.975,
+            "heldout_ranks": [
+              {
+                "file_id": "acv_case_01.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_02.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_04.xlsx",
+                "true_car_rank": 2,
+                "rank_decay": 0.875
+              },
+              {
+                "file_id": "acv_case_05.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_06.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              }
+            ]
+          },
+          {
+            "name": "XGBoost pairwise ranking",
+            "score": 0.875,
+            "heldout_ranks": [
+              {
+                "file_id": "acv_case_01.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_02.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_04.xlsx",
+                "true_car_rank": 2,
+                "rank_decay": 0.875
+              },
+              {
+                "file_id": "acv_case_05.xlsx",
+                "true_car_rank": 5,
+                "rank_decay": 0.5
+              },
+              {
+                "file_id": "acv_case_06.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "file_id": "acv_case_04.xlsx",
+        "training_files": [
+          "acv_case_01.xlsx",
+          "acv_case_02.xlsx",
+          "acv_case_03.xlsx",
+          "acv_case_05.xlsx",
+          "acv_case_06.xlsx"
+        ],
+        "faulty_car": "01",
+        "ranked_cars": [
+          "04",
+          "01",
+          "03",
+          "02",
+          "05",
+          "06",
+          "07",
+          "08"
+        ],
+        "true_car_rank": 2,
+        "rank_decay": 0.875,
+        "available_cars": [
+          "04",
+          "01",
+          "03",
+          "02"
+        ],
+        "selected_candidate": "Pairwise regularized logistic ranking",
+        "inner_candidates": [
+          {
+            "name": "Cooling peer-deviation ranking",
+            "score": 0.925,
+            "heldout_ranks": [
+              {
+                "file_id": "acv_case_01.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_02.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_03.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_05.xlsx",
+                "true_car_rank": 4,
+                "rank_decay": 0.625
+              },
+              {
+                "file_id": "acv_case_06.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              }
+            ]
+          },
+          {
+            "name": "Pairwise regularized logistic ranking",
+            "score": 1.0,
+            "heldout_ranks": [
+              {
+                "file_id": "acv_case_01.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_02.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_03.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_05.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_06.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              }
+            ]
+          },
+          {
+            "name": "Normal-car Isolation Forest",
+            "score": 0.925,
+            "heldout_ranks": [
+              {
+                "file_id": "acv_case_01.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_02.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_03.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_05.xlsx",
+                "true_car_rank": 4,
+                "rank_decay": 0.625
+              },
+              {
+                "file_id": "acv_case_06.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              }
+            ]
+          },
+          {
+            "name": "Pairwise cooling-exceedance ranking",
+            "score": 1.0,
+            "heldout_ranks": [
+              {
+                "file_id": "acv_case_01.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_02.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_03.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_05.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_06.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              }
+            ]
+          },
+          {
+            "name": "XGBoost pairwise ranking",
+            "score": 0.925,
+            "heldout_ranks": [
+              {
+                "file_id": "acv_case_01.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_02.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_03.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_05.xlsx",
+                "true_car_rank": 4,
+                "rank_decay": 0.625
+              },
+              {
+                "file_id": "acv_case_06.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "file_id": "acv_case_05.xlsx",
+        "training_files": [
+          "acv_case_01.xlsx",
+          "acv_case_02.xlsx",
+          "acv_case_03.xlsx",
+          "acv_case_04.xlsx",
+          "acv_case_06.xlsx"
+        ],
+        "faulty_car": "04",
+        "ranked_cars": [
+          "01",
+          "02",
+          "03",
+          "04",
+          "06",
+          "07",
+          "08",
+          "05"
+        ],
+        "true_car_rank": 4,
+        "rank_decay": 0.625,
+        "available_cars": [
+          "01",
+          "02",
+          "03",
+          "04",
+          "06",
+          "07",
+          "08",
+          "05"
+        ],
+        "selected_candidate": "Cooling peer-deviation ranking",
+        "inner_candidates": [
+          {
+            "name": "Cooling peer-deviation ranking",
+            "score": 1.0,
+            "heldout_ranks": [
+              {
+                "file_id": "acv_case_01.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_02.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_03.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_04.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_06.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              }
+            ]
+          },
+          {
+            "name": "Pairwise regularized logistic ranking",
+            "score": 0.975,
+            "heldout_ranks": [
+              {
+                "file_id": "acv_case_01.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_02.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_03.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_04.xlsx",
+                "true_car_rank": 2,
+                "rank_decay": 0.875
+              },
+              {
+                "file_id": "acv_case_06.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              }
+            ]
+          },
+          {
+            "name": "Normal-car Isolation Forest",
+            "score": 0.975,
+            "heldout_ranks": [
+              {
+                "file_id": "acv_case_01.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_02.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_03.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_04.xlsx",
+                "true_car_rank": 2,
+                "rank_decay": 0.875
+              },
+              {
+                "file_id": "acv_case_06.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              }
+            ]
+          },
+          {
+            "name": "Pairwise cooling-exceedance ranking",
+            "score": 0.975,
+            "heldout_ranks": [
+              {
+                "file_id": "acv_case_01.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_02.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_03.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_04.xlsx",
+                "true_car_rank": 2,
+                "rank_decay": 0.875
+              },
+              {
+                "file_id": "acv_case_06.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              }
+            ]
+          },
+          {
+            "name": "XGBoost pairwise ranking",
+            "score": 0.975,
+            "heldout_ranks": [
+              {
+                "file_id": "acv_case_01.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_02.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_03.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_04.xlsx",
+                "true_car_rank": 2,
+                "rank_decay": 0.875
+              },
+              {
+                "file_id": "acv_case_06.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "file_id": "acv_case_06.xlsx",
+        "training_files": [
+          "acv_case_01.xlsx",
+          "acv_case_02.xlsx",
+          "acv_case_03.xlsx",
+          "acv_case_04.xlsx",
+          "acv_case_05.xlsx"
+        ],
+        "faulty_car": "06",
+        "ranked_cars": [
+          "06",
+          "08",
+          "04",
+          "05",
+          "02",
+          "03",
+          "01",
+          "07"
+        ],
+        "true_car_rank": 1,
+        "rank_decay": 1.0,
+        "available_cars": [
+          "06",
+          "08",
+          "04",
+          "05",
+          "02",
+          "03",
+          "01",
+          "07"
+        ],
+        "selected_candidate": "Pairwise cooling-exceedance ranking",
+        "inner_candidates": [
+          {
+            "name": "Cooling peer-deviation ranking",
+            "score": 0.925,
+            "heldout_ranks": [
+              {
+                "file_id": "acv_case_01.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_02.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_03.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_04.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_05.xlsx",
+                "true_car_rank": 4,
+                "rank_decay": 0.625
+              }
+            ]
+          },
+          {
+            "name": "Pairwise regularized logistic ranking",
+            "score": 0.95,
+            "heldout_ranks": [
+              {
+                "file_id": "acv_case_01.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_02.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_03.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_04.xlsx",
+                "true_car_rank": 2,
+                "rank_decay": 0.875
+              },
+              {
+                "file_id": "acv_case_05.xlsx",
+                "true_car_rank": 2,
+                "rank_decay": 0.875
+              }
+            ]
+          },
+          {
+            "name": "Normal-car Isolation Forest",
+            "score": 0.8,
+            "heldout_ranks": [
+              {
+                "file_id": "acv_case_01.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_02.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_03.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_04.xlsx",
+                "true_car_rank": 4,
+                "rank_decay": 0.625
+              },
+              {
+                "file_id": "acv_case_05.xlsx",
+                "true_car_rank": 6,
+                "rank_decay": 0.375
+              }
+            ]
+          },
+          {
+            "name": "Pairwise cooling-exceedance ranking",
+            "score": 0.975,
+            "heldout_ranks": [
+              {
+                "file_id": "acv_case_01.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_02.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_03.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_04.xlsx",
+                "true_car_rank": 2,
+                "rank_decay": 0.875
+              },
+              {
+                "file_id": "acv_case_05.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              }
+            ]
+          },
+          {
+            "name": "XGBoost pairwise ranking",
+            "score": 0.825,
+            "heldout_ranks": [
+              {
+                "file_id": "acv_case_01.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_02.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_03.xlsx",
+                "true_car_rank": 1,
+                "rank_decay": 1.0
+              },
+              {
+                "file_id": "acv_case_04.xlsx",
+                "true_car_rank": 2,
+                "rank_decay": 0.875
+              },
+              {
+                "file_id": "acv_case_05.xlsx",
+                "true_car_rank": 7,
+                "rank_decay": 0.25
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "fixed_original_pairwise_loco": {
+    "candidate": "Pairwise regularized logistic ranking",
+    "metrics": {
+      "cases": 6,
+      "top1_correct": 4,
+      "top1_accuracy": 0.6666666666666666,
+      "top2_correct": 6,
+      "top2_accuracy": 1.0,
+      "mean_true_car_rank": 1.3333333333333333,
+      "mean_rank_decay": 0.9583333333333334
+    },
+    "folds": [
+      {
+        "file_id": "acv_case_01.xlsx",
+        "training_files": [
+          "acv_case_02.xlsx",
+          "acv_case_03.xlsx",
+          "acv_case_04.xlsx",
+          "acv_case_05.xlsx",
+          "acv_case_06.xlsx"
+        ],
+        "faulty_car": "01",
+        "ranked_cars": [
+          "01",
+          "02",
+          "08",
+          "07",
+          "05",
+          "06",
+          "03",
+          "04"
+        ],
+        "true_car_rank": 1,
+        "rank_decay": 1.0,
+        "available_cars": [
+          "01",
+          "02",
+          "08",
+          "07",
+          "05",
+          "06",
+          "03",
+          "04"
+        ]
+      },
+      {
+        "file_id": "acv_case_02.xlsx",
+        "training_files": [
+          "acv_case_01.xlsx",
+          "acv_case_03.xlsx",
+          "acv_case_04.xlsx",
+          "acv_case_05.xlsx",
+          "acv_case_06.xlsx"
+        ],
+        "faulty_car": "02",
+        "ranked_cars": [
+          "02",
+          "03",
+          "08",
+          "07",
+          "01",
+          "04",
+          "06",
+          "05"
+        ],
+        "true_car_rank": 1,
+        "rank_decay": 1.0,
+        "available_cars": [
+          "02",
+          "03",
+          "08",
+          "07",
+          "01",
+          "04",
+          "06",
+          "05"
+        ]
+      },
+      {
+        "file_id": "acv_case_03.xlsx",
+        "training_files": [
+          "acv_case_01.xlsx",
+          "acv_case_02.xlsx",
+          "acv_case_04.xlsx",
+          "acv_case_05.xlsx",
+          "acv_case_06.xlsx"
+        ],
+        "faulty_car": "03",
+        "ranked_cars": [
+          "03",
+          "02",
+          "01",
+          "08",
+          "07",
+          "05",
+          "06",
+          "04"
+        ],
+        "true_car_rank": 1,
+        "rank_decay": 1.0,
+        "available_cars": [
+          "03",
+          "02",
+          "01",
+          "08",
+          "07",
+          "05",
+          "06",
+          "04"
+        ]
+      },
+      {
+        "file_id": "acv_case_04.xlsx",
+        "training_files": [
+          "acv_case_01.xlsx",
+          "acv_case_02.xlsx",
+          "acv_case_03.xlsx",
+          "acv_case_05.xlsx",
+          "acv_case_06.xlsx"
+        ],
+        "faulty_car": "01",
+        "ranked_cars": [
+          "04",
+          "01",
+          "03",
+          "02",
+          "05",
+          "06",
+          "07",
+          "08"
+        ],
+        "true_car_rank": 2,
+        "rank_decay": 0.875,
+        "available_cars": [
+          "04",
+          "01",
+          "03",
+          "02"
+        ]
+      },
+      {
+        "file_id": "acv_case_05.xlsx",
+        "training_files": [
+          "acv_case_01.xlsx",
+          "acv_case_02.xlsx",
+          "acv_case_03.xlsx",
+          "acv_case_04.xlsx",
+          "acv_case_06.xlsx"
+        ],
+        "faulty_car": "04",
+        "ranked_cars": [
+          "02",
+          "04",
+          "01",
+          "03",
+          "07",
+          "06",
+          "08",
+          "05"
+        ],
+        "true_car_rank": 2,
+        "rank_decay": 0.875,
+        "available_cars": [
+          "02",
+          "04",
+          "01",
+          "03",
+          "07",
+          "06",
+          "08",
+          "05"
+        ]
+      },
+      {
+        "file_id": "acv_case_06.xlsx",
+        "training_files": [
+          "acv_case_01.xlsx",
+          "acv_case_02.xlsx",
+          "acv_case_03.xlsx",
+          "acv_case_04.xlsx",
+          "acv_case_05.xlsx"
+        ],
+        "faulty_car": "06",
+        "ranked_cars": [
+          "06",
+          "08",
+          "01",
+          "05",
+          "02",
+          "03",
+          "04",
+          "07"
+        ],
+        "true_car_rank": 1,
+        "rank_decay": 1.0,
+        "available_cars": [
+          "06",
+          "08",
+          "01",
+          "05",
+          "02",
+          "03",
+          "04",
+          "07"
+        ]
+      }
+    ]
+  },
+  "fixed_two_feature_candidate_loco": {
+    "candidate": "Pairwise cooling-exceedance ranking",
+    "metrics": {
+      "cases": 6,
+      "top1_correct": 5,
+      "top1_accuracy": 0.8333333333333334,
+      "top2_correct": 6,
+      "top2_accuracy": 1.0,
+      "mean_true_car_rank": 1.1666666666666667,
+      "mean_rank_decay": 0.9791666666666666
+    },
+    "folds": [
+      {
+        "file_id": "acv_case_01.xlsx",
+        "training_files": [
+          "acv_case_02.xlsx",
+          "acv_case_03.xlsx",
+          "acv_case_04.xlsx",
+          "acv_case_05.xlsx",
+          "acv_case_06.xlsx"
+        ],
+        "faulty_car": "01",
+        "ranked_cars": [
+          "01",
+          "02",
+          "03",
+          "04",
+          "08",
+          "07",
+          "05",
+          "06"
+        ],
+        "true_car_rank": 1,
+        "rank_decay": 1.0,
+        "available_cars": [
+          "01",
+          "02",
+          "03",
+          "04",
+          "08",
+          "07",
+          "05",
+          "06"
+        ]
+      },
+      {
+        "file_id": "acv_case_02.xlsx",
+        "training_files": [
+          "acv_case_01.xlsx",
+          "acv_case_03.xlsx",
+          "acv_case_04.xlsx",
+          "acv_case_05.xlsx",
+          "acv_case_06.xlsx"
+        ],
+        "faulty_car": "02",
+        "ranked_cars": [
+          "02",
+          "03",
+          "08",
+          "07",
+          "01",
+          "04",
+          "06",
+          "05"
+        ],
+        "true_car_rank": 1,
+        "rank_decay": 1.0,
+        "available_cars": [
+          "02",
+          "03",
+          "08",
+          "07",
+          "01",
+          "04",
+          "06",
+          "05"
+        ]
+      },
+      {
+        "file_id": "acv_case_03.xlsx",
+        "training_files": [
+          "acv_case_01.xlsx",
+          "acv_case_02.xlsx",
+          "acv_case_04.xlsx",
+          "acv_case_05.xlsx",
+          "acv_case_06.xlsx"
+        ],
+        "faulty_car": "03",
+        "ranked_cars": [
+          "03",
+          "02",
+          "01",
+          "07",
+          "08",
+          "04",
+          "05",
+          "06"
+        ],
+        "true_car_rank": 1,
+        "rank_decay": 1.0,
+        "available_cars": [
+          "03",
+          "02",
+          "01",
+          "07",
+          "08",
+          "04",
+          "05",
+          "06"
+        ]
+      },
+      {
+        "file_id": "acv_case_04.xlsx",
+        "training_files": [
+          "acv_case_01.xlsx",
+          "acv_case_02.xlsx",
+          "acv_case_03.xlsx",
+          "acv_case_05.xlsx",
+          "acv_case_06.xlsx"
+        ],
+        "faulty_car": "01",
+        "ranked_cars": [
+          "04",
+          "01",
+          "03",
+          "02",
+          "05",
+          "06",
+          "07",
+          "08"
+        ],
+        "true_car_rank": 2,
+        "rank_decay": 0.875,
+        "available_cars": [
+          "04",
+          "01",
+          "03",
+          "02"
+        ]
+      },
+      {
+        "file_id": "acv_case_05.xlsx",
+        "training_files": [
+          "acv_case_01.xlsx",
+          "acv_case_02.xlsx",
+          "acv_case_03.xlsx",
+          "acv_case_04.xlsx",
+          "acv_case_06.xlsx"
+        ],
+        "faulty_car": "04",
+        "ranked_cars": [
+          "04",
+          "02",
+          "01",
+          "07",
+          "06",
+          "03",
+          "08",
+          "05"
+        ],
+        "true_car_rank": 1,
+        "rank_decay": 1.0,
+        "available_cars": [
+          "04",
+          "02",
+          "01",
+          "07",
+          "06",
+          "03",
+          "08",
+          "05"
+        ]
+      },
+      {
+        "file_id": "acv_case_06.xlsx",
+        "training_files": [
+          "acv_case_01.xlsx",
+          "acv_case_02.xlsx",
+          "acv_case_03.xlsx",
+          "acv_case_04.xlsx",
+          "acv_case_05.xlsx"
+        ],
+        "faulty_car": "06",
+        "ranked_cars": [
+          "06",
+          "08",
+          "04",
+          "05",
+          "02",
+          "03",
+          "01",
+          "07"
+        ],
+        "true_car_rank": 1,
+        "rank_decay": 1.0,
+        "available_cars": [
+          "06",
+          "08",
+          "04",
+          "05",
+          "02",
+          "03",
+          "01",
+          "07"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,344 @@
+/* Night Glass: one quiet visual system for actual recording results.
+   Cyan identifies interaction; amber is reserved for existing model findings.
+   Signal/chart strokes and map line colours are deliberately untouched. */
+:root {
+  --ui-canvas: #10151a;
+  --ui-surface: #1b232a;
+  --ui-subtle: #151d24;
+  --ui-text: #f3f7fa;
+  --ui-muted: #bcc8cf;
+  --ui-border: #344149;
+  --ui-strong: #7fdeeb;
+  --ui-on-strong: #102126;
+  --ng-hover: #28353e;
+  --ng-selected: #20363e;
+  --ng-amber: #efbd7e;
+  --ng-amber-bg: #302b24;
+  --finding-color: var(--ng-amber);
+  --bg: var(--ui-canvas);
+  --panel: var(--ui-surface);
+  --ink: var(--ui-text);
+  --muted: var(--ui-muted);
+  --faint: #9cabb5;
+  --line: var(--ui-border);
+  color-scheme: dark;
+}
+body { background: var(--ui-canvas); color: var(--ui-text); }
+/* The result and its 3D evidence are peer cards, without an extra card shell. */
+.rg-workspace.ps3-shell .ps3-panel.ps3-results-first { background: transparent; border: 0; box-shadow: none; }
+.rg-workspace.ps3-shell .ps3-results-first .ps3-results-heading { padding: 0 0 12px; }
+.rg-workspace.ps3-shell .ps3-results-first .ps3-result-toolbar { margin: 0; }
+.rg-workspace.ps3-shell .ps3-results-first .ps3-result-overview { margin: 16px 0; }
+.rg-workspace.ps3-shell .ps3-results-first .ps3-result-finding { margin: 0 0 20px; }
+::selection { background: #7fdeeb; color: #102126; }
+::-webkit-scrollbar-thumb { background: #536571; }
+.rg-workspace.ps3-shell {
+  --ps3-green: var(--ui-strong);
+  background: radial-gradient(ellipse at 91% 0%, #2a4b5326, transparent 36%), var(--ui-canvas);
+  color: var(--ui-text);
+}
+.rg-workspace.ps3-shell :is(button,a,input,textarea,select,summary):focus-visible {
+  outline: 2px solid var(--ui-strong);
+  outline-offset: 3px;
+}
+.rg-workspace.ps3-shell :is(button,input,textarea,select) { border-radius: 8px; }
+.rg-workspace.ps3-shell :is(input,textarea,select) { accent-color: var(--ui-strong); }
+.rg-workspace.ps3-shell :is(select,input[type=search],textarea),
+.rg-workspace.ps3-shell select option { color: var(--ui-text); background: var(--ui-subtle); }
+.rg-workspace.ps3-shell :is(input,textarea)::placeholder { color: #9cabb5; opacity: 1; }
+.rg-workspace.ps3-shell :is(.ps3-panel,.recording-twin,.rg-export-picker,.rg-export-preview) {
+  background: linear-gradient(135deg, #202a32ed, #1b232af5);
+  border-color: var(--ui-border);
+  border-radius: 15px;
+  box-shadow: 0 12px 34px #00000018, inset 0 1px 0 #ffffff05;
+}
+.rg-workspace.ps3-shell :is(.ps3-button,.rg-topbar-upload) {
+  background: #243039;
+  color: var(--ui-text);
+  border-color: #495963;
+  box-shadow: none;
+}
+.rg-workspace.ps3-shell :is(.ps3-button,.rg-topbar-upload):hover:not(:disabled) {
+  background: #30404a;
+  border-color: #8ba4ae;
+}
+.rg-workspace.ps3-shell .ps3-button-primary {
+  color: var(--ui-on-strong);
+  background: var(--ui-strong);
+  border-color: var(--ui-strong);
+  font-weight: 650;
+}
+.rg-workspace.ps3-shell .ps3-button-primary:hover:not(:disabled) {
+  background: #acf0f7;
+  border-color: #acf0f7;
+}
+.rg-workspace.ps3-shell .ps3-icon-button { color: var(--ui-muted); }
+.rg-workspace.ps3-shell .ps3-skip { color: var(--ui-on-strong); background: var(--ui-strong); }
+
+/* Keep the navigation short, with a distinct but quiet selected state. */
+.rg-workspace.ps3-shell .rg-sidebar {
+  background: linear-gradient(170deg, #1a242b, #12191f 62%);
+  border-right-color: var(--ui-border);
+}
+.rg-workspace.ps3-shell .rg-brand>span { background: #20383f; color: var(--ui-strong); border: 1px solid #43636b; }
+.rg-workspace.ps3-shell .rg-brand small { color: var(--ui-strong); }
+.rg-workspace.ps3-shell .rg-brand em { color: var(--ui-muted); }
+.rg-workspace.ps3-shell .rg-sidebar nav button { color: var(--ui-muted); }
+.rg-workspace.ps3-shell .rg-sidebar nav button.active {
+  background: linear-gradient(100deg, #23404a, #1b2b33);
+  color: var(--ui-strong);
+  border-color: #527a84;
+  box-shadow: inset 3px 0 0 var(--ui-strong);
+}
+.rg-workspace.ps3-shell .rg-sidebar nav button:hover:not(.active) { background: #24313a; color: var(--ui-text); }
+.rg-workspace.ps3-shell .rg-model-state { color: var(--ui-strong); }
+.rg-workspace.ps3-shell .rg-topbar { background: #141d24e8; backdrop-filter: blur(18px); }
+.rg-workspace.ps3-shell .rg-topbar-upload svg { color: var(--ui-strong); }
+.rg-workspace.ps3-shell .rg-service-badge { color: var(--ui-muted); }
+.rg-workspace.ps3-shell .rg-service-badge i { background: var(--ui-strong); }
+.rg-workspace.ps3-shell .rg-service-badge.error i { background: var(--ng-amber); }
+.rg-workspace.ps3-shell :is(.rg-menu,.rg-nav-close) { color: var(--ui-text); }
+.rg-workspace.ps3-shell .rg-content { padding-top: 28px; }
+.rg-workspace.ps3-shell .rg-page-heading h1 { font-weight: 550; letter-spacing: -.8px; }
+.rg-workspace.ps3-shell :is(.rg-eyebrow,.rg-footer,.rg-footer a) { color: var(--ui-muted); }
+.rg-workspace.ps3-shell .rg-panel-title { color: var(--ui-text); }
+.rg-workspace.ps3-shell .rg-inline-link { color: var(--ui-strong)!important; }
+.rg-workspace.ps3-shell .rg-inline-link:hover { color: #baf6fc!important; }
+.rg-workspace.ps3-shell .rg-back-result { color: var(--ui-strong); }
+
+/* Overview retains the data hierarchy and restrained geographic context. */
+.rg-workspace.ps3-shell .rg-flow { border-color: var(--ui-border); }
+.rg-workspace.ps3-shell .rg-flow span { color: var(--ui-muted); }
+.rg-workspace.ps3-shell .rg-flow b { color: var(--ui-muted); border-color: #5b707b; }
+.rg-workspace.ps3-shell .rg-flow .current { color: var(--ui-text); }
+.rg-workspace.ps3-shell .rg-flow .current b { color: var(--ui-on-strong); background: var(--ui-strong); border-color: var(--ui-strong); }
+.rg-workspace.ps3-shell .rg-task-card {
+  background: linear-gradient(130deg, #222e37d9, #1b232af5);
+  border-color: var(--ui-border);
+  color: var(--ui-text);
+  border-radius: 14px;
+  box-shadow: inset 0 1px 0 #ffffff05;
+}
+.rg-workspace.ps3-shell .rg-task-card:hover { border-color: #739aa7; background: #25333c; }
+.rg-workspace.ps3-shell .rg-task-card>svg { color: var(--ui-strong); }
+.rg-workspace.ps3-shell .rg-task-card>span { color: var(--ui-muted); }
+.rg-workspace.ps3-shell .rg-task-card>strong { border-color: var(--ui-border); }
+.rg-workspace.ps3-shell .rg-task-card>strong svg { color: var(--ui-strong); }
+.rg-workspace.ps3-shell .rg-overview-details :is(.rg-history,.rg-current-finding),
+.rg-workspace.ps3-shell .rg-map-section { background: var(--ui-surface); border-color: var(--ui-border); border-radius: 14px; }
+.rg-workspace.ps3-shell .rg-map-section>summary { color: var(--ui-text); }
+.rg-workspace.ps3-shell .rg-map-section>summary small { color: var(--ui-muted); }
+.rg-workspace.ps3-shell .rg-map-frame { border-color: var(--ui-border); }
+.rg-workspace.ps3-shell .rg-map-frame .workspace-map-glass {
+  background: #1a252ded;
+  color: var(--ui-text);
+  border-color: #57707b;
+  box-shadow: 0 6px 20px #0003;
+  backdrop-filter: blur(16px);
+}
+.rg-workspace.ps3-shell .rg-glass { background: #1b252def; border-color: var(--ui-border); box-shadow: inset 0 1px 0 #ffffff05; }
+
+/* File choices stay visually secondary to the finding itself. */
+.rg-workspace.ps3-shell .rg-analysis-grid.has-result { align-items: stretch; }
+.rg-workspace.ps3-shell .rg-analysis-grid.has-result>div { width: 100%; min-width: 0; }
+.rg-workspace.ps3-shell .rg-subsystems button { background: var(--ui-subtle); color: var(--ui-muted); }
+.rg-workspace.ps3-shell .rg-subsystems button.active { background: var(--ng-selected); color: var(--ui-strong); border-color: #6fa3af; }
+.rg-workspace.ps3-shell .rg-subsystems button:hover { border-color: #718c98; }
+.rg-workspace.ps3-shell :is(.rg-selection,.rg-recording-context,.rg-upload-disclosure,.rg-history-disclosure) {
+  background: #182129;
+  border-color: var(--ui-border);
+  border-radius: 11px;
+}
+.rg-workspace.ps3-shell .rg-selection label>span { color: var(--ui-muted); }
+.rg-workspace.ps3-shell .rg-run-status { background: var(--ui-subtle); color: var(--ui-text); border-color: var(--ui-border); }
+.rg-workspace.ps3-shell .rg-run-status span { color: var(--ui-muted); }
+.rg-workspace.ps3-shell .rg-result-actions button { background: #243039; color: var(--ui-text); }
+.rg-workspace.ps3-shell .rg-history-row:hover strong,
+.rg-workspace.ps3-shell .rg-history-row.selected strong { color: var(--ui-strong); }
+.rg-workspace.ps3-shell .rg-history-row.selected { background: #20313a; }
+.rg-workspace.ps3-shell .rg-upload-disclosure>.ps3-panel { background: transparent; border-radius: 0 0 11px 11px; box-shadow: none; }
+.rg-workspace.ps3-shell .ps3-drop { background: #121c23; border-color: #607b86; }
+.rg-workspace.ps3-shell .ps3-drop.dragging { background: #213b44; border-color: var(--ui-strong); }
+.rg-workspace.ps3-shell .ps3-drop>svg { color: var(--ui-strong); }
+.rg-workspace.ps3-shell .ps3-empty-symbol { background: #20333d; color: var(--ui-strong); }
+.rg-workspace.ps3-shell .ps3-job-progress progress::-webkit-progress-value { background: var(--ui-strong); }
+
+/* Result typography is the focal point. Numeric facts remain actual report data. */
+.rg-workspace.ps3-shell .ps3-results-heading { padding-top: 21px; padding-bottom: 17px; }
+.rg-workspace.ps3-shell .ps3-results-heading h2 { font-size: 20px; }
+.rg-workspace.ps3-shell .ps3-result-overview {
+  background: radial-gradient(ellipse at 100% 0%, #45839116, transparent 55%), #1c2831;
+  border: 1px solid #4d6874;
+  border-top: 2px solid var(--ui-strong);
+  border-radius: 12px;
+  padding: 25px;
+  margin-top: 20px;
+}
+.rg-workspace.ps3-shell .ps3-result-conclusion h3 { color: var(--ui-text); font-weight: 550; }
+.rg-workspace.ps3-shell .ps3-result-emblem { background: #17252e; border-color: #547482; }
+.rg-workspace.ps3-shell .ps3-result-emblem.needs-review { background: #302b24; border-color: var(--ng-amber); color: var(--ng-amber); }
+.rg-workspace.ps3-shell .ps3-result-file { color: #c3d3dc; }
+.rg-workspace.ps3-shell .ps3-result-file svg { color: var(--ui-strong); }
+.rg-workspace.ps3-shell .ps3-result-facts { gap: 20px 36px; border-color: #425865; }
+.rg-workspace.ps3-shell .ps3-result-facts dd { font-size: 25px; font-weight: 550; color: var(--ui-text); }
+.rg-workspace.ps3-shell .ps3-result-facts.is-single dd { font-size: 12px; }
+.rg-workspace.ps3-shell .ps3-result-next .ps3-button-quiet { color: var(--ui-strong); background: #182831; border-color: #6b9eac; }
+.rg-workspace.ps3-shell .ps3-result-finding { margin-top: 0; }
+.rg-workspace.ps3-shell .ps3-result-order li { background: #17232c; }
+.rg-workspace.ps3-shell .ps3-result-order li:first-child { border-color: var(--ng-amber); background: var(--ng-amber-bg); }
+.rg-workspace.ps3-shell .ps3-result-order li:first-child strong { color: #f6d3a6; }
+.rg-workspace.ps3-shell .ps3-result-order li.is-unavailable { border-color: #788793; background: #20272e; }
+.rg-workspace.ps3-shell .ps3-result-order li.is-unavailable strong { color: var(--ui-muted); }
+.rg-workspace.ps3-shell .ps3-result-limit { color: var(--ui-muted); }
+.rg-workspace.ps3-shell .ps3-result-tabs { border-color: var(--ui-border); }
+.rg-workspace.ps3-shell .ps3-result-tabs button { color: var(--ui-muted); }
+.rg-workspace.ps3-shell .ps3-result-tabs button.active { color: var(--ui-strong); border-bottom-color: var(--ui-strong); }
+.rg-workspace.ps3-shell .ps3-result-summary { background: #17232b; border-color: var(--ui-border); }
+.rg-workspace.ps3-shell .ps3-result-summary>p { color: var(--ui-text); }
+.rg-workspace.ps3-shell .ps3-evidence-card { background: #17212a; border-color: #3b4d58; }
+.rg-workspace.ps3-shell :is(.ps3-limitations,.rg-warning,.rg-agent-warning,.rg-validation-intro,.ps3-context-note) {
+  background: #242b2e;
+  color: var(--ui-muted)!important;
+  border-color: #505a5e;
+  border-left: 3px solid #b1bec6;
+}
+.rg-workspace.ps3-shell :is(.ps3-limitations,.rg-warning,.rg-agent-warning,.rg-validation-intro) p { color: var(--ui-muted); }
+.rg-workspace.ps3-shell .ps3-prediction-scope>div { background: #111c23; border-color: var(--ui-border); }
+.rg-workspace.ps3-shell :is(.ps3-prediction-scope button.active,.rg-agent-scope-options button[aria-pressed=true]) {
+  color: var(--ui-strong);
+  background: var(--ng-selected);
+  border-color: #6f9aa5;
+}
+.rg-workspace.ps3-shell .ps3-prediction-scope button.active span { color: var(--ui-strong); background: #31505a; }
+.rg-workspace.ps3-shell :is(.ps3-table-scroll,.ps3-compare-table) { background: #17212a; }
+.rg-workspace.ps3-shell th { color: #d6e2e9; background: #25323c; }
+.rg-workspace.ps3-shell td { color: var(--ui-text); }
+.rg-workspace.ps3-shell .ps3-compare-table tr.is-current { background: #20353f; }
+.rg-workspace.ps3-shell .ps3-compare-table tr.is-current>th { background: #20353f; box-shadow: inset 3px 0 var(--ui-strong); }
+.rg-workspace.ps3-shell .ps3-compare-table tbody tr:hover { background: #273b46; }
+.rg-workspace.ps3-shell .ps3-compare-selected { color: var(--ui-strong); }
+.rg-workspace.ps3-shell .ps3-compare-open { background: #243039; color: var(--ui-strong)!important; border-color: #526b78; }
+.rg-workspace.ps3-shell .ps3-compare-open:hover { background: #2b424d; border-color: var(--ui-strong); }
+.rg-workspace.ps3-shell .ps3-compare-class { color: var(--ui-text); background: #24333e; }
+.rg-workspace.ps3-shell .ps3-compare-class.side { color: #f5c78d; background: #302b24; border-color: #826644; border-style: solid; }
+.rg-workspace.ps3-shell .ps3-compare-ranking li:first-child { border-color: #bd9058; background: #302b24; color: #f5d4a8; }
+.rg-workspace.ps3-shell .ps3-compare-ranking li.unavailable { background: #20272e; color: var(--ui-muted); border-color: #788793; }
+.rg-workspace.ps3-shell .ps3-compare-search input { background: transparent; }
+.rg-workspace.ps3-shell .ps3-signal svg { background: #111b23; border: 1px solid #314650; }
+.rg-workspace.ps3-shell .ps3-signal svg text { fill: #becbd4; }
+.rg-workspace.ps3-shell .ps3-grid-line { stroke: #bdcfd529; }
+.rg-workspace.ps3-shell .ps3-ranking li:first-child { background: #302b24; border-color: #bd9058; }
+.rg-workspace.ps3-shell .ps3-validation-score strong { color: var(--ui-text); }
+
+/* Investigation uses the same quiet surfaces as its sources. */
+.rg-workspace.ps3-shell .rg-agent-emblem { background: #213942; color: var(--ui-strong); border-color: #486b77; }
+.rg-workspace.ps3-shell .rg-agent-status i { background: var(--ui-strong); }
+.rg-workspace.ps3-shell .rg-agent-status.local i { background: #aebcc5; }
+.rg-workspace.ps3-shell .rg-agent-prose,
+.rg-workspace.ps3-shell .rg-agent-prose>p,
+.rg-workspace.ps3-shell .rg-agent-prose strong { color: var(--ui-text); }
+.rg-workspace.ps3-shell .rg-agent-question { background: #263943; color: var(--ui-text)!important; border-color: #4e6976; }
+.rg-workspace.ps3-shell .rg-agent-workflow-grid button:hover:not(:disabled) { background: #24343e; border-color: #6b8b99; }
+.rg-workspace.ps3-shell .rg-agent-compose textarea { color: var(--ui-text); background: #131e26; }
+.rg-workspace.ps3-shell .rg-agent-compose-actions button { background: var(--ui-strong); color: var(--ui-on-strong); border-color: var(--ui-strong); }
+.rg-workspace.ps3-shell .rg-agent-compose-actions button.rg-agent-stop { color: var(--ui-text); background: #25313a; border-color: #647c88; }
+.rg-workspace.ps3-shell .rg-citation { color: var(--ui-strong); border-color: #79adba; }
+.rg-workspace.ps3-shell .rg-citation:hover { color: #b9f5fc; }
+.rg-workspace.ps3-shell .rg-agent-sources li:target,
+.rg-workspace.ps3-shell .rg-agent-sources li:focus { background: var(--ng-selected); border-color: var(--ui-strong); }
+.rg-workspace.ps3-shell .rg-agent-answer-actions button:hover { background: #263c47; border-color: #6b8b99; }
+
+/* Selected export files are explicit; highlight never obscures filenames. */
+.rg-workspace.ps3-shell .rg-export-selection-bar { background: #182830; border-color: #47626f; }
+.rg-workspace.ps3-shell .rg-export-selection-bar strong { color: var(--ui-strong); }
+.rg-workspace.ps3-shell .rg-export-picker.has-selection { border-color: #6a9aa7; }
+.rg-workspace.ps3-shell .rg-export-run-label select { background: var(--ui-subtle); color: var(--ui-text); }
+.rg-workspace.ps3-shell .rg-export-search { background: #131e26; }
+.rg-workspace.ps3-shell .rg-export-search input { background: transparent; }
+.rg-workspace.ps3-shell .rg-export-file-list label:has(input:checked) { background: #203842; }
+.rg-workspace.ps3-shell .rg-export-file-list strong { color: var(--ui-text); }
+.rg-workspace.ps3-shell .rg-export-file-tools button { color: var(--ui-strong); }
+.rg-workspace.ps3-shell .rg-export-preview { background: #15222b; }
+.rg-workspace.ps3-shell .rg-export-preview :is(h3,strong) { color: var(--ui-text); }
+
+/* A studio-lit model and glass annotations, with readable data alongside it. */
+.rg-workspace.ps3-shell .recording-twin { background: #1b252e; }
+.rg-workspace.ps3-shell .recording-twin .rt-heading { background: linear-gradient(100deg, #23313a, #1b252e); }
+.rg-workspace.ps3-shell .recording-twin .rt-heading h3 { font-weight: 550; }
+.rg-workspace.ps3-shell .recording-twin .rt-focus-result { color: var(--ui-on-strong); background: var(--ui-strong); border-color: var(--ui-strong); font-weight: 600; }
+.rg-workspace.ps3-shell .recording-twin .rt-focus-result:hover:not(:disabled) { background: #acf0f7; }
+.rg-workspace.ps3-shell .rt-view-toolbar { background: #17222b; }
+.rg-workspace.ps3-shell .rt-view-toolbar button { color: var(--ui-muted); background: #1d2b34; border-color: #45606d; }
+.rg-workspace.ps3-shell .rt-view-toolbar button:hover:not(:disabled) { color: var(--ui-text); background: #2a424e; }
+.rg-workspace.ps3-shell .rt-view-toolbar button[aria-pressed=true],
+.rg-workspace.ps3-shell .rt-view-toolbar button[aria-pressed=true]:hover:not(:disabled) { color: var(--ui-strong); background: #26404b; border-color: #81b8c5; }
+.rg-workspace.ps3-shell .rt-visual { background: radial-gradient(ellipse at 50% 42%, #314b59 0%, #1a2a35 43%, #101b24 80%); }
+.rg-workspace.ps3-shell .rt-source-strip { color: #d8e4eb; }
+.rg-workspace.ps3-shell .rt-source-strip>span:last-child { color: #b0c4ce; letter-spacing: .035em; }
+.rg-workspace.ps3-shell .rt-scene-caption,
+.rg-workspace.ps3-shell .rt-scene-caption span:last-child { color: #b2c7d1; }
+.rg-workspace.ps3-shell :is(.rt-selection-controls,.rt-car-navigation) { background: #18252e; }
+.rg-workspace.ps3-shell .recording-twin .rt-inspector { background: #1d2933; }
+.rg-workspace.ps3-shell .rt-camera-tools { background: #1d2933; border-color: #496572; }
+.rg-workspace.ps3-shell :is(.rt-car-navigation,.rt-camera-tools,.rt-sensor-navigation,.rt-sides) button[aria-pressed=true],
+.rg-workspace.ps3-shell :is(.rt-car-navigation,.rt-camera-tools,.rt-sensor-navigation,.rt-sides) button[aria-pressed=true]:hover:not(:disabled) {
+  color: var(--ui-strong);
+  border-color: #81b8c5;
+  background: #26404b;
+}
+.rg-workspace.ps3-shell .rt-sides button[aria-pressed=true] small { color: #c3dae4; }
+.rg-workspace.ps3-shell .rt-finding-list button { background: #17242d; color: var(--ui-text); border-color: #3e5561; }
+.rg-workspace.ps3-shell .rt-finding-list button small { color: var(--ui-muted); }
+.rg-workspace.ps3-shell .rt-finding-list button[aria-pressed=true] { background: #302c26; border: 2px solid #c6995f; }
+.rg-workspace.ps3-shell .rt-finding-list button:hover:not(:disabled) { background: #30414a; }
+.rg-workspace.ps3-shell .rt-findings>div:first-child>svg { color: var(--ng-amber); }
+.rg-workspace.ps3-shell .rt-status { color: var(--ui-text)!important; }
+.rg-workspace.ps3-shell .rt-measurements>div { background: #14222b; border-color: #3b5260; }
+.rg-workspace.ps3-shell .rt-measurements dt { color: var(--ui-muted); }
+.rg-workspace.ps3-shell .rt-measurements dd { color: var(--ui-text); font-weight: 550; }
+.rg-workspace.ps3-shell .rt-trace svg { background: #101b23; }
+.rg-workspace.ps3-shell .rt-provenance { background: #15222b; }
+.rg-workspace.ps3-shell .rt-car-label { color: #e7f0f5; background: #1a2d38ed; border-color: #617f8d; box-shadow: 0 3px 12px #0003; }
+.rg-workspace.ps3-shell .rt-car-label.is-active { color: #b9f5fc; border-color: var(--ui-strong); }
+.rg-workspace.ps3-shell .rt-sensor-label { color: #d6eaf3; background: #1a2d38ed; }
+.rg-workspace.ps3-shell .rt-scene-callout { background: #1b2a34ed; color: var(--ui-text); border-color: #627d8b; box-shadow: 0 5px 20px #0005; backdrop-filter: blur(10px); }
+.rg-workspace.ps3-shell .rt-scene-callout small { color: #c6d6df; }
+.rg-workspace.ps3-shell .rt-scene-callout.needs-review { border-top-color: var(--ng-amber); }
+.rg-workspace.ps3-shell .rt-scene-callout.needs-review b { color: #f7d2a2; }
+.rg-workspace.ps3-shell .rt-scene-scope { background: #12212ade; color: #c8dbe4; border: 1px solid #405e6c; }
+.rg-workspace.ps3-shell .rt-fallback { background: #17242e; color: var(--ui-text); }
+.rg-workspace.ps3-shell .recording-twin.is-embedded { margin-top: 0; }
+.rg-workspace.ps3-shell .recording-twin.is-embedded .rt-heading { padding: 20px 23px; }
+.rg-workspace.ps3-shell .recording-twin.is-embedded .rt-heading h3 { font-size: 23px; margin: 7px 0; }
+.rg-workspace.ps3-shell .recording-twin.is-embedded .rt-heading .rt-eyebrow { display: none; }
+.rg-workspace.ps3-shell .recording-twin.is-embedded .rt-heading p { max-width: 75ch; font-size: 12px; line-height: 1.55; margin-top: 7px; color: var(--ui-muted); }
+.rg-workspace.ps3-shell .recording-twin.is-embedded .rt-canvas { height: 430px; }
+.rg-workspace.ps3-shell .recording-twin.is-embedded .rt-embedded-heading { padding: 18px 21px; }
+.rg-workspace.ps3-shell .recording-twin.is-embedded .rt-embedded-heading h3 { font-size: 20px; margin: 0; }
+.rg-workspace.ps3-shell .recording-twin.is-embedded .rt-evidence-heading { margin: 0 0 16px; padding-bottom: 13px; border-bottom: 1px solid var(--ui-border); font-size: 18px; font-weight: 550; }
+.rg-workspace.ps3-shell .recording-twin.is-embedded .rt-inspector-header h4 { font-size: 15px; margin: 0 0 7px; }
+.rg-workspace.ps3-shell .recording-twin.is-embedded .rt-key-measurements { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8px; }
+.rg-workspace.ps3-shell .recording-twin.is-embedded .rt-key-measurements>div { min-width: 0; padding: 11px 10px; }
+.rg-workspace.ps3-shell .recording-twin.is-embedded .rt-key-measurements dd { font-size: 20px; }
+.rg-workspace.ps3-shell .recording-twin.is-embedded .rt-key-measurements dd small { display: block; margin: 3px 0 0; font-size: 11px; }
+.rg-workspace.ps3-shell .recording-twin.is-embedded .rt-traces { grid-template-columns: minmax(0,1fr); }
+
+@media(max-width:760px) {
+  .rg-workspace.ps3-shell .rg-content { padding-top: 22px; }
+  .rg-workspace.ps3-shell .rg-topbar { background: #141d24f5; }
+  .rg-workspace.ps3-shell .rg-nav-scrim { background: #04090dcc; }
+  .rg-workspace.ps3-shell .ps3-result-overview { padding: 20px; }
+  .rg-workspace.ps3-shell .ps3-result-facts { gap: 17px 27px; }
+  .rg-workspace.ps3-shell .ps3-result-facts dd { font-size: 22px; }
+  .rg-workspace.ps3-shell .ps3-result-facts.is-single dd { font-size: 12px; }
+}
+@container(max-width:500px) {
+  .rg-workspace.ps3-shell .recording-twin.is-embedded .rt-heading { padding: 18px; }
+  .rg-workspace.ps3-shell .recording-twin.is-embedded .rt-heading h3 { font-size: 21px; }
+  .rg-workspace.ps3-shell .recording-twin.is-embedded .rt-canvas { height: 350px; }
+}
+@media(prefers-reduced-transparency:reduce) {
+  .rg-workspace.ps3-shell .rg-topbar,
+  .rg-workspace.ps3-shell .rt-scene-callout,
+  .rg-workspace.ps3-shell .rg-map-frame .workspace-map-glass { background: #1b252e; backdrop-filter: none; }
+}

@@ -1,0 +1,252 @@
+{
+  "verified": true,
+  "files": 272,
+  "groups": 270,
+  "method": "Independently recomputed confusion counts and macro F1 with plain Python from saved OOF CSV. Checked unique coverage and outer/inner group isolation against saved split lists.",
+  "script_hash_matches_predeclared_protocol": true,
+  "baseline_columns_exactly_reproduced": true,
+  "installed_model_unchanged": true,
+  "manual_metrics": {
+    "Balanced logistic regression": {
+      "macro_f1": 0.6364559367470902,
+      "counts": [
+        {
+          "label": "Normal",
+          "tp": 227,
+          "fp": 14,
+          "fn": 7,
+          "f1": 0.9557894736842105
+        },
+        {
+          "label": "Side I",
+          "tp": 3,
+          "fp": 5,
+          "fn": 11,
+          "f1": 0.2727272727272727
+        },
+        {
+          "label": "Side II",
+          "tp": 16,
+          "fp": 7,
+          "fn": 8,
+          "f1": 0.6808510638297872
+        }
+      ]
+    },
+    "Balanced Extra Trees": {
+      "macro_f1": 0.5246753246753246,
+      "counts": [
+        {
+          "label": "Normal",
+          "tp": 234,
+          "fp": 27,
+          "fn": 0,
+          "f1": 0.9454545454545454
+        },
+        {
+          "label": "Side I",
+          "tp": 0,
+          "fp": 0,
+          "fn": 14,
+          "f1": 0.0
+        },
+        {
+          "label": "Side II",
+          "tp": 11,
+          "fp": 0,
+          "fn": 13,
+          "f1": 0.6285714285714286
+        }
+      ]
+    },
+    "Class-weighted XGBoost": {
+      "macro_f1": 0.7857466383581033,
+      "counts": [
+        {
+          "label": "Normal",
+          "tp": 227,
+          "fp": 10,
+          "fn": 7,
+          "f1": 0.9639065817409767
+        },
+        {
+          "label": "Side I",
+          "tp": 7,
+          "fp": 4,
+          "fn": 7,
+          "f1": 0.56
+        },
+        {
+          "label": "Side II",
+          "tp": 20,
+          "fp": 4,
+          "fn": 4,
+          "f1": 0.8333333333333334
+        }
+      ]
+    },
+    "Normal-reference side Isolation Forest": {
+      "macro_f1": 0.2896742896742897,
+      "counts": [
+        {
+          "label": "Normal",
+          "tp": 209,
+          "fp": 38,
+          "fn": 25,
+          "f1": 0.8690228690228691
+        },
+        {
+          "label": "Side I",
+          "tp": 0,
+          "fp": 10,
+          "fn": 14,
+          "f1": 0.0
+        },
+        {
+          "label": "Side II",
+          "tp": 0,
+          "fp": 15,
+          "fn": 24,
+          "f1": 0.0
+        }
+      ]
+    },
+    "Balanced RBF SVM, all features": {
+      "macro_f1": 0.5894325874832698,
+      "counts": [
+        {
+          "label": "Normal",
+          "tp": 229,
+          "fp": 23,
+          "fn": 5,
+          "f1": 0.9423868312757202
+        },
+        {
+          "label": "Side I",
+          "tp": 2,
+          "fp": 3,
+          "fn": 12,
+          "f1": 0.21052631578947367
+        },
+        {
+          "label": "Side II",
+          "tp": 12,
+          "fp": 3,
+          "fn": 12,
+          "f1": 0.6153846153846154
+        }
+      ]
+    },
+    "Balanced RBF SVM, side summaries": {
+      "macro_f1": 0.5945033879648661,
+      "counts": [
+        {
+          "label": "Normal",
+          "tp": 221,
+          "fp": 14,
+          "fn": 13,
+          "f1": 0.9424307036247335
+        },
+        {
+          "label": "Side I",
+          "tp": 4,
+          "fp": 11,
+          "fn": 10,
+          "f1": 0.27586206896551724
+        },
+        {
+          "label": "Side II",
+          "tp": 13,
+          "fp": 9,
+          "fn": 11,
+          "f1": 0.5652173913043478
+        }
+      ]
+    },
+    "Balanced Extra Trees, leaf size 1": {
+      "macro_f1": 0.47991967871485947,
+      "counts": [
+        {
+          "label": "Normal",
+          "tp": 234,
+          "fp": 30,
+          "fn": 0,
+          "f1": 0.9397590361445783
+        },
+        {
+          "label": "Side I",
+          "tp": 0,
+          "fp": 0,
+          "fn": 14,
+          "f1": 0.0
+        },
+        {
+          "label": "Side II",
+          "tp": 8,
+          "fp": 0,
+          "fn": 16,
+          "f1": 0.5
+        }
+      ]
+    },
+    "existing_candidate_selection": {
+      "macro_f1": 0.7857466383581033,
+      "counts": [
+        {
+          "label": "Normal",
+          "tp": 227,
+          "fp": 10,
+          "fn": 7,
+          "f1": 0.9639065817409767
+        },
+        {
+          "label": "Side I",
+          "tp": 7,
+          "fp": 4,
+          "fn": 7,
+          "f1": 0.56
+        },
+        {
+          "label": "Side II",
+          "tp": 20,
+          "fp": 4,
+          "fn": 4,
+          "f1": 0.8333333333333334
+        }
+      ]
+    },
+    "expanded_candidate_selection": {
+      "macro_f1": 0.7857466383581033,
+      "counts": [
+        {
+          "label": "Normal",
+          "tp": 227,
+          "fp": 10,
+          "fn": 7,
+          "f1": 0.9639065817409767
+        },
+        {
+          "label": "Side I",
+          "tp": 7,
+          "fp": 4,
+          "fn": 7,
+          "f1": 0.56
+        },
+        {
+          "label": "Side II",
+          "tp": 20,
+          "fp": 4,
+          "fn": 4,
+          "f1": 0.8333333333333334
+        }
+      ]
+    }
+  },
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "scikit_learn": "1.9.1",
+    "xgboost": "3.4.1"
+  }
+}

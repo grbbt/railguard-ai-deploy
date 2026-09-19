@@ -1,0 +1,48 @@
+/* Shared workflow structure. The final theme owns colours and materials. */
+.rg-workspace.ps3-shell .rg-analysis-upload { margin-bottom: 22px; padding: 24px; border: 1px solid var(--ui-border); border-radius: 18px; scroll-margin-top: 84px; }
+.rg-upload-top { display: flex; justify-content: space-between; align-items: center; gap: 20px; margin-bottom: 18px; }
+.rg-upload-top h2 { margin: 6px 0; font-size: 23px; letter-spacing: -.035em; }
+.rg-upload-top p { margin: 0; color: var(--ui-muted); font-size: 13px; }
+.rg-local-processing { display: inline-flex; gap: 7px; align-items: center; font-size: 12px; white-space: nowrap; }
+.rg-workspace.ps3-shell .rg-analysis-grid.has-result { display: grid; grid-template-columns: minmax(0, 1fr); gap: 24px; }
+.rg-workspace.ps3-shell .rg-analysis-grid.has-result > .rg-history { margin-top: 4px; }
+.rg-workspace.ps3-shell .rg-analysis-upload .rg-subsystems { margin-bottom: 18px; }
+.rg-workspace.ps3-shell .rg-analysis-upload .ps3-input-panel { margin: 0; }
+.rg-signal-guide { display: flex; align-items: flex-start; gap: 11px; margin-top: 15px; padding-top: 14px; border-top: 1px solid var(--ui-border); color: var(--ui-strong); }
+.rg-signal-guide > svg { flex-shrink: 0; margin-top: 2px; }
+.rg-signal-guide p { margin: 0; display: grid; gap: 5px; line-height: 1.6; }
+.rg-signal-guide strong { font-size: 12px; color: var(--ui-text); }
+.rg-signal-guide span { font-size: 12px; color: var(--ui-muted); }
+.rg-signal-guide small { font-size: 11px; color: var(--ui-muted); }
+.rg-workspace.ps3-shell .rg-sidebar nav button span { white-space: normal; text-align: left; line-height: 1.35; }
+.rg-investigation-intro { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 21px 24px; border: 1px solid var(--ui-border); border-radius: 16px; margin-bottom: 22px; }
+.rg-investigation-intro > div { display: flex; align-items: center; gap: 15px; min-width: 0; }
+.rg-workbench-symbol { width: 43px; height: 43px; border-radius: 13px; flex-shrink: 0; display: grid; place-items: center; }
+.rg-investigation-intro strong { font-size: 16px; letter-spacing: -.02em; }
+.rg-investigation-intro p { margin: 6px 0 0; font-size: 12px; overflow-wrap: anywhere; color: var(--ui-muted); }
+.rg-investigation-intro p span { display: block; margin-top: 5px; }
+.rg-investigation-intro nav { display: flex; gap: 8px; flex-shrink: 0; }
+.rg-investigation-intro nav :is(a, button) { display: inline-flex; align-items: center; gap: 7px; min-height: 42px; padding: 10px 13px; border: 1px solid var(--ui-border); border-radius: 10px; font-size: 12px; font-weight: 600; text-decoration: none; cursor: pointer; }
+.rg-investigation-workbench { display: grid; grid-template-columns: minmax(0, 1fr); gap: 24px; align-items: start; }
+.rg-workbench-stage, .rg-workbench-agent { min-width: 0; scroll-margin-top: 84px; }
+.rg-agent-connection { padding: 21px 24px; border: 1px solid var(--ui-border); border-radius: 16px 16px 0 0; }
+.rg-agent-connection > span { display: flex; align-items: center; gap: 8px; font-size: 12px; margin-bottom: 10px; }
+.rg-agent-connection strong { display: block; font-size: 16px; overflow-wrap: anywhere; }
+.rg-agent-connection p { color: var(--ui-muted); line-height: 1.65; margin: 8px 0 0; font-size: 12px; }
+.rg-workspace.ps3-shell .rg-workbench-agent .rg-investigator { border-radius: 0 0 16px 16px; }
+.rg-workspace.ps3-shell .rg-recording-console { padding-bottom: 16px; }
+.rg-agent-component { display: grid; gap: 9px; margin: 16px 0; padding: 15px; border: 1px solid #545084; border-radius: 12px; background: linear-gradient(120deg, #272441b3, #1832448c); }
+.rg-agent-component > span { color: #b7b6ff; font-size: 11px; letter-spacing: .07em; text-transform: uppercase; }
+.rg-agent-component strong { font-size: 14px; color: #f0f3ff; }
+.rg-agent-component p { margin: 0; font-size: 12px; color: #c2cce0; line-height: 1.5; }
+.rg-agent-component button { display: flex; justify-content: center; align-items: center; gap: 8px; min-height: 40px; padding: 9px 12px; border: 1px solid #7286b2; border-radius: 9px; background: linear-gradient(110deg, #324d70, #443863); color: #f1f7ff; font-size: 12px; cursor: pointer; }
+.rg-agent-component button:disabled { opacity: .5; cursor: not-allowed; }
+@media (max-width: 760px) {
+  .rg-workspace.ps3-shell .rg-analysis-upload { padding: 16px; border-radius: 14px; }
+  .rg-upload-top, .rg-investigation-intro { align-items: stretch; flex-direction: column; gap: 14px; }
+  .rg-upload-top h2 { font-size: 21px; }
+  .rg-investigation-intro { padding: 18px; }
+  .rg-investigation-intro nav { flex-wrap: wrap; }
+  .rg-investigation-intro nav :is(a, button) { flex: 1; justify-content: center; }
+  .rg-agent-connection { padding: 18px; }
+}

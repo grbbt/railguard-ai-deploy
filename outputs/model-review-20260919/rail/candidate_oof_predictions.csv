@@ -1,0 +1,273 @@
+file_id,group,outer_fold,true,Balanced logistic regression,Balanced Extra Trees,Class-weighted XGBoost,Normal-reference side Isolation Forest,"Balanced RBF SVM, all features","Balanced RBF SVM, side summaries","Balanced Extra Trees, leaf size 1"
+Train1.csv,0,1,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train10.csv,1,0,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train100.csv,2,2,Side I,Normal,Normal,Normal,Normal,Normal,Side I,Normal
+Train101.csv,3,0,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train102.csv,4,1,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train103.csv,5,2,Side II,Side II,Side II,Normal,Normal,Side II,Side II,Normal
+Train104.csv,6,1,Side II,Side II,Side II,Side II,Normal,Side II,Side II,Side II
+Train105.csv,7,0,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train106.csv,8,2,Side I,Normal,Normal,Normal,Normal,Normal,Side II,Normal
+Train107.csv,18,1,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train108.csv,10,3,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train109.csv,11,3,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train11.csv,12,2,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train110.csv,13,3,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train111.csv,14,3,Side II,Side II,Normal,Side II,Normal,Side II,Side II,Normal
+Train112.csv,15,3,Normal,Normal,Normal,Normal,Side I,Normal,Normal,Normal
+Train113.csv,16,2,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train114.csv,17,0,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train115.csv,18,1,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train116.csv,19,0,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train117.csv,20,2,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train118.csv,21,2,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train119.csv,22,3,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train12.csv,23,0,Side II,Side II,Side II,Side II,Normal,Normal,Normal,Normal
+Train120.csv,24,3,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train121.csv,25,0,Side I,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train122.csv,26,3,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train123.csv,27,1,Normal,Normal,Normal,Side I,Normal,Normal,Side I,Normal
+Train124.csv,28,0,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train125.csv,29,1,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train126.csv,30,0,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train127.csv,31,3,Side II,Side II,Normal,Side II,Normal,Normal,Side II,Normal
+Train128.csv,32,2,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train129.csv,33,0,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train13.csv,34,3,Normal,Normal,Normal,Normal,Side II,Normal,Normal,Normal
+Train130.csv,35,3,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train131.csv,36,0,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train132.csv,37,0,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train133.csv,38,3,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train134.csv,39,0,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train135.csv,40,3,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train136.csv,41,1,Normal,Normal,Normal,Normal,Normal,Normal,Side II,Normal
+Train137.csv,42,2,Side I,Normal,Normal,Side I,Normal,Normal,Side I,Normal
+Train138.csv,43,1,Normal,Normal,Normal,Normal,Side II,Normal,Normal,Normal
+Train139.csv,44,0,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train14.csv,45,2,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train140.csv,46,2,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train141.csv,47,0,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train142.csv,48,2,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train143.csv,49,1,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train144.csv,50,2,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train145.csv,51,2,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train146.csv,52,3,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train147.csv,53,0,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train148.csv,54,3,Normal,Normal,Normal,Normal,Side II,Normal,Normal,Normal
+Train149.csv,55,1,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train15.csv,56,3,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train150.csv,57,0,Side I,Side I,Normal,Side I,Normal,Side I,Side II,Normal
+Train151.csv,58,0,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train152.csv,59,3,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train153.csv,60,2,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train154.csv,61,1,Normal,Side II,Normal,Normal,Normal,Normal,Normal,Normal
+Train155.csv,62,2,Normal,Normal,Normal,Normal,Side I,Normal,Normal,Normal
+Train156.csv,63,1,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train157.csv,64,0,Normal,Normal,Normal,Normal,Side II,Normal,Normal,Normal
+Train158.csv,65,1,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train159.csv,66,0,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train16.csv,67,1,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train160.csv,68,1,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train161.csv,69,3,Normal,Normal,Normal,Normal,Side I,Normal,Normal,Normal
+Train162.csv,70,0,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train163.csv,71,1,Side I,Normal,Normal,Side I,Normal,Normal,Normal,Normal
+Train164.csv,72,2,Side II,Side II,Normal,Side II,Normal,Side II,Side II,Normal
+Train165.csv,97,0,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train166.csv,74,2,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train167.csv,75,1,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train168.csv,76,2,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train169.csv,77,1,Normal,Normal,Normal,Normal,Normal,Normal,Side II,Normal
+Train17.csv,78,3,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train170.csv,79,0,Side I,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train171.csv,80,0,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train172.csv,81,3,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train173.csv,82,0,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train174.csv,83,0,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train175.csv,84,0,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train176.csv,85,3,Normal,Normal,Normal,Side II,Normal,Normal,Normal,Normal
+Train177.csv,86,1,Normal,Side I,Normal,Side I,Normal,Side I,Side I,Normal
+Train178.csv,87,2,Normal,Normal,Normal,Normal,Side II,Normal,Normal,Normal
+Train179.csv,88,2,Side II,Side II,Side II,Side II,Normal,Side II,Side II,Side II
+Train18.csv,89,2,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train180.csv,90,3,Side I,Side I,Normal,Normal,Normal,Side I,Normal,Normal
+Train181.csv,91,1,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train182.csv,92,3,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train183.csv,93,1,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train184.csv,94,0,Normal,Normal,Normal,Normal,Side I,Normal,Normal,Normal
+Train185.csv,95,1,Side I,Normal,Normal,Normal,Normal,Normal,Side I,Normal
+Train186.csv,96,0,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train187.csv,97,0,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train188.csv,98,1,Side II,Normal,Normal,Side II,Normal,Normal,Normal,Normal
+Train189.csv,99,1,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train19.csv,100,3,Normal,Normal,Normal,Normal,Side II,Normal,Normal,Normal
+Train190.csv,101,1,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train191.csv,102,0,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train192.csv,103,2,Normal,Normal,Normal,Normal,Side I,Normal,Normal,Normal
+Train193.csv,104,1,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train194.csv,105,3,Side I,Side II,Normal,Side I,Normal,Normal,Side I,Normal
+Train195.csv,106,0,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train196.csv,107,1,Normal,Normal,Normal,Normal,Side II,Normal,Normal,Normal
+Train197.csv,108,0,Normal,Normal,Normal,Side II,Normal,Normal,Normal,Normal
+Train198.csv,109,0,Side II,Side II,Normal,Side II,Normal,Normal,Side II,Normal
+Train199.csv,110,3,Side II,Side II,Side II,Side II,Normal,Side II,Side II,Normal
+Train2.csv,111,1,Side II,Side I,Normal,Side II,Normal,Normal,Side I,Normal
+Train20.csv,112,0,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train200.csv,113,1,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train201.csv,114,1,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train202.csv,115,2,Side I,Side II,Normal,Normal,Normal,Normal,Normal,Normal
+Train203.csv,116,3,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train204.csv,117,2,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train205.csv,118,2,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train206.csv,119,3,Normal,Normal,Normal,Normal,Side II,Normal,Normal,Normal
+Train207.csv,120,3,Side II,Side II,Side II,Side II,Normal,Side II,Side II,Side II
+Train208.csv,121,2,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train209.csv,122,0,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train21.csv,123,0,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train210.csv,124,3,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train211.csv,125,2,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train212.csv,126,2,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train213.csv,127,1,Side I,Side I,Normal,Side I,Normal,Normal,Normal,Normal
+Train214.csv,128,1,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train215.csv,129,2,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train216.csv,130,0,Side II,Normal,Normal,Side II,Normal,Normal,Normal,Normal
+Train217.csv,131,2,Side II,Side I,Normal,Side I,Normal,Side I,Side I,Normal
+Train218.csv,132,3,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train219.csv,133,0,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train22.csv,134,2,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train220.csv,135,2,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train221.csv,136,0,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train222.csv,137,3,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train223.csv,138,2,Normal,Normal,Normal,Normal,Side I,Normal,Normal,Normal
+Train224.csv,139,0,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train225.csv,140,2,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train226.csv,141,1,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train227.csv,142,3,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train228.csv,143,0,Normal,Normal,Normal,Normal,Side II,Normal,Normal,Normal
+Train229.csv,144,1,Normal,Normal,Normal,Normal,Side II,Normal,Normal,Normal
+Train23.csv,145,0,Normal,Normal,Normal,Normal,Side II,Normal,Normal,Normal
+Train230.csv,146,0,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train231.csv,147,1,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train232.csv,148,3,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train233.csv,149,2,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train234.csv,150,2,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train235.csv,151,2,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train236.csv,152,1,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train237.csv,153,0,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train238.csv,154,3,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train239.csv,155,0,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train24.csv,156,3,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train240.csv,157,3,Side II,Normal,Normal,Side II,Normal,Normal,Normal,Normal
+Train241.csv,158,3,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train242.csv,159,1,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train243.csv,160,3,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train244.csv,161,2,Normal,Normal,Normal,Normal,Side II,Normal,Normal,Normal
+Train245.csv,162,2,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train246.csv,163,2,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train247.csv,164,1,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train248.csv,165,3,Side II,Side II,Normal,Side II,Normal,Normal,Side I,Normal
+Train249.csv,166,3,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train25.csv,167,1,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train250.csv,168,1,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train251.csv,169,0,Normal,Normal,Normal,Side II,Normal,Normal,Side I,Normal
+Train252.csv,170,3,Normal,Normal,Normal,Normal,Side I,Normal,Normal,Normal
+Train253.csv,171,2,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train254.csv,172,0,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train255.csv,173,1,Normal,Normal,Normal,Normal,Normal,Normal,Side I,Normal
+Train256.csv,174,1,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train257.csv,175,0,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train258.csv,176,1,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train259.csv,177,2,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train26.csv,178,0,Side II,Side II,Side II,Side II,Normal,Side II,Side II,Side II
+Train260.csv,179,0,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train261.csv,180,2,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train262.csv,181,1,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train263.csv,182,0,Normal,Side II,Normal,Normal,Normal,Side II,Side I,Normal
+Train264.csv,183,3,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train265.csv,184,0,Side II,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train266.csv,185,1,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train267.csv,186,0,Side II,Side II,Side II,Side II,Normal,Side II,Side II,Side II
+Train268.csv,187,2,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train269.csv,188,0,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train27.csv,189,0,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train270.csv,190,3,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train271.csv,191,2,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train272.csv,192,3,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train28.csv,193,1,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train29.csv,194,2,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train3.csv,195,2,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train30.csv,196,2,Side II,Normal,Normal,Side II,Normal,Normal,Normal,Normal
+Train31.csv,197,3,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train32.csv,198,3,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train33.csv,199,2,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train34.csv,200,3,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train35.csv,201,1,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train36.csv,202,2,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train37.csv,203,3,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train38.csv,204,1,Normal,Normal,Normal,Normal,Side II,Normal,Normal,Normal
+Train39.csv,205,1,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train4.csv,206,2,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train40.csv,207,1,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train41.csv,208,0,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train42.csv,209,1,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train43.csv,210,2,Side II,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train44.csv,211,1,Normal,Normal,Normal,Normal,Normal,Normal,Side II,Normal
+Train45.csv,212,1,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train46.csv,213,2,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train47.csv,214,3,Normal,Side II,Normal,Normal,Normal,Side II,Side II,Normal
+Train48.csv,215,2,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train49.csv,216,3,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train5.csv,217,1,Normal,Normal,Normal,Normal,Side II,Normal,Normal,Normal
+Train50.csv,218,1,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train51.csv,219,1,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train52.csv,220,0,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train53.csv,221,1,Side II,Side II,Side II,Side II,Normal,Side II,Side II,Side II
+Train54.csv,222,1,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train55.csv,223,2,Normal,Normal,Normal,Normal,Side I,Normal,Normal,Normal
+Train56.csv,224,3,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train57.csv,225,1,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train58.csv,226,2,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train59.csv,227,3,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train6.csv,228,2,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train60.csv,229,3,Normal,Normal,Normal,Side II,Normal,Normal,Side II,Normal
+Train61.csv,230,2,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train62.csv,231,3,Side I,Side II,Normal,Side I,Normal,Normal,Side II,Normal
+Train63.csv,232,3,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train64.csv,233,3,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train65.csv,234,1,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train66.csv,235,0,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train67.csv,236,3,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train68.csv,237,2,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train69.csv,238,3,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train7.csv,239,2,Normal,Side I,Normal,Side I,Normal,Side I,Side I,Normal
+Train70.csv,240,3,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train71.csv,241,0,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train72.csv,242,1,Side II,Side II,Side II,Side II,Normal,Side II,Side II,Side II
+Train73.csv,243,2,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train74.csv,244,2,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train75.csv,245,0,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train76.csv,246,0,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train77.csv,247,0,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train78.csv,248,3,Normal,Normal,Normal,Normal,Side II,Normal,Normal,Normal
+Train79.csv,249,0,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train8.csv,250,3,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train80.csv,251,1,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train81.csv,252,0,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train82.csv,253,2,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train83.csv,254,3,Side I,Normal,Normal,Side I,Normal,Normal,Normal,Normal
+Train84.csv,255,2,Normal,Normal,Normal,Normal,Normal,Normal,Side I,Normal
+Train85.csv,256,3,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train86.csv,257,0,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train87.csv,258,0,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train88.csv,259,2,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train89.csv,260,3,Normal,Side II,Normal,Normal,Normal,Side II,Side II,Normal
+Train9.csv,261,1,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train90.csv,262,0,Normal,Normal,Normal,Normal,Side I,Normal,Normal,Normal
+Train91.csv,263,2,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train92.csv,264,1,Normal,Normal,Normal,Normal,Side I,Normal,Normal,Normal
+Train93.csv,265,1,Side II,Side II,Side II,Side II,Normal,Side II,Side I,Side II
+Train94.csv,266,3,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train95.csv,267,3,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train96.csv,268,3,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train97.csv,269,1,Normal,Side I,Normal,Normal,Normal,Normal,Normal,Normal
+Train98.csv,270,2,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
+Train99.csv,271,1,Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normal
