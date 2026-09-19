@@ -1,10 +1,10 @@
 # Submission, hosting and database plan
 
-**Status: proposed — 19 September 2026.** This document is a plan, not a deployment report. No cloud resource, public repository, domain, database or submission has been created by this work. Example URLs below are placeholders. The project owner chooses the account, domain and budget before provisioning.
+**Status — 19 September 2026:** the source is published at [hpone2k/railguard-ai](https://github.com/hpone2k/railguard-ai). Hosting and database arrangements remain proposed; no cloud server, hosted domain or cloud database has been provisioned. Example deployment URLs below are placeholders. The project owner chooses the account, domain and budget before provisioning.
 
 ## Recommendation
 
-**Oracle option selected for preparation:** the user subsequently chose Oracle Cloud Always Free. The [Oracle deployment guide](ORACLE_DEPLOYMENT.md) and `deploy/oracle/` configuration implement preparation for the same single-server architecture. No cloud server has been created yet. The DigitalOcean discussion below is retained as the earlier alternative; it is not a purchase or deployment instruction.
+**Provider selection is pending.** The options below describe the application's hosting requirements and remain proposals, not purchase or deployment instructions.
 
 Host the existing app on **one Linux virtual machine**, with a DigitalOcean Droplet as the concrete provider option. Run the production Next.js frontend and one FastAPI process behind an HTTPS reverse proxy. Keep the current saved-job files on persistent storage for the hackathon. A database migration is unnecessary for the initial judges' deployment.
 
@@ -96,7 +96,7 @@ Use a dedicated server-side OpenAI project/key. Preserve current context bounds,
 
 The newer submission checklist supplied with this request adds a GitHub URL/README, a hosted prototype/domain, a 2–3 minute video and a short write-up. Complete those alongside the pinned PS3 app and CSV requirements. The pinned specification calls the write-up optional; including it satisfies the newer checklist without changing the scoring formulas. [Pinned PS3 deliverables](https://github.com/aochinwen/NebulaX-Hackathon-ProblemStatement/blob/16526c02579c7f37e54eaaa42a4cc6d4ceb19994/PS3/01_Problem_Statement_3_Specifications.md).
 
-- [ ] Prepare a GitHub repository and README with setup, architecture, supported inputs, model provenance, measured validation limits, live-demo access and export instructions. Proposed URL: `https://github.com/OWNER/REPOSITORY` — placeholder only. Review the actual staged files and Git history before publication.
+- [x] Publish the [GitHub repository](https://github.com/hpone2k/railguard-ai) and README with local setup, supported inputs, model provenance, measured validation and export instructions. Add the live-demo URL and access instructions after hosting is configured.
 - [ ] Exclude credentials and all environment variants, raw organiser/uploaded datasets, runtime jobs, logs, caches, backups, local database files, `.venv`, `node_modules` and `.next`. The publication `.gitignore` now covers environment variants and private session outputs while permitting secret-free `.env.example` files and the four active model/provenance pairs. Review staged files; ignoring a file does not remove it from Git history.
 - [ ] Keep source, dependency locks, tests, documentation, a secret-free configuration example and reproducibility scripts. Include only reviewed, relevant results/screenshots. Distribute trusted frozen model bundles separately if needed, with hashes and setup instructions; do not publish training feature caches or accept user-uploaded pickle/joblib artifacts.
 - [ ] Publish and test the hosted prototype from a fresh external browser, with the laptop's localhost services unavailable. Verify all four subsystems, batch upload, reload/persisted history, charts, 3D, local/AI summaries, selectable exports and download filenames. Check restart recovery, HTTPS, access controls, disk limits and AI fallback. These checks are planned, not reported as passed.
@@ -107,7 +107,7 @@ The newer submission checklist supplied with this request adds a GitHub URL/READ
 
 ## Implementation order after this plan
 
-1. Confirm the repository visibility, hosting account, domain, budget and judging access mode.
+1. Confirm the hosting account, domain, budget and judging access mode.
 2. Prepare a clean release and trusted artifact/example package; add deployment configuration and the agreed access/quota controls.
 3. Provision the persistent server, build, deploy and run the hosted acceptance checks.
 4. Generate and inspect final predictions, record the video, complete the write-up and assemble the submission.

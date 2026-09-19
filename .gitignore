@@ -30,9 +30,7 @@ frontend/tsconfig.tsbuildinfo
 !**/.env.example
 *.pem
 *.key
-output/deploy/
-output/oracle-verification/
-deploy/oracle/backups/
+deploy/**/backups/
 *.log
 # Local consultation/deployment packages and private development sessions.
 output/

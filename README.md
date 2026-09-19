@@ -6,7 +6,7 @@ The application uses **Next.js, React and Three.js** for the interface, and **Py
 
 ## Run locally on Windows
 
-Install Python 3.12+ and a supported Node.js version satisfying 20.9+ (the deployment image uses Node 22). From the cloned project folder in PowerShell:
+Install Python 3.12+ and Node.js 20.9+. From the cloned project folder in PowerShell:
 
 ```powershell
 .\scripts\setup.ps1
@@ -17,12 +17,12 @@ Open [localhost:3000](http://127.0.0.1:3000). Upload compatible recordings to us
 
 For optional AI investigation, copy `.env.example` to `.env` and configure your own server-side OpenAI API key. Predictions and exports work without it. Never commit the configured file.
 
-## Review and deployment
+## Review and validation
 
 - [Measured model validation and audit](outputs/model-review-20260919/model-review.md): development validation, not hidden-Test accuracy.
 - [Current prediction export](outputs/model-review-20260919/inference-check/predictions.zip) and [export verification](outputs/model-review-20260919/inference-check/verification.json).
 - [Unified workspace guide](docs/UNIFIED_WORKSPACE.md) and [AI investigation controls](docs/AI_SECURITY.md).
-- [Ubuntu/Docker deployment guide](docs/ORACLE_DEPLOYMENT.md). The prepared application containers can run on a suitable Ubuntu VM; the provider account, networking and DNS must be configured separately. No public website has been deployed yet.
+- [Hosting and database plan](docs/SUBMISSION_HOSTING_PLAN.md). A hosting provider has not yet been selected, and no public website has been deployed.
 
 Run `.\scripts\check.ps1 -SkipBuild` for tests, type checking and lint while the app is running. Stop the app with `.\scripts\stop.ps1` before running the full `.\scripts\check.ps1` production build. Start the verified build with `.\scripts\start.ps1 -Production`.
 
@@ -39,8 +39,6 @@ This brief records the intended solution and implementation constraints. It does
 **Glanceable results:** an **In brief** card explains **Current file** or **All files** in the selected run, using prediction counts and recorded measurements. The scope follows you between Analyse data and 3D + AI investigation. Exact facts and measurements remain server-owned; a bounded OpenAI request adds a short review sentence, successful wording is cached, and failures leave a labelled local summary visible. The 3D model remains tied to the named recording. New investigation questions anchor at the start of their exchange; completed answers no longer scroll to the bottom or refocus the input. See [summary behavior](docs/RESULT_SUMMARIES.md).
 
 **Submission planning:** the newer submission slide requires a GitHub URL/README, hosted prototype, 2–3 minute video, prediction output and short write-up. The [hosting and database plan](docs/SUBMISSION_HOSTING_PLAN.md) recommends a persistent server for the existing app and a staged metadata/object-storage design if multi-user access is added. Cloud resources, a public domain and a hosted deployment have not been provisioned.
-
-**Oracle deployment preparation:** [Follow the Oracle setup guide](docs/ORACLE_DEPLOYMENT.md) for an Ubuntu A1 server, HTTPS and a password-protected shared judging workspace. The deployment package separates read-only models/examples from persistent saved runs and excludes local credentials and upload history. Cloud provisioning and Linux/ARM acceptance checks still require an actual server; PostgreSQL is optional for this initial deployment.
 
 **AI retrieval controls:** project investigation uses allowlisted local retrieval, server-enforced read-only tools and file/run scope, untrusted-content envelopes, credential redaction, bounded context and fresh source citations. Adversarial tests cover scope expansion, role spoofing, malformed arguments and credential disclosure. See the [implemented controls and test scope](docs/AI_SECURITY.md).
 
