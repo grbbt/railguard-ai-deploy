@@ -107,3 +107,19 @@ returned HTTP 202, completed inference, retained matching source hashes, appeare
 in saved analyses and exported CSVs. One official Door, ACV and SHM recording
 each passed the same workflow. These local checks do not substitute for testing
 the rebuilt image behind the live server's own proxy.
+
+## Hosted verification after deployment
+
+Later on 19 September 2026 the public route began advertising `stream-v1`.
+An intact official Rail `Test1.csv` returned HTTP 202 in 1.58 seconds; a batch
+of `Test1.csv` and `Test2.csv` returned HTTP 202 in 2.45 seconds. Both jobs
+completed, retained matching source SHA-256 hashes and exported CSVs with
+HTTP 200. These timings measure request acceptance from the test connection,
+not inference time or a guarantee for other networks. The samples were verified
+against their unauthenticated public organiser GitHub blob hashes before upload.
+
+That live check used ordinary, uncompressed uploads: the hosted backend had not
+yet advertised `limits.upload_encodings`. Deploy the backend from `cbfd855` or
+later, alongside the corresponding frontend, to enable the additional lossless
+compression improvement. Existing and mixed-version deployments remain usable
+through capability negotiation.
